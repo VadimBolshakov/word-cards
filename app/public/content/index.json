@@ -1,0 +1,18 @@
+{
+ "contentVersion": "aa31e121ebf7",
+ "topics": [
+  {
+   "cardCount": 8,
+   "description": "Самые первые фразы для любого разговора",
+   "id": "greetings",
+   "order": 1,
+   "sets": [
+    {
+     "count": 8,
+     "n": 1
+    }
+   ],
+   "title": "Приветствия и вежливость"
+  }
+ ]
+}

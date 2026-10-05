@@ -1,0 +1,85 @@
+{
+ "cards": [
+  {
+   "en": "Hello!",
+   "enAudio": "audio/93cb103ac77f.mp3",
+   "enEx": "",
+   "id": "gr001",
+   "ru": "Привет!",
+   "ruAudio": "audio/f12e1b97b44a.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Good morning!",
+   "enAudio": "audio/1d132cf26459.mp3",
+   "enEx": "",
+   "id": "gr002",
+   "ru": "Доброе утро!",
+   "ruAudio": "audio/80f4b9c875ae.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "How are you?",
+   "enAudio": "audio/9f688ecee075.mp3",
+   "enEx": "",
+   "id": "gr003",
+   "ru": "Как дела?",
+   "ruAudio": "audio/a47845c92f34.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "I'm fine, thank you.",
+   "enAudio": "audio/0ad630ad6ace.mp3",
+   "enEx": "",
+   "id": "gr004",
+   "ru": "У меня всё хорошо, спасибо.",
+   "ruAudio": "audio/5c6ae8717617.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Nice to meet you.",
+   "enAudio": "audio/455f6d534bb0.mp3",
+   "enEx": "",
+   "id": "gr005",
+   "ru": "Приятно познакомиться.",
+   "ruAudio": "audio/46db9bcde4f6.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "See you later!",
+   "enAudio": "audio/c90287095138.mp3",
+   "enEx": "",
+   "id": "gr006",
+   "ru": "Увидимся!",
+   "ruAudio": "audio/315b1ce66b58.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Excuse me.",
+   "enAudio": "audio/468eb38f56bb.mp3",
+   "enEx": "",
+   "id": "gr007",
+   "ru": "Извините.",
+   "ruAudio": "audio/bfc8384baf0d.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Thank you very much!",
+   "enAudio": "audio/2f14316870e8.mp3",
+   "enEx": "",
+   "id": "gr008",
+   "ru": "Большое спасибо!",
+   "ruAudio": "audio/5848da3d944e.mp3",
+   "ruEx": "",
+   "set": 1
+  }
+ ],
+ "id": "greetings"
+}
