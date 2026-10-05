@@ -12,14 +12,18 @@ class FakeAudio implements AudioLike {
   playbackRate = 1;
   currentTime = 0;
   loop = false;
+  muted = false;
+  paused = true;
   played = 0;
+  pauses = 0;
   rejectPlay = false;
   private listeners: Record<AudioEvent, (() => void)[]> = { ended: [], error: [], timeupdate: [] };
   async play() {
     this.played++;
     if (this.rejectPlay) throw new Error('AbortError');
+    this.paused = false;
   }
-  pause() {}
+  pause() { this.pauses++; this.paused = true; }
   addEventListener(type: AudioEvent, fn: () => void) { this.listeners[type].push(fn); }
   fire(type: AudioEvent) { this.listeners[type].forEach(fn => fn()); }
   at(seconds: number) { this.currentTime = seconds; this.fire('timeupdate'); }
@@ -40,8 +44,19 @@ const STEPS: Step[] = [a('a1', 0), s(0), a('a2', 0, 'back'), s(0), a('b1', 1), s
 // Длительности в секундах. stepStart: 0, 1, 2, 4, 5, 6, 7, 9, (конец) 10.
 const SECONDS: Record<string, number> = { a1: 1, sil: 1, a2: 2, b1: 1, b2: 2 };
 
+class FakeTimers {
+  pending = new Map<number, () => void>();
+  private next = 0;
+  set = (fn: () => void, _ms: number) => { const id = ++this.next; this.pending.set(id, fn); return id; };
+  clear = (id: unknown) => { this.pending.delete(id as number); };
+  runAll() { const fns = [...this.pending.values()]; this.pending.clear(); fns.forEach(fn => fn()); }
+}
+
 function setup(opts: { loop?: boolean; rate?: number; missing?: string[]; session?: FakeSession } = {}) {
   const audio = new FakeAudio();
+  const timers = new FakeTimers();
+  const setTimer = vi.fn(timers.set);
+  const visibility = { hidden: true, fire: () => {}, unsubscribed: false };
   const session = opts.session ?? new FakeSession();
   const onError = vi.fn();
   const missing = new Set(opts.missing ?? []);
@@ -56,9 +71,18 @@ function setup(opts: { loop?: boolean; rate?: number; missing?: string[]; sessio
   const engine = new AudioEngine({
     audio, mediaSession: session, onError, resolve, readBytes, makeObjectUrl, revokeObjectUrl,
     describeCard: i => ({ title: `card ${i}`, artist: 'topic' }),
+    isHidden: () => visibility.hidden,
+    setTimer, clearTimer: timers.clear,
+    subscribeVisibility: fn => {
+      visibility.fire = fn;
+      return () => { visibility.unsubscribed = true; };
+    },
   });
   engine.load(STEPS, { loop: opts.loop ?? false, rate: opts.rate ?? 1 });
-  return { audio, session, onError, engine, resolve, readBytes, blobs, makeObjectUrl, revokeObjectUrl };
+  return {
+    audio, session, onError, engine, resolve, readBytes, blobs, makeObjectUrl, revokeObjectUrl,
+    timers, setTimer, visibility,
+  };
 }
 
 describe('AudioEngine', () => {
@@ -99,7 +123,7 @@ describe('AudioEngine', () => {
     expect(engine.getState()).toMatchObject({ playing: false, stepIndex: 2 });
     await engine.play();
     expect(audio.srcSets).toHaveLength(1);
-    expect(audio.played).toBe(2);
+    expect(audio.played).toBe(1);                             // мягкая пауза: элемент не вставал
     expect(audio.currentTime).toBe(2.5);
     expect(engine.getState()).toMatchObject({ playing: true, stepIndex: 2, side: 'back' });
   });
@@ -355,5 +379,139 @@ describe('AudioEngine', () => {
     engine.prevCard();
     expect(engine.getState()).toMatchObject({ cardIndex: 0, finished: false });
     expect(audio.currentTime).toBe(0);
+  });
+
+  describe('soft pause', () => {
+    it('pause while playing mutes instead of pausing the element', async () => {
+      const { audio, session, engine, setTimer } = setup();
+      await engine.play();
+      audio.at(2.5);
+      engine.pause();
+      expect(audio.muted).toBe(true);
+      expect(audio.pauses).toBe(1);                         // только из load()
+      expect(audio.paused).toBe(false);
+      expect(audio.played).toBe(1);
+      expect(audio.loop).toBe(true);
+      expect(engine.getState().playing).toBe(false);
+      expect(session.playbackState).toBe('paused');
+      expect(setTimer).toHaveBeenCalledWith(expect.any(Function), 10 * 60 * 1000);
+    });
+
+    it('timeupdate during soft pause does not move the position', async () => {
+      const { audio, session, engine } = setup();
+      await engine.play();
+      audio.at(0.5);
+      engine.pause();
+      audio.at(5.5);
+      audio.at(9.5);
+      expect(engine.getState()).toMatchObject({ cardIndex: 0, stepIndex: 0 });
+      expect(session.metadata).toMatchObject({ title: 'card 0' });
+      expect(session.playbackState).toBe('paused');
+    });
+
+    it('play after soft pause returns to the paused position and unmutes', async () => {
+      const { audio, engine, timers } = setup();
+      await engine.play();
+      audio.at(2.5);
+      engine.pause();
+      audio.at(7);
+      await engine.play();
+      expect(audio.currentTime).toBe(2.5);
+      expect(audio.muted).toBe(false);
+      expect(audio.loop).toBe(false);
+      expect(audio.played).toBe(1);
+      expect(timers.pending.size).toBe(0);
+      expect(engine.getState()).toMatchObject({ playing: true, stepIndex: 2 });
+    });
+
+    it('nextCard during soft pause moves the saved position to that card', async () => {
+      const { audio, engine } = setup();
+      await engine.play();
+      audio.at(0.5);
+      engine.pause();
+      audio.at(1.5);
+      engine.nextCard();
+      expect(engine.getState()).toMatchObject({ cardIndex: 1, stepIndex: 4, playing: false });
+      expect(audio.muted).toBe(true);
+      audio.at(2);
+      await engine.play();
+      expect(audio.currentTime).toBe(5);
+      expect(engine.getState()).toMatchObject({ cardIndex: 1, stepIndex: 4, playing: true });
+    });
+
+    it('the time limit turns the soft pause into a real one', async () => {
+      const { audio, engine, timers } = setup({ loop: true });
+      await engine.play();
+      audio.at(2.5);
+      engine.pause();
+      audio.at(8);
+      timers.runAll();
+      expect(audio.paused).toBe(true);
+      expect(audio.currentTime).toBe(2.5);
+      expect(audio.muted).toBe(false);
+      expect(audio.loop).toBe(true);
+      await engine.play();
+      expect(audio.played).toBe(2);
+      expect(audio.currentTime).toBe(2.5);
+      expect(engine.getState()).toMatchObject({ playing: true, stepIndex: 2 });
+    });
+
+    it('becoming visible turns the soft pause into a real one', async () => {
+      const { audio, engine, visibility, timers } = setup();
+      await engine.play();
+      audio.at(2.5);
+      engine.pause();
+      audio.at(4);
+      visibility.fire();                                    // всё ещё скрыта
+      expect(audio.paused).toBe(false);
+      visibility.hidden = false;
+      visibility.fire();
+      expect(audio.paused).toBe(true);
+      expect(audio.currentTime).toBe(2.5);
+      expect(audio.muted).toBe(false);
+      expect(audio.loop).toBe(false);
+      expect(timers.pending.size).toBe(0);
+      await engine.play();
+      expect(audio.played).toBe(2);
+    });
+
+    it('pause before playback starts is a plain pause', async () => {
+      const { audio, engine, setTimer } = setup();
+      await flush();
+      engine.pause();
+      expect(audio.muted).toBe(false);
+      expect(audio.pauses).toBe(2);
+      expect(setTimer).not.toHaveBeenCalled();
+    });
+
+    it('setLoop during soft pause keeps the element looping until resume', async () => {
+      const { audio, engine } = setup();
+      await engine.play();
+      engine.pause();
+      engine.setLoop(false);
+      expect(audio.loop).toBe(true);
+      engine.setLoop(true);
+      await engine.play();
+      expect(audio.loop).toBe(true);
+    });
+
+    it('load and destroy during soft pause unmute and drop the timer', async () => {
+      const { audio, engine, timers, visibility } = setup({ loop: true });
+      await engine.play();
+      engine.pause();
+      engine.load(STEPS, { loop: false, rate: 1 });
+      expect(audio.muted).toBe(false);
+      expect(audio.loop).toBe(false);
+      expect(timers.pending.size).toBe(0);
+      await engine.play();
+      engine.pause();
+      expect(audio.muted).toBe(true);
+      engine.destroy();
+      expect(audio.muted).toBe(false);
+      expect(audio.paused).toBe(true);
+      expect(audio.loop).toBe(false);
+      expect(timers.pending.size).toBe(0);
+      expect(visibility.unsubscribed).toBe(true);
+    });
   });
 });

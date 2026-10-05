@@ -5,6 +5,8 @@ export interface AudioLike {
   playbackRate: number;
   currentTime: number;
   loop: boolean;
+  muted: boolean;
+  readonly paused: boolean;
   play(): Promise<void>;
   pause(): void;
   addEventListener(type: 'ended' | 'error' | 'timeupdate', listener: () => void): void;
@@ -36,6 +38,14 @@ export interface EngineOptions {
   mediaSession?: MediaSessionLike | null;
   describeCard?: (cardIndex: number) => { title: string; artist: string };
   onError?: (message: string) => void;
+  /** Скрыта ли страница; по умолчанию — document.visibilityState. */
+  isHidden?: () => boolean;
+  /** Подписка на смену видимости; по умолчанию — visibilitychange на document. */
+  subscribeVisibility?: (fn: () => void) => () => void;
+  /** Через сколько мягкая пауза становится настоящей. */
+  softPauseLimitMs?: number;
+  setTimer?: (fn: () => void, ms: number) => unknown;
+  clearTimer?: (id: unknown) => void;
 }
 
 export const NO_AUDIO_MESSAGE = 'Нет звука для карточки — скачайте набор для офлайна';
@@ -48,6 +58,17 @@ const BYTES_PER_SECOND = 6000;
 // Safari может вернуть currentTime чуть меньше выставленного; допуск меньше
 // одного mp3-кадра (24 мс) с запасом, чтобы не откатываться на предыдущую карточку.
 const SEEK_TOLERANCE_S = 0.03;
+
+const SOFT_PAUSE_LIMIT_MS = 10 * 60 * 1000;
+
+const defaultIsHidden = () =>
+  typeof document !== 'undefined' && document.visibilityState === 'hidden';
+
+const defaultSubscribeVisibility = (fn: () => void): (() => void) => {
+  if (typeof document === 'undefined') return () => {};
+  document.addEventListener('visibilitychange', fn);
+  return () => document.removeEventListener('visibilitychange', fn);
+};
 
 const defaultReadBytes = async (url: string): Promise<ArrayBuffer> => {
   const r = await fetch(url);
@@ -77,6 +98,14 @@ export class AudioEngine {
   private streamUrl: string | null = null;
   private assembly: Promise<void> = Promise.resolve();
   private lastCard = -1;
+  /**
+   * Позиция «мягкой паузы» или null. На iOS настоящая пауза в фоне гасит аудиосессию,
+   * и play с экрана блокировки уже не звучит. Поэтому пауза глушит элемент, а он
+   * продолжает играть беззвучно; позиция для пользователя заморожена здесь.
+   */
+  private softPos: number | null = null;
+  private softTimer: unknown = null;
+  private readonly unsubscribeVisibility: () => void;
   private listeners = new Set<(s: EngineState) => void>();
   private readonly audio: AudioLike;
   private readonly session: MediaSessionLike | null;
@@ -95,10 +124,13 @@ export class AudioEngine {
     this.session?.setActionHandler('pause', () => this.pause());
     this.session?.setActionHandler('nexttrack', () => this.nextCard());
     this.session?.setActionHandler('previoustrack', () => this.prevCard());
+    this.unsubscribeVisibility = (opts.subscribeVisibility ?? defaultSubscribeVisibility)(
+      () => this.onVisibilityChange());
   }
 
   load(steps: Step[], opts: { loop: boolean; rate: number }): void {
     this.audio.pause();
+    this.clearSoftPause();
     this.token++;
     this.releaseStream();
     this.steps = steps;
@@ -133,6 +165,7 @@ export class AudioEngine {
 
   async play(): Promise<void> {
     if (this.steps.length === 0) return;
+    if (this.softPos !== null) return this.resumeSoftPause();
     const token = this.token;
     const attempt = ++this.playAttempt;
     this.playing = true;
@@ -149,21 +182,21 @@ export class AudioEngine {
       this.index = this.stepAt(0);
       this.emit();
     }
-    this.audio.playbackRate = this.rate;
-    try {
-      await this.audio.play();
-    } catch {
-      // Отказ play() (например, прерывание iOS) — это не отсутствие звука: просто пауза.
-      if (attempt !== this.playAttempt) return;
-      this.playing = false;
-      this.emit();
-    }
+    await this.startElement(attempt);
   }
 
   pause(): void {
     this.playAttempt++;
+    if (this.playing && this.streamUrl && this.softPos === null) {
+      this.softPos = this.audio.currentTime;
+      this.audio.muted = true;
+      this.audio.loop = true;              // конец потока не должен вызвать ended/finish
+      const setTimer = this.opts.setTimer ?? ((fn, ms) => setTimeout(fn, ms));
+      this.softTimer = setTimer(() => this.hardenPause(), this.opts.softPauseLimitMs ?? SOFT_PAUSE_LIMIT_MS);
+    } else if (this.softPos === null) {
+      this.audio.pause();
+    }
     this.playing = false;
-    this.audio.pause();
     this.emit();
   }
 
@@ -183,13 +216,15 @@ export class AudioEngine {
 
   setLoop(loop: boolean): void {
     this.loop = loop;
-    this.audio.loop = loop;
+    if (this.softPos === null) this.audio.loop = loop;
   }
 
   destroy(): void {
     this.token++;
     this.playing = false;
     this.audio.pause();
+    this.clearSoftPause();
+    this.unsubscribeVisibility();
     this.releaseStream();
     this.listeners.clear();
     if (this.session && sessionOwner === this) {
@@ -237,6 +272,52 @@ export class AudioEngine {
     this.emit();
   }
 
+  private async resumeSoftPause(): Promise<void> {
+    const attempt = ++this.playAttempt;
+    this.audio.currentTime = this.softPos!;
+    this.clearSoftPause();
+    this.playing = true;
+    this.emit();
+    if (this.audio.paused) await this.startElement(attempt);
+  }
+
+  private async startElement(attempt: number): Promise<void> {
+    this.audio.playbackRate = this.rate;
+    try {
+      await this.audio.play();
+    } catch {
+      // Отказ play() (например, прерывание iOS) — это не отсутствие звука: просто пауза.
+      if (attempt !== this.playAttempt) return;
+      this.playing = false;
+      this.emit();
+    }
+  }
+
+  /** Мягкая пауза → настоящая: элемент на паузе в запомненной позиции. */
+  private hardenPause(): void {
+    if (this.softPos === null) return;
+    const pos = this.softPos;
+    this.audio.pause();
+    this.clearSoftPause();
+    this.audio.currentTime = pos;
+  }
+
+  private clearSoftPause(): void {
+    if (this.softTimer !== null) {
+      (this.opts.clearTimer ?? (id => clearTimeout(id as ReturnType<typeof setTimeout>)))(this.softTimer);
+      this.softTimer = null;
+    }
+    if (this.softPos === null) return;
+    this.softPos = null;
+    this.audio.muted = false;
+    this.audio.loop = this.loop;
+  }
+
+  // На переднем плане обычная пауза работает и бережёт батарею.
+  private onVisibilityChange(): void {
+    if (!(this.opts.isHidden ?? defaultIsHidden)()) this.hardenPause();
+  }
+
   private releaseStream(): void {
     if (!this.streamUrl) return;
     (this.opts.revokeObjectUrl ?? (u => URL.revokeObjectURL(u)))(this.streamUrl);
@@ -261,14 +342,15 @@ export class AudioEngine {
       }
       start = 0;
     }
-    this.audio.currentTime = this.stepStart[start];
+    if (this.softPos !== null) this.softPos = this.stepStart[start];
+    else this.audio.currentTime = this.stepStart[start];
     this.index = start;
     this.finished = false;
     this.emit();
   }
 
   private onTimeUpdate(): void {
-    if (!this.streamUrl) return;
+    if (!this.streamUrl || this.softPos !== null) return;
     const i = this.stepAt(this.audio.currentTime + SEEK_TOLERANCE_S);
     if (i === this.index) return;
     this.index = i;
@@ -277,6 +359,12 @@ export class AudioEngine {
 
   // При audio.loop элемент сам переходит в начало и ended не приходит; ветка ниже — страховка.
   private onEnded(): void {
+    if (this.softPos !== null) {
+      // Страховка: беззвучное проигрывание не должно останавливаться.
+      this.audio.currentTime = 0;
+      this.audio.play().catch(() => {});
+      return;
+    }
     if (!this.loop) {
       this.finish();
       return;
@@ -296,6 +384,7 @@ export class AudioEngine {
 
   private onAudioError(): void {
     if (!this.streamUrl) return;
+    this.hardenPause();
     this.playing = false;
     this.opts.onError?.(NO_AUDIO_MESSAGE);
     this.emit();
@@ -305,6 +394,7 @@ export class AudioEngine {
     this.playing = false;
     this.finished = true;
     this.audio.pause();
+    this.clearSoftPause();
     this.emit();
   }
 
