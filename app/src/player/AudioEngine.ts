@@ -190,6 +190,7 @@ export class AudioEngine {
     }
     const token = ++this.token;
     this.attemptFailed = false;
+    this.loadedIndex = -1;
     this.index = i;
     this.emit();
     const step = this.steps[i];

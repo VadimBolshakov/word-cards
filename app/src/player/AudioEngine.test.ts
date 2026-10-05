@@ -177,4 +177,39 @@ describe('AudioEngine', () => {
     expect(onError).toHaveBeenCalledTimes(2);
     expect(engine.getState()).toMatchObject({ playing: false, finished: true });
   });
+
+  it('pause during a retry resolve then resume does not get stuck', async () => {
+    const audio = new FakeAudio();
+    audio.failing.add('blob:a1');
+    const onError = vi.fn();
+    let a1Calls = 0;
+    let release!: (src: string) => void;
+    const engine = new AudioEngine({
+      audio, mediaSession: null, onError,
+      resolve: url => {
+        if (url === 'a1' && ++a1Calls === 2) return new Promise<string>(r => { release = r; });
+        return Promise.resolve(`blob:${url}`);
+      },
+    });
+    engine.load(STEPS, { loop: false, rate: 1 });
+    await engine.play(); await flush();               // первая попытка упала, retry ждёт resolve
+    engine.pause();
+    release('blob:a1'); await flush();
+    await engine.play();
+    for (let i = 0; i < 6; i++) await flush();
+    expect(audio.played.filter(p => p.src === 'blob:a1').length).toBeGreaterThanOrEqual(2);
+    expect(onError).toHaveBeenCalledTimes(1);
+    expect(engine.getState()).toMatchObject({ cardIndex: 1, stepIndex: 4, playing: true });
+  });
+
+  it('media session play and previoustrack handlers work', async () => {
+    const { session, engine, audio } = setup();
+    session.handlers.play!(); await flush();
+    expect(engine.getState().playing).toBe(true);
+    expect(audio.played.at(-1)?.src).toBe('blob:a1');
+    session.handlers.nexttrack!(); await flush();
+    session.handlers.previoustrack!(); await flush();
+    expect(engine.getState()).toMatchObject({ cardIndex: 0, stepIndex: 0, playing: true });
+    expect(session.metadata).toMatchObject({ title: 'card 0' });
+  });
 });
