@@ -1,0 +1,9 @@
+:root {
+  --bg: #111827; --panel: #1f2937; --text: #f9fafb; --muted: #9ca3af;
+  --accent: #6366f1; --good: #22c55e; --warn: #f59e0b; --bad: #ef4444;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text);
+  font-family: -apple-system, system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
+#app { min-height: 100%; padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom); }
