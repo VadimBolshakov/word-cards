@@ -1,4 +1,4 @@
-import { useRef, useState } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 import { ImportError } from '../../data/db';
 import { todayISO } from '../../domain/dates';
 import type { Settings } from '../../types';
@@ -25,30 +25,54 @@ export function SettingsScreen() {
   latest.current = s;
   const set = <K extends keyof Settings>(key: K, value: Settings[K]) => {
     latest.current = { ...latest.current, [key]: value };
-    app.saveSettings(latest.current).catch(err => setMessage(`Не удалось сохранить настройки: ${err}`));
+    app.saveSettings(latest.current).then(refreshExport).catch(err => setMessage(`Не удалось сохранить настройки: ${err}`));
   };
 
-  async function exportProgress() {
+  // JSON готовим заранее: navigator.share в iOS Safari требует вызова без await после жеста пользователя.
+  const exportJson = useRef<string | null>(null);
+  const exportSeq = useRef(0);
+  const refreshExport = () => {
+    const seq = ++exportSeq.current;
+    app.store.exportProfile(app.profile.id)
+      .then(json => { if (seq === exportSeq.current) exportJson.current = json; })
+      .catch(() => { if (seq === exportSeq.current) exportJson.current = null; });
+  };
+  useEffect(() => {
+    refreshExport();
+    return () => { exportSeq.current++; };
+  }, [app.profile.id]);
+
+  function downloadFile(file: File) {
+    const url = URL.createObjectURL(file);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = file.name;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 10_000);
+  }
+
+  function exportProgress() {
+    const name = `word-cards-${app.profile.name}-${todayISO()}.json`;
+    const json = exportJson.current;
+    if (json === null) {
+      // Данные ещё не готовы: получаем их и скачиваем файлом (без меню «Поделиться»).
+      app.store.exportProfile(app.profile.id)
+        .then(j => downloadFile(new File([j], name, { type: 'application/json' })))
+        .catch(err => setMessage(`Не удалось сохранить файл: ${err}`));
+      return;
+    }
+    const file = new File([json], name, { type: 'application/json' });
     try {
-      const json = await app.store.exportProfile(app.profile.id);
-      const name = `word-cards-${app.profile.name}-${todayISO()}.json`;
-      const file = new File([json], name, { type: 'application/json' });
       if (navigator.canShare?.({ files: [file] })) {
-        try {
-          await navigator.share({ files: [file], title: 'Резервная копия карточек' });
-        } catch (err) {
-          if (!(err instanceof DOMException && err.name === 'AbortError')) throw err;
-        }
+        navigator.share({ files: [file], title: 'Резервная копия карточек' }).catch(err => {
+          if (err instanceof DOMException && err.name === 'AbortError') return;
+          try { downloadFile(file); } catch (e) { setMessage(`Не удалось сохранить файл: ${e}`); }
+        });
         return;
       }
-      const url = URL.createObjectURL(file);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = name;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 10_000);
+      downloadFile(file);
     } catch (err) {
       setMessage(`Не удалось сохранить файл: ${err}`);
     }
@@ -67,9 +91,11 @@ export function SettingsScreen() {
       return;
     }
     setMessage(`Восстановлен профиль «${profile.name}»`);
+    refreshExport();
     if (profile.id === app.profile.id) {
       try {
         await app.reloadProfile();
+        refreshExport();
       } catch (err) {
         setMessage(`Восстановлен профиль «${profile.name}», но обновить экран не удалось (${err}). Перезапустите приложение.`);
       }

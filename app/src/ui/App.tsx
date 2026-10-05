@@ -1,10 +1,11 @@
 import { createContext } from 'preact';
-import { useContext, useEffect, useState } from 'preact/hooks';
+import { useContext, useEffect, useRef, useState } from 'preact/hooks';
 import { loadIndex, loadTopic } from '../data/content';
 import { Store } from '../data/db';
 import { selectDue, type ProgressMap } from '../domain/selection';
 import { todayISO } from '../domain/dates';
 import type { Card, ContentIndex, Profile, Progress, Settings } from '../types';
+import { depthFromState, truncateTo } from './navigation';
 import { CardScreen } from './screens/CardScreen';
 import { PlayerScreen } from './screens/PlayerScreen';
 import { ProfilesScreen } from './screens/ProfilesScreen';
@@ -69,7 +70,46 @@ export function App() {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [settings, setSettings] = useState<Settings | null>(null);
   const [progress, setProgress] = useState<ProgressMap>(new Map());
-  const [stack, setStack] = useState<Route[]>([{ name: 'profiles' }]);
+  const [stack, setStackState] = useState<Route[]>([{ name: 'profiles' }]);
+  // Зеркало стека для синхронного чтения из обработчиков (popstate, go, back, home).
+  const stackRef = useRef<Route[]>(stack);
+  // Корень, который нужно поставить после возврата истории на глубину 0 (см. resetRoot).
+  const pendingRoot = useRef<Route | null>(null);
+
+  function setStack(next: Route[]) {
+    stackRef.current = next;
+    setStackState(next);
+  }
+
+  // Смена корня (профиль, «Темы», «Профили»). Если стек глубже одного экрана, сначала возвращаем историю
+  // на глубину 0, а корень ставим в popstate: так в истории не остаётся записей старого профиля.
+  function resetRoot(root: Route) {
+    const extra = stackRef.current.length - 1;
+    setStack([root]);
+    if (extra > 0) {
+      pendingRoot.current = root;
+      history.go(-extra);
+    } else {
+      history.replaceState({ depth: 0 }, '');
+    }
+  }
+
+  // Свайп «назад» и системная кнопка приходят как popstate; стек меняется только здесь.
+  useEffect(() => {
+    history.replaceState({ depth: 0 }, '');
+    const onPop = (e: PopStateEvent) => {
+      const pending = pendingRoot.current;
+      if (pending) {
+        pendingRoot.current = null;
+        setStack([pending]);
+        history.replaceState({ depth: 0 }, '');
+        return;
+      }
+      setStack([...truncateTo(stackRef.current, depthFromState(e.state))]);
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
 
   useEffect(() => {
     setLoadError('');
@@ -106,7 +146,7 @@ export function App() {
   async function selectProfile(store: Store, p: Profile) {
     await loadProfileData(store, p);
     writeLastProfile(p.id);
-    setStack([{ name: 'topics' }]);
+    resetRoot({ name: 'topics' });
   }
 
   if (loadError) {
@@ -126,9 +166,15 @@ export function App() {
 
   const ctx: AppCtx = {
     ...loaded, profile, settings, progress,
-    go: r => setStack(s => [...s, r]),
-    back: () => setStack(s => (s.length > 1 ? s.slice(0, -1) : s)),
-    home: () => setStack([{ name: 'topics' }]),
+    go: r => {
+      history.pushState({ depth: stackRef.current.length }, '');
+      setStack([...stackRef.current, r]);
+    },
+    back: () => { if (stackRef.current.length > 1) history.back(); },
+    home: () => {
+      const extra = stackRef.current.length - 1;
+      if (extra > 0) history.go(-extra);
+    },
     // Оптимистично: UI обновляется сразу, запись в БД следом (ошибку получает вызывающий).
     saveSettings: async s => {
       setSettings(s);
@@ -140,11 +186,11 @@ export function App() {
     },
     // Запомненный профиль не трогаем: после перезапуска пользователь вернётся в последний профиль,
     // а смена профиля делается кнопкой на этом экране.
-    switchProfile: () => setStack([{ name: 'profiles' }]),
+    switchProfile: () => resetRoot({ name: 'profiles' }),
     reloadProfile: async () => {
       const fresh = (await loaded.store.listProfiles()).find(p => p.id === profile.id);
       if (fresh) await loadProfileData(loaded.store, fresh);
-      else setStack([{ name: 'profiles' }]);
+      else resetRoot({ name: 'profiles' });
     },
   };
 
