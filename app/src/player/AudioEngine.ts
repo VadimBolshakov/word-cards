@@ -35,6 +35,9 @@ export interface EngineOptions {
 
 export const NO_AUDIO_MESSAGE = 'Нет звука для карточки — скачайте набор для офлайна';
 
+// Media Session глобальна: handlers принадлежат последнему созданному движку.
+let sessionOwner: AudioEngine | null = null;
+
 export class AudioEngine {
   private steps: Step[] = [];
   private index = 0;
@@ -61,6 +64,7 @@ export class AudioEngine {
         ? (navigator.mediaSession as unknown as MediaSessionLike) : null);
     this.audio.addEventListener('ended', () => this.onEnded());
     this.audio.addEventListener('error', () => this.onStepError(this.srcToken));
+    if (this.session) sessionOwner = this;
     this.session?.setActionHandler('play', () => void this.play());
     this.session?.setActionHandler('pause', () => this.pause());
     this.session?.setActionHandler('nexttrack', () => this.nextCard());
@@ -152,10 +156,13 @@ export class AudioEngine {
     this.playing = false;
     this.audio.pause();
     this.listeners.clear();
-    for (const action of ['play', 'pause', 'nexttrack', 'previoustrack'] as const) {
-      this.session?.setActionHandler(action, null);
+    if (this.session && sessionOwner === this) {
+      sessionOwner = null;
+      for (const action of ['play', 'pause', 'nexttrack', 'previoustrack'] as const) {
+        this.session.setActionHandler(action, null);
+      }
+      this.session.playbackState = 'none';
     }
-    if (this.session) this.session.playbackState = 'none';
   }
 
   private goToCard(cardIndex: number): void {

@@ -202,6 +202,27 @@ describe('AudioEngine', () => {
     expect(engine.getState()).toMatchObject({ cardIndex: 1, stepIndex: 4, playing: true });
   });
 
+  it('destroying an old engine does not wipe the live engine media session handlers', async () => {
+    const session = new FakeSession();
+    const mk = () => new AudioEngine({
+      audio: new FakeAudio(), mediaSession: session,
+      resolve: async url => `blob:${url}`,
+      describeCard: i => ({ title: `card ${i}`, artist: 'topic' }),
+    });
+    const engA = mk();
+    const engB = mk();
+    engB.load(STEPS, { loop: false, rate: 1 });
+    engA.destroy();
+    expect(session.handlers.nexttrack).toBeTypeOf('function');
+    expect(session.handlers.play).toBeTypeOf('function');
+    session.handlers.nexttrack!(); await flush();
+    expect(engB.getState().cardIndex).toBe(1);
+    engB.destroy();
+    expect(session.handlers.nexttrack).toBeNull();
+    expect(session.handlers.play).toBeNull();
+    expect(session.playbackState).toBe('none');
+  });
+
   it('media session play and previoustrack handlers work', async () => {
     const { session, engine, audio } = setup();
     session.handlers.play!(); await flush();

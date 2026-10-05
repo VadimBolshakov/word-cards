@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 import { audioStore } from '../data/offline';
 import { loadIndex, loadTopic } from '../data/content';
 import { buildSequence, sideText } from '../domain/sequence';
@@ -10,11 +10,20 @@ export function Prototype() {
   const [cards, setCards] = useState<Card[]>([]);
   const [state, setState] = useState<EngineState | null>(null);
   const [error, setError] = useState('');
-  const engine = useMemo(() => new AudioEngine({
-    resolve: url => audioStore.resolve(url),
-    describeCard: i => ({ title: `${cards[i]?.en ?? ''} — ${cards[i]?.ru ?? ''}`, artist: 'Карточки слов' }),
-    onError: setError,
-  }), [cards]);
+  const cardsRef = useRef<Card[]>(cards);
+  cardsRef.current = cards;
+  const engineRef = useRef<AudioEngine | null>(null);
+  if (!engineRef.current) {
+    engineRef.current = new AudioEngine({
+      resolve: url => audioStore.resolve(url),
+      describeCard: i => {
+        const c = cardsRef.current[i];
+        return { title: `${c?.en ?? ''} — ${c?.ru ?? ''}`, artist: 'Карточки слов' };
+      },
+      onError: setError,
+    });
+  }
+  const engine = engineRef.current;
 
   useEffect(() => {
     loadIndex()
@@ -24,10 +33,13 @@ export function Prototype() {
   }, []);
 
   useEffect(() => {
-    engine.load(buildSequence(cards, DEFAULT_SETTINGS), { loop: true, rate: 1 });
     const off = engine.subscribe(setState);
     return () => { off(); engine.destroy(); };
   }, [engine]);
+
+  useEffect(() => {
+    engine.load(buildSequence(cards, DEFAULT_SETTINGS), { loop: true, rate: 1 });
+  }, [engine, cards]);
 
   const card = state ? cards[state.cardIndex] : undefined;
   return (
