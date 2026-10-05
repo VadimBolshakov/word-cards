@@ -18,6 +18,9 @@ export function CardScreen({ title, cards }: { title: string; cards: Card[] }) {
   const [stats, setStats] = useState<Record<Answer, number>>({ know: 0, again: 0 });
   const [error, setError] = useState('');
   const touchX = useRef<number | null>(null);
+  const touchY = useRef(0);
+  const busy = useRef(false);
+  const [saving, setSaving] = useState(false);
   const playReq = useRef(0);
   const card = cards[i];
   const dir = app.settings.direction;
@@ -51,6 +54,7 @@ export function CardScreen({ title, cards }: { title: string; cards: Card[] }) {
   }, []);
 
   function next() {
+    if (busy.current) return;
     setFlipped(false);
     setI(n => n + 1);
   }
@@ -62,16 +66,31 @@ export function CardScreen({ title, cards }: { title: string; cards: Card[] }) {
   }
 
   async function answer(a: Answer) {
-    const p = app.progress.get(card.id) ?? newProgress(app.profile.id, card.id);
-    await app.saveProgress(applyAnswer(p, a, todayISO()));
-    setStats(s => ({ ...s, [a]: s[a] + 1 }));
-    next();
+    if (busy.current) return;
+    busy.current = true;
+    setSaving(true);
+    try {
+      const p = app.progress.get(card.id) ?? newProgress(app.profile.id, card.id);
+      await app.saveProgress(applyAnswer(p, a, todayISO()));
+      setStats(s => ({ ...s, [a]: s[a] + 1 }));
+      busy.current = false;
+      setError('');
+      next();
+    } catch {
+      setError('Не удалось сохранить ответ');
+    } finally {
+      busy.current = false;
+      setSaving(false);
+    }
   }
 
   function onTouchEnd(e: TouchEvent) {
     const start = touchX.current;
     touchX.current = null;
-    if (start !== null && e.changedTouches[0].clientX - start < -SWIPE_PX) next();
+    if (start === null) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - start;
+    if (dx < -SWIPE_PX && Math.abs(dx) > Math.abs(t.clientY - touchY.current)) next();
   }
 
   const topbar = (
@@ -100,7 +119,7 @@ export function CardScreen({ title, cards }: { title: string; cards: Card[] }) {
     <main class="stack">
       {topbar}
       <div class="card" onClick={flip}
-        onTouchStart={e => { touchX.current = e.touches[0].clientX; }} onTouchEnd={onTouchEnd}>
+        onTouchStart={e => { touchX.current = e.touches[0].clientX; touchY.current = e.touches[0].clientY; }} onTouchEnd={onTouchEnd}>
         <div class="main">{front.main}</div>
         {front.example && <div class="example">{front.example}</div>}
         {flipped ? (
@@ -115,12 +134,12 @@ export function CardScreen({ title, cards }: { title: string; cards: Card[] }) {
       </div>
       <div class="row">
         <button onClick={() => play(audioFor(card, flipped ? 'back' : 'front'))}>🔊 Ещё раз</button>
-        <button onClick={next}>Пропустить →</button>
+        <button disabled={saving} onClick={next}>Пропустить →</button>
       </div>
       {flipped && (
         <div class="row">
-          <button class="warn" onClick={() => answer('again')}>Повторить</button>
-          <button class="good" onClick={() => answer('know')}>Знаю</button>
+          <button class="warn" disabled={saving} onClick={() => answer('again')}>Повторить</button>
+          <button class="good" disabled={saving} onClick={() => answer('know')}>Знаю</button>
         </div>
       )}
       {error && <p class="error">{error}</p>}
