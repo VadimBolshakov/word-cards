@@ -25,6 +25,7 @@ export function SettingsScreen() {
   latest.current = s;
   const set = <K extends keyof Settings>(key: K, value: Settings[K]) => {
     latest.current = { ...latest.current, [key]: value };
+    exportJson.current = null;
     app.saveSettings(latest.current).then(refreshExport).catch(err => setMessage(`Не удалось сохранить настройки: ${err}`));
   };
 
@@ -33,6 +34,7 @@ export function SettingsScreen() {
   const exportSeq = useRef(0);
   const refreshExport = () => {
     const seq = ++exportSeq.current;
+    exportJson.current = null; // пока идёт обновление, не делимся устаревшими данными
     app.store.exportProfile(app.profile.id)
       .then(json => { if (seq === exportSeq.current) exportJson.current = json; })
       .catch(() => { if (seq === exportSeq.current) exportJson.current = null; });
@@ -64,17 +66,19 @@ export function SettingsScreen() {
       return;
     }
     const file = new File([json], name, { type: 'application/json' });
+    const fallback = () => {
+      try { downloadFile(file); } catch (e) { setMessage(`Не удалось сохранить файл: ${e}`); }
+    };
+    let canShare = false;
+    try { canShare = !!navigator.canShare?.({ files: [file] }); } catch { /* считаем, что делиться нельзя */ }
+    if (!canShare) { fallback(); return; }
     try {
-      if (navigator.canShare?.({ files: [file] })) {
-        navigator.share({ files: [file], title: 'Резервная копия карточек' }).catch(err => {
-          if (err instanceof DOMException && err.name === 'AbortError') return;
-          try { downloadFile(file); } catch (e) { setMessage(`Не удалось сохранить файл: ${e}`); }
-        });
-        return;
-      }
-      downloadFile(file);
-    } catch (err) {
-      setMessage(`Не удалось сохранить файл: ${err}`);
+      navigator.share({ files: [file], title: 'Резервная копия карточек' }).catch(err => {
+        if (err instanceof DOMException && err.name === 'AbortError') return;
+        fallback();
+      });
+    } catch {
+      fallback();
     }
   }
 

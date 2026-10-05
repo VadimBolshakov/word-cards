@@ -9,3 +9,11 @@ export function truncateTo<T>(stack: readonly T[], depth: number): readonly T[] 
   const keep = Math.max(1, Math.floor(Number.isFinite(depth) ? depth : 0) + 1);
   return keep >= stack.length ? stack : stack.slice(0, keep);
 }
+
+/**
+ * Сколько шагов истории нужно сделать (go), чтобы вернуть историю к вершине стека.
+ * Ненулевое значение (отрицательное) бывает при свайпе «вперёд»: depth оказывается глубже стека.
+ */
+export function resyncDelta(stackLength: number, depth: number): number {
+  return depth >= stackLength ? stackLength - 1 - depth : 0;
+}

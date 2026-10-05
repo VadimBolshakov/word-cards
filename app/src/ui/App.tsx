@@ -5,7 +5,7 @@ import { Store } from '../data/db';
 import { selectDue, type ProgressMap } from '../domain/selection';
 import { todayISO } from '../domain/dates';
 import type { Card, ContentIndex, Profile, Progress, Settings } from '../types';
-import { depthFromState, truncateTo } from './navigation';
+import { depthFromState, resyncDelta, truncateTo } from './navigation';
 import { CardScreen } from './screens/CardScreen';
 import { PlayerScreen } from './screens/PlayerScreen';
 import { ProfilesScreen } from './screens/ProfilesScreen';
@@ -75,6 +75,7 @@ export function App() {
   const stackRef = useRef<Route[]>(stack);
   // Корень, который нужно поставить после возврата истории на глубину 0 (см. resetRoot).
   const pendingRoot = useRef<Route | null>(null);
+  const pendingTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   function setStack(next: Route[]) {
     stackRef.current = next;
@@ -84,10 +85,13 @@ export function App() {
   // Смена корня (профиль, «Темы», «Профили»). Если стек глубже одного экрана, сначала возвращаем историю
   // на глубину 0, а корень ставим в popstate: так в истории не остаётся записей старого профиля.
   function resetRoot(root: Route) {
-    const extra = stackRef.current.length - 1;
+    const extra = depthFromState(history.state);
     setStack([root]);
     if (extra > 0) {
       pendingRoot.current = root;
+      // Страховка: ожидание не должно «проглотить» посторонний свайп назад.
+      clearTimeout(pendingTimer.current);
+      pendingTimer.current = setTimeout(() => { pendingRoot.current = null; }, 1000);
       history.go(-extra);
     } else {
       history.replaceState({ depth: 0 }, '');
@@ -98,14 +102,23 @@ export function App() {
   useEffect(() => {
     history.replaceState({ depth: 0 }, '');
     const onPop = (e: PopStateEvent) => {
+      const depth = depthFromState(e.state);
       const pending = pendingRoot.current;
       if (pending) {
+        if (depth !== 0) return;
         pendingRoot.current = null;
+        clearTimeout(pendingTimer.current);
         setStack([pending]);
         history.replaceState({ depth: 0 }, '');
         return;
       }
-      setStack([...truncateTo(stackRef.current, depthFromState(e.state))]);
+      const delta = resyncDelta(stackRef.current.length, depth);
+      if (delta !== 0) {
+        // Свайп «вперёд»: возвращаем историю к вершине стека, экран не меняем.
+        history.go(delta);
+        return;
+      }
+      setStack([...truncateTo(stackRef.current, depth)]);
     };
     window.addEventListener('popstate', onPop);
     return () => window.removeEventListener('popstate', onPop);
@@ -172,7 +185,7 @@ export function App() {
     },
     back: () => { if (stackRef.current.length > 1) history.back(); },
     home: () => {
-      const extra = stackRef.current.length - 1;
+      const extra = depthFromState(history.state);
       if (extra > 0) history.go(-extra);
     },
     // Оптимистично: UI обновляется сразу, запись в БД следом (ошибку получает вызывающий).
