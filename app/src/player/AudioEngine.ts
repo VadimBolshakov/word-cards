@@ -9,7 +9,7 @@ export interface AudioLike {
   readonly paused: boolean;
   play(): Promise<void>;
   pause(): void;
-  addEventListener(type: 'ended' | 'error' | 'timeupdate', listener: () => void): void;
+  addEventListener(type: 'ended' | 'error' | 'timeupdate' | 'seeked', listener: () => void): void;
 }
 
 export interface MediaSessionLike {
@@ -38,10 +38,6 @@ export interface EngineOptions {
   mediaSession?: MediaSessionLike | null;
   describeCard?: (cardIndex: number) => { title: string; artist: string };
   onError?: (message: string) => void;
-  /** Скрыта ли страница; по умолчанию — document.visibilityState. */
-  isHidden?: () => boolean;
-  /** Подписка на смену видимости; по умолчанию — visibilitychange на document. */
-  subscribeVisibility?: (fn: () => void) => () => void;
   /** Через сколько мягкая пауза становится настоящей. */
   softPauseLimitMs?: number;
   setTimer?: (fn: () => void, ms: number) => unknown;
@@ -61,14 +57,8 @@ const SEEK_TOLERANCE_S = 0.03;
 
 const SOFT_PAUSE_LIMIT_MS = 10 * 60 * 1000;
 
-const defaultIsHidden = () =>
-  typeof document !== 'undefined' && document.visibilityState === 'hidden';
-
-const defaultSubscribeVisibility = (fn: () => void): (() => void) => {
-  if (typeof document === 'undefined') return () => {};
-  document.addEventListener('visibilitychange', fn);
-  return () => document.removeEventListener('visibilitychange', fn);
-};
+// Если 'seeked' после перемотки при продолжении не пришёл — снять muted всё равно.
+const UNMUTE_FALLBACK_MS = 300;
 
 const defaultReadBytes = async (url: string): Promise<ArrayBuffer> => {
   const r = await fetch(url);
@@ -102,10 +92,12 @@ export class AudioEngine {
    * Позиция «мягкой паузы» или null. На iOS настоящая пауза в фоне гасит аудиосессию,
    * и play с экрана блокировки уже не звучит. Поэтому пауза глушит элемент, а он
    * продолжает играть беззвучно; позиция для пользователя заморожена здесь.
+   * Настоящей пауза становится только по лимиту softPauseLimitMs.
    */
   private softPos: number | null = null;
   private softTimer: unknown = null;
-  private readonly unsubscribeVisibility: () => void;
+  /** Таймер-страховка снятия muted после продолжения; не null, пока ждём 'seeked'. */
+  private unmuteTimer: unknown = null;
   private listeners = new Set<(s: EngineState) => void>();
   private readonly audio: AudioLike;
   private readonly session: MediaSessionLike | null;
@@ -119,13 +111,16 @@ export class AudioEngine {
     this.audio.addEventListener('ended', () => this.onEnded());
     this.audio.addEventListener('error', () => this.onAudioError());
     this.audio.addEventListener('timeupdate', () => this.onTimeUpdate());
+    this.audio.addEventListener('seeked', () => this.unmuteAfterSeek());
     if (this.session) sessionOwner = this;
     this.session?.setActionHandler('play', () => void this.play());
-    this.session?.setActionHandler('pause', () => this.pause());
+    // iOS может показывать ⏸, пока элемент беззвучно играет: тогда «пауза» означает продолжить.
+    this.session?.setActionHandler('pause', () => {
+      if (this.softPos !== null) void this.play();
+      else this.pause();
+    });
     this.session?.setActionHandler('nexttrack', () => this.nextCard());
     this.session?.setActionHandler('previoustrack', () => this.prevCard());
-    this.unsubscribeVisibility = (opts.subscribeVisibility ?? defaultSubscribeVisibility)(
-      () => this.onVisibilityChange());
   }
 
   load(steps: Step[], opts: { loop: boolean; rate: number }): void {
@@ -188,11 +183,11 @@ export class AudioEngine {
   pause(): void {
     this.playAttempt++;
     if (this.playing && this.streamUrl && this.softPos === null) {
+      this.cancelUnmute();
       this.softPos = this.audio.currentTime;
       this.audio.muted = true;
       this.audio.loop = true;              // конец потока не должен вызвать ended/finish
-      const setTimer = this.opts.setTimer ?? ((fn, ms) => setTimeout(fn, ms));
-      this.softTimer = setTimer(() => this.hardenPause(), this.opts.softPauseLimitMs ?? SOFT_PAUSE_LIMIT_MS);
+      this.softTimer = this.setTimer(() => this.hardenPause(), this.opts.softPauseLimitMs ?? SOFT_PAUSE_LIMIT_MS);
     } else if (this.softPos === null) {
       this.audio.pause();
     }
@@ -224,7 +219,6 @@ export class AudioEngine {
     this.playing = false;
     this.audio.pause();
     this.clearSoftPause();
-    this.unsubscribeVisibility();
     this.releaseStream();
     this.listeners.clear();
     if (this.session && sessionOwner === this) {
@@ -272,10 +266,12 @@ export class AudioEngine {
     this.emit();
   }
 
+  /** Перемотка идёт ещё беззвучно; muted снимается по 'seeked' (или по таймеру), без «щелчка». */
   private async resumeSoftPause(): Promise<void> {
     const attempt = ++this.playAttempt;
     this.audio.currentTime = this.softPos!;
-    this.clearSoftPause();
+    this.endSoftPause();
+    this.unmuteTimer = this.setTimer(() => this.unmuteAfterSeek(), UNMUTE_FALLBACK_MS);
     this.playing = true;
     this.emit();
     if (this.audio.paused) await this.startElement(attempt);
@@ -302,20 +298,42 @@ export class AudioEngine {
     this.audio.currentTime = pos;
   }
 
+  /** Снять мягкую паузу (и ожидание снятия muted) и включить звук элемента. */
   private clearSoftPause(): void {
+    this.cancelUnmute();
+    this.endSoftPause();
+    this.audio.muted = false;
+  }
+
+  /** Выйти из мягкой паузы, не трогая muted. */
+  private endSoftPause(): void {
     if (this.softTimer !== null) {
-      (this.opts.clearTimer ?? (id => clearTimeout(id as ReturnType<typeof setTimeout>)))(this.softTimer);
+      this.clearTimer(this.softTimer);
       this.softTimer = null;
     }
     if (this.softPos === null) return;
     this.softPos = null;
-    this.audio.muted = false;
     this.audio.loop = this.loop;
   }
 
-  // На переднем плане обычная пауза работает и бережёт батарею.
-  private onVisibilityChange(): void {
-    if (!(this.opts.isHidden ?? defaultIsHidden)()) this.hardenPause();
+  private unmuteAfterSeek(): void {
+    if (this.unmuteTimer === null) return;
+    this.cancelUnmute();
+    this.audio.muted = false;
+  }
+
+  private cancelUnmute(): void {
+    if (this.unmuteTimer === null) return;
+    this.clearTimer(this.unmuteTimer);
+    this.unmuteTimer = null;
+  }
+
+  private setTimer(fn: () => void, ms: number): unknown {
+    return (this.opts.setTimer ?? ((f, m) => setTimeout(f, m)))(fn, ms);
+  }
+
+  private clearTimer(id: unknown): void {
+    (this.opts.clearTimer ?? (i => clearTimeout(i as ReturnType<typeof setTimeout>)))(id);
   }
 
   private releaseStream(): void {

@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import type { Step } from '../domain/sequence';
 import { AudioEngine, type AudioLike, type MediaSessionLike } from './AudioEngine';
 
-type AudioEvent = 'ended' | 'error' | 'timeupdate';
+type AudioEvent = 'ended' | 'error' | 'timeupdate' | 'seeked';
 
 class FakeAudio implements AudioLike {
   srcSets: string[] = [];
@@ -17,7 +17,7 @@ class FakeAudio implements AudioLike {
   played = 0;
   pauses = 0;
   rejectPlay = false;
-  private listeners: Record<AudioEvent, (() => void)[]> = { ended: [], error: [], timeupdate: [] };
+  private listeners: Record<AudioEvent, (() => void)[]> = { ended: [], error: [], timeupdate: [], seeked: [] };
   async play() {
     this.played++;
     if (this.rejectPlay) throw new Error('AbortError');
@@ -56,7 +56,6 @@ function setup(opts: { loop?: boolean; rate?: number; missing?: string[]; sessio
   const audio = new FakeAudio();
   const timers = new FakeTimers();
   const setTimer = vi.fn(timers.set);
-  const visibility = { hidden: true, fire: () => {}, unsubscribed: false };
   const session = opts.session ?? new FakeSession();
   const onError = vi.fn();
   const missing = new Set(opts.missing ?? []);
@@ -71,17 +70,12 @@ function setup(opts: { loop?: boolean; rate?: number; missing?: string[]; sessio
   const engine = new AudioEngine({
     audio, mediaSession: session, onError, resolve, readBytes, makeObjectUrl, revokeObjectUrl,
     describeCard: i => ({ title: `card ${i}`, artist: 'topic' }),
-    isHidden: () => visibility.hidden,
     setTimer, clearTimer: timers.clear,
-    subscribeVisibility: fn => {
-      visibility.fire = fn;
-      return () => { visibility.unsubscribed = true; };
-    },
   });
   engine.load(STEPS, { loop: opts.loop ?? false, rate: opts.rate ?? 1 });
   return {
     audio, session, onError, engine, resolve, readBytes, blobs, makeObjectUrl, revokeObjectUrl,
-    timers, setTimer, visibility,
+    timers, setTimer,
   };
 }
 
@@ -417,11 +411,57 @@ describe('AudioEngine', () => {
       audio.at(7);
       await engine.play();
       expect(audio.currentTime).toBe(2.5);
-      expect(audio.muted).toBe(false);
+      expect(audio.muted).toBe(true);                       // молчим, пока перемотка не завершилась
       expect(audio.loop).toBe(false);
       expect(audio.played).toBe(1);
-      expect(timers.pending.size).toBe(0);
       expect(engine.getState()).toMatchObject({ playing: true, stepIndex: 2 });
+      audio.fire('seeked');
+      expect(audio.muted).toBe(false);
+      expect(timers.pending.size).toBe(0);
+    });
+
+    it('unmutes after resume even if seeked never arrives', async () => {
+      const { audio, engine, timers, setTimer } = setup();
+      await engine.play();
+      engine.pause();
+      await engine.play();
+      expect(audio.muted).toBe(true);
+      expect(setTimer).toHaveBeenLastCalledWith(expect.any(Function), 300);
+      timers.runAll();
+      expect(audio.muted).toBe(false);
+      expect(engine.getState().playing).toBe(true);
+    });
+
+    it('pausing again before the resume unmute keeps the element muted', async () => {
+      const { audio, engine, timers } = setup();
+      await engine.play();
+      audio.at(2.5);
+      engine.pause();
+      await engine.play();
+      engine.pause();
+      audio.fire('seeked');
+      expect(audio.muted).toBe(true);
+      expect(timers.pending.size).toBe(1);                  // только лимит мягкой паузы
+      timers.runAll();
+      expect(audio.muted).toBe(false);
+      expect(audio.paused).toBe(true);
+      expect(audio.currentTime).toBe(2.5);
+    });
+
+    it('media session pause during soft pause resumes playback', async () => {
+      const { audio, session, engine } = setup();
+      await engine.play();
+      audio.at(2.5);
+      session.handlers.pause!();
+      expect(engine.getState().playing).toBe(false);
+      expect(audio.muted).toBe(true);
+      audio.at(6);
+      session.handlers.pause!(); await flush();
+      expect(engine.getState().playing).toBe(true);
+      expect(session.playbackState).toBe('playing');
+      expect(audio.currentTime).toBe(2.5);
+      audio.fire('seeked');
+      expect(audio.muted).toBe(false);
     });
 
     it('nextCard during soft pause moves the saved position to that card', async () => {
@@ -439,6 +479,48 @@ describe('AudioEngine', () => {
       expect(engine.getState()).toMatchObject({ cardIndex: 1, stepIndex: 4, playing: true });
     });
 
+    it('prevCard during soft pause moves the saved position to the previous card', async () => {
+      const { audio, engine } = setup();
+      await engine.play();
+      audio.at(5.5);
+      engine.pause();
+      audio.at(8);
+      engine.prevCard();
+      expect(engine.getState()).toMatchObject({ cardIndex: 0, stepIndex: 0, playing: false });
+      expect(audio.currentTime).toBe(8);                    // элемент не перематывается до play()
+      await engine.play();
+      expect(audio.currentTime).toBe(0);
+      expect(engine.getState()).toMatchObject({ cardIndex: 0, stepIndex: 0, playing: true });
+    });
+
+    it('nextCard during soft pause then the limit leaves the element at the new card', async () => {
+      const { audio, engine, timers } = setup();
+      await engine.play();
+      audio.at(0.5);
+      engine.pause();
+      engine.nextCard();
+      audio.at(3);
+      timers.runAll();
+      expect(audio.paused).toBe(true);
+      expect(audio.currentTime).toBe(5);
+      expect(audio.muted).toBe(false);
+    });
+
+    it('element error during soft pause turns it into a real pause', async () => {
+      const { audio, engine, onError, timers } = setup();
+      await engine.play();
+      audio.at(2.5);
+      engine.pause();
+      audio.at(4);
+      audio.fire('error');
+      expect(onError).toHaveBeenCalledTimes(1);
+      expect(audio.paused).toBe(true);
+      expect(audio.muted).toBe(false);
+      expect(audio.currentTime).toBe(2.5);
+      expect(timers.pending.size).toBe(0);
+      expect(engine.getState().playing).toBe(false);
+    });
+
     it('the time limit turns the soft pause into a real one', async () => {
       const { audio, engine, timers } = setup({ loop: true });
       await engine.play();
@@ -453,26 +535,8 @@ describe('AudioEngine', () => {
       await engine.play();
       expect(audio.played).toBe(2);
       expect(audio.currentTime).toBe(2.5);
-      expect(engine.getState()).toMatchObject({ playing: true, stepIndex: 2 });
-    });
-
-    it('becoming visible turns the soft pause into a real one', async () => {
-      const { audio, engine, visibility, timers } = setup();
-      await engine.play();
-      audio.at(2.5);
-      engine.pause();
-      audio.at(4);
-      visibility.fire();                                    // всё ещё скрыта
-      expect(audio.paused).toBe(false);
-      visibility.hidden = false;
-      visibility.fire();
-      expect(audio.paused).toBe(true);
-      expect(audio.currentTime).toBe(2.5);
       expect(audio.muted).toBe(false);
-      expect(audio.loop).toBe(false);
-      expect(timers.pending.size).toBe(0);
-      await engine.play();
-      expect(audio.played).toBe(2);
+      expect(engine.getState()).toMatchObject({ playing: true, stepIndex: 2 });
     });
 
     it('pause before playback starts is a plain pause', async () => {
@@ -495,8 +559,19 @@ describe('AudioEngine', () => {
       expect(audio.loop).toBe(true);
     });
 
+    it('load while waiting for the resume unmute unmutes and drops the fallback timer', async () => {
+      const { audio, engine, timers } = setup();
+      await engine.play();
+      engine.pause();
+      await engine.play();
+      expect(audio.muted).toBe(true);
+      engine.load(STEPS, { loop: false, rate: 1 });
+      expect(audio.muted).toBe(false);
+      expect(timers.pending.size).toBe(0);
+    });
+
     it('load and destroy during soft pause unmute and drop the timer', async () => {
-      const { audio, engine, timers, visibility } = setup({ loop: true });
+      const { audio, engine, timers } = setup({ loop: true });
       await engine.play();
       engine.pause();
       engine.load(STEPS, { loop: false, rate: 1 });
@@ -511,7 +586,6 @@ describe('AudioEngine', () => {
       expect(audio.paused).toBe(true);
       expect(audio.loop).toBe(false);
       expect(timers.pending.size).toBe(0);
-      expect(visibility.unsubscribed).toBe(true);
     });
   });
 });
