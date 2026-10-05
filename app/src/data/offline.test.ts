@@ -68,4 +68,49 @@ describe('AudioStore', () => {
     const err = await store.download(['audio/a.mp3']).catch(e => e);
     expect(err.reason).toBe('network');
   });
+
+  it('resolve is a true LRU: a hit refreshes the entry so a hot url is not revoked', async () => {
+    const cache = new MapCache();
+    const fetcher = vi.fn(async (url: RequestInfo | URL) => new Response(`data:${url}`));
+    const revoked: string[] = [];
+    const urls = new Map<string, string>();
+    let n = 0;
+    const store = new AudioStore(async () => cache, fetcher as typeof fetch, () => `blob:${++n}`, u => revoked.push(u));
+    const hot = await store.resolve('audio/hot.mp3');
+    for (let i = 0; i < 29; i++) urls.set(`audio/o${i}.mp3`, await store.resolve(`audio/o${i}.mp3`));
+    expect(await store.resolve('audio/hot.mp3')).toBe(hot);
+    await store.resolve('audio/extra.mp3');
+    expect(revoked).not.toContain(hot);
+    expect(revoked).toEqual([urls.get('audio/o0.mp3')]);
+  });
+
+  it('download removes entries it added on a network failure midway', async () => {
+    const cache = new MapCache();
+    await cache.put('/content/audio/old.mp3', new Response('x'));
+    const fetcher = vi.fn(async (url: RequestInfo | URL) =>
+      String(url).endsWith('b.mp3') ? new Response('', { status: 503 }) : new Response(`data:${url}`));
+    const store = new AudioStore(async () => cache, fetcher as typeof fetch, () => 'blob:x', () => {});
+    const err = await store.download(['audio/a.mp3', 'audio/b.mp3']).catch(e => e);
+    expect(err).toBeInstanceOf(OfflineError);
+    expect(err.reason).toBe('network');
+    expect([...cache.store.keys()]).toEqual(['/content/audio/old.mp3']);
+  });
+
+  it('concurrent resolve of the same rel shares one fetch and one url', async () => {
+    const { store, fetcher } = setup();
+    const [u1, u2] = await Promise.all([store.resolve('audio/a.mp3'), store.resolve('audio/a.mp3')]);
+    expect(u2).toBe(u1);
+    expect(fetcher).toHaveBeenCalledTimes(1);
+  });
+
+  it('a rejected resolve does not poison later calls', async () => {
+    const cache = new MapCache();
+    let fail = true;
+    const fetcher = vi.fn(async (url: RequestInfo | URL) =>
+      fail ? new Response('', { status: 503 }) : new Response(`data:${url}`));
+    const store = new AudioStore(async () => cache, fetcher as typeof fetch, () => 'blob:ok', () => {});
+    await expect(store.resolve('audio/a.mp3')).rejects.toThrow();
+    fail = false;
+    expect(await store.resolve('audio/a.mp3')).toBe('blob:ok');
+  });
 });

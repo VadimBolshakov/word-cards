@@ -19,6 +19,7 @@ export interface CacheLike {
 
 export class AudioStore {
   private blobUrls = new Map<string, string>();
+  private pending = new Map<string, Promise<string>>();
 
   constructor(
     private readonly openCache: () => Promise<CacheLike>,
@@ -27,9 +28,22 @@ export class AudioStore {
     private readonly revoke: (u: string) => void = u => URL.revokeObjectURL(u),
   ) {}
 
-  async resolve(rel: string): Promise<string> {
+  resolve(rel: string): Promise<string> {
     const known = this.blobUrls.get(rel);
-    if (known) return known;
+    if (known) {
+      // refresh recency: Map iterates in insertion order, so re-insert as most recent
+      this.blobUrls.delete(rel);
+      this.blobUrls.set(rel, known);
+      return Promise.resolve(known);
+    }
+    const inFlight = this.pending.get(rel);
+    if (inFlight) return inFlight;
+    const p = this.load(rel).finally(() => this.pending.delete(rel));
+    this.pending.set(rel, p);
+    return p;
+  }
+
+  private async load(rel: string): Promise<string> {
     const abs = contentUrl(rel);
     const cache = await this.openCache();
     let res = await cache.match(abs);
@@ -68,11 +82,8 @@ export class AudioStore {
         onProgress?.(++done, rels.length);
       }
     } catch (e) {
-      if (e instanceof OfflineError && e.reason === 'network') throw e;
-      if (e instanceof DOMException && e.name === 'QuotaExceededError') {
-        await Promise.all(added.map(a => cache.delete(a)));
-        throw new OfflineError('quota');
-      }
+      await Promise.all(added.map(a => cache.delete(a)));
+      if (e instanceof DOMException && e.name === 'QuotaExceededError') throw new OfflineError('quota');
       throw e;
     }
   }
