@@ -1,6 +1,6 @@
 import 'fake-indexeddb/auto';
 import { describe, expect, it } from 'vitest';
-import { DEFAULT_SETTINGS, type Progress } from '../types';
+import { DEFAULT_SETTINGS, type Progress, type Settings } from '../types';
 import { ImportError, Store } from './db';
 
 let n = 0;
@@ -83,5 +83,66 @@ describe('Store', () => {
       progress: [{ profileId: 'x', cardId: 'c', box: 9 }] });
     await expect(db.importProfile(bad)).rejects.toBeInstanceOf(ImportError);
     expect(await db.listProfiles()).toEqual([]);
+  });
+
+  describe('import validation', () => {
+    const file = (over: Record<string, unknown>) => JSON.stringify({
+      app: 'word-cards', version: 1,
+      profile: { id: 'x', name: 'X', createdAt: '2026-01-01' },
+      settings: DEFAULT_SETTINGS, progress: [], ...over,
+    });
+
+    it('bad import over an existing profile leaves its data unchanged', async () => {
+      const db = await open();
+      const a = await db.addProfile('A');
+      const s = { ...DEFAULT_SETTINGS, rate: 1.2 as const };
+      await db.saveSettings(a.id, s);
+      await db.putProgress(prog(a.id, 'c1', 2));
+      const bad = file({ profile: a, settings: { ...DEFAULT_SETTINGS, pauseSec: 99 },
+        progress: [prog(a.id, 'c9', 1)] });
+      await expect(db.importProfile(bad)).rejects.toBeInstanceOf(ImportError);
+      expect(await db.getSettings(a.id)).toEqual(s);
+      expect([...(await db.getProgressMap(a.id)).keys()]).toEqual(['c1']);
+    });
+
+    it('rejects an invalid settings value', async () => {
+      const db = await open();
+      await expect(db.importProfile(file({ settings: { ...DEFAULT_SETTINGS, direction: 'xx' } })))
+        .rejects.toBeInstanceOf(ImportError);
+    });
+
+    it('rejects array settings', async () => {
+      const db = await open();
+      await expect(db.importProfile(file({ settings: [] }))).rejects.toBeInstanceOf(ImportError);
+    });
+
+    it('partial settings are filled with defaults', async () => {
+      const db = await open();
+      await db.importProfile(file({ settings: { rate: 0.8 } }));
+      expect(await db.getSettings('x')).toEqual({ ...DEFAULT_SETTINGS, rate: 0.8 });
+    });
+
+    it('rejects a progress row without nextDue', async () => {
+      const db = await open();
+      const row = { cardId: 'c', box: 1, lastSeen: null, starred: false };
+      await expect(db.importProfile(file({ progress: [row] }))).rejects.toBeInstanceOf(ImportError);
+    });
+
+    it('rejects bad progress dates and empty profile fields', async () => {
+      const db = await open();
+      const row = { cardId: 'c', box: 1, nextDue: 'tomorrow', lastSeen: null, starred: false };
+      await expect(db.importProfile(file({ progress: [row] }))).rejects.toBeInstanceOf(ImportError);
+      await expect(db.importProfile(file({ profile: { id: '', name: 'X', createdAt: 'z' } })))
+        .rejects.toBeInstanceOf(ImportError);
+      await expect(db.importProfile(file({ profile: { id: 'x', name: '', createdAt: 'z' } })))
+        .rejects.toBeInstanceOf(ImportError);
+    });
+  });
+
+  it('getSettings falls back per field for stored invalid values', async () => {
+    const db = await open();
+    const a = await db.addProfile('A');
+    await db.saveSettings(a.id, { ...DEFAULT_SETTINGS, rate: 1.2, pauseSec: 42 } as unknown as Settings);
+    expect(await db.getSettings(a.id)).toEqual({ ...DEFAULT_SETTINGS, rate: 1.2 });
   });
 });

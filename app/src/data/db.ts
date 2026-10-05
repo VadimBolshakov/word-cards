@@ -29,15 +29,47 @@ function nextStamp(): string {
   return new Date(lastStamp).toISOString();
 }
 
+const SETTING_CHECKS: { [K in keyof Settings]: (v: unknown) => boolean } = {
+  pauseSec: v => v === 3 || v === 5 || v === 8 || v === 10,
+  direction: v => v === 'en-ru' || v === 'ru-en',
+  order: v => v === 'seq' || v === 'shuffle',
+  enRepeat: v => v === 1 || v === 2,
+  rate: v => v === 0.8 || v === 1 || v === 1.2,
+  loop: v => typeof v === 'boolean',
+};
+
+// Оставляет только допустимые поля; invalid=true, если есть недопустимое значение или не объект.
+function pickSettings(raw: unknown): { patch: Partial<Settings>; invalid: boolean } {
+  if (typeof raw !== 'object' || raw === null || Array.isArray(raw)) return { patch: {}, invalid: true };
+  const patch: Record<string, unknown> = {};
+  let invalid = false;
+  for (const key of Object.keys(SETTING_CHECKS) as (keyof Settings)[]) {
+    const v = (raw as Record<string, unknown>)[key];
+    if (v === undefined) continue;
+    if (SETTING_CHECKS[key](v)) patch[key] = v;
+    else invalid = true;
+  }
+  return { patch: patch as Partial<Settings>, invalid };
+}
+
+const nonEmpty = (v: unknown): v is string => typeof v === 'string' && v.length > 0;
+const isDateOrNull = (v: unknown) => v === null || (typeof v === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(v));
+
+function isValidProgressRow(x: unknown): boolean {
+  if (typeof x !== 'object' || x === null) return false;
+  const r = x as Record<string, unknown>;
+  return nonEmpty(r.cardId) && Number.isInteger(r.box) && (r.box as number) >= 0 && (r.box as number) <= 5
+    && isDateOrNull(r.nextDue) && isDateOrNull(r.lastSeen) && typeof r.starred === 'boolean';
+}
+
 function isValidExport(d: unknown): d is ExportFile {
   if (typeof d !== 'object' || d === null) return false;
   const f = d as Partial<ExportFile>;
   const p = f.profile;
   return f.app === 'word-cards' && f.version === 1
-    && !!p && typeof p.id === 'string' && typeof p.name === 'string' && typeof p.createdAt === 'string'
-    && typeof f.settings === 'object' && f.settings !== null
-    && Array.isArray(f.progress)
-    && f.progress.every(x => typeof x?.cardId === 'string' && Number.isInteger(x.box) && x.box >= 0 && x.box <= 5);
+    && !!p && nonEmpty(p.id) && nonEmpty(p.name) && typeof p.createdAt === 'string'
+    && !pickSettings(f.settings).invalid
+    && Array.isArray(f.progress) && f.progress.every(isValidProgressRow);
 }
 
 export class Store {
@@ -79,7 +111,7 @@ export class Store {
 
   async getSettings(profileId: string): Promise<Settings> {
     const row = await this.db.get('settings', profileId);
-    return { ...DEFAULT_SETTINGS, ...row?.settings };
+    return { ...DEFAULT_SETTINGS, ...pickSettings(row?.settings).patch };
   }
 
   async saveSettings(profileId: string, settings: Settings): Promise<void> {
@@ -120,7 +152,7 @@ export class Store {
     const oldKeys = await progressStore.index('byProfile').getAllKeys(profile.id);
     await Promise.all(oldKeys.map(k => progressStore.delete(k)));
     await tx.objectStore('profiles').put(profile);
-    await tx.objectStore('settings').put({ profileId: profile.id, settings: { ...DEFAULT_SETTINGS, ...settings } });
+    await tx.objectStore('settings').put({ profileId: profile.id, settings: { ...DEFAULT_SETTINGS, ...pickSettings(settings).patch } });
     await Promise.all(progress.map(p => progressStore.put({ ...p, profileId: profile.id })));
     await tx.done;
     return profile;
