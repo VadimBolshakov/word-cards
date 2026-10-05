@@ -2,7 +2,7 @@ import { useEffect, useState } from 'preact/hooks';
 import type { Store } from '../../data/db';
 import type { Profile } from '../../types';
 
-export function ProfilesScreen({ store, onSelect }: { store: Store; onSelect: (p: Profile) => void }) {
+export function ProfilesScreen({ store, onSelect }: { store: Store; onSelect: (p: Profile) => void | Promise<void> }) {
   const [profiles, setProfiles] = useState<Profile[]>([]);
   const [name, setName] = useState('');
   const [error, setError] = useState('');
@@ -12,7 +12,15 @@ export function ProfilesScreen({ store, onSelect }: { store: Store; onSelect: (p
   async function add(e: Event) {
     e.preventDefault();
     try {
-      onSelect(await store.addProfile(name));
+      await onSelect(await store.addProfile(name));
+    } catch (err) {
+      setError(err instanceof Error ? err.message : String(err));
+    }
+  }
+
+  async function select(p: Profile) {
+    try {
+      await onSelect(p);
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
     }
@@ -22,7 +30,7 @@ export function ProfilesScreen({ store, onSelect }: { store: Store; onSelect: (p
     <main class="stack">
       <h1>Кто занимается?</h1>
       {profiles.map(p => (
-        <button key={p.id} class="list-item" onClick={() => onSelect(p)}>{p.name}</button>
+        <button key={p.id} class="list-item" onClick={() => select(p)}>{p.name}</button>
       ))}
       <form class="stack" onSubmit={add}>
         <h2>{profiles.length ? 'Новый профиль' : 'Как вас зовут?'}</h2>

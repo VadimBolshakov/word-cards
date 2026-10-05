@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks';
+import { useRef, useState } from 'preact/hooks';
 import { ImportError } from '../../data/db';
 import { todayISO } from '../../domain/dates';
 import type { Settings } from '../../types';
@@ -20,16 +20,38 @@ export function SettingsScreen() {
   const app = useApp();
   const s = app.settings;
   const [message, setMessage] = useState('');
-  const set = <K extends keyof Settings>(key: K, value: Settings[K]) => app.saveSettings({ ...s, [key]: value });
+  // Каждое изменение строим от последних настроек (ref), чтобы два быстрых нажатия не затёрли друг друга.
+  const latest = useRef(s);
+  latest.current = s;
+  const set = <K extends keyof Settings>(key: K, value: Settings[K]) => {
+    latest.current = { ...latest.current, [key]: value };
+    app.saveSettings(latest.current).catch(err => setMessage(`Не удалось сохранить настройки: ${err}`));
+  };
 
   async function exportProgress() {
-    const json = await app.store.exportProfile(app.profile.id);
-    const url = URL.createObjectURL(new Blob([json], { type: 'application/json' }));
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `word-cards-${app.profile.name}-${todayISO()}.json`;
-    a.click();
-    setTimeout(() => URL.revokeObjectURL(url), 10_000);
+    try {
+      const json = await app.store.exportProfile(app.profile.id);
+      const name = `word-cards-${app.profile.name}-${todayISO()}.json`;
+      const file = new File([json], name, { type: 'application/json' });
+      if (navigator.canShare?.({ files: [file] })) {
+        try {
+          await navigator.share({ files: [file], title: 'Резервная копия карточек' });
+        } catch (err) {
+          if (!(err instanceof DOMException && err.name === 'AbortError')) throw err;
+        }
+        return;
+      }
+      const url = URL.createObjectURL(file);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = name;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 10_000);
+    } catch (err) {
+      setMessage(`Не удалось сохранить файл: ${err}`);
+    }
   }
 
   async function importProgress(e: Event) {
@@ -37,19 +59,31 @@ export function SettingsScreen() {
     const file = input.files?.[0];
     input.value = '';
     if (!file) return;
+    let profile;
     try {
-      const profile = await app.store.importProfile(await file.text());
-      setMessage(`Восстановлен профиль «${profile.name}»`);
-      if (profile.id === app.profile.id) await app.reloadProfile();
+      profile = await app.store.importProfile(await file.text());
     } catch (err) {
       setMessage(err instanceof ImportError ? err.message : `Ошибка импорта: ${err}`);
+      return;
+    }
+    setMessage(`Восстановлен профиль «${profile.name}»`);
+    if (profile.id === app.profile.id) {
+      try {
+        await app.reloadProfile();
+      } catch (err) {
+        setMessage(`Восстановлен профиль «${profile.name}», но обновить экран не удалось (${err}). Перезапустите приложение.`);
+      }
     }
   }
 
   async function deleteProfile() {
     if (!confirm(`Удалить профиль «${app.profile.name}» и весь его прогресс?`)) return;
-    await app.store.deleteProfile(app.profile.id);
-    app.switchProfile();
+    try {
+      await app.store.deleteProfile(app.profile.id);
+      app.switchProfile();
+    } catch (err) {
+      setMessage(`Не удалось удалить профиль: ${err}`);
+    }
   }
 
   return (

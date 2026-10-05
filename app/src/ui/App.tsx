@@ -60,37 +60,63 @@ interface Loaded {
   cardsByTopic: Map<string, Card[]>;
 }
 
+class ContentError extends Error {}
+
 export function App() {
   const [loaded, setLoaded] = useState<Loaded | null>(null);
   const [loadError, setLoadError] = useState('');
+  const [attempt, setAttempt] = useState(0);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [settings, setSettings] = useState<Settings | null>(null);
   const [progress, setProgress] = useState<ProgressMap>(new Map());
   const [stack, setStack] = useState<Route[]>([{ name: 'profiles' }]);
 
   useEffect(() => {
+    setLoadError('');
     (async () => {
       const store = await Store.open();
-      const index = await loadIndex();
-      const topics = await Promise.all(index.topics.map(t => loadTopic(t.id)));
-      const cardsByTopic = new Map(topics.map(t => [t.id, t.cards]));
-      setLoaded({ store, index, cardsByTopic });
+      let index: ContentIndex;
+      let cardsByTopic: Map<string, Card[]>;
+      try {
+        index = await loadIndex();
+        const topics = await Promise.all(index.topics.map(t => loadTopic(t.id)));
+        cardsByTopic = new Map(topics.map(t => [t.id, t.cards]));
+      } catch {
+        throw new ContentError();
+      }
+      // Состояние «загружено» ставим только после попытки восстановить профиль,
+      // чтобы вернувшийся пользователь не видел мигание экрана выбора профиля.
       const profiles = await store.listProfiles();
       const last = profiles.find(p => p.id === readLastProfile()) ?? (profiles.length === 1 ? profiles[0] : null);
       if (last) await selectProfile(store, last);
-    })().catch(e => setLoadError(
-      `Не удалось загрузить данные. Откройте приложение с интернетом хотя бы один раз. (${e})`));
-  }, []);
+      setLoaded({ store, index, cardsByTopic });
+    })().catch(e => setLoadError(e instanceof ContentError
+      ? 'Не удалось загрузить темы. Проверьте интернет — при первом запуске он нужен.'
+      : `Ошибка запуска: ${e}`));
+  }, [attempt]);
+
+  // Загружает профиль, настройки и прогресс, не трогая навигацию.
+  async function loadProfileData(store: Store, p: Profile) {
+    const [s, pr] = await Promise.all([store.getSettings(p.id), store.getProgressMap(p.id)]);
+    setSettings(s);
+    setProgress(pr);
+    setProfile(p);
+  }
 
   async function selectProfile(store: Store, p: Profile) {
+    await loadProfileData(store, p);
     writeLastProfile(p.id);
-    setSettings(await store.getSettings(p.id));
-    setProgress(await store.getProgressMap(p.id));
-    setProfile(p);
     setStack([{ name: 'topics' }]);
   }
 
-  if (loadError) return <p class="error">{loadError}</p>;
+  if (loadError) {
+    return (
+      <main class="stack">
+        <p class="error">{loadError}</p>
+        <button class="primary" onClick={() => setAttempt(n => n + 1)}>Повторить</button>
+      </main>
+    );
+  }
   if (!loaded) return <p class="muted">Загрузка…</p>;
 
   const route = stack[stack.length - 1];
@@ -103,18 +129,21 @@ export function App() {
     go: r => setStack(s => [...s, r]),
     back: () => setStack(s => (s.length > 1 ? s.slice(0, -1) : s)),
     home: () => setStack([{ name: 'topics' }]),
+    // Оптимистично: UI обновляется сразу, запись в БД следом (ошибку получает вызывающий).
     saveSettings: async s => {
-      await loaded.store.saveSettings(profile.id, s);
       setSettings(s);
+      await loaded.store.saveSettings(profile.id, s);
     },
     saveProgress: async p => {
       await loaded.store.putProgress(p);
       setProgress(prev => new Map(prev).set(p.cardId, p));
     },
+    // Запомненный профиль не трогаем: после перезапуска пользователь вернётся в последний профиль,
+    // а смена профиля делается кнопкой на этом экране.
     switchProfile: () => setStack([{ name: 'profiles' }]),
     reloadProfile: async () => {
       const fresh = (await loaded.store.listProfiles()).find(p => p.id === profile.id);
-      if (fresh) await selectProfile(loaded.store, fresh);
+      if (fresh) await loadProfileData(loaded.store, fresh);
       else setStack([{ name: 'profiles' }]);
     },
   };
@@ -127,7 +156,14 @@ function renderRoute(route: Route, ctx: AppCtx) {
     case 'topics':
       return <TopicsScreen />;
     case 'set': {
-      const topic = ctx.index.topics.find(t => t.id === route.topicId)!;
+      const topic = ctx.index.topics.find(t => t.id === route.topicId);
+      if (!topic) {
+        return (
+          <main class="stack">
+            <div class="topbar"><button class="icon" onClick={ctx.back}>←</button><h1>Тема не найдена</h1></div>
+          </main>
+        );
+      }
       const cards = (ctx.cardsByTopic.get(route.topicId) ?? []).filter(c => c.set === route.setN);
       return <SetScreen key={`${route.topicId}-${route.setN}`} title={`${topic.title} · набор ${route.setN}`}
         cards={cards} allowModeChoice />;
