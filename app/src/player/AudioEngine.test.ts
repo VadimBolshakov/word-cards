@@ -2,19 +2,26 @@ import { describe, expect, it, vi } from 'vitest';
 import type { Step } from '../domain/sequence';
 import { AudioEngine, type AudioLike, type MediaSessionLike } from './AudioEngine';
 
+type AudioEvent = 'ended' | 'error' | 'timeupdate';
+
 class FakeAudio implements AudioLike {
-  src = '';
+  srcSets: string[] = [];
+  private _src = '';
+  get src() { return this._src; }
+  set src(v: string) { this._src = v; this.srcSets.push(v); }
   playbackRate = 1;
-  played: { src: string; rate: number }[] = [];
-  failing = new Set<string>();
-  private listeners: Record<string, (() => void)[]> = { ended: [], error: [] };
+  currentTime = 0;
+  played = 0;
+  rejectPlay = false;
+  private listeners: Record<AudioEvent, (() => void)[]> = { ended: [], error: [], timeupdate: [] };
   async play() {
-    this.played.push({ src: this.src, rate: this.playbackRate });
-    if (this.failing.has(this.src)) queueMicrotask(() => this.fire('error'));
+    this.played++;
+    if (this.rejectPlay) throw new Error('AbortError');
   }
   pause() {}
-  addEventListener(type: 'ended' | 'error', fn: () => void) { this.listeners[type].push(fn); }
-  fire(type: 'ended' | 'error') { this.listeners[type].forEach(fn => fn()); }
+  addEventListener(type: AudioEvent, fn: () => void) { this.listeners[type].push(fn); }
+  fire(type: AudioEvent) { this.listeners[type].forEach(fn => fn()); }
+  at(seconds: number) { this.currentTime = seconds; this.fire('timeupdate'); }
 }
 
 class FakeSession implements MediaSessionLike {
@@ -24,198 +31,244 @@ class FakeSession implements MediaSessionLike {
   setActionHandler(action: string, handler: (() => void) | null) { this.handlers[action] = handler; }
 }
 
-class RejectingAudio extends FakeAudio {
-  async play() {
-    this.played.push({ src: this.src, rate: this.playbackRate });
-    if (this.failing.has(this.src)) {
-      // error приходит после того, как отказ play() уже обработан
-      void Promise.resolve().then(() => {}).then(() => {}).then(() => {}).then(() => this.fire('error'));
-      throw new Error('load failed');
-    }
-  }
-}
-
 const flush = () => new Promise(r => setTimeout(r, 0));
 const a = (url: string, cardIndex: number, side: 'front' | 'back' = 'front'): Step =>
   ({ kind: 'audio', url, cardIndex, side });
 const s = (cardIndex: number): Step => ({ kind: 'silence', url: 'sil', cardIndex, seconds: 1 });
 const STEPS: Step[] = [a('a1', 0), s(0), a('a2', 0, 'back'), s(0), a('b1', 1), s(1), a('b2', 1, 'back'), s(1)];
+// Длительности в секундах. stepStart: 0, 1, 2, 4, 5, 6, 7, 9, (конец) 10.
+const SECONDS: Record<string, number> = { a1: 1, sil: 1, a2: 2, b1: 1, b2: 2 };
 
-function setup(opts: { loop?: boolean; rate?: number; audio?: FakeAudio } = {}) {
-  const audio = opts.audio ?? new FakeAudio();
-  const session = new FakeSession();
+function setup(opts: { loop?: boolean; rate?: number; missing?: string[]; session?: FakeSession } = {}) {
+  const audio = new FakeAudio();
+  const session = opts.session ?? new FakeSession();
   const onError = vi.fn();
-  const resolve = vi.fn(async (url: string) => `blob:${url}`);
+  const missing = new Set(opts.missing ?? []);
+  const resolve = vi.fn(async (url: string) => {
+    if (missing.has(url)) throw new Error('no audio');
+    return `blob:${url}`;
+  });
+  const readBytes = vi.fn(async (u: string) => new Uint8Array(SECONDS[u.slice(5)] * 6000).buffer);
+  const blobs: Blob[] = [];
+  const makeObjectUrl = vi.fn((b: Blob) => { blobs.push(b); return `blob:stream-${blobs.length}`; });
+  const revokeObjectUrl = vi.fn();
   const engine = new AudioEngine({
-    audio, mediaSession: session, onError,
-    resolve,
+    audio, mediaSession: session, onError, resolve, readBytes, makeObjectUrl, revokeObjectUrl,
     describeCard: i => ({ title: `card ${i}`, artist: 'topic' }),
   });
   engine.load(STEPS, { loop: opts.loop ?? false, rate: opts.rate ?? 1 });
-  return { audio, session, onError, engine, resolve };
-}
-
-async function playThrough(audio: FakeAudio, count: number) {
-  for (let i = 0; i < count; i++) { audio.fire('ended'); await flush(); }
+  return { audio, session, onError, engine, resolve, readBytes, blobs, makeObjectUrl, revokeObjectUrl };
 }
 
 describe('AudioEngine', () => {
-  it('plays all steps in order and finishes', async () => {
+  it('assembles one stream, assigns src once and plays it', async () => {
+    const { audio, engine, readBytes, blobs } = setup();
+    await engine.play();
+    expect(audio.srcSets).toEqual(['blob:stream-1']);
+    expect(audio.played).toBe(1);
+    expect(engine.getState()).toMatchObject({ playing: true, finished: false, stepIndex: 0 });
+    expect(readBytes).toHaveBeenCalledTimes(5);              // 'sil' читается один раз
+    expect(blobs).toHaveLength(1);
+    expect(blobs[0].size).toBe(10 * 6000);
+    expect(blobs[0].type).toBe('audio/mpeg');
+  });
+
+  it('timeupdate moves step, card and side by stream position', async () => {
     const { audio, engine } = setup();
-    await engine.play(); await flush();
-    await playThrough(audio, STEPS.length);
-    expect(audio.played.map(p => p.src)).toEqual(STEPS.map(st => `blob:${st.url}`));
-    expect(engine.getState()).toMatchObject({ playing: false, finished: true });
+    await engine.play();
+    audio.at(0.5);
+    expect(engine.getState()).toMatchObject({ stepIndex: 0, cardIndex: 0, side: 'front' });
+    audio.at(1.2);
+    expect(engine.getState()).toMatchObject({ stepIndex: 1, cardIndex: 0, side: null });
+    audio.at(3.9);
+    expect(engine.getState()).toMatchObject({ stepIndex: 2, cardIndex: 0, side: 'back' });
+    audio.at(5);
+    expect(engine.getState()).toMatchObject({ stepIndex: 4, cardIndex: 1, side: 'front' });
+    audio.at(8);
+    expect(engine.getState()).toMatchObject({ stepIndex: 6, cardIndex: 1, side: 'back' });
+    audio.at(9.5);
+    expect(engine.getState()).toMatchObject({ stepIndex: 7, cardIndex: 1, side: null });
   });
 
-  it('loops to the start when loop is on', async () => {
-    const { audio, engine } = setup({ loop: true });
-    await engine.play(); await flush();
-    await playThrough(audio, STEPS.length);
-    expect(audio.played.at(-1)?.src).toBe('blob:a1');
-    expect(engine.getState()).toMatchObject({ playing: true, stepIndex: 0 });
-  });
-
-  it('pause and resume continue the same step', async () => {
-    const { audio, engine, resolve } = setup();
-    await engine.play(); await flush();
-    await playThrough(audio, 2);
+  it('pause and resume keep the same src and position', async () => {
+    const { audio, engine } = setup();
+    await engine.play();
+    audio.at(2.5);
     engine.pause();
-    expect(engine.getState().playing).toBe(false);
-    audio.fire('ended'); await flush();               // ended после паузы игнорируется
-    expect(engine.getState().stepIndex).toBe(2);
-    const resolvesBefore = resolve.mock.calls.length;
-    await engine.play(); await flush();
-    expect(resolve.mock.calls.length).toBe(resolvesBefore);   // src не перезагружался
-    expect(audio.played.at(-1)?.src).toBe('blob:a2');
+    expect(engine.getState()).toMatchObject({ playing: false, stepIndex: 2 });
+    await engine.play();
+    expect(audio.srcSets).toHaveLength(1);
+    expect(audio.played).toBe(2);
+    expect(audio.currentTime).toBe(2.5);
     expect(engine.getState()).toMatchObject({ playing: true, stepIndex: 2, side: 'back' });
   });
 
-  it('applies rate to speech and 1 to silence', async () => {
-    const { audio, engine } = setup({ rate: 1.2 });
-    await engine.play(); await flush();
-    await playThrough(audio, 1);
-    expect(audio.played.map(p => p.rate)).toEqual([1.2, 1]);
-  });
-
-  it('nextCard and prevCard jump to card starts', async () => {
+  it('nextCard and prevCard seek to card starts; past the last card finishes', async () => {
     const { audio, engine } = setup();
-    await engine.play(); await flush();
-    engine.nextCard(); await flush();
-    expect(engine.getState()).toMatchObject({ cardIndex: 1, stepIndex: 4 });
-    expect(audio.played.at(-1)?.src).toBe('blob:b1');
-    engine.prevCard(); await flush();
+    await engine.play();
+    engine.nextCard();
+    expect(audio.currentTime).toBe(5);
+    expect(engine.getState()).toMatchObject({ cardIndex: 1, stepIndex: 4, playing: true });
+    engine.prevCard();
+    expect(audio.currentTime).toBe(0);
     expect(engine.getState()).toMatchObject({ cardIndex: 0, stepIndex: 0 });
+    engine.nextCard();
+    engine.nextCard();
+    expect(engine.getState()).toMatchObject({ finished: true, playing: false });
+    expect(audio.srcSets).toHaveLength(1);
   });
 
-  it('retries a failing step once, then skips to next card and reports', async () => {
-    const { audio, engine, onError } = setup();
-    audio.failing.add('blob:a2');
-    await engine.play(); await flush();
-    await playThrough(audio, 2); await flush(); await flush();
-    expect(audio.played.filter(p => p.src === 'blob:a2')).toHaveLength(2);
+  it('nextCard past the last card wraps to the start when looping, also while paused', async () => {
+    const { audio, engine } = setup({ loop: true });
+    await flush();
+    engine.nextCard();
+    expect(audio.currentTime).toBe(5);
+    engine.nextCard();
+    expect(audio.currentTime).toBe(0);
+    expect(engine.getState()).toMatchObject({ cardIndex: 0, stepIndex: 0, playing: false, finished: false });
+    expect(audio.played).toBe(0);
+  });
+
+  it('ended finishes without loop and restarts with loop', async () => {
+    const plain = setup();
+    await plain.engine.play();
+    plain.audio.at(10);
+    plain.audio.fire('ended');
+    expect(plain.engine.getState()).toMatchObject({ finished: true, playing: false });
+    await plain.engine.play();                                // повтор после окончания — с начала
+    expect(plain.audio.currentTime).toBe(0);
+    expect(plain.engine.getState()).toMatchObject({ finished: false, playing: true });
+
+    const looped = setup({ loop: true });
+    await looped.engine.play();
+    looped.audio.at(10);
+    looped.audio.fire('ended'); await flush();
+    expect(looped.audio.currentTime).toBe(0);
+    expect(looped.audio.played).toBe(2);
+    expect(looped.engine.getState()).toMatchObject({ playing: true, finished: false, stepIndex: 0 });
+  });
+
+  it('a step without audio gets zero length and is reported once', async () => {
+    const { audio, engine, onError, blobs } = setup({ missing: ['a2', 'b2'] });
+    await engine.play();
     expect(onError).toHaveBeenCalledTimes(1);
-    expect(engine.getState()).toMatchObject({ cardIndex: 1, stepIndex: 4, playing: true });
+    expect(blobs[0].size).toBe(6 * 6000);                     // a1 + 4×sil + b1
+    // stepStart: 0, 1, 2, 2, 3, 4, 5, 5, (конец) 6
+    audio.at(2.5);
+    expect(engine.getState()).toMatchObject({ stepIndex: 3, cardIndex: 0 });
+    audio.at(5.5);
+    expect(engine.getState()).toMatchObject({ stepIndex: 7, cardIndex: 1 });
+  });
+
+  it('when no step has audio the engine finishes and reports once', async () => {
+    const { audio, engine, onError } = setup({ missing: ['a1', 'a2', 'b1', 'b2', 'sil'] });
+    await engine.play();
+    expect(onError).toHaveBeenCalledTimes(1);
+    expect(audio.srcSets).toHaveLength(0);
+    expect(audio.played).toBe(0);
+    expect(engine.getState()).toMatchObject({ finished: true, playing: false });
+  });
+
+  it('play before assembly ends waits for it; a new load drops the old assembly', async () => {
+    const audio = new FakeAudio();
+    const releases: (() => void)[] = [];
+    const readBytes = vi.fn((u: string) => new Promise<ArrayBuffer>(r =>
+      releases.push(() => r(new Uint8Array(SECONDS[u.slice(5)] * 6000).buffer))));
+    let n = 0;
+    const engine = new AudioEngine({
+      audio, mediaSession: null, readBytes,
+      resolve: async url => `blob:${url}`,
+      makeObjectUrl: () => `blob:stream-${++n}`,
+      revokeObjectUrl: () => {},
+    });
+    engine.load(STEPS, { loop: false, rate: 1 });
+    await flush();
+    const oldReleases = releases.splice(0);
+    engine.load(STEPS, { loop: false, rate: 1 });
+    await flush();
+    const p = engine.play();
+    expect(engine.getState().playing).toBe(true);
+    oldReleases.forEach(r => r()); await flush();
+    expect(audio.srcSets).toHaveLength(0);                   // старая сборка отброшена
+    expect(audio.played).toBe(0);
+    releases.forEach(r => r()); await p;
+    expect(audio.srcSets).toEqual(['blob:stream-1']);
+    expect(audio.played).toBe(1);
+    expect(readBytes).toHaveBeenCalledTimes(10);
+  });
+
+  it('pause during assembly prevents playback once assembled', async () => {
+    const { audio, engine } = setup();
+    const p = engine.play();
+    engine.pause();
+    await p;
+    expect(audio.played).toBe(0);
+    expect(engine.getState().playing).toBe(false);
+  });
+
+  it('rejected audio.play() leaves the engine paused without an error message', async () => {
+    const { audio, engine, onError } = setup();
+    audio.rejectPlay = true;
+    await engine.play();
+    expect(engine.getState().playing).toBe(false);
+    expect(onError).not.toHaveBeenCalled();
+  });
+
+  it('element error stops playback and reports', async () => {
+    const { audio, engine, onError } = setup();
+    await engine.play();
+    audio.fire('error');
+    expect(engine.getState().playing).toBe(false);
+    expect(onError).toHaveBeenCalledTimes(1);
+  });
+
+  it('applies rate to the stream and setRate changes it on the fly', async () => {
+    const { audio, engine } = setup({ rate: 1.2 });
+    await engine.play();
+    expect(audio.playbackRate).toBe(1.2);
+    engine.setRate(0.8);
+    expect(audio.playbackRate).toBe(0.8);
   });
 
   it('updates media session and handles remote commands', async () => {
-    const { session, engine } = setup();
-    await engine.play(); await flush();
+    const { audio, session, engine } = setup();
+    session.handlers.play!(); await flush();
+    expect(engine.getState().playing).toBe(true);
     expect(session.metadata).toMatchObject({ title: 'card 0', artist: 'topic' });
     expect(session.playbackState).toBe('playing');
-    session.handlers.nexttrack!(); await flush();
+    audio.at(5.5);
+    expect(session.metadata).toMatchObject({ title: 'card 1' });
+    session.handlers.previoustrack!();
+    expect(audio.currentTime).toBe(0);
+    expect(session.metadata).toMatchObject({ title: 'card 0' });
+    session.handlers.nexttrack!();
+    expect(engine.getState().cardIndex).toBe(1);
     expect(session.metadata).toMatchObject({ title: 'card 1' });
     session.handlers.pause!();
     expect(session.playbackState).toBe('paused');
+    expect(engine.getState().playing).toBe(false);
   });
 
   it('subscribe emits current and subsequent states', async () => {
     const { engine } = setup();
     const seen: number[] = [];
     const off = engine.subscribe(st => seen.push(st.stepIndex));
-    await engine.play(); await flush();
+    await engine.play();
     off();
-    engine.nextCard(); await flush();
+    engine.nextCard();
     expect(seen[0]).toBe(0);
     expect(seen).not.toContain(4);
   });
 
-  it('pause during a pending resolve does not start playback', async () => {
-    const audio = new FakeAudio();
-    let release!: (src: string) => void;
-    const engine = new AudioEngine({
-      audio, mediaSession: null,
-      resolve: () => new Promise<string>(r => { release = r; }),
-    });
-    engine.load(STEPS, { loop: false, rate: 1 });
-    const p = engine.play();
-    engine.pause();
-    release('blob:a1'); await p; await flush();
-    expect(audio.played).toHaveLength(0);
-    expect(engine.getState().playing).toBe(false);
-    const p2 = engine.play();
-    release('blob:a1'); await p2; await flush();
-    expect(audio.played.map(x => x.src)).toEqual(['blob:a1']);
-    expect(engine.getState()).toMatchObject({ playing: true, stepIndex: 0 });
-  });
-
-  it('counts one load failure once even if play rejects and error fires', async () => {
-    const { audio, engine, onError } = setup({ audio: new RejectingAudio() });
-    audio.failing.add('blob:a2');
-    await engine.play(); await flush();
-    await playThrough(audio, 2); await flush(); await flush();
-    expect(audio.played.filter(p => p.src === 'blob:a2')).toHaveLength(2);
-    expect(onError).toHaveBeenCalledTimes(1);
-    expect(engine.getState()).toMatchObject({ cardIndex: 1, stepIndex: 4, playing: true });
-  });
-
-  it('stops after a full lap of failures when looping', async () => {
-    const { audio, engine, onError } = setup({ loop: true });
-    for (const st of STEPS) audio.failing.add(`blob:${st.url}`);
-    await engine.play();
-    for (let i = 0; i < 10; i++) await flush();
-    expect(onError).toHaveBeenCalledTimes(2);
-    expect(engine.getState()).toMatchObject({ playing: false, finished: true });
-  });
-
-  it('pause during a retry resolve then resume does not get stuck', async () => {
-    const audio = new FakeAudio();
-    audio.failing.add('blob:a1');
-    const onError = vi.fn();
-    let a1Calls = 0;
-    let release!: (src: string) => void;
-    const engine = new AudioEngine({
-      audio, mediaSession: null, onError,
-      resolve: url => {
-        if (url === 'a1' && ++a1Calls === 2) return new Promise<string>(r => { release = r; });
-        return Promise.resolve(`blob:${url}`);
-      },
-    });
-    engine.load(STEPS, { loop: false, rate: 1 });
-    await engine.play(); await flush();               // первая попытка упала, retry ждёт resolve
-    engine.pause();
-    release('blob:a1'); await flush();
-    await engine.play();
-    for (let i = 0; i < 6; i++) await flush();
-    expect(audio.played.filter(p => p.src === 'blob:a1').length).toBeGreaterThanOrEqual(2);
-    expect(onError).toHaveBeenCalledTimes(1);
-    expect(engine.getState()).toMatchObject({ cardIndex: 1, stepIndex: 4, playing: true });
-  });
-
   it('destroying an old engine does not wipe the live engine media session handlers', async () => {
     const session = new FakeSession();
-    const mk = () => new AudioEngine({
-      audio: new FakeAudio(), mediaSession: session,
-      resolve: async url => `blob:${url}`,
-      describeCard: i => ({ title: `card ${i}`, artist: 'topic' }),
-    });
-    const engA = mk();
-    const engB = mk();
-    engB.load(STEPS, { loop: false, rate: 1 });
+    const engA = setup({ session }).engine;
+    const engB = setup({ session }).engine;
+    await flush();
     engA.destroy();
     expect(session.handlers.nexttrack).toBeTypeOf('function');
     expect(session.handlers.play).toBeTypeOf('function');
-    session.handlers.nexttrack!(); await flush();
+    session.handlers.nexttrack!();
     expect(engB.getState().cardIndex).toBe(1);
     engB.destroy();
     expect(session.handlers.nexttrack).toBeNull();
@@ -223,14 +276,13 @@ describe('AudioEngine', () => {
     expect(session.playbackState).toBe('none');
   });
 
-  it('media session play and previoustrack handlers work', async () => {
-    const { session, engine, audio } = setup();
-    session.handlers.play!(); await flush();
-    expect(engine.getState().playing).toBe(true);
-    expect(audio.played.at(-1)?.src).toBe('blob:a1');
-    session.handlers.nexttrack!(); await flush();
-    session.handlers.previoustrack!(); await flush();
-    expect(engine.getState()).toMatchObject({ cardIndex: 0, stepIndex: 0, playing: true });
-    expect(session.metadata).toMatchObject({ title: 'card 0' });
+  it('destroy and reload release the stream object URL', async () => {
+    const { engine, revokeObjectUrl } = setup();
+    await engine.play();
+    engine.load(STEPS, { loop: false, rate: 1 });
+    expect(revokeObjectUrl).toHaveBeenCalledWith('blob:stream-1');
+    await flush();
+    engine.destroy();
+    expect(revokeObjectUrl).toHaveBeenCalledWith('blob:stream-2');
   });
 });

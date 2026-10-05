@@ -3,9 +3,10 @@ import { cardStartStep, type Side, type Step } from '../domain/sequence';
 export interface AudioLike {
   src: string;
   playbackRate: number;
+  currentTime: number;
   play(): Promise<void>;
   pause(): void;
-  addEventListener(type: 'ended' | 'error', listener: () => void): void;
+  addEventListener(type: 'ended' | 'error' | 'timeupdate', listener: () => void): void;
 }
 
 export interface MediaSessionLike {
@@ -27,6 +28,9 @@ export interface EngineState {
 
 export interface EngineOptions {
   resolve: (url: string) => Promise<string>;
+  readBytes?: (url: string) => Promise<ArrayBuffer>;
+  makeObjectUrl?: (b: Blob) => string;
+  revokeObjectUrl?: (u: string) => void;
   audio?: AudioLike;
   mediaSession?: MediaSessionLike | null;
   describeCard?: (cardIndex: number) => { title: string; artist: string };
@@ -35,22 +39,38 @@ export interface EngineOptions {
 
 export const NO_AUDIO_MESSAGE = 'Нет звука для карточки — скачайте набор для офлайна';
 
+// Все mp3 набора — MPEG-2 Layer III, CBR 48 кбит/с без заголовков ID3/Xing:
+// 48000 бит/с = 6000 байт/с, поэтому длительность файла = байты / 6000,
+// а склейка байтов файлов — корректный mp3-поток.
+const BYTES_PER_SECOND = 6000;
+
+const defaultReadBytes = async (url: string): Promise<ArrayBuffer> => {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  return r.arrayBuffer();
+};
+
 // Media Session глобальна: handlers принадлежат последнему созданному движку.
 let sessionOwner: AudioEngine | null = null;
 
+/**
+ * Играет весь сценарий как один mp3-blob, собранный при load() на переднем плане.
+ * Дальше — только play/pause/currentTime одного загруженного элемента: в фоне iOS
+ * не загружает новые источники, поэтому src меняется лишь при новой сборке.
+ */
 export class AudioEngine {
   private steps: Step[] = [];
+  /** Начало каждого шага в потоке, секунды; последний элемент — длина потока. */
+  private stepStart: number[] = [];
   private index = 0;
-  private loadedIndex = -1;
   private playing = false;
   private finished = false;
   private loop = false;
   private rate = 1;
-  private retried = false;
-  private skips = 0;
-  private srcToken = 0;
-  private attemptFailed = false;
   private token = 0;
+  private playAttempt = 0;
+  private streamUrl: string | null = null;
+  private assembly: Promise<void> = Promise.resolve();
   private lastCard = -1;
   private listeners = new Set<(s: EngineState) => void>();
   private readonly audio: AudioLike;
@@ -63,7 +83,8 @@ export class AudioEngine {
       : (typeof navigator !== 'undefined' && 'mediaSession' in navigator
         ? (navigator.mediaSession as unknown as MediaSessionLike) : null);
     this.audio.addEventListener('ended', () => this.onEnded());
-    this.audio.addEventListener('error', () => this.onStepError(this.srcToken));
+    this.audio.addEventListener('error', () => this.onAudioError());
+    this.audio.addEventListener('timeupdate', () => this.onTimeUpdate());
     if (this.session) sessionOwner = this;
     this.session?.setActionHandler('play', () => void this.play());
     this.session?.setActionHandler('pause', () => this.pause());
@@ -74,17 +95,17 @@ export class AudioEngine {
   load(steps: Step[], opts: { loop: boolean; rate: number }): void {
     this.audio.pause();
     this.token++;
+    this.releaseStream();
     this.steps = steps;
+    this.stepStart = [];
     this.loop = opts.loop;
     this.rate = opts.rate;
     this.index = 0;
-    this.loadedIndex = -1;
     this.playing = false;
     this.finished = false;
-    this.retried = false;
-    this.skips = 0;
     this.lastCard = -1;
     this.emit();
+    this.assembly = steps.length > 0 ? this.assemble(this.token) : Promise.resolve();
   }
 
   subscribe(fn: (s: EngineState) => void): () => void {
@@ -106,28 +127,35 @@ export class AudioEngine {
 
   async play(): Promise<void> {
     if (this.steps.length === 0) return;
-    if (this.finished) {
-      this.finished = false;
-      this.index = 0;
-      this.loadedIndex = -1;
-    }
+    const token = this.token;
+    const attempt = ++this.playAttempt;
     this.playing = true;
-    this.retried = false;
-    this.skips = 0;
-    if (this.loadedIndex === this.index) {
-      this.attemptFailed = false;
-      this.emit();
-      try {
-        await this.audio.play();
-      } catch {
-        this.onStepError(this.srcToken);
-      }
+    this.emit();
+    await this.assembly;
+    if (token !== this.token || attempt !== this.playAttempt || !this.playing) return;
+    if (!this.streamUrl) {
+      this.finish();
       return;
     }
-    await this.playStep(this.index);
+    if (this.finished) {
+      this.audio.currentTime = 0;
+      this.finished = false;
+      this.index = this.stepAt(0);
+      this.emit();
+    }
+    this.audio.playbackRate = this.rate;
+    try {
+      await this.audio.play();
+    } catch {
+      // Отказ play() (например, прерывание iOS) — это не отсутствие звука: просто пауза.
+      if (attempt !== this.playAttempt) return;
+      this.playing = false;
+      this.emit();
+    }
   }
 
   pause(): void {
+    this.playAttempt++;
     this.playing = false;
     this.audio.pause();
     this.emit();
@@ -141,10 +169,10 @@ export class AudioEngine {
     this.goToCard(Math.max(this.getState().cardIndex - 1, 0));
   }
 
+  // Скорость применяется ко всему потоку, включая паузы-тишину: принятое упрощение.
   setRate(rate: number): void {
     this.rate = rate;
-    const step = this.steps[this.loadedIndex];
-    if (step?.kind === 'audio') this.audio.playbackRate = rate;
+    this.audio.playbackRate = rate;
   }
 
   setLoop(loop: boolean): void {
@@ -155,6 +183,7 @@ export class AudioEngine {
     this.token++;
     this.playing = false;
     this.audio.pause();
+    this.releaseStream();
     this.listeners.clear();
     if (this.session && sessionOwner === this) {
       sessionOwner = null;
@@ -165,7 +194,58 @@ export class AudioEngine {
     }
   }
 
+  private async assemble(token: number): Promise<void> {
+    const readBytes = this.opts.readBytes ?? defaultReadBytes;
+    const cache = new Map<string, Promise<ArrayBuffer | null>>();
+    const read = (url: string) => {
+      let bytes = cache.get(url);
+      if (!bytes) {
+        bytes = this.opts.resolve(url).then(readBytes).catch(() => null);
+        cache.set(url, bytes);
+      }
+      return bytes;
+    };
+    const buffers = await Promise.all(this.steps.map(step => read(step.url)));
+    if (token !== this.token) return;
+
+    // Шаг без звука получает нулевую длительность: stepStart[i] === stepStart[i + 1].
+    const starts = [0];
+    let total = 0;
+    for (const b of buffers) {
+      total += b?.byteLength ?? 0;
+      starts.push(total / BYTES_PER_SECOND);
+    }
+    if (buffers.includes(null) || total === 0) this.opts.onError?.(NO_AUDIO_MESSAGE);
+    if (total === 0) {
+      this.finish();
+      return;
+    }
+    const parts = buffers.filter((b): b is ArrayBuffer => b !== null);
+    this.stepStart = starts;
+    this.streamUrl = (this.opts.makeObjectUrl ?? (b => URL.createObjectURL(b)))(
+      new Blob(parts, { type: 'audio/mpeg' }));
+    this.audio.src = this.streamUrl;
+    this.audio.playbackRate = this.rate;
+    this.index = this.stepAt(0);
+    this.emit();
+  }
+
+  private releaseStream(): void {
+    if (!this.streamUrl) return;
+    (this.opts.revokeObjectUrl ?? (u => URL.revokeObjectURL(u)))(this.streamUrl);
+    this.streamUrl = null;
+  }
+
+  /** Шаг, звучащий в момент t потока; шаги нулевой длительности пропускаются. */
+  private stepAt(t: number): number {
+    for (let i = this.steps.length - 1; i >= 0; i--) {
+      if (this.stepStart[i] <= t && this.stepStart[i + 1] > this.stepStart[i]) return i;
+    }
+    return 0;
+  }
+
   private goToCard(cardIndex: number): void {
+    if (!this.streamUrl) return;
     let start = cardStartStep(this.steps, cardIndex);
     if (start === -1) {
       if (!this.loop) {
@@ -174,80 +254,48 @@ export class AudioEngine {
       }
       start = 0;
     }
-    this.retried = false;
-    this.skips = 0;
-    if (this.playing) {
-      void this.playStep(start);
-    } else {
-      this.token++;
-      this.index = start;
-      this.loadedIndex = -1;
-      this.finished = false;
-      this.emit();
-    }
+    this.audio.currentTime = this.stepStart[start];
+    this.index = start;
+    this.finished = false;
+    this.emit();
   }
 
-  private async playStep(i: number): Promise<void> {
-    if (i >= this.steps.length) {
-      if (!this.loop) {
-        this.finish();
-        return;
-      }
-      i = 0;
-    }
-    const token = ++this.token;
-    this.attemptFailed = false;
-    this.loadedIndex = -1;
+  private onTimeUpdate(): void {
+    if (!this.streamUrl) return;
+    const i = this.stepAt(this.audio.currentTime);
+    if (i === this.index) return;
     this.index = i;
     this.emit();
-    const step = this.steps[i];
-    try {
-      const src = await this.opts.resolve(step.url);
-      if (token !== this.token || !this.playing) return;
-      this.audio.src = src;
-      this.srcToken = token;
-      this.audio.playbackRate = step.kind === 'audio' ? this.rate : 1;
-      this.loadedIndex = i;
-      await this.audio.play();
-    } catch {
-      this.onStepError(token);
-      return;
-    }
-    const next = this.steps[i + 1];
-    if (next) this.opts.resolve(next.url).catch(() => {});
   }
 
   private onEnded(): void {
-    if (!this.playing) return;
-    this.retried = false;
-    this.skips = 0;
-    void this.playStep(this.index + 1);
-  }
-
-  private onStepError(token: number): void {
-    if (token !== this.token || !this.playing || this.attemptFailed) return;
-    this.attemptFailed = true;
-    if (!this.retried) {
-      this.retried = true;
-      void this.playStep(this.index);
-      return;
-    }
-    this.retried = false;
-    this.opts.onError?.(NO_AUDIO_MESSAGE);
-    this.skips++;
-    if (this.skips >= new Set(this.steps.map(st => st.cardIndex)).size) {
+    if (!this.loop) {
       this.finish();
       return;
     }
-    const nextStart = cardStartStep(this.steps, this.getState().cardIndex + 1);
-    void this.playStep(nextStart === -1 ? this.steps.length : nextStart);
+    this.audio.currentTime = 0;
+    this.index = this.stepAt(0);
+    this.emit();
+    if (this.playing) {
+      const attempt = this.playAttempt;
+      this.audio.play().catch(() => {
+        if (attempt !== this.playAttempt) return;
+        this.playing = false;
+        this.emit();
+      });
+    }
+  }
+
+  private onAudioError(): void {
+    if (!this.streamUrl) return;
+    this.playing = false;
+    this.opts.onError?.(NO_AUDIO_MESSAGE);
+    this.emit();
   }
 
   private finish(): void {
-    this.token++;
     this.playing = false;
     this.finished = true;
-    this.loadedIndex = -1;
     this.audio.pause();
     this.emit();
   }

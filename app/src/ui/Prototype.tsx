@@ -31,37 +31,6 @@ export function Prototype() {
   }
   const engine = engineRef.current;
 
-  const [silentPause, setSilentPause] = useState(() => {
-    try { return localStorage.getItem('word-cards:silent-pause') === '1'; } catch { return false; }
-  });
-
-  useEffect(() => {
-    try { localStorage.setItem('word-cards:silent-pause', silentPause ? '1' : '0'); } catch { /* ignore */ }
-    if (!silentPause || !('mediaSession' in navigator)) return;
-    // Эксперимент: на паузе с экрана блокировки играем тишину по кругу, чтобы iOS не усыплял приложение.
-    const silence = new Audio();
-    silence.loop = true;
-    audioStore.resolve('audio/silence_1s.mp3').then(u => { silence.src = u; log('silent-pause: ready'); });
-    const ms = navigator.mediaSession;
-    ms.setActionHandler('pause', () => {
-      engine.pause();
-      silence.play().then(() => log('silent-pause: silence playing'),
-        (e: unknown) => log(`silent-pause: silence REJECTED ${e}`));
-      ms.playbackState = 'paused';
-    });
-    ms.setActionHandler('play', () => {
-      silence.pause();
-      void engine.play();
-    });
-    log('silent-pause: ON');
-    return () => {
-      silence.pause();
-      ms.setActionHandler('pause', () => engine.pause());
-      ms.setActionHandler('play', () => void engine.play());
-      log('silent-pause: OFF');
-    };
-  }, [silentPause, engine]);
-
   useEffect(() => {
     loadIndex()
       .then(index => loadTopic(index.topics[0].id))
@@ -101,11 +70,6 @@ export function Prototype() {
       <button onClick={() => engine.nextCard()} style={{ fontSize: 24 }}>⏭</button>
       <p>Карточек: {cards.length}. Шаг: {state?.stepIndex ?? '-'}</p>
       {error && <p style={{ color: 'var(--bad)' }}>{error}</p>}
-      <label style={{ display: 'block', margin: '16px 0', fontSize: 18 }}>
-        <input type="checkbox" checked={silentPause}
-          onChange={e => setSilentPause((e.target as HTMLInputElement).checked)} />
-        {' '}Тихая пауза (эксперимент)
-      </label>
       <h2>Журнал (диагностика)</h2>
       <button onClick={clearLog}>Очистить журнал</button>{' '}
       <button onClick={() => navigator.clipboard?.writeText(
