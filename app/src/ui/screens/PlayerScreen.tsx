@@ -12,9 +12,12 @@ function useWakeLock(active: boolean) {
     if (!active || !('wakeLock' in navigator)) return;
     let lock: WakeLockSentinel | null = null;
     let cancelled = false;
-    const acquire = () => navigator.wakeLock.request('screen')
+    const acquire = () => {
+      if (lock && !lock.released) return Promise.resolve();
+      return navigator.wakeLock.request('screen')
       .then(l => { if (cancelled) void l.release(); else lock = l; })
       .catch(() => { /* не поддерживается или отказано — просто без блокировки */ });
+    };
     const onVisible = () => { if (document.visibilityState === 'visible') void acquire(); };
     void acquire();
     document.addEventListener('visibilitychange', onVisible);
@@ -60,8 +63,11 @@ export function PlayerScreen({ title, cards, mode }: { title: string; cards: Car
   const playing = state?.playing ?? false;
   const card = cards[cardIndex];
 
-  useEffect(() => setRevealed(false), [cardIndex]);
-  useEffect(() => { if (state?.side === 'back') setRevealed(true); }, [state?.side, cardIndex]);
+  // Перевод виден, пока звучит обратная сторона (и пауза после неё); тишина оставляет прежнее значение.
+  useEffect(() => {
+    if (state?.side === 'front') setRevealed(false);
+    else if (state?.side === 'back') setRevealed(true);
+  }, [state?.side, state?.stepIndex]);
 
   useEffect(() => {
     if (!playing || !card) return;
