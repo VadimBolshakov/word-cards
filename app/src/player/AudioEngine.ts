@@ -44,6 +44,9 @@ export class AudioEngine {
   private loop = false;
   private rate = 1;
   private retried = false;
+  private skips = 0;
+  private srcToken = 0;
+  private attemptFailed = false;
   private token = 0;
   private lastCard = -1;
   private listeners = new Set<(s: EngineState) => void>();
@@ -57,7 +60,7 @@ export class AudioEngine {
       : (typeof navigator !== 'undefined' && 'mediaSession' in navigator
         ? (navigator.mediaSession as unknown as MediaSessionLike) : null);
     this.audio.addEventListener('ended', () => this.onEnded());
-    this.audio.addEventListener('error', () => this.onStepError(this.token));
+    this.audio.addEventListener('error', () => this.onStepError(this.srcToken));
     this.session?.setActionHandler('play', () => void this.play());
     this.session?.setActionHandler('pause', () => this.pause());
     this.session?.setActionHandler('nexttrack', () => this.nextCard());
@@ -75,6 +78,7 @@ export class AudioEngine {
     this.playing = false;
     this.finished = false;
     this.retried = false;
+    this.skips = 0;
     this.lastCard = -1;
     this.emit();
   }
@@ -104,12 +108,15 @@ export class AudioEngine {
       this.loadedIndex = -1;
     }
     this.playing = true;
+    this.retried = false;
+    this.skips = 0;
     if (this.loadedIndex === this.index) {
+      this.attemptFailed = false;
       this.emit();
       try {
         await this.audio.play();
       } catch {
-        this.onStepError(this.token);
+        this.onStepError(this.srcToken);
       }
       return;
     }
@@ -161,6 +168,7 @@ export class AudioEngine {
       start = 0;
     }
     this.retried = false;
+    this.skips = 0;
     if (this.playing) {
       void this.playStep(start);
     } else {
@@ -181,13 +189,15 @@ export class AudioEngine {
       i = 0;
     }
     const token = ++this.token;
+    this.attemptFailed = false;
     this.index = i;
     this.emit();
     const step = this.steps[i];
     try {
       const src = await this.opts.resolve(step.url);
-      if (token !== this.token) return;
+      if (token !== this.token || !this.playing) return;
       this.audio.src = src;
+      this.srcToken = token;
       this.audio.playbackRate = step.kind === 'audio' ? this.rate : 1;
       this.loadedIndex = i;
       await this.audio.play();
@@ -202,11 +212,13 @@ export class AudioEngine {
   private onEnded(): void {
     if (!this.playing) return;
     this.retried = false;
+    this.skips = 0;
     void this.playStep(this.index + 1);
   }
 
   private onStepError(token: number): void {
-    if (token !== this.token || !this.playing) return;
+    if (token !== this.token || !this.playing || this.attemptFailed) return;
+    this.attemptFailed = true;
     if (!this.retried) {
       this.retried = true;
       void this.playStep(this.index);
@@ -214,6 +226,11 @@ export class AudioEngine {
     }
     this.retried = false;
     this.opts.onError?.(NO_AUDIO_MESSAGE);
+    this.skips++;
+    if (this.skips >= new Set(this.steps.map(st => st.cardIndex)).size) {
+      this.finish();
+      return;
+    }
     const nextStart = cardStartStep(this.steps, this.getState().cardIndex + 1);
     void this.playStep(nextStart === -1 ? this.steps.length : nextStart);
   }
