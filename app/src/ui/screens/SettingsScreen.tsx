@@ -25,8 +25,12 @@ export function SettingsScreen() {
   latest.current = s;
   const set = <K extends keyof Settings>(key: K, value: Settings[K]) => {
     latest.current = { ...latest.current, [key]: value };
+    exportSeq.current++; // отбросить незавершённую подготовку со старыми настройками
     exportJson.current = null;
-    app.saveSettings(latest.current).then(refreshExport).catch(err => setMessage(`Не удалось сохранить настройки: ${err}`));
+    app.saveSettings(latest.current).then(refreshExport).catch(err => {
+      setMessage(`Не удалось сохранить настройки: ${err}`);
+      refreshExport();
+    });
   };
 
   // JSON готовим заранее: navigator.share в iOS Safari требует вызова без await после жеста пользователя.
