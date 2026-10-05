@@ -1,4 +1,5 @@
 import { render } from 'preact';
 import './styles.css';
+import { Prototype } from './ui/Prototype';
 
-render(<h1>Карточки слов</h1>, document.getElementById('app')!);
+render(<Prototype />, document.getElementById('app')!);
