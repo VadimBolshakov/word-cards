@@ -11,6 +11,7 @@ class FakeAudio implements AudioLike {
   set src(v: string) { this._src = v; this.srcSets.push(v); }
   playbackRate = 1;
   currentTime = 0;
+  loop = false;
   played = 0;
   rejectPlay = false;
   private listeners: Record<AudioEvent, (() => void)[]> = { ended: [], error: [], timeupdate: [] };
@@ -284,5 +285,75 @@ describe('AudioEngine', () => {
     await flush();
     engine.destroy();
     expect(revokeObjectUrl).toHaveBeenCalledWith('blob:stream-2');
+  });
+
+  it('tolerates a seek readback slightly below the target', async () => {
+    const { audio, engine } = setup();
+    await flush();
+    engine.nextCard();
+    audio.at(5 - 0.00002);
+    expect(engine.getState().cardIndex).toBe(1);
+    engine.nextCard();
+    expect(engine.getState().finished).toBe(true);
+  });
+
+  it('nextCard from a card-1 readback below target reaches the next card', async () => {
+    const { audio, engine } = setup();
+    await flush();
+    engine.nextCard();
+    audio.at(5 - 0.00002);
+    engine.prevCard();
+    expect(engine.getState().cardIndex).toBe(0);
+    engine.nextCard();
+    audio.at(5 - 0.00002);
+    expect(engine.getState()).toMatchObject({ cardIndex: 1, stepIndex: 4 });
+  });
+
+  it('sets audio.loop from load and setLoop', async () => {
+    const { audio, engine } = setup({ loop: true });
+    expect(audio.loop).toBe(true);
+    engine.setLoop(false);
+    expect(audio.loop).toBe(false);
+    engine.setLoop(true);
+    expect(audio.loop).toBe(true);
+  });
+
+  it('with native loop, timeupdate after the wrap maps back to card 0', async () => {
+    const { audio, session, engine } = setup({ loop: true });
+    await engine.play();
+    audio.at(9.9);
+    expect(session.metadata).toMatchObject({ title: 'card 1' });
+    audio.at(0.1);
+    expect(engine.getState()).toMatchObject({ cardIndex: 0, stepIndex: 0 });
+    expect(session.metadata).toMatchObject({ title: 'card 0' });
+    expect(audio.played).toBe(1);
+  });
+
+  it('nextCard onto a card whose first step has zero length lands on the sounding step', async () => {
+    const audio = new FakeAudio();
+    const steps: Step[] = [a('a1', 0), a('a2', 1), a('b1', 1, 'back')];
+    const engine = new AudioEngine({
+      audio, mediaSession: null,
+      resolve: async u => `blob:${u}`,
+      readBytes: async u => new Uint8Array(u === 'blob:a2' ? 0 : SECONDS[u.slice(5)] * 6000).buffer,
+      makeObjectUrl: () => 'blob:s', revokeObjectUrl: () => {},
+    });
+    engine.load(steps, { loop: false, rate: 1 });
+    await flush();
+    engine.nextCard();
+    expect(audio.currentTime).toBe(1);
+    audio.at(1);
+    expect(engine.getState()).toMatchObject({ cardIndex: 1, stepIndex: 2 });
+  });
+
+  it('prevCard from the finished state returns to the previous card', async () => {
+    const { audio, engine } = setup();
+    await engine.play();
+    engine.nextCard();
+    engine.nextCard();
+    expect(engine.getState().finished).toBe(true);
+    engine.prevCard();
+    expect(engine.getState()).toMatchObject({ cardIndex: 0, finished: false });
+    expect(audio.currentTime).toBe(0);
   });
 });

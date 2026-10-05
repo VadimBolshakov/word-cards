@@ -4,6 +4,7 @@ export interface AudioLike {
   src: string;
   playbackRate: number;
   currentTime: number;
+  loop: boolean;
   play(): Promise<void>;
   pause(): void;
   addEventListener(type: 'ended' | 'error' | 'timeupdate', listener: () => void): void;
@@ -43,6 +44,10 @@ export const NO_AUDIO_MESSAGE = 'Нет звука для карточки — �
 // 48000 бит/с = 6000 байт/с, поэтому длительность файла = байты / 6000,
 // а склейка байтов файлов — корректный mp3-поток.
 const BYTES_PER_SECOND = 6000;
+
+// Safari может вернуть currentTime чуть меньше выставленного; допуск меньше
+// одного mp3-кадра (24 мс) с запасом, чтобы не откатываться на предыдущую карточку.
+const SEEK_TOLERANCE_S = 0.03;
 
 const defaultReadBytes = async (url: string): Promise<ArrayBuffer> => {
   const r = await fetch(url);
@@ -99,6 +104,7 @@ export class AudioEngine {
     this.steps = steps;
     this.stepStart = [];
     this.loop = opts.loop;
+    this.audio.loop = opts.loop;
     this.rate = opts.rate;
     this.index = 0;
     this.playing = false;
@@ -177,6 +183,7 @@ export class AudioEngine {
 
   setLoop(loop: boolean): void {
     this.loop = loop;
+    this.audio.loop = loop;
   }
 
   destroy(): void {
@@ -262,12 +269,13 @@ export class AudioEngine {
 
   private onTimeUpdate(): void {
     if (!this.streamUrl) return;
-    const i = this.stepAt(this.audio.currentTime);
+    const i = this.stepAt(this.audio.currentTime + SEEK_TOLERANCE_S);
     if (i === this.index) return;
     this.index = i;
     this.emit();
   }
 
+  // При audio.loop элемент сам переходит в начало и ended не приходит; ветка ниже — страховка.
   private onEnded(): void {
     if (!this.loop) {
       this.finish();
