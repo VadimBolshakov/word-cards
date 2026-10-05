@@ -1,6 +1,6 @@
 // Временный журнал для диагностики фонового аудио на iPhone. Удаляется вместе с прототипом.
 const KEY = 'word-cards:debug-log';
-const MAX = 120;
+const MAX = 500;
 
 export interface LogEntry { t: string; msg: string }
 
@@ -35,7 +35,7 @@ export function subscribeLog(fn: (e: LogEntry[]) => void): () => void {
 export function instrumentedAudio(): HTMLAudioElement {
   const audio = new Audio();
   const short = () => audio.src.slice(-8);
-  for (const type of ['play', 'playing', 'pause', 'ended', 'error', 'stalled', 'waiting', 'abort', 'emptied']) {
+  for (const type of ['playing', 'pause', 'ended', 'error', 'stalled']) {
     audio.addEventListener(type, () =>
       log(`audio:${type} src=${short()} t=${audio.currentTime.toFixed(1)} paused=${audio.paused}`));
   }
