@@ -1,5 +1,5 @@
 import { render } from 'preact';
 import './styles.css';
-import { Prototype } from './ui/Prototype';
+import { App } from './ui/App';
 
-render(<Prototype />, document.getElementById('app')!);
+render(<App />, document.getElementById('app')!);
