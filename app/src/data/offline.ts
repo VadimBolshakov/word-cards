@@ -43,6 +43,18 @@ export class AudioStore {
     return p;
   }
 
+  /** Raw bytes without creating a blob URL (safe for big sets: nothing to revoke). */
+  async readBytes(rel: string): Promise<ArrayBuffer> {
+    const abs = contentUrl(rel);
+    const cache = await this.openCache();
+    let res = await cache.match(abs);
+    if (!res) {
+      res = await this.fetcher(abs);
+      if (!res.ok) throw new Error(`HTTP ${res.status} для ${rel}`);
+    }
+    return res.arrayBuffer();
+  }
+
   private async load(rel: string): Promise<string> {
     const abs = contentUrl(rel);
     const cache = await this.openCache();

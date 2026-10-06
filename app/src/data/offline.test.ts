@@ -113,4 +113,32 @@ describe('AudioStore', () => {
     fail = false;
     expect(await store.resolve('audio/a.mp3')).toBe('blob:ok');
   });
+
+  it('readBytes prefers cache, creates no blob url', async () => {
+    const cache = new MapCache();
+    const fetcher = vi.fn(async () => new Response('net'));
+    const makeUrl = vi.fn(() => 'blob:x');
+    const store = new AudioStore(async () => cache, fetcher as unknown as typeof fetch, makeUrl, () => {});
+    await cache.put('/content/audio/a.mp3', new Response('cached'));
+    const buf = await store.readBytes('audio/a.mp3');
+    expect(new TextDecoder().decode(buf)).toBe('cached');
+    expect(fetcher).not.toHaveBeenCalled();
+    expect(makeUrl).not.toHaveBeenCalled();
+  });
+
+  it('readBytes falls back to network, no blob url', async () => {
+    const cache = new MapCache();
+    const fetcher = vi.fn(async () => new Response('net'));
+    const makeUrl = vi.fn(() => 'blob:x');
+    const store = new AudioStore(async () => cache, fetcher as unknown as typeof fetch, makeUrl, () => {});
+    const buf = await store.readBytes('audio/a.mp3');
+    expect(new TextDecoder().decode(buf)).toBe('net');
+    expect(fetcher).toHaveBeenCalledWith('/content/audio/a.mp3');
+    expect(makeUrl).not.toHaveBeenCalled();
+  });
+
+  it('readBytes throws on HTTP error', async () => {
+    const { store } = setup(true);
+    await expect(store.readBytes('audio/a.mp3')).rejects.toThrow();
+  });
 });

@@ -2,7 +2,7 @@ import { createContext } from 'preact';
 import { useContext, useEffect, useRef, useState } from 'preact/hooks';
 import { loadIndex, loadTopic } from '../data/content';
 import { Store } from '../data/db';
-import { selectDue, type ProgressMap } from '../domain/selection';
+import { selectDueSession, type ProgressMap } from '../domain/selection';
 import { todayISO } from '../domain/dates';
 import type { Card, ContentIndex, Profile, Progress, Settings } from '../types';
 import { depthFromState, resyncDelta, truncateTo } from './navigation';
@@ -230,7 +230,7 @@ function renderRoute(route: Route, ctx: AppCtx) {
     case 'due': {
       const all = [...ctx.cardsByTopic.values()].flat();
       return <SetScreen key="due" title="Повторение на сегодня"
-        cards={selectDue(all, ctx.progress, todayISO())} allowModeChoice={false} />;
+        cards={selectDueSession(all, ctx.progress, todayISO())} allowModeChoice={false} />;
     }
     case 'card':
       return <CardScreen title={route.title} cards={route.cards} />;

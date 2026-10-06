@@ -42,7 +42,8 @@ export function PlayerScreen({ title, cards, mode }: { title: string; cards: Car
   const engineRef = useRef<AudioEngine | null>(null);
   if (!engineRef.current) {
     engineRef.current = new AudioEngine({
-      resolve: url => audioStore.resolve(url),
+      resolve: url => Promise.resolve(url),
+      readBytes: url => audioStore.readBytes(url),
       describeCard: i => {
         const { cards: cs, title: t } = infoRef.current;
         return { title: `${cs[i].en} — ${cs[i].ru}`, artist: t };

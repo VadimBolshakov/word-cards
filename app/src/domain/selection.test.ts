@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { Card, Progress } from '../types';
-import { orderCards, selectDue, selectForSet, type ProgressMap } from './selection';
+import { orderCards, selectDue, selectDueSession, selectForSet, type ProgressMap } from './selection';
 
 const card = (id: string, set = 1): Card =>
   ({ id, set, en: id, ru: id, enEx: '', ruEx: '', enAudio: `audio/${id}e.mp3`, ruAudio: `audio/${id}r.mp3` });
@@ -34,5 +34,17 @@ describe('selection', () => {
     expect(shuffled.map(c => c.id).sort()).toEqual(['a', 'b', 'c', 'd', 'e']);
     expect(shuffled.map(c => c.id)).toEqual(['b', 'c', 'd', 'e', 'a']);
     expect(cards.map(c => c.id)).toEqual(['a', 'b', 'c', 'd', 'e']);
+  });
+
+  it('selectDueSession: most overdue first, ties keep order, capped', () => {
+    const cs = [card('a'), card('b'), card('c'), card('d')];
+    const pr: ProgressMap = new Map([
+      ['a', prog('a', 1, '2026-10-04')],
+      ['b', prog('b', 1, '2026-10-01')],
+      ['c', prog('c', 1, '2026-10-04')],
+      ['d', prog('d', 1, '2026-12-01')],
+    ]);
+    expect(selectDueSession(cs, pr, '2026-10-05').map(c => c.id)).toEqual(['b', 'a', 'c']);
+    expect(selectDueSession(cs, pr, '2026-10-05', 2).map(c => c.id)).toEqual(['b', 'a']);
   });
 });

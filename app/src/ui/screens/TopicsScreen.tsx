@@ -1,5 +1,5 @@
 import { todayISO } from '../../domain/dates';
-import { selectDue } from '../../domain/selection';
+import { DUE_SESSION_LIMIT, selectDue } from '../../domain/selection';
 import { ProgressBar } from '../components/ProgressBar';
 import { useApp } from '../App';
 
@@ -16,7 +16,7 @@ export function TopicsScreen() {
       </div>
 
       <button class="primary" disabled={due === 0} onClick={() => app.go({ name: 'due' })}>
-        📅 Повторение на сегодня{due ? ` (${due})` : ' — пока нечего'}
+        📅 Повторение на сегодня{due ? (due > DUE_SESSION_LIMIT ? ` (${due}, по ${DUE_SESSION_LIMIT} за раз)` : ` (${due})`) : ' — пока нечего'}
       </button>
 
       {app.index.topics.map(topic => {
