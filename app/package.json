@@ -1,8 +1,7 @@
 {
   "name": "app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite --host",
@@ -11,9 +10,6 @@
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "idb": "^8.0.3",
     "preact": "^11.0.0"

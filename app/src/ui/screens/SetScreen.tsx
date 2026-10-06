@@ -5,6 +5,7 @@ import { orderCards, selectForSet, type SetMode } from '../../domain/selection';
 import type { Card } from '../../types';
 import { countBuckets, ProgressBar } from '../components/ProgressBar';
 import { useApp } from '../App';
+import { unlockCardAudio } from './CardScreen';
 
 type Download = { state: 'checking' | 'no' | 'yes' } | { state: 'loading'; done: number; total: number }
   | { state: 'error'; message: string };
@@ -29,7 +30,10 @@ export function SetScreen({ title, cards, allowModeChoice }: { title: string; ca
 
   function start(kind: 'card' | 'auto' | 'pocket') {
     const ordered = orderCards(selected, app.settings.order);
-    if (kind === 'card') app.go({ name: 'card', title, cards: ordered });
+    if (kind === 'card') {
+      unlockCardAudio();   // синхронно, пока действует жест: иначе первая карточка на iPhone молчит
+      app.go({ name: 'card', title, cards: ordered });
+    }
     else app.go({ name: 'player', title, cards: ordered, mode: kind });
   }
 
@@ -60,7 +64,9 @@ export function SetScreen({ title, cards, allowModeChoice }: { title: string; ca
       )}
 
       {selected.length === 0 ? (
-        <p class="muted">Здесь нечего повторять — выберите «Весь набор».</p>
+        <p class="muted">
+          {allowModeChoice ? 'Здесь нечего повторять — выберите «Весь набор».' : 'На сегодня всё повторено 🎉'}
+        </p>
       ) : (
         <>
           <button class="primary" onClick={() => start('card')}>🃏 Карточки ({selected.length})</button>

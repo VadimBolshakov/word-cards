@@ -24,8 +24,11 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,png,svg}'],
-        globIgnores: ['content/**'],
+        // JSON контента — в precache: иначе при первом запуске (SW ещё не управляет страницей)
+        // он не попадает в кэш и первое занятие без сети не открывается. mp3 — только по «Скачать».
+        globPatterns: ['**/*.{js,css,html,png,svg}', 'content/index.json', 'content/topics/*.json'],
+        globIgnores: ['content/audio/**', '**/*.mp3'],
+        // Запасной путь для JSON вне precache (например, новые темы до обновления SW).
         runtimeCaching: [
           {
             urlPattern: ({ url }) => url.pathname.includes('/content/') && url.pathname.endsWith('.json'),

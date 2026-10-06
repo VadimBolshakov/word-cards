@@ -9,6 +9,24 @@ import { useApp } from '../App';
 
 let sharedAudio: HTMLAudioElement | null = null;
 const audioEl = () => (sharedAudio ??= new Audio());
+
+// Четыре беззвучных кадра mp3 (MPEG-2 L3, 24 кГц, 48 кбит/с) — как файлы набора.
+const SILENT_MP3 = 'data:audio/mpeg;base64,//NkxAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//NkxAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//NkxAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//NkxAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
+
+/**
+ * Вызывать синхронно в обработчике нажатия перед переходом к карточкам: iOS разрешает
+ * play() элементу, запущенному из жеста, а звук первой карточки стартует уже после await.
+ */
+export function unlockCardAudio(): void {
+  const a = audioEl();
+  a.src = SILENT_MP3;   // прежний src мог быть отозванным blob: — play() должен иметь что играть
+  try {
+    a.play().catch(() => {});
+    a.pause();
+  } catch {
+    // Нет поддержки звука — первая карточка просто покажет ошибку как раньше.
+  }
+}
 const SWIPE_PX = 60;
 
 export function CardScreen({ title, cards }: { title: string; cards: Card[] }) {

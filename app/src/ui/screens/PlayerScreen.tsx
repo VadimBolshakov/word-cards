@@ -62,6 +62,8 @@ export function PlayerScreen({ title, cards, mode }: { title: string; cards: Car
 
   const cardIndex = state?.cardIndex ?? 0;
   const playing = state?.playing ?? false;
+  // До сборки потока ▶ ждал бы её, и iOS мог бы отклонить play() без жеста — кнопки ждут готовности.
+  const ready = state?.ready ?? false;
   const card = cards[cardIndex];
 
   // Перевод виден, пока звучит обратная сторона (и пауза после неё); тишина оставляет прежнее значение.
@@ -74,7 +76,9 @@ export function PlayerScreen({ title, cards, mode }: { title: string; cards: Car
     if (!playing || !card) return;
     const today = todayISO();
     const p = app.progress.get(card.id) ?? newProgress(app.profile.id, card.id);
-    if (p.lastSeen !== today) void app.saveProgress(markSeen(p, today));
+    if (p.lastSeen !== today) {
+      app.saveProgress(markSeen(p, today)).catch(() => setToast('Не удалось сохранить прогресс'));
+    }
   }, [cardIndex, playing]);
 
   useEffect(() => {
@@ -90,7 +94,7 @@ export function PlayerScreen({ title, cards, mode }: { title: string; cards: Car
   const starred = app.progress.get(card.id)?.starred ?? false;
   const star = () => {
     const p = app.progress.get(card.id) ?? newProgress(app.profile.id, card.id);
-    void app.saveProgress(markStarred(p, todayISO()));
+    app.saveProgress(markStarred(p, todayISO())).catch(() => setToast('Не удалось сохранить прогресс'));
   };
   const front = sideText(card, 'front', settings.direction);
   const back = sideText(card, 'back', settings.direction);
@@ -131,12 +135,16 @@ export function PlayerScreen({ title, cards, mode }: { title: string; cards: Car
           <button onClick={app.home}>К темам</button>
         </div>
       ) : (
-        <div class="row">
-          <button onClick={() => engine.prevCard()}>⏮</button>
-          <button class="primary" onClick={() => (playing ? engine.pause() : void engine.play())}>
-            {playing ? '⏸' : '▶'}
-          </button>
-          <button onClick={() => engine.nextCard()}>⏭</button>
+        <div class="stack">
+          <div class="row">
+            <button onClick={() => engine.prevCard()} disabled={!ready}>⏮</button>
+            <button class="primary" disabled={!ready}
+              onClick={() => (playing ? engine.pause() : void engine.play())}>
+              {playing ? '⏸' : '▶'}
+            </button>
+            <button onClick={() => engine.nextCard()} disabled={!ready}>⏭</button>
+          </div>
+          {!ready && <p class="muted">Готовлю звук…</p>}
         </div>
       )}
 

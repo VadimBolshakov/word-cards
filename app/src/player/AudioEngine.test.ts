@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import type { Step } from '../domain/sequence';
 import { AudioEngine, type AudioLike, type MediaSessionLike } from './AudioEngine';
 
-type AudioEvent = 'ended' | 'error' | 'timeupdate' | 'seeked';
+type AudioEvent = 'ended' | 'error' | 'timeupdate' | 'seeked' | 'pause' | 'play';
 
 class FakeAudio implements AudioLike {
   srcSets: string[] = [];
@@ -17,13 +17,21 @@ class FakeAudio implements AudioLike {
   played = 0;
   pauses = 0;
   rejectPlay = false;
-  private listeners: Record<AudioEvent, (() => void)[]> = { ended: [], error: [], timeupdate: [], seeked: [] };
+  private listeners: Record<AudioEvent, (() => void)[]> =
+    { ended: [], error: [], timeupdate: [], seeked: [], pause: [], play: [] };
+  // Как у настоящего элемента: 'play'/'pause' приходят только при смене paused (здесь — синхронно).
   async play() {
     this.played++;
     if (this.rejectPlay) throw new Error('AbortError');
-    this.paused = false;
+    if (this.paused) { this.paused = false; this.fire('play'); }
   }
-  pause() { this.pauses++; this.paused = true; }
+  pause() {
+    this.pauses++;
+    if (!this.paused) { this.paused = true; this.fire('pause'); }
+  }
+  /** Пауза/старт со стороны системы (звонок, Siri, наушники), не через движок. */
+  systemPause() { this.paused = true; this.fire('pause'); }
+  systemPlay() { this.paused = false; this.fire('play'); }
   addEventListener(type: AudioEvent, fn: () => void) { this.listeners[type].push(fn); }
   fire(type: AudioEvent) { this.listeners[type].forEach(fn => fn()); }
   at(seconds: number) { this.currentTime = seconds; this.fire('timeupdate'); }
@@ -586,6 +594,112 @@ describe('AudioEngine', () => {
       expect(audio.paused).toBe(true);
       expect(audio.loop).toBe(false);
       expect(timers.pending.size).toBe(0);
+    });
+  });
+
+  describe('system pause and play of the element', () => {
+    it('an unrequested element pause stops the engine and media session', async () => {
+      const { audio, engine, session } = setup();
+      await engine.play();
+      audio.at(2.5);
+      audio.systemPause();
+      expect(engine.getState()).toMatchObject({ playing: false, finished: false, stepIndex: 2 });
+      expect(session.playbackState).toBe('paused');
+      await engine.play();                                    // ▶ снова запускает элемент
+      expect(audio.paused).toBe(false);
+      expect(engine.getState().playing).toBe(true);
+    });
+
+    it('an unrequested pause cancels a play() still waiting for the element', async () => {
+      const { audio, engine } = setup();
+      await engine.play();
+      let resolvePlay!: () => void;
+      audio.systemPause();
+      audio.play = vi.fn(() => new Promise<void>(r => { resolvePlay = r; }));
+      const p = engine.play();
+      await flush();
+      audio.systemPause();
+      expect(engine.getState().playing).toBe(false);
+      resolvePlay();
+      await p;
+      expect(engine.getState().playing).toBe(false);
+    });
+
+    it('engine-initiated pauses are not treated as system pauses', async () => {
+      const { audio, engine, timers } = setup();
+      await engine.play();
+      engine.pause();                                         // мягкая пауза
+      timers.runAll();                                        // → настоящая пауза элемента
+      expect(audio.paused).toBe(true);
+      await engine.play();
+      expect(engine.getState().playing).toBe(true);
+      engine.load(STEPS, { loop: false, rate: 1 });           // load ставит элемент на паузу сам
+      expect(engine.getState().playing).toBe(false);
+      await engine.play();
+      expect(engine.getState().playing).toBe(true);
+      // Следующая системная пауза снова распознаётся (флаг не «залипает»).
+      audio.systemPause();
+      expect(engine.getState().playing).toBe(false);
+    });
+
+    it('the pause at the natural end of the stream is left to ended', async () => {
+      const { audio, engine } = setup();
+      await engine.play();
+      audio.at(10);
+      audio.systemPause();
+      audio.fire('ended');
+      expect(engine.getState()).toMatchObject({ playing: false, finished: true });
+    });
+
+    it('a system pause during soft pause keeps the soft pause and resume restarts the element', async () => {
+      const { audio, engine } = setup();
+      await engine.play();
+      audio.at(2.5);
+      engine.pause();
+      audio.systemPause();
+      expect(engine.getState().playing).toBe(false);
+      await engine.play();
+      expect(audio.currentTime).toBe(2.5);
+      expect(audio.paused).toBe(false);
+      expect(engine.getState().playing).toBe(true);
+    });
+
+    it('an unrequested element play after a system pause marks the engine playing', async () => {
+      const { audio, engine, session } = setup();
+      await engine.play();
+      audio.systemPause();
+      audio.systemPlay();
+      expect(engine.getState().playing).toBe(true);
+      expect(session.playbackState).toBe('playing');
+    });
+
+    it('an unrequested element play during soft pause keeps it soft-paused', async () => {
+      const { audio, engine } = setup();
+      await engine.play();
+      engine.pause();
+      audio.systemPause();
+      audio.systemPlay();
+      expect(engine.getState().playing).toBe(false);
+      expect(audio.muted).toBe(true);
+    });
+  });
+
+  describe('ready state', () => {
+    it('is false after load and true once the stream is assembled', async () => {
+      const { engine } = setup();
+      expect(engine.getState().ready).toBe(false);
+      await flush();
+      expect(engine.getState().ready).toBe(true);
+      engine.load(STEPS, { loop: false, rate: 1 });
+      expect(engine.getState().ready).toBe(false);
+      await flush();
+      expect(engine.getState().ready).toBe(true);
+    });
+
+    it('is true after assembly even when nothing could be assembled', async () => {
+      const { engine } = setup({ missing: ['a1', 'sil', 'a2', 'b1', 'b2'] });
+      await flush();
+      expect(engine.getState()).toMatchObject({ ready: true, finished: true });
     });
   });
 });

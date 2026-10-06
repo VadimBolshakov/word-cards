@@ -9,7 +9,10 @@ export interface AudioLike {
   readonly paused: boolean;
   play(): Promise<void>;
   pause(): void;
-  addEventListener(type: 'ended' | 'error' | 'timeupdate' | 'seeked', listener: () => void): void;
+  addEventListener(
+    type: 'ended' | 'error' | 'timeupdate' | 'seeked' | 'pause' | 'play',
+    listener: () => void,
+  ): void;
 }
 
 export interface MediaSessionLike {
@@ -27,6 +30,8 @@ export interface EngineState {
   side: Side | null;
   playing: boolean;
   finished: boolean;
+  /** Поток собран (или собирать нечего); до этого ▶ на iOS может потерять жест пользователя. */
+  ready: boolean;
 }
 
 export interface EngineOptions {
@@ -88,6 +93,9 @@ export class AudioEngine {
   private streamUrl: string | null = null;
   private assembly: Promise<void> = Promise.resolve();
   private lastCard = -1;
+  private ready = false;
+  /** Движок сам поставил элемент на паузу и ждёт его событие 'pause' — это не системная пауза. */
+  private selfPause = false;
   /**
    * Позиция «мягкой паузы» или null. На iOS настоящая пауза в фоне гасит аудиосессию,
    * и play с экрана блокировки уже не звучит. Поэтому пауза глушит элемент, а он
@@ -112,6 +120,8 @@ export class AudioEngine {
     this.audio.addEventListener('error', () => this.onAudioError());
     this.audio.addEventListener('timeupdate', () => this.onTimeUpdate());
     this.audio.addEventListener('seeked', () => this.unmuteAfterSeek());
+    this.audio.addEventListener('pause', () => this.onElementPause());
+    this.audio.addEventListener('play', () => this.onElementPlay());
     if (this.session) sessionOwner = this;
     this.session?.setActionHandler('play', () => void this.play());
     // iOS может показывать ⏸, пока элемент беззвучно играет: тогда «пауза» означает продолжить.
@@ -124,7 +134,7 @@ export class AudioEngine {
   }
 
   load(steps: Step[], opts: { loop: boolean; rate: number }): void {
-    this.audio.pause();
+    this.pauseElement();
     this.clearSoftPause();
     this.token++;
     this.releaseStream();
@@ -137,6 +147,7 @@ export class AudioEngine {
     this.playing = false;
     this.finished = false;
     this.lastCard = -1;
+    this.ready = steps.length === 0;
     this.emit();
     this.assembly = steps.length > 0 ? this.assemble(this.token) : Promise.resolve();
   }
@@ -155,6 +166,7 @@ export class AudioEngine {
       side: step?.kind === 'audio' ? step.side : null,
       playing: this.playing,
       finished: this.finished,
+      ready: this.ready,
     };
   }
 
@@ -189,7 +201,7 @@ export class AudioEngine {
       this.audio.loop = true;              // конец потока не должен вызвать ended/finish
       this.softTimer = this.setTimer(() => this.hardenPause(), this.opts.softPauseLimitMs ?? SOFT_PAUSE_LIMIT_MS);
     } else if (this.softPos === null) {
-      this.audio.pause();
+      this.pauseElement();
     }
     this.playing = false;
     this.emit();
@@ -217,7 +229,7 @@ export class AudioEngine {
   destroy(): void {
     this.token++;
     this.playing = false;
-    this.audio.pause();
+    this.pauseElement();
     this.clearSoftPause();
     this.releaseStream();
     this.listeners.clear();
@@ -252,6 +264,7 @@ export class AudioEngine {
       starts.push(total / BYTES_PER_SECOND);
     }
     if (buffers.includes(null) || total === 0) this.opts.onError?.(NO_AUDIO_MESSAGE);
+    this.ready = true;
     if (total === 0) {
       this.finish();
       return;
@@ -293,7 +306,7 @@ export class AudioEngine {
   private hardenPause(): void {
     if (this.softPos === null) return;
     const pos = this.softPos;
-    this.audio.pause();
+    this.pauseElement();
     this.clearSoftPause();
     this.audio.currentTime = pos;
   }
@@ -334,6 +347,41 @@ export class AudioEngine {
 
   private clearTimer(id: unknown): void {
     (this.opts.clearTimer ?? (i => clearTimeout(i as ReturnType<typeof setTimeout>)))(id);
+  }
+
+  /** Пауза элемента по воле движка: её событие 'pause' не считается системной паузой. */
+  private pauseElement(): void {
+    if (!this.audio.paused) this.selfPause = true;
+    this.audio.pause();
+  }
+
+  /**
+   * iOS сам ставит элемент на паузу (звонок, Siri, отключение наушников) — движок должен
+   * это заметить, иначе UI и экран блокировки показывают «играет». При мягкой паузе
+   * playing уже false: элемент перезапустится при продолжении (resumeSoftPause).
+   */
+  private onElementPause(): void {
+    if (this.selfPause) {
+      this.selfPause = false;
+      return;
+    }
+    if (!this.playing || this.finished || !this.streamUrl) return;
+    // Естественный конец потока: 'pause' приходит перед 'ended', остальное сделает onEnded.
+    const end = this.stepStart[this.steps.length] ?? 0;
+    if (this.audio.currentTime >= end - SEEK_TOLERANCE_S) return;
+    this.playAttempt++;
+    this.playing = false;
+    this.emit();
+  }
+
+  /** Старт элемента не через движок (например, кнопка Bluetooth): состояние следует за элементом. */
+  private onElementPlay(): void {
+    this.selfPause = false;   // события идут по порядку: ожидаемая 'pause' уже пришла бы раньше
+    if (this.playing || this.softPos !== null || !this.streamUrl) return;
+    this.playing = true;
+    this.finished = false;
+    this.index = this.stepAt(this.audio.currentTime + SEEK_TOLERANCE_S);
+    this.emit();
   }
 
   private releaseStream(): void {
@@ -411,7 +459,7 @@ export class AudioEngine {
   private finish(): void {
     this.playing = false;
     this.finished = true;
-    this.audio.pause();
+    this.pauseElement();
     this.clearSoftPause();
     this.emit();
   }

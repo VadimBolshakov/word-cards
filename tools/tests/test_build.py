@@ -13,7 +13,8 @@ class FakeSynth:
 
     async def __call__(self, text, voice):
         self.calls.append(text)
-        return f"{voice}:{text}".encode()
+        # Один кадр формата потока (MPEG-2 L3, 24 кГц, 48 кбит/с, моно) с меткой текста.
+        return b"\xff\xf3\x64\xc4" + f"{voice}:{text}".encode().ljust(140, b"\0")
 
 
 def setup(tmp_path: Path, cards: str = CARDS) -> tuple[Path, Path]:
