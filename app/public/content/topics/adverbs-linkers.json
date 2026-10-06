@@ -1,0 +1,605 @@
+{
+ "cards": [
+  {
+   "en": "already",
+   "enAudio": "audio/69a88b4e150d.mp3",
+   "enEx": "I have already eaten.",
+   "id": "al001",
+   "ru": "уже",
+   "ruAudio": "audio/f8501d5368f9.mp3",
+   "ruEx": "Я уже поел.",
+   "set": 1
+  },
+  {
+   "en": "still",
+   "enAudio": "audio/a2f0f46cfe75.mp3",
+   "enEx": "She is still asleep.",
+   "id": "al002",
+   "ru": "всё ещё, до сих пор",
+   "ruAudio": "audio/929824b550c8.mp3",
+   "ruEx": "Она всё ещё спит.",
+   "set": 1
+  },
+  {
+   "en": "yet",
+   "enAudio": "audio/d3fbcfd4d14e.mp3",
+   "enEx": "He hasn't called yet.",
+   "id": "al003",
+   "ru": "ещё, уже",
+   "ruAudio": "audio/5db99d6d6972.mp3",
+   "ruEx": "Он ещё не позвонил.",
+   "set": 1
+  },
+  {
+   "en": "just",
+   "enAudio": "audio/b49cdb4f62e4.mp3",
+   "enEx": "I just got home.",
+   "id": "al004",
+   "ru": "только что, как раз",
+   "ruAudio": "audio/066c3e5c0005.mp3",
+   "ruEx": "Я только что пришёл домой.",
+   "set": 1
+  },
+  {
+   "en": "always",
+   "enAudio": "audio/88995d30c20b.mp3",
+   "enEx": "He always arrives early.",
+   "id": "al005",
+   "ru": "всегда",
+   "ruAudio": "audio/54f3add41ff0.mp3",
+   "ruEx": "Он всегда приходит рано.",
+   "set": 1
+  },
+  {
+   "en": "usually",
+   "enAudio": "audio/ffb0ac2dbee5.mp3",
+   "enEx": "We usually eat at six.",
+   "id": "al006",
+   "ru": "обычно",
+   "ruAudio": "audio/2388cf56d713.mp3",
+   "ruEx": "Мы обычно ужинаем в шесть.",
+   "set": 1
+  },
+  {
+   "en": "often",
+   "enAudio": "audio/c9b0af1a6f81.mp3",
+   "enEx": "I often walk to work.",
+   "id": "al007",
+   "ru": "часто",
+   "ruAudio": "audio/49e4a5100984.mp3",
+   "ruEx": "Я часто хожу на работу пешком.",
+   "set": 1
+  },
+  {
+   "en": "sometimes",
+   "enAudio": "audio/282111a43ddc.mp3",
+   "enEx": "Sometimes I take the bus.",
+   "id": "al008",
+   "ru": "иногда",
+   "ruAudio": "audio/72d4a5835746.mp3",
+   "ruEx": "Иногда я езжу на автобусе.",
+   "set": 1
+  },
+  {
+   "en": "never",
+   "enAudio": "audio/4b764e33e818.mp3",
+   "enEx": "I never drink coffee at night.",
+   "id": "al009",
+   "ru": "никогда",
+   "ruAudio": "audio/f76eb21cab6e.mp3",
+   "ruEx": "Я никогда не пью кофе на ночь.",
+   "set": 1
+  },
+  {
+   "en": "ever",
+   "enAudio": "audio/974d15787ffd.mp3",
+   "enEx": "Have you ever been to Paris?",
+   "id": "al010",
+   "ru": "когда-либо",
+   "ruAudio": "audio/c8a3e58d026e.mp3",
+   "ruEx": "Ты когда-нибудь был в Париже?",
+   "set": 1
+  },
+  {
+   "en": "rarely",
+   "enAudio": "audio/535d63ebd7ab.mp3",
+   "enEx": "She rarely eats meat.",
+   "id": "al011",
+   "ru": "редко",
+   "ruAudio": "audio/2c42dc2d4b46.mp3",
+   "ruEx": "Она редко ест мясо.",
+   "set": 1
+  },
+  {
+   "en": "soon",
+   "enAudio": "audio/8c9bedf3485c.mp3",
+   "enEx": "The movie will start soon.",
+   "id": "al012",
+   "ru": "скоро, вскоре",
+   "ruAudio": "audio/7c656b76b4e6.mp3",
+   "ruEx": "Фильм скоро начнётся.",
+   "set": 1
+  },
+  {
+   "en": "recently",
+   "enAudio": "audio/c2027f239398.mp3",
+   "enEx": "I recently moved to Boston.",
+   "id": "al013",
+   "ru": "недавно",
+   "ruAudio": "audio/cb104571cf85.mp3",
+   "ruEx": "Я недавно переехал в Бостон.",
+   "set": 1
+  },
+  {
+   "en": "lately",
+   "enAudio": "audio/06f79e3aae6b.mp3",
+   "enEx": "I have been tired lately.",
+   "id": "al014",
+   "ru": "в последнее время",
+   "ruAudio": "audio/cdd448f78370.mp3",
+   "ruEx": "В последнее время я устаю.",
+   "set": 1
+  },
+  {
+   "en": "now",
+   "enAudio": "audio/fecbcd27ee6b.mp3",
+   "enEx": "I am busy now.",
+   "id": "al015",
+   "ru": "сейчас, теперь",
+   "ruAudio": "audio/bb423d18a1b8.mp3",
+   "ruEx": "Сейчас я занят.",
+   "set": 1
+  },
+  {
+   "en": "then",
+   "enAudio": "audio/33519b3aaffe.mp3",
+   "enEx": "We ate and then left.",
+   "id": "al016",
+   "ru": "потом, тогда",
+   "ruAudio": "audio/df2b83ddc2de.mp3",
+   "ruEx": "Мы поели и потом ушли.",
+   "set": 1
+  },
+  {
+   "en": "later",
+   "enAudio": "audio/3ea3b137716f.mp3",
+   "enEx": "I will call you later.",
+   "id": "al017",
+   "ru": "позже, потом",
+   "ruAudio": "audio/ddb68cc9ad7d.mp3",
+   "ruEx": "Я позвоню тебе позже.",
+   "set": 1
+  },
+  {
+   "en": "early",
+   "enAudio": "audio/ee7be22deea6.mp3",
+   "enEx": "I woke up early today.",
+   "id": "al018",
+   "ru": "рано",
+   "ruAudio": "audio/96c05b3c10a7.mp3",
+   "ruEx": "Сегодня я проснулся рано.",
+   "set": 1
+  },
+  {
+   "en": "suddenly",
+   "enAudio": "audio/6c5f5b599ac9.mp3",
+   "enEx": "Suddenly the lights went out.",
+   "id": "al019",
+   "ru": "вдруг, внезапно",
+   "ruAudio": "audio/ee2c96270e40.mp3",
+   "ruEx": "Вдруг погас свет.",
+   "set": 1
+  },
+  {
+   "en": "finally",
+   "enAudio": "audio/0a78b94ab342.mp3",
+   "enEx": "We finally found a taxi.",
+   "id": "al020",
+   "ru": "наконец",
+   "ruAudio": "audio/fd8bec104201.mp3",
+   "ruEx": "Мы наконец нашли такси.",
+   "set": 1
+  },
+  {
+   "en": "really",
+   "enAudio": "audio/051d0901314f.mp3",
+   "enEx": "I really like this song.",
+   "id": "al021",
+   "ru": "действительно, правда",
+   "ruAudio": "audio/cf36d13c34ca.mp3",
+   "ruEx": "Мне правда нравится эта песня.",
+   "set": 2
+  },
+  {
+   "en": "very",
+   "enAudio": "audio/12d79cc69f23.mp3",
+   "enEx": "The soup is very hot.",
+   "id": "al022",
+   "ru": "очень",
+   "ruAudio": "audio/b1e79d32d8f1.mp3",
+   "ruEx": "Суп очень горячий.",
+   "set": 2
+  },
+  {
+   "en": "quite",
+   "enAudio": "audio/03e91ae996ae.mp3",
+   "enEx": "It is quite cold outside.",
+   "id": "al023",
+   "ru": "довольно, весьма",
+   "ruAudio": "audio/87d44593c6da.mp3",
+   "ruEx": "На улице довольно холодно.",
+   "set": 2
+  },
+  {
+   "en": "too",
+   "enAudio": "audio/1e9ef766a292.mp3",
+   "enEx": "This coffee is too sweet.",
+   "id": "al024",
+   "ru": "слишком, тоже",
+   "ruAudio": "audio/3611b7d26bce.mp3",
+   "ruEx": "Этот кофе слишком сладкий.",
+   "set": 2
+  },
+  {
+   "en": "enough",
+   "enAudio": "audio/6d2e1931ddf5.mp3",
+   "enEx": "Is the room big enough?",
+   "id": "al025",
+   "ru": "достаточно",
+   "ruAudio": "audio/55c76dccb70a.mp3",
+   "ruEx": "Комната достаточно большая?",
+   "set": 2
+  },
+  {
+   "en": "almost",
+   "enAudio": "audio/5207cf0fc030.mp3",
+   "enEx": "I am almost ready.",
+   "id": "al026",
+   "ru": "почти",
+   "ruAudio": "audio/aea4b042964f.mp3",
+   "ruEx": "Я почти готов.",
+   "set": 2
+  },
+  {
+   "en": "even",
+   "enAudio": "audio/46f383274409.mp3",
+   "enEx": "Even my mom knows that.",
+   "id": "al027",
+   "ru": "даже",
+   "ruAudio": "audio/9e486277fb65.mp3",
+   "ruEx": "Даже моя мама это знает.",
+   "set": 2
+  },
+  {
+   "en": "only",
+   "enAudio": "audio/2ffb158afa95.mp3",
+   "enEx": "I have only five dollars.",
+   "id": "al028",
+   "ru": "только, лишь",
+   "ruAudio": "audio/f54ed6f1f16c.mp3",
+   "ruEx": "У меня только пять долларов.",
+   "set": 2
+  },
+  {
+   "en": "also",
+   "enAudio": "audio/d2c5bcb6397a.mp3",
+   "enEx": "She also speaks Spanish.",
+   "id": "al029",
+   "ru": "также, тоже",
+   "ruAudio": "audio/e08304456116.mp3",
+   "ruEx": "Она также говорит по-испански.",
+   "set": 2
+  },
+  {
+   "en": "actually",
+   "enAudio": "audio/295c7897e717.mp3",
+   "enEx": "Actually, I live nearby.",
+   "id": "al030",
+   "ru": "на самом деле, вообще-то",
+   "ruAudio": "audio/4cc75d2df0a3.mp3",
+   "ruEx": "Вообще-то я живу рядом.",
+   "set": 2
+  },
+  {
+   "en": "probably",
+   "enAudio": "audio/11b2c1fea765.mp3",
+   "enEx": "He will probably be late.",
+   "id": "al031",
+   "ru": "вероятно, наверное",
+   "ruAudio": "audio/ef9f89913115.mp3",
+   "ruEx": "Он, наверное, опоздает.",
+   "set": 2
+  },
+  {
+   "en": "maybe",
+   "enAudio": "audio/e19192d28567.mp3",
+   "enEx": "Maybe we should leave now.",
+   "id": "al032",
+   "ru": "может быть, возможно",
+   "ruAudio": "audio/441e292f0b2c.mp3",
+   "ruEx": "Может, нам пора идти.",
+   "set": 2
+  },
+  {
+   "en": "especially",
+   "enAudio": "audio/0ad161e47942.mp3",
+   "enEx": "I love fruit, especially apples.",
+   "id": "al033",
+   "ru": "особенно, в особенности",
+   "ruAudio": "audio/9874bfbcb792.mp3",
+   "ruEx": "Я люблю фрукты, особенно яблоки.",
+   "set": 2
+  },
+  {
+   "en": "exactly",
+   "enAudio": "audio/f957d0489e66.mp3",
+   "enEx": "That is exactly what I meant.",
+   "id": "al034",
+   "ru": "точно, именно",
+   "ruAudio": "audio/05a5666e6555.mp3",
+   "ruEx": "Это именно то, что я имел в виду.",
+   "set": 2
+  },
+  {
+   "en": "perhaps",
+   "enAudio": "audio/de3a1b4ba6a0.mp3",
+   "enEx": "Perhaps she forgot about it.",
+   "id": "al035",
+   "ru": "возможно, пожалуй",
+   "ruAudio": "audio/b7b231517826.mp3",
+   "ruEx": "Возможно, она забыла об этом.",
+   "set": 2
+  },
+  {
+   "en": "definitely",
+   "enAudio": "audio/0aaa44850b84.mp3",
+   "enEx": "I will definitely come.",
+   "id": "al036",
+   "ru": "определённо, безусловно",
+   "ruAudio": "audio/ba38f3709991.mp3",
+   "ruEx": "Я обязательно приду.",
+   "set": 2
+  },
+  {
+   "en": "hardly",
+   "enAudio": "audio/62ff47afdb26.mp3",
+   "enEx": "I can hardly hear you.",
+   "id": "al037",
+   "ru": "едва, почти не",
+   "ruAudio": "audio/ea4c351ff6cd.mp3",
+   "ruEx": "Я тебя почти не слышу.",
+   "set": 2
+  },
+  {
+   "en": "quickly",
+   "enAudio": "audio/160817608ca8.mp3",
+   "enEx": "Please answer quickly.",
+   "id": "al038",
+   "ru": "быстро",
+   "ruAudio": "audio/df3cd4e83245.mp3",
+   "ruEx": "Пожалуйста, отвечай быстро.",
+   "set": 2
+  },
+  {
+   "en": "slowly",
+   "enAudio": "audio/fcb68bc522f3.mp3",
+   "enEx": "He walks very slowly.",
+   "id": "al039",
+   "ru": "медленно",
+   "ruAudio": "audio/f93a9cf2c3ef.mp3",
+   "ruEx": "Он ходит очень медленно.",
+   "set": 2
+  },
+  {
+   "en": "carefully",
+   "enAudio": "audio/f691142c643f.mp3",
+   "enEx": "Drive carefully in the rain.",
+   "id": "al040",
+   "ru": "осторожно, внимательно",
+   "ruAudio": "audio/1112d6f7ea9e.mp3",
+   "ruEx": "Води осторожно в дождь.",
+   "set": 2
+  },
+  {
+   "en": "however",
+   "enAudio": "audio/6b59089bb128.mp3",
+   "enEx": "It was cold. However, we went out.",
+   "id": "al041",
+   "ru": "однако, тем не менее",
+   "ruAudio": "audio/8318c3e4aa1e.mp3",
+   "ruEx": "Было холодно. Однако мы вышли.",
+   "set": 3
+  },
+  {
+   "en": "although",
+   "enAudio": "audio/d24a9cbc91b5.mp3",
+   "enEx": "Although it rained, we had fun.",
+   "id": "al042",
+   "ru": "хотя",
+   "ruAudio": "audio/a10026b8b9d1.mp3",
+   "ruEx": "Хотя шёл дождь, нам было весело.",
+   "set": 3
+  },
+  {
+   "en": "even though",
+   "enAudio": "audio/795ae427dc99.mp3",
+   "enEx": "I went even though I was sick.",
+   "id": "al043",
+   "ru": "несмотря на то что, хотя",
+   "ruAudio": "audio/732b79a5a5ed.mp3",
+   "ruEx": "Я пошёл, хотя был болен.",
+   "set": 3
+  },
+  {
+   "en": "therefore",
+   "enAudio": "audio/8d6f739af9a7.mp3",
+   "enEx": "I was tired. Therefore, I stayed home.",
+   "id": "al044",
+   "ru": "поэтому, следовательно",
+   "ruAudio": "audio/174d481654c7.mp3",
+   "ruEx": "Я устал, поэтому остался дома.",
+   "set": 3
+  },
+  {
+   "en": "so",
+   "enAudio": "audio/23d4d3b1c7af.mp3",
+   "enEx": "It was late, so we left.",
+   "id": "al045",
+   "ru": "поэтому, так что",
+   "ruAudio": "audio/433ed57c0574.mp3",
+   "ruEx": "Было поздно, поэтому мы ушли.",
+   "set": 3
+  },
+  {
+   "en": "because",
+   "enAudio": "audio/42fdadd32f32.mp3",
+   "enEx": "I stayed home because I was sick.",
+   "id": "al046",
+   "ru": "потому что",
+   "ruAudio": "audio/54823847ef56.mp3",
+   "ruEx": "Я остался дома, потому что болел.",
+   "set": 3
+  },
+  {
+   "en": "but",
+   "enAudio": "audio/b72ffaebf3dc.mp3",
+   "enEx": "I like tea but not coffee.",
+   "id": "al047",
+   "ru": "но, а",
+   "ruAudio": "audio/8003cd1b5992.mp3",
+   "ruEx": "Я люблю чай, но не кофе.",
+   "set": 3
+  },
+  {
+   "en": "instead",
+   "enAudio": "audio/1ce7dcc92aea.mp3",
+   "enEx": "There was no bus. We walked instead.",
+   "id": "al048",
+   "ru": "вместо этого",
+   "ruAudio": "audio/c3f48ad4d56c.mp3",
+   "ruEx": "Автобуса не было. Вместо этого мы пошли пешком.",
+   "set": 3
+  },
+  {
+   "en": "otherwise",
+   "enAudio": "audio/2bb21065d7d9.mp3",
+   "enEx": "Hurry up, otherwise we will be late.",
+   "id": "al049",
+   "ru": "иначе, а то",
+   "ruAudio": "audio/053000203556.mp3",
+   "ruEx": "Поторопись, иначе мы опоздаем.",
+   "set": 3
+  },
+  {
+   "en": "meanwhile",
+   "enAudio": "audio/64185408bce0.mp3",
+   "enEx": "Meanwhile, I cooked dinner.",
+   "id": "al050",
+   "ru": "тем временем, между тем",
+   "ruAudio": "audio/beeaca122c80.mp3",
+   "ruEx": "Тем временем я приготовил ужин.",
+   "set": 3
+  },
+  {
+   "en": "besides",
+   "enAudio": "audio/2f3e781183f3.mp3",
+   "enEx": "Besides, it is too expensive.",
+   "id": "al051",
+   "ru": "кроме того, к тому же",
+   "ruAudio": "audio/03239efd0793.mp3",
+   "ruEx": "К тому же это слишком дорого.",
+   "set": 3
+  },
+  {
+   "en": "moreover",
+   "enAudio": "audio/08143ee5c3e3.mp3",
+   "enEx": "Moreover, the food was great.",
+   "id": "al052",
+   "ru": "более того, к тому же",
+   "ruAudio": "audio/08b02107c2ab.mp3",
+   "ruEx": "Более того, еда была отличной.",
+   "set": 3
+  },
+  {
+   "en": "nevertheless",
+   "enAudio": "audio/33bb1fb69f23.mp3",
+   "enEx": "It was hard. Nevertheless, she won.",
+   "id": "al053",
+   "ru": "тем не менее, всё же",
+   "ruAudio": "audio/4c6f0e947340.mp3",
+   "ruEx": "Было трудно. Тем не менее она победила.",
+   "set": 3
+  },
+  {
+   "en": "unless",
+   "enAudio": "audio/e100ffd8373b.mp3",
+   "enEx": "I will go unless it rains.",
+   "id": "al054",
+   "ru": "если не, разве что",
+   "ruAudio": "audio/e1e1a1cad5b7.mp3",
+   "ruEx": "Я пойду, если не будет дождя.",
+   "set": 3
+  },
+  {
+   "en": "while",
+   "enAudio": "audio/1ebe7a9c994d.mp3",
+   "enEx": "I read while I wait.",
+   "id": "al055",
+   "ru": "пока, в то время как",
+   "ruAudio": "audio/99e6315ad9db.mp3",
+   "ruEx": "Я читаю, пока жду.",
+   "set": 3
+  },
+  {
+   "en": "whereas",
+   "enAudio": "audio/6b6e9a5be4b2.mp3",
+   "enEx": "He is tall, whereas I am short.",
+   "id": "al056",
+   "ru": "тогда как, а",
+   "ruAudio": "audio/4bc6f740b66d.mp3",
+   "ruEx": "Он высокий, тогда как я невысокий.",
+   "set": 3
+  },
+  {
+   "en": "in addition",
+   "enAudio": "audio/14feea3ebd03.mp3",
+   "enEx": "In addition, we need more time.",
+   "id": "al057",
+   "ru": "вдобавок, кроме того",
+   "ruAudio": "audio/214af6badec1.mp3",
+   "ruEx": "Кроме того, нам нужно больше времени.",
+   "set": 3
+  },
+  {
+   "en": "for example",
+   "enAudio": "audio/d66be1b5e8c0.mp3",
+   "enEx": "I like sports, for example tennis.",
+   "id": "al058",
+   "ru": "например",
+   "ruAudio": "audio/8267df56c4c8.mp3",
+   "ruEx": "Я люблю спорт, например теннис.",
+   "set": 3
+  },
+  {
+   "en": "in fact",
+   "enAudio": "audio/0e43aff33fbd.mp3",
+   "enEx": "In fact, I met him yesterday.",
+   "id": "al059",
+   "ru": "на самом деле, фактически",
+   "ruAudio": "audio/f4b4693ce363.mp3",
+   "ruEx": "На самом деле я встретил его вчера.",
+   "set": 3
+  },
+  {
+   "en": "as a result",
+   "enAudio": "audio/50ef4f501d04.mp3",
+   "enEx": "As a result, we missed the train.",
+   "id": "al060",
+   "ru": "в результате, как итог",
+   "ruAudio": "audio/a4ec0d726020.mp3",
+   "ruEx": "В результате мы опоздали на поезд.",
+   "set": 3
+  }
+ ],
+ "id": "adverbs-linkers"
+}

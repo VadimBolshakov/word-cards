@@ -1,0 +1,1005 @@
+{
+ "cards": [
+  {
+   "en": "be – was – been",
+   "enAudio": "audio/d462ac8663f8.mp3",
+   "enEx": "I was tired after work.",
+   "id": "iv001",
+   "ru": "быть",
+   "ruAudio": "audio/dbcc14d01863.mp3",
+   "ruEx": "Я устал после работы.",
+   "set": 1
+  },
+  {
+   "en": "have – had – had",
+   "enAudio": "audio/0433e6d37953.mp3",
+   "enEx": "We had lunch at noon.",
+   "id": "iv002",
+   "ru": "иметь, есть",
+   "ruAudio": "audio/95ec2ecebb6e.mp3",
+   "ruEx": "Мы пообедали в полдень.",
+   "set": 1
+  },
+  {
+   "en": "do – did – done",
+   "enAudio": "audio/367ae8e7a8d9.mp3",
+   "enEx": "I have done my homework.",
+   "id": "iv003",
+   "ru": "делать",
+   "ruAudio": "audio/978e51b6fa2f.mp3",
+   "ruEx": "Я сделал домашнее задание.",
+   "set": 1
+  },
+  {
+   "en": "say – said – said",
+   "enAudio": "audio/79b981025d89.mp3",
+   "enEx": "She said hello to me.",
+   "id": "iv004",
+   "ru": "сказать, говорить",
+   "ruAudio": "audio/362e6b3bb860.mp3",
+   "ruEx": "Она поздоровалась со мной.",
+   "set": 1
+  },
+  {
+   "en": "go – went – gone",
+   "enAudio": "audio/3dc08c1a59df.mp3",
+   "enEx": "We went to the beach yesterday.",
+   "id": "iv005",
+   "ru": "идти, ехать",
+   "ruAudio": "audio/f6576ca3b292.mp3",
+   "ruEx": "Вчера мы ходили на пляж.",
+   "set": 1
+  },
+  {
+   "en": "get – got – gotten",
+   "enAudio": "audio/4295fadbecf1.mp3",
+   "enEx": "I got a letter today.",
+   "id": "iv006",
+   "ru": "получать, становиться",
+   "ruAudio": "audio/0722090f8a4b.mp3",
+   "ruEx": "Сегодня я получил письмо.",
+   "set": 1
+  },
+  {
+   "en": "make – made – made",
+   "enAudio": "audio/3c022a2f1f2d.mp3",
+   "enEx": "She made a cake for me.",
+   "id": "iv007",
+   "ru": "делать, создавать",
+   "ruAudio": "audio/b16a7418d28a.mp3",
+   "ruEx": "Она испекла для меня торт.",
+   "set": 1
+  },
+  {
+   "en": "know – knew – known",
+   "enAudio": "audio/006353fde559.mp3",
+   "enEx": "I knew him as a child.",
+   "id": "iv008",
+   "ru": "знать",
+   "ruAudio": "audio/5b38ac1d1ee6.mp3",
+   "ruEx": "Я знал его ещё ребёнком.",
+   "set": 1
+  },
+  {
+   "en": "think – thought – thought",
+   "enAudio": "audio/c55ba69d0e45.mp3",
+   "enEx": "I thought about you today.",
+   "id": "iv009",
+   "ru": "думать",
+   "ruAudio": "audio/6507091240f6.mp3",
+   "ruEx": "Я думал о тебе сегодня.",
+   "set": 1
+  },
+  {
+   "en": "take – took – taken",
+   "enAudio": "audio/bd6b474edfe2.mp3",
+   "enEx": "He took my umbrella.",
+   "id": "iv010",
+   "ru": "брать",
+   "ruAudio": "audio/5e3ccb380ea9.mp3",
+   "ruEx": "Он взял мой зонт.",
+   "set": 1
+  },
+  {
+   "en": "see – saw – seen",
+   "enAudio": "audio/507c26195599.mp3",
+   "enEx": "I have never seen snow.",
+   "id": "iv011",
+   "ru": "видеть",
+   "ruAudio": "audio/e2c5a95bbdf7.mp3",
+   "ruEx": "Я никогда не видел снега.",
+   "set": 1
+  },
+  {
+   "en": "come – came – come",
+   "enAudio": "audio/661342a093d4.mp3",
+   "enEx": "She came home late.",
+   "id": "iv012",
+   "ru": "приходить, приезжать",
+   "ruAudio": "audio/ef5714a673b4.mp3",
+   "ruEx": "Она пришла домой поздно.",
+   "set": 1
+  },
+  {
+   "en": "give – gave – given",
+   "enAudio": "audio/41933fd0fa6a.mp3",
+   "enEx": "He gave me his phone number.",
+   "id": "iv013",
+   "ru": "давать",
+   "ruAudio": "audio/3311f6c36623.mp3",
+   "ruEx": "Он дал мне свой номер телефона.",
+   "set": 1
+  },
+  {
+   "en": "find – found – found",
+   "enAudio": "audio/3271d87c70e8.mp3",
+   "enEx": "I found my keys.",
+   "id": "iv014",
+   "ru": "находить",
+   "ruAudio": "audio/9526371e909a.mp3",
+   "ruEx": "Я нашёл свои ключи.",
+   "set": 1
+  },
+  {
+   "en": "tell – told – told",
+   "enAudio": "audio/a4041ccc7642.mp3",
+   "enEx": "She told me the truth.",
+   "id": "iv015",
+   "ru": "рассказывать, сказать",
+   "ruAudio": "audio/eda2fe0de346.mp3",
+   "ruEx": "Она сказала мне правду.",
+   "set": 1
+  },
+  {
+   "en": "become – became – become",
+   "enAudio": "audio/ef5eb37cdbab.mp3",
+   "enEx": "He became a doctor.",
+   "id": "iv016",
+   "ru": "становиться",
+   "ruAudio": "audio/6e01cd2de4d7.mp3",
+   "ruEx": "Он стал врачом.",
+   "set": 1
+  },
+  {
+   "en": "leave – left – left",
+   "enAudio": "audio/b9bf4f0f44b2.mp3",
+   "enEx": "We left early this morning.",
+   "id": "iv017",
+   "ru": "уходить, оставлять",
+   "ruAudio": "audio/ac914769ddc9.mp3",
+   "ruEx": "Сегодня мы ушли рано утром.",
+   "set": 1
+  },
+  {
+   "en": "feel – felt – felt",
+   "enAudio": "audio/9374a1ca1602.mp3",
+   "enEx": "I felt sick yesterday.",
+   "id": "iv018",
+   "ru": "чувствовать",
+   "ruAudio": "audio/3364145d8bc7.mp3",
+   "ruEx": "Вчера мне было плохо.",
+   "set": 1
+  },
+  {
+   "en": "put – put – put",
+   "enAudio": "audio/2b813510b73f.mp3",
+   "enEx": "I put the book on the table.",
+   "id": "iv019",
+   "ru": "класть, ставить",
+   "ruAudio": "audio/f686e6299490.mp3",
+   "ruEx": "Я положил книгу на стол.",
+   "set": 1
+  },
+  {
+   "en": "bring – brought – brought",
+   "enAudio": "audio/a95e6e3aafb5.mp3",
+   "enEx": "She brought coffee for everyone.",
+   "id": "iv020",
+   "ru": "приносить",
+   "ruAudio": "audio/5649b8fb989b.mp3",
+   "ruEx": "Она принесла всем кофе.",
+   "set": 1
+  },
+  {
+   "en": "begin – began – begun",
+   "enAudio": "audio/db0bd02b2b27.mp3",
+   "enEx": "The movie has just begun.",
+   "id": "iv021",
+   "ru": "начинать, начинаться",
+   "ruAudio": "audio/89dac378d580.mp3",
+   "ruEx": "Фильм только что начался.",
+   "set": 1
+  },
+  {
+   "en": "keep – kept – kept",
+   "enAudio": "audio/ca118ae0f61b.mp3",
+   "enEx": "I kept the receipt.",
+   "id": "iv022",
+   "ru": "хранить, держать",
+   "ruAudio": "audio/0a99990ee0f9.mp3",
+   "ruEx": "Я сохранил чек.",
+   "set": 1
+  },
+  {
+   "en": "hold – held – held",
+   "enAudio": "audio/ec7519a33598.mp3",
+   "enEx": "She held my hand.",
+   "id": "iv023",
+   "ru": "держать",
+   "ruAudio": "audio/409070732523.mp3",
+   "ruEx": "Она держала меня за руку.",
+   "set": 1
+  },
+  {
+   "en": "write – wrote – written",
+   "enAudio": "audio/9d00b7338c94.mp3",
+   "enEx": "He wrote me a long email.",
+   "id": "iv024",
+   "ru": "писать",
+   "ruAudio": "audio/8dcf7f472c16.mp3",
+   "ruEx": "Он написал мне длинное письмо.",
+   "set": 1
+  },
+  {
+   "en": "stand – stood – stood",
+   "enAudio": "audio/7fba0428c3b3.mp3",
+   "enEx": "We stood in line for an hour.",
+   "id": "iv025",
+   "ru": "стоять",
+   "ruAudio": "audio/52b24d553d22.mp3",
+   "ruEx": "Мы простояли в очереди час.",
+   "set": 1
+  },
+  {
+   "en": "hear – heard – heard",
+   "enAudio": "audio/e2972aa5b3b2.mp3",
+   "enEx": "I heard a strange noise.",
+   "id": "iv026",
+   "ru": "слышать",
+   "ruAudio": "audio/7531dc70ee50.mp3",
+   "ruEx": "Я услышал странный шум.",
+   "set": 2
+  },
+  {
+   "en": "let – let – let",
+   "enAudio": "audio/de2e84560ed3.mp3",
+   "enEx": "She let me use her car.",
+   "id": "iv027",
+   "ru": "позволять, пускать",
+   "ruAudio": "audio/fb33e7ba10c1.mp3",
+   "ruEx": "Она разрешила мне взять её машину.",
+   "set": 2
+  },
+  {
+   "en": "mean – meant – meant",
+   "enAudio": "audio/7978b61673be.mp3",
+   "enEx": "I meant to call you.",
+   "id": "iv028",
+   "ru": "значить, иметь в виду",
+   "ruAudio": "audio/fd3014289205.mp3",
+   "ruEx": "Я хотел тебе позвонить.",
+   "set": 2
+  },
+  {
+   "en": "set – set – set",
+   "enAudio": "audio/c007a769f672.mp3",
+   "enEx": "He set the alarm for six.",
+   "id": "iv029",
+   "ru": "устанавливать, ставить",
+   "ruAudio": "audio/932bd5626a92.mp3",
+   "ruEx": "Он поставил будильник на шесть.",
+   "set": 2
+  },
+  {
+   "en": "meet – met – met",
+   "enAudio": "audio/831832e42e3d.mp3",
+   "enEx": "I met her last summer.",
+   "id": "iv030",
+   "ru": "встречать, знакомиться",
+   "ruAudio": "audio/5ac955762a76.mp3",
+   "ruEx": "Я познакомился с ней прошлым летом.",
+   "set": 2
+  },
+  {
+   "en": "run – ran – run",
+   "enAudio": "audio/aa828bf7389a.mp3",
+   "enEx": "I ran to the station.",
+   "id": "iv031",
+   "ru": "бежать",
+   "ruAudio": "audio/68f2c92c215c.mp3",
+   "ruEx": "Я побежал на вокзал.",
+   "set": 2
+  },
+  {
+   "en": "pay – paid – paid",
+   "enAudio": "audio/796dc799ca60.mp3",
+   "enEx": "He paid for dinner.",
+   "id": "iv032",
+   "ru": "платить",
+   "ruAudio": "audio/76abde289c2b.mp3",
+   "ruEx": "Он заплатил за ужин.",
+   "set": 2
+  },
+  {
+   "en": "sit – sat – sat",
+   "enAudio": "audio/48649f3adca0.mp3",
+   "enEx": "We sat by the window.",
+   "id": "iv033",
+   "ru": "сидеть, садиться",
+   "ruAudio": "audio/401878af9247.mp3",
+   "ruEx": "Мы сидели у окна.",
+   "set": 2
+  },
+  {
+   "en": "speak – spoke – spoken",
+   "enAudio": "audio/be1c6b5baac6.mp3",
+   "enEx": "I have spoken to the manager.",
+   "id": "iv034",
+   "ru": "говорить",
+   "ruAudio": "audio/75dfa0f2ff0a.mp3",
+   "ruEx": "Я поговорил с менеджером.",
+   "set": 2
+  },
+  {
+   "en": "lie – lay – lain",
+   "enAudio": "audio/9a7609386941.mp3",
+   "enEx": "The cat lay on the sofa.",
+   "id": "iv035",
+   "ru": "лежать",
+   "ruAudio": "audio/831801c46acd.mp3",
+   "ruEx": "Кот лежал на диване.",
+   "set": 2
+  },
+  {
+   "en": "lead – led – led",
+   "enAudio": "audio/02e2109e6079.mp3",
+   "enEx": "She led us to the exit.",
+   "id": "iv036",
+   "ru": "вести, возглавлять",
+   "ruAudio": "audio/42cc9cd29df4.mp3",
+   "ruEx": "Она провела нас к выходу.",
+   "set": 2
+  },
+  {
+   "en": "read – read – read",
+   "enAudio": "audio/f4dd3447c966.mp3",
+   "enEx": "I read that book last year.",
+   "id": "iv037",
+   "ru": "читать",
+   "ruAudio": "audio/100b4453051a.mp3",
+   "ruEx": "Я прочитал эту книгу в прошлом году.",
+   "set": 2
+  },
+  {
+   "en": "grow – grew – grown",
+   "enAudio": "audio/34237ad0270f.mp3",
+   "enEx": "You have grown so much!",
+   "id": "iv038",
+   "ru": "расти, выращивать",
+   "ruAudio": "audio/90af1c4690f6.mp3",
+   "ruEx": "Ты так вырос!",
+   "set": 2
+  },
+  {
+   "en": "lose – lost – lost",
+   "enAudio": "audio/47138b4791a4.mp3",
+   "enEx": "I have lost my wallet.",
+   "id": "iv039",
+   "ru": "терять, проигрывать",
+   "ruAudio": "audio/ce1e1504a670.mp3",
+   "ruEx": "Я потерял кошелёк.",
+   "set": 2
+  },
+  {
+   "en": "fall – fell – fallen",
+   "enAudio": "audio/1e7b344c32c1.mp3",
+   "enEx": "He fell off his bike.",
+   "id": "iv040",
+   "ru": "падать",
+   "ruAudio": "audio/4b0d80901ee7.mp3",
+   "ruEx": "Он упал с велосипеда.",
+   "set": 2
+  },
+  {
+   "en": "send – sent – sent",
+   "enAudio": "audio/f882ee541f02.mp3",
+   "enEx": "I sent you a message.",
+   "id": "iv041",
+   "ru": "отправлять",
+   "ruAudio": "audio/6a2bdf81add9.mp3",
+   "ruEx": "Я отправил тебе сообщение.",
+   "set": 2
+  },
+  {
+   "en": "build – built – built",
+   "enAudio": "audio/54a0c438642a.mp3",
+   "enEx": "They built a new school here.",
+   "id": "iv042",
+   "ru": "строить",
+   "ruAudio": "audio/0c4c960f86d6.mp3",
+   "ruEx": "Здесь построили новую школу.",
+   "set": 2
+  },
+  {
+   "en": "understand – understood – understood",
+   "enAudio": "audio/b391d6bf1d2a.mp3",
+   "enEx": "I finally understood the question.",
+   "id": "iv043",
+   "ru": "понимать",
+   "ruAudio": "audio/a06d0ba9b009.mp3",
+   "ruEx": "Наконец я понял вопрос.",
+   "set": 2
+  },
+  {
+   "en": "draw – drew – drawn",
+   "enAudio": "audio/f1e9ca0369ed.mp3",
+   "enEx": "She drew a picture of a house.",
+   "id": "iv044",
+   "ru": "рисовать",
+   "ruAudio": "audio/4dd41d2fcdb8.mp3",
+   "ruEx": "Она нарисовала дом.",
+   "set": 2
+  },
+  {
+   "en": "break – broke – broken",
+   "enAudio": "audio/276ded50bb27.mp3",
+   "enEx": "I broke my phone.",
+   "id": "iv045",
+   "ru": "ломать, разбивать",
+   "ruAudio": "audio/8e2adca4cde2.mp3",
+   "ruEx": "Я разбил телефон.",
+   "set": 2
+  },
+  {
+   "en": "spend – spent – spent",
+   "enAudio": "audio/c8b6008bee1d.mp3",
+   "enEx": "We spent a week in Spain.",
+   "id": "iv046",
+   "ru": "тратить, проводить",
+   "ruAudio": "audio/b2311acf11b6.mp3",
+   "ruEx": "Мы провели неделю в Испании.",
+   "set": 2
+  },
+  {
+   "en": "cut – cut – cut",
+   "enAudio": "audio/a8a07b765885.mp3",
+   "enEx": "He cut his finger.",
+   "id": "iv047",
+   "ru": "резать",
+   "ruAudio": "audio/fda944a1f9aa.mp3",
+   "ruEx": "Он порезал палец.",
+   "set": 2
+  },
+  {
+   "en": "rise – rose – risen",
+   "enAudio": "audio/4a00f66a088f.mp3",
+   "enEx": "Prices have risen again.",
+   "id": "iv048",
+   "ru": "подниматься, вставать",
+   "ruAudio": "audio/ad7048626ac8.mp3",
+   "ruEx": "Цены снова выросли.",
+   "set": 2
+  },
+  {
+   "en": "drive – drove – driven",
+   "enAudio": "audio/4208fab88678.mp3",
+   "enEx": "She drove to work today.",
+   "id": "iv049",
+   "ru": "водить, ехать",
+   "ruAudio": "audio/7525bf064add.mp3",
+   "ruEx": "Сегодня она поехала на работу на машине.",
+   "set": 2
+  },
+  {
+   "en": "buy – bought – bought",
+   "enAudio": "audio/e7b4145800ce.mp3",
+   "enEx": "I bought a new jacket.",
+   "id": "iv050",
+   "ru": "покупать",
+   "ruAudio": "audio/e5d377c81fee.mp3",
+   "ruEx": "Я купил новую куртку.",
+   "set": 2
+  },
+  {
+   "en": "wear – wore – worn",
+   "enAudio": "audio/4a50e95f724a.mp3",
+   "enEx": "She wore a red dress.",
+   "id": "iv051",
+   "ru": "носить, быть одетым",
+   "ruAudio": "audio/4b0613d591d4.mp3",
+   "ruEx": "Она была в красном платье.",
+   "set": 3
+  },
+  {
+   "en": "choose – chose – chosen",
+   "enAudio": "audio/2d5519802460.mp3",
+   "enEx": "He chose the blue one.",
+   "id": "iv052",
+   "ru": "выбирать",
+   "ruAudio": "audio/ab2021fb4b0c.mp3",
+   "ruEx": "Он выбрал синий.",
+   "set": 3
+  },
+  {
+   "en": "eat – ate – eaten",
+   "enAudio": "audio/5becc5a1aa74.mp3",
+   "enEx": "I have already eaten.",
+   "id": "iv053",
+   "ru": "есть, кушать",
+   "ruAudio": "audio/db499d767038.mp3",
+   "ruEx": "Я уже поел.",
+   "set": 3
+  },
+  {
+   "en": "sell – sold – sold",
+   "enAudio": "audio/de52cf85bc67.mp3",
+   "enEx": "They sold their old car.",
+   "id": "iv054",
+   "ru": "продавать",
+   "ruAudio": "audio/5d009d706453.mp3",
+   "ruEx": "Они продали свою старую машину.",
+   "set": 3
+  },
+  {
+   "en": "win – won – won",
+   "enAudio": "audio/c434677c1f0b.mp3",
+   "enEx": "Our team won the game.",
+   "id": "iv055",
+   "ru": "выигрывать, побеждать",
+   "ruAudio": "audio/86a3221d864e.mp3",
+   "ruEx": "Наша команда выиграла матч.",
+   "set": 3
+  },
+  {
+   "en": "teach – taught – taught",
+   "enAudio": "audio/a29c69640f4b.mp3",
+   "enEx": "She taught me to swim.",
+   "id": "iv056",
+   "ru": "учить, преподавать",
+   "ruAudio": "audio/1d085fc4c237.mp3",
+   "ruEx": "Она научила меня плавать.",
+   "set": 3
+  },
+  {
+   "en": "catch – caught – caught",
+   "enAudio": "audio/9298146cd678.mp3",
+   "enEx": "I caught the last bus.",
+   "id": "iv057",
+   "ru": "ловить",
+   "ruAudio": "audio/59b9b4b2a11f.mp3",
+   "ruEx": "Я успел на последний автобус.",
+   "set": 3
+  },
+  {
+   "en": "fight – fought – fought",
+   "enAudio": "audio/1fa4d5469c85.mp3",
+   "enEx": "They fought for years.",
+   "id": "iv058",
+   "ru": "драться, бороться",
+   "ruAudio": "audio/434ab2396607.mp3",
+   "ruEx": "Они боролись годами.",
+   "set": 3
+  },
+  {
+   "en": "throw – threw – thrown",
+   "enAudio": "audio/c99506b43cbc.mp3",
+   "enEx": "He threw the ball to me.",
+   "id": "iv059",
+   "ru": "бросать",
+   "ruAudio": "audio/125ed7e90cc4.mp3",
+   "ruEx": "Он бросил мне мяч.",
+   "set": 3
+  },
+  {
+   "en": "sleep – slept – slept",
+   "enAudio": "audio/292acc452156.mp3",
+   "enEx": "I slept well last night.",
+   "id": "iv060",
+   "ru": "спать",
+   "ruAudio": "audio/c862cfe64684.mp3",
+   "ruEx": "Прошлой ночью я хорошо спал.",
+   "set": 3
+  },
+  {
+   "en": "drink – drank – drunk",
+   "enAudio": "audio/ace528841269.mp3",
+   "enEx": "She drank a glass of water.",
+   "id": "iv061",
+   "ru": "пить",
+   "ruAudio": "audio/17087064c098.mp3",
+   "ruEx": "Она выпила стакан воды.",
+   "set": 3
+  },
+  {
+   "en": "fly – flew – flown",
+   "enAudio": "audio/3978f4b25203.mp3",
+   "enEx": "We flew to Paris in May.",
+   "id": "iv062",
+   "ru": "летать, лететь",
+   "ruAudio": "audio/2c03d19a5fcb.mp3",
+   "ruEx": "В мае мы летали в Париж.",
+   "set": 3
+  },
+  {
+   "en": "forget – forgot – forgotten",
+   "enAudio": "audio/308684fa2599.mp3",
+   "enEx": "I forgot my password.",
+   "id": "iv063",
+   "ru": "забывать",
+   "ruAudio": "audio/22aa9465fc56.mp3",
+   "ruEx": "Я забыл свой пароль.",
+   "set": 3
+  },
+  {
+   "en": "hide – hid – hidden",
+   "enAudio": "audio/effe433aff32.mp3",
+   "enEx": "The kids hid behind the door.",
+   "id": "iv064",
+   "ru": "прятать, прятаться",
+   "ruAudio": "audio/cbae72330822.mp3",
+   "ruEx": "Дети спрятались за дверью.",
+   "set": 3
+  },
+  {
+   "en": "sing – sang – sung",
+   "enAudio": "audio/b9c6f55f1d8a.mp3",
+   "enEx": "She sang a beautiful song.",
+   "id": "iv065",
+   "ru": "петь",
+   "ruAudio": "audio/e10bccb0cf1a.mp3",
+   "ruEx": "Она спела красивую песню.",
+   "set": 3
+  },
+  {
+   "en": "swim – swam – swum",
+   "enAudio": "audio/94e7e72b138a.mp3",
+   "enEx": "We swam in the lake.",
+   "id": "iv066",
+   "ru": "плавать",
+   "ruAudio": "audio/3da5b70e0366.mp3",
+   "ruEx": "Мы купались в озере.",
+   "set": 3
+  },
+  {
+   "en": "ride – rode – ridden",
+   "enAudio": "audio/34eff1486165.mp3",
+   "enEx": "I rode my bike to school.",
+   "id": "iv067",
+   "ru": "ехать верхом, кататься",
+   "ruAudio": "audio/5e6ff60b314f.mp3",
+   "ruEx": "Я ездил в школу на велосипеде.",
+   "set": 3
+  },
+  {
+   "en": "shake – shook – shaken",
+   "enAudio": "audio/29b5aa0bfc86.mp3",
+   "enEx": "He shook my hand.",
+   "id": "iv068",
+   "ru": "трясти, пожимать",
+   "ruAudio": "audio/25c34d1777db.mp3",
+   "ruEx": "Он пожал мне руку.",
+   "set": 3
+  },
+  {
+   "en": "steal – stole – stolen",
+   "enAudio": "audio/2c89725493f6.mp3",
+   "enEx": "Someone stole my bike.",
+   "id": "iv069",
+   "ru": "красть",
+   "ruAudio": "audio/f8faf005e902.mp3",
+   "ruEx": "Кто-то украл мой велосипед.",
+   "set": 3
+  },
+  {
+   "en": "wake – woke – woken",
+   "enAudio": "audio/917f7248a340.mp3",
+   "enEx": "I woke up at six.",
+   "id": "iv070",
+   "ru": "просыпаться, будить",
+   "ruAudio": "audio/11460c8766ef.mp3",
+   "ruEx": "Я проснулся в шесть.",
+   "set": 3
+  },
+  {
+   "en": "lend – lent – lent",
+   "enAudio": "audio/643823ae31c8.mp3",
+   "enEx": "She lent me some money.",
+   "id": "iv071",
+   "ru": "одалживать, давать взаймы",
+   "ruAudio": "audio/f25195d70c8d.mp3",
+   "ruEx": "Она одолжила мне немного денег.",
+   "set": 3
+  },
+  {
+   "en": "hit – hit – hit",
+   "enAudio": "audio/966db03e2ddf.mp3",
+   "enEx": "He hit the ball hard.",
+   "id": "iv072",
+   "ru": "ударять, попадать",
+   "ruAudio": "audio/4fc1c836c75d.mp3",
+   "ruEx": "Он сильно ударил по мячу.",
+   "set": 3
+  },
+  {
+   "en": "hurt – hurt – hurt",
+   "enAudio": "audio/70cdcc58a3ea.mp3",
+   "enEx": "I hurt my back.",
+   "id": "iv073",
+   "ru": "причинять боль, болеть",
+   "ruAudio": "audio/460e4502a8ec.mp3",
+   "ruEx": "Я повредил спину.",
+   "set": 3
+  },
+  {
+   "en": "shut – shut – shut",
+   "enAudio": "audio/5a2d75b410aa.mp3",
+   "enEx": "She shut the door quietly.",
+   "id": "iv074",
+   "ru": "закрывать",
+   "ruAudio": "audio/28c2ce496557.mp3",
+   "ruEx": "Она тихо закрыла дверь.",
+   "set": 3
+  },
+  {
+   "en": "lay – laid – laid",
+   "enAudio": "audio/d3eb2477d964.mp3",
+   "enEx": "He laid the keys on the desk.",
+   "id": "iv075",
+   "ru": "класть, положить",
+   "ruAudio": "audio/b438d37b007c.mp3",
+   "ruEx": "Он положил ключи на стол.",
+   "set": 3
+  },
+  {
+   "en": "forgive – forgave – forgiven",
+   "enAudio": "audio/5d3111bd58b1.mp3",
+   "enEx": "She has forgiven me.",
+   "id": "iv076",
+   "ru": "прощать",
+   "ruAudio": "audio/06c2a4349b0a.mp3",
+   "ruEx": "Она меня простила.",
+   "set": 4
+  },
+  {
+   "en": "bite – bit – bitten",
+   "enAudio": "audio/37737675ce5d.mp3",
+   "enEx": "The dog bit his hand.",
+   "id": "iv077",
+   "ru": "кусать",
+   "ruAudio": "audio/c7e599617a7f.mp3",
+   "ruEx": "Собака укусила его за руку.",
+   "set": 4
+  },
+  {
+   "en": "blow – blew – blown",
+   "enAudio": "audio/930b2dd397f0.mp3",
+   "enEx": "The wind blew all night.",
+   "id": "iv078",
+   "ru": "дуть",
+   "ruAudio": "audio/6d27accff12d.mp3",
+   "ruEx": "Ветер дул всю ночь.",
+   "set": 4
+  },
+  {
+   "en": "bend – bent – bent",
+   "enAudio": "audio/afb590be985e.mp3",
+   "enEx": "He bent down to pick it up.",
+   "id": "iv079",
+   "ru": "гнуть, наклоняться",
+   "ruAudio": "audio/cd6f25cb1670.mp3",
+   "ruEx": "Он наклонился, чтобы поднять это.",
+   "set": 4
+  },
+  {
+   "en": "bet – bet – bet",
+   "enAudio": "audio/aab7d503999f.mp3",
+   "enEx": "I bet him five dollars.",
+   "id": "iv080",
+   "ru": "спорить, держать пари",
+   "ruAudio": "audio/6218c236ae21.mp3",
+   "ruEx": "Я поспорил с ним на пять долларов.",
+   "set": 4
+  },
+  {
+   "en": "dig – dug – dug",
+   "enAudio": "audio/d66cce2933b0.mp3",
+   "enEx": "They dug a deep hole.",
+   "id": "iv081",
+   "ru": "копать",
+   "ruAudio": "audio/3c3380659db8.mp3",
+   "ruEx": "Они выкопали глубокую яму.",
+   "set": 4
+  },
+  {
+   "en": "feed – fed – fed",
+   "enAudio": "audio/5b1e2dac5977.mp3",
+   "enEx": "I fed the cat this morning.",
+   "id": "iv082",
+   "ru": "кормить",
+   "ruAudio": "audio/bf444a3f65d1.mp3",
+   "ruEx": "Сегодня утром я покормил кота.",
+   "set": 4
+  },
+  {
+   "en": "hang – hung – hung",
+   "enAudio": "audio/e57e1e9c56ff.mp3",
+   "enEx": "She hung her coat on the hook.",
+   "id": "iv083",
+   "ru": "вешать, висеть",
+   "ruAudio": "audio/2b01088aadc7.mp3",
+   "ruEx": "Она повесила пальто на крючок.",
+   "set": 4
+  },
+  {
+   "en": "deal – dealt – dealt",
+   "enAudio": "audio/81ff20354ed9.mp3",
+   "enEx": "I have dealt with worse problems.",
+   "id": "iv084",
+   "ru": "иметь дело, справляться",
+   "ruAudio": "audio/8d593ecb4e4c.mp3",
+   "ruEx": "Мне приходилось справляться с проблемами и похуже.",
+   "set": 4
+  },
+  {
+   "en": "shoot – shot – shot",
+   "enAudio": "audio/4269bea3a083.mp3",
+   "enEx": "The police shot at the car.",
+   "id": "iv085",
+   "ru": "стрелять",
+   "ruAudio": "audio/d71a049556e8.mp3",
+   "ruEx": "Полиция стреляла по машине.",
+   "set": 4
+  },
+  {
+   "en": "shine – shone – shone",
+   "enAudio": "audio/b061951309b4.mp3",
+   "enEx": "The sun shone all day.",
+   "id": "iv086",
+   "ru": "светить, сиять",
+   "ruAudio": "audio/7cc0740c477e.mp3",
+   "ruEx": "Весь день светило солнце.",
+   "set": 4
+  },
+  {
+   "en": "sink – sank – sunk",
+   "enAudio": "audio/ae829d6f9ed0.mp3",
+   "enEx": "The boat sank quickly.",
+   "id": "iv087",
+   "ru": "тонуть",
+   "ruAudio": "audio/b910bdd554b5.mp3",
+   "ruEx": "Лодка быстро затонула.",
+   "set": 4
+  },
+  {
+   "en": "spread – spread – spread",
+   "enAudio": "audio/0a7ef9b89044.mp3",
+   "enEx": "The news spread fast.",
+   "id": "iv088",
+   "ru": "распространять, намазывать",
+   "ruAudio": "audio/07ae5d749045.mp3",
+   "ruEx": "Новость быстро разлетелась.",
+   "set": 4
+  },
+  {
+   "en": "stick – stuck – stuck",
+   "enAudio": "audio/ba73071db563.mp3",
+   "enEx": "The door got stuck again.",
+   "id": "iv089",
+   "ru": "приклеивать, застрять",
+   "ruAudio": "audio/47b3b0e8e5b0.mp3",
+   "ruEx": "Дверь снова заклинило.",
+   "set": 4
+  },
+  {
+   "en": "strike – struck – struck",
+   "enAudio": "audio/cb3332af507c.mp3",
+   "enEx": "The clock struck twelve.",
+   "id": "iv090",
+   "ru": "ударять, поражать",
+   "ruAudio": "audio/f6dde659e134.mp3",
+   "ruEx": "Часы пробили двенадцать.",
+   "set": 4
+  },
+  {
+   "en": "swear – swore – sworn",
+   "enAudio": "audio/7d51d939176a.mp3",
+   "enEx": "He swore he was innocent.",
+   "id": "iv091",
+   "ru": "клясться, ругаться",
+   "ruAudio": "audio/a00336384c8d.mp3",
+   "ruEx": "Он поклялся, что невиновен.",
+   "set": 4
+  },
+  {
+   "en": "sweep – swept – swept",
+   "enAudio": "audio/413f14dd098f.mp3",
+   "enEx": "I swept the kitchen floor.",
+   "id": "iv092",
+   "ru": "подметать",
+   "ruAudio": "audio/a08d82871faf.mp3",
+   "ruEx": "Я подмёл пол на кухне.",
+   "set": 4
+  },
+  {
+   "en": "swing – swung – swung",
+   "enAudio": "audio/575e7f65cd5a.mp3",
+   "enEx": "The kids swung on the swings.",
+   "id": "iv093",
+   "ru": "качать, качаться",
+   "ruAudio": "audio/11f7b05ec7aa.mp3",
+   "ruEx": "Дети качались на качелях.",
+   "set": 4
+  },
+  {
+   "en": "tear – tore – torn",
+   "enAudio": "audio/1029f80c52b3.mp3",
+   "enEx": "I tore my jeans.",
+   "id": "iv094",
+   "ru": "рвать",
+   "ruAudio": "audio/e5ace518c3e7.mp3",
+   "ruEx": "Я порвал джинсы.",
+   "set": 4
+  },
+  {
+   "en": "seek – sought – sought",
+   "enAudio": "audio/09d6b45d3bef.mp3",
+   "enEx": "They sought help from friends.",
+   "id": "iv095",
+   "ru": "искать, стремиться",
+   "ruAudio": "audio/690ca3a2124a.mp3",
+   "ruEx": "Они обратились за помощью к друзьям.",
+   "set": 4
+  },
+  {
+   "en": "ring – rang – rung",
+   "enAudio": "audio/02d2ef093038.mp3",
+   "enEx": "The phone rang twice.",
+   "id": "iv096",
+   "ru": "звонить",
+   "ruAudio": "audio/53076a4b992e.mp3",
+   "ruEx": "Телефон прозвонил дважды.",
+   "set": 4
+  },
+  {
+   "en": "slide – slid – slid",
+   "enAudio": "audio/e1fc14846194.mp3",
+   "enEx": "He slid on the ice.",
+   "id": "iv097",
+   "ru": "скользить",
+   "ruAudio": "audio/f6938fd1f0c1.mp3",
+   "ruEx": "Он скользил по льду.",
+   "set": 4
+  },
+  {
+   "en": "split – split – split",
+   "enAudio": "audio/59f9edf763bd.mp3",
+   "enEx": "We split the bill.",
+   "id": "iv098",
+   "ru": "раскалывать, делить",
+   "ruAudio": "audio/5896514d1009.mp3",
+   "ruEx": "Мы поделили счёт.",
+   "set": 4
+  },
+  {
+   "en": "quit – quit – quit",
+   "enAudio": "audio/b2c7bb07168d.mp3",
+   "enEx": "He quit his job last week.",
+   "id": "iv099",
+   "ru": "бросать, увольняться",
+   "ruAudio": "audio/3e1077b1d8bf.mp3",
+   "ruEx": "На прошлой неделе он уволился с работы.",
+   "set": 4
+  },
+  {
+   "en": "cost – cost – cost",
+   "enAudio": "audio/b6387f5501b9.mp3",
+   "enEx": "The ticket cost ten dollars.",
+   "id": "iv100",
+   "ru": "стоить",
+   "ruAudio": "audio/a673b35d02d6.mp3",
+   "ruEx": "Билет стоил десять долларов.",
+   "set": 4
+  }
+ ],
+ "id": "irregular-verbs"
+}

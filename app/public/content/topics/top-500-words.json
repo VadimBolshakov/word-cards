@@ -1,0 +1,5005 @@
+{
+ "cards": [
+  {
+   "en": "time",
+   "enAudio": "audio/eb91b641b654.mp3",
+   "enEx": "What time is it?",
+   "id": "w001",
+   "ru": "время",
+   "ruAudio": "audio/d493c410dbed.mp3",
+   "ruEx": "Который час?",
+   "set": 1
+  },
+  {
+   "en": "year",
+   "enAudio": "audio/b7724de2721e.mp3",
+   "enEx": "I lived there for a year.",
+   "id": "w002",
+   "ru": "год",
+   "ruAudio": "audio/54652edfaecb.mp3",
+   "ruEx": "Я прожил там год.",
+   "set": 1
+  },
+  {
+   "en": "people",
+   "enAudio": "audio/6da3fcbb31c1.mp3",
+   "enEx": "Many people like this song.",
+   "id": "w003",
+   "ru": "люди",
+   "ruAudio": "audio/434bfa8075bb.mp3",
+   "ruEx": "Многим людям нравится эта песня.",
+   "set": 1
+  },
+  {
+   "en": "way",
+   "enAudio": "audio/a810a7e5f0fc.mp3",
+   "enEx": "Is this the right way?",
+   "id": "w004",
+   "ru": "путь, способ",
+   "ruAudio": "audio/f71e4c3a734e.mp3",
+   "ruEx": "Это правильная дорога?",
+   "set": 1
+  },
+  {
+   "en": "day",
+   "enAudio": "audio/c0637f784451.mp3",
+   "enEx": "Have a nice day!",
+   "id": "w005",
+   "ru": "день",
+   "ruAudio": "audio/7bc48b8e7e49.mp3",
+   "ruEx": "Хорошего дня!",
+   "set": 1
+  },
+  {
+   "en": "man",
+   "enAudio": "audio/8c491c958985.mp3",
+   "enEx": "That man is my uncle.",
+   "id": "w006",
+   "ru": "мужчина",
+   "ruAudio": "audio/5f075714d81e.mp3",
+   "ruEx": "Тот мужчина — мой дядя.",
+   "set": 1
+  },
+  {
+   "en": "thing",
+   "enAudio": "audio/6e8ab975dcbb.mp3",
+   "enEx": "I need to buy a few things.",
+   "id": "w007",
+   "ru": "вещь",
+   "ruAudio": "audio/f4492e0882b8.mp3",
+   "ruEx": "Мне нужно купить кое-какие вещи.",
+   "set": 1
+  },
+  {
+   "en": "woman",
+   "enAudio": "audio/4994b3827081.mp3",
+   "enEx": "The woman is waiting outside.",
+   "id": "w008",
+   "ru": "женщина",
+   "ruAudio": "audio/4e5f97b6940a.mp3",
+   "ruEx": "Женщина ждёт на улице.",
+   "set": 1
+  },
+  {
+   "en": "life",
+   "enAudio": "audio/8cdbd8484dae.mp3",
+   "enEx": "Life is not always easy.",
+   "id": "w009",
+   "ru": "жизнь",
+   "ruAudio": "audio/1ff07de1c7f7.mp3",
+   "ruEx": "Жизнь не всегда проста.",
+   "set": 1
+  },
+  {
+   "en": "child",
+   "enAudio": "audio/35d736810f42.mp3",
+   "enEx": "The child is sleeping.",
+   "id": "w010",
+   "ru": "ребёнок",
+   "ruAudio": "audio/3ba0aed8c1a9.mp3",
+   "ruEx": "Ребёнок спит.",
+   "set": 1
+  },
+  {
+   "en": "world",
+   "enAudio": "audio/ad198d1cecb2.mp3",
+   "enEx": "She wants to see the world.",
+   "id": "w011",
+   "ru": "мир, свет",
+   "ruAudio": "audio/5e8db746a2db.mp3",
+   "ruEx": "Она хочет увидеть мир.",
+   "set": 1
+  },
+  {
+   "en": "school",
+   "enAudio": "audio/1eb437eb6749.mp3",
+   "enEx": "My kids go to school.",
+   "id": "w012",
+   "ru": "школа",
+   "ruAudio": "audio/5b1c2146ec7f.mp3",
+   "ruEx": "Мои дети ходят в школу.",
+   "set": 1
+  },
+  {
+   "en": "state",
+   "enAudio": "audio/d1881ccc4165.mp3",
+   "enEx": "She lives in the state of Ohio.",
+   "id": "w013",
+   "ru": "штат, состояние",
+   "ruAudio": "audio/131fd6885620.mp3",
+   "ruEx": "Она живёт в штате Огайо.",
+   "set": 1
+  },
+  {
+   "en": "family",
+   "enAudio": "audio/acd14773e1ba.mp3",
+   "enEx": "I have a big family.",
+   "id": "w014",
+   "ru": "семья",
+   "ruAudio": "audio/a9fa363047f0.mp3",
+   "ruEx": "У меня большая семья.",
+   "set": 1
+  },
+  {
+   "en": "student",
+   "enAudio": "audio/fc9f92c583cf.mp3",
+   "enEx": "He is a college student.",
+   "id": "w015",
+   "ru": "студент, ученик",
+   "ruAudio": "audio/24df1d721e6d.mp3",
+   "ruEx": "Он студент колледжа.",
+   "set": 1
+  },
+  {
+   "en": "group",
+   "enAudio": "audio/d035bc8d8008.mp3",
+   "enEx": "We work in small groups.",
+   "id": "w016",
+   "ru": "группа",
+   "ruAudio": "audio/3474e031b94b.mp3",
+   "ruEx": "Мы работаем в небольших группах.",
+   "set": 1
+  },
+  {
+   "en": "country",
+   "enAudio": "audio/cece510df2bf.mp3",
+   "enEx": "Which country are you from?",
+   "id": "w017",
+   "ru": "страна",
+   "ruAudio": "audio/ce124f3fb4ec.mp3",
+   "ruEx": "Вы из какой страны?",
+   "set": 1
+  },
+  {
+   "en": "problem",
+   "enAudio": "audio/cbb845c5f4a5.mp3",
+   "enEx": "We have a small problem.",
+   "id": "w018",
+   "ru": "проблема",
+   "ruAudio": "audio/be5405457c2b.mp3",
+   "ruEx": "У нас небольшая проблема.",
+   "set": 1
+  },
+  {
+   "en": "hand",
+   "enAudio": "audio/70fa9d0d1c75.mp3",
+   "enEx": "Wash your hands first.",
+   "id": "w019",
+   "ru": "рука",
+   "ruAudio": "audio/f1e274dab17f.mp3",
+   "ruEx": "Сначала вымой руки.",
+   "set": 1
+  },
+  {
+   "en": "part",
+   "enAudio": "audio/b0b7b417fc52.mp3",
+   "enEx": "This is the best part.",
+   "id": "w020",
+   "ru": "часть",
+   "ruAudio": "audio/a8f4847793fd.mp3",
+   "ruEx": "Это лучшая часть.",
+   "set": 1
+  },
+  {
+   "en": "place",
+   "enAudio": "audio/9376bdee0f2f.mp3",
+   "enEx": "This is a quiet place.",
+   "id": "w021",
+   "ru": "место",
+   "ruAudio": "audio/08f7c5cc1ea6.mp3",
+   "ruEx": "Это тихое место.",
+   "set": 1
+  },
+  {
+   "en": "case",
+   "enAudio": "audio/30dce52c5adf.mp3",
+   "enEx": "In that case, I will wait.",
+   "id": "w022",
+   "ru": "случай, дело",
+   "ruAudio": "audio/7fea5ded3c40.mp3",
+   "ruEx": "В таком случае я подожду.",
+   "set": 1
+  },
+  {
+   "en": "week",
+   "enAudio": "audio/ab16aae48486.mp3",
+   "enEx": "See you next week.",
+   "id": "w023",
+   "ru": "неделя",
+   "ruAudio": "audio/ff0841706460.mp3",
+   "ruEx": "Увидимся на следующей неделе.",
+   "set": 1
+  },
+  {
+   "en": "company",
+   "enAudio": "audio/878e453274a6.mp3",
+   "enEx": "She works for a big company.",
+   "id": "w024",
+   "ru": "компания",
+   "ruAudio": "audio/f8ccc60253f7.mp3",
+   "ruEx": "Она работает в большой компании.",
+   "set": 1
+  },
+  {
+   "en": "system",
+   "enAudio": "audio/0f3ffa438daf.mp3",
+   "enEx": "The system is down.",
+   "id": "w025",
+   "ru": "система",
+   "ruAudio": "audio/4335e076af27.mp3",
+   "ruEx": "Система не работает.",
+   "set": 1
+  },
+  {
+   "en": "question",
+   "enAudio": "audio/42917582a520.mp3",
+   "enEx": "Can I ask a question?",
+   "id": "w026",
+   "ru": "вопрос",
+   "ruAudio": "audio/2d5509ebe85d.mp3",
+   "ruEx": "Можно задать вопрос?",
+   "set": 1
+  },
+  {
+   "en": "work",
+   "enAudio": "audio/3fbc4a54662a.mp3",
+   "enEx": "I work from home.",
+   "id": "w027",
+   "ru": "работа, работать",
+   "ruAudio": "audio/6a9136d0b81f.mp3",
+   "ruEx": "Я работаю из дома.",
+   "set": 1
+  },
+  {
+   "en": "government",
+   "enAudio": "audio/be064c9cd597.mp3",
+   "enEx": "The government announced a new plan.",
+   "id": "w028",
+   "ru": "правительство",
+   "ruAudio": "audio/8d88ac0d8f91.mp3",
+   "ruEx": "Правительство объявило новый план.",
+   "set": 1
+  },
+  {
+   "en": "number",
+   "enAudio": "audio/9fcc873e98ab.mp3",
+   "enEx": "What is your phone number?",
+   "id": "w029",
+   "ru": "номер, число",
+   "ruAudio": "audio/909892a9d683.mp3",
+   "ruEx": "Какой у вас номер телефона?",
+   "set": 1
+  },
+  {
+   "en": "night",
+   "enAudio": "audio/366fd894956c.mp3",
+   "enEx": "We stayed up all night.",
+   "id": "w030",
+   "ru": "ночь, вечер",
+   "ruAudio": "audio/1a0a05bf94cd.mp3",
+   "ruEx": "Мы не спали всю ночь.",
+   "set": 1
+  },
+  {
+   "en": "point",
+   "enAudio": "audio/4a9fac645206.mp3",
+   "enEx": "I see your point.",
+   "id": "w031",
+   "ru": "точка, смысл",
+   "ruAudio": "audio/fd219975c09b.mp3",
+   "ruEx": "Я понимаю вашу мысль.",
+   "set": 1
+  },
+  {
+   "en": "home",
+   "enAudio": "audio/439ecbf36bd2.mp3",
+   "enEx": "I am going home.",
+   "id": "w032",
+   "ru": "дом",
+   "ruAudio": "audio/9b2e86925b1a.mp3",
+   "ruEx": "Я иду домой.",
+   "set": 1
+  },
+  {
+   "en": "water",
+   "enAudio": "audio/6ba937272949.mp3",
+   "enEx": "Can I have some water?",
+   "id": "w033",
+   "ru": "вода",
+   "ruAudio": "audio/e545866c844b.mp3",
+   "ruEx": "Можно мне воды?",
+   "set": 1
+  },
+  {
+   "en": "room",
+   "enAudio": "audio/26391d1b9adc.mp3",
+   "enEx": "My room is on the left.",
+   "id": "w034",
+   "ru": "комната",
+   "ruAudio": "audio/b7c6f68042eb.mp3",
+   "ruEx": "Моя комната слева.",
+   "set": 1
+  },
+  {
+   "en": "mother",
+   "enAudio": "audio/d458e868afb4.mp3",
+   "enEx": "My mother is a teacher.",
+   "id": "w035",
+   "ru": "мать, мама",
+   "ruAudio": "audio/e2042826dcae.mp3",
+   "ruEx": "Моя мама — учительница.",
+   "set": 1
+  },
+  {
+   "en": "area",
+   "enAudio": "audio/c0866a4c134c.mp3",
+   "enEx": "This area is very safe.",
+   "id": "w036",
+   "ru": "район, область",
+   "ruAudio": "audio/b6f85c154a89.mp3",
+   "ruEx": "Этот район очень безопасный.",
+   "set": 1
+  },
+  {
+   "en": "money",
+   "enAudio": "audio/9c9157918206.mp3",
+   "enEx": "I do not have much money.",
+   "id": "w037",
+   "ru": "деньги",
+   "ruAudio": "audio/fbcf2d91e469.mp3",
+   "ruEx": "У меня мало денег.",
+   "set": 1
+  },
+  {
+   "en": "story",
+   "enAudio": "audio/0e1292e7e710.mp3",
+   "enEx": "Tell me a story.",
+   "id": "w038",
+   "ru": "история, рассказ",
+   "ruAudio": "audio/252920c4fe7d.mp3",
+   "ruEx": "Расскажи мне историю.",
+   "set": 1
+  },
+  {
+   "en": "fact",
+   "enAudio": "audio/267fe11cbcc3.mp3",
+   "enEx": "That is a fact.",
+   "id": "w039",
+   "ru": "факт",
+   "ruAudio": "audio/83cdcbf6550c.mp3",
+   "ruEx": "Это факт.",
+   "set": 1
+  },
+  {
+   "en": "month",
+   "enAudio": "audio/88b1a936e27c.mp3",
+   "enEx": "I will call you next month.",
+   "id": "w040",
+   "ru": "месяц",
+   "ruAudio": "audio/629cee928367.mp3",
+   "ruEx": "Я позвоню тебе в следующем месяце.",
+   "set": 1
+  },
+  {
+   "en": "lot",
+   "enAudio": "audio/611a46f75f0c.mp3",
+   "enEx": "Thanks a lot!",
+   "id": "w041",
+   "ru": "множество, много",
+   "ruAudio": "audio/c34a7fadbafa.mp3",
+   "ruEx": "Большое спасибо!",
+   "set": 1
+  },
+  {
+   "en": "right",
+   "enAudio": "audio/81a80ab66593.mp3",
+   "enEx": "You are right.",
+   "id": "w042",
+   "ru": "правильный, правый",
+   "ruAudio": "audio/6a7343d7f87c.mp3",
+   "ruEx": "Ты прав.",
+   "set": 1
+  },
+  {
+   "en": "study",
+   "enAudio": "audio/77190185f2cd.mp3",
+   "enEx": "I study English every day.",
+   "id": "w043",
+   "ru": "учиться, изучать",
+   "ruAudio": "audio/b51d56b33cd5.mp3",
+   "ruEx": "Я каждый день учу английский.",
+   "set": 1
+  },
+  {
+   "en": "book",
+   "enAudio": "audio/eb16459422b1.mp3",
+   "enEx": "I am reading a good book.",
+   "id": "w044",
+   "ru": "книга",
+   "ruAudio": "audio/b36c9fec77a1.mp3",
+   "ruEx": "Я читаю хорошую книгу.",
+   "set": 1
+  },
+  {
+   "en": "eye",
+   "enAudio": "audio/57da907b7c9e.mp3",
+   "enEx": "She has blue eyes.",
+   "id": "w045",
+   "ru": "глаз",
+   "ruAudio": "audio/f990d1a152c6.mp3",
+   "ruEx": "У неё голубые глаза.",
+   "set": 1
+  },
+  {
+   "en": "job",
+   "enAudio": "audio/59f8c79a01ed.mp3",
+   "enEx": "He found a new job.",
+   "id": "w046",
+   "ru": "работа, должность",
+   "ruAudio": "audio/01eac10e8d47.mp3",
+   "ruEx": "Он нашёл новую работу.",
+   "set": 1
+  },
+  {
+   "en": "word",
+   "enAudio": "audio/8876bb52e650.mp3",
+   "enEx": "I do not know this word.",
+   "id": "w047",
+   "ru": "слово",
+   "ruAudio": "audio/a5a583e5140a.mp3",
+   "ruEx": "Я не знаю этого слова.",
+   "set": 1
+  },
+  {
+   "en": "business",
+   "enAudio": "audio/1ebe157101b9.mp3",
+   "enEx": "He runs a small business.",
+   "id": "w048",
+   "ru": "бизнес, дело",
+   "ruAudio": "audio/96dc623f7fb5.mp3",
+   "ruEx": "Он ведёт небольшой бизнес.",
+   "set": 1
+  },
+  {
+   "en": "issue",
+   "enAudio": "audio/acf6fe288b6f.mp3",
+   "enEx": "This is an important issue.",
+   "id": "w049",
+   "ru": "вопрос, проблема",
+   "ruAudio": "audio/3ff66406c6ee.mp3",
+   "ruEx": "Это важный вопрос.",
+   "set": 1
+  },
+  {
+   "en": "program",
+   "enAudio": "audio/8e9a97c68aac.mp3",
+   "enEx": "I like this TV program.",
+   "id": "w050",
+   "ru": "программа",
+   "ruAudio": "audio/19b7fdb5e950.mp3",
+   "ruEx": "Мне нравится эта передача.",
+   "set": 1
+  },
+  {
+   "en": "side",
+   "enAudio": "audio/7b686a4efbeb.mp3",
+   "enEx": "Sit on the other side.",
+   "id": "w051",
+   "ru": "сторона",
+   "ruAudio": "audio/383a9da13af4.mp3",
+   "ruEx": "Сядь с другой стороны.",
+   "set": 2
+  },
+  {
+   "en": "kind",
+   "enAudio": "audio/2276423d830f.mp3",
+   "enEx": "What kind of music do you like?",
+   "id": "w052",
+   "ru": "вид, добрый",
+   "ruAudio": "audio/488b88d84b3a.mp3",
+   "ruEx": "Какую музыку ты любишь?",
+   "set": 2
+  },
+  {
+   "en": "head",
+   "enAudio": "audio/842db7c1926d.mp3",
+   "enEx": "My head hurts.",
+   "id": "w053",
+   "ru": "голова",
+   "ruAudio": "audio/158c0f5a9d73.mp3",
+   "ruEx": "У меня болит голова.",
+   "set": 2
+  },
+  {
+   "en": "house",
+   "enAudio": "audio/e78faf223a33.mp3",
+   "enEx": "They bought a new house.",
+   "id": "w054",
+   "ru": "дом",
+   "ruAudio": "audio/94924aef6327.mp3",
+   "ruEx": "Они купили новый дом.",
+   "set": 2
+  },
+  {
+   "en": "service",
+   "enAudio": "audio/f81de5914732.mp3",
+   "enEx": "The service here is great.",
+   "id": "w055",
+   "ru": "обслуживание, услуга",
+   "ruAudio": "audio/a2e86bb10728.mp3",
+   "ruEx": "Обслуживание здесь отличное.",
+   "set": 2
+  },
+  {
+   "en": "friend",
+   "enAudio": "audio/32df7b9a205c.mp3",
+   "enEx": "He is my best friend.",
+   "id": "w056",
+   "ru": "друг",
+   "ruAudio": "audio/22b6177e5e38.mp3",
+   "ruEx": "Он мой лучший друг.",
+   "set": 2
+  },
+  {
+   "en": "father",
+   "enAudio": "audio/839afe22443d.mp3",
+   "enEx": "My father drives a truck.",
+   "id": "w057",
+   "ru": "отец, папа",
+   "ruAudio": "audio/bb08596b5e80.mp3",
+   "ruEx": "Мой папа водит грузовик.",
+   "set": 2
+  },
+  {
+   "en": "power",
+   "enAudio": "audio/303318dcebde.mp3",
+   "enEx": "The power went out.",
+   "id": "w058",
+   "ru": "сила, электричество",
+   "ruAudio": "audio/62ebe7ccc01f.mp3",
+   "ruEx": "Отключили электричество.",
+   "set": 2
+  },
+  {
+   "en": "hour",
+   "enAudio": "audio/4f48889804cc.mp3",
+   "enEx": "The movie is two hours long.",
+   "id": "w059",
+   "ru": "час",
+   "ruAudio": "audio/6cc9896ffc07.mp3",
+   "ruEx": "Фильм идёт два часа.",
+   "set": 2
+  },
+  {
+   "en": "game",
+   "enAudio": "audio/ba3e1164c53e.mp3",
+   "enEx": "Let's play a game.",
+   "id": "w060",
+   "ru": "игра",
+   "ruAudio": "audio/faa0fe3c463c.mp3",
+   "ruEx": "Давай сыграем в игру.",
+   "set": 2
+  },
+  {
+   "en": "line",
+   "enAudio": "audio/8e774afeb2db.mp3",
+   "enEx": "Please wait in line.",
+   "id": "w061",
+   "ru": "линия, очередь",
+   "ruAudio": "audio/d43e7bb99fa4.mp3",
+   "ruEx": "Пожалуйста, подождите в очереди.",
+   "set": 2
+  },
+  {
+   "en": "end",
+   "enAudio": "audio/86a5187493f0.mp3",
+   "enEx": "This is the end of the story.",
+   "id": "w062",
+   "ru": "конец",
+   "ruAudio": "audio/6e6d72ae10c6.mp3",
+   "ruEx": "Это конец истории.",
+   "set": 2
+  },
+  {
+   "en": "member",
+   "enAudio": "audio/8dd91a4544f9.mp3",
+   "enEx": "She is a member of the club.",
+   "id": "w063",
+   "ru": "член, участник",
+   "ruAudio": "audio/f1eec111ae19.mp3",
+   "ruEx": "Она член клуба.",
+   "set": 2
+  },
+  {
+   "en": "law",
+   "enAudio": "audio/4d107aa2752c.mp3",
+   "enEx": "It is against the law.",
+   "id": "w064",
+   "ru": "закон",
+   "ruAudio": "audio/fa4c2e52ab54.mp3",
+   "ruEx": "Это противозаконно.",
+   "set": 2
+  },
+  {
+   "en": "car",
+   "enAudio": "audio/3e3eab6e5bcd.mp3",
+   "enEx": "I need to wash my car.",
+   "id": "w065",
+   "ru": "машина",
+   "ruAudio": "audio/ed3cb513b017.mp3",
+   "ruEx": "Мне нужно помыть машину.",
+   "set": 2
+  },
+  {
+   "en": "city",
+   "enAudio": "audio/a63c22eedf22.mp3",
+   "enEx": "New York is a big city.",
+   "id": "w066",
+   "ru": "город",
+   "ruAudio": "audio/bfc70033a95c.mp3",
+   "ruEx": "Нью-Йорк — большой город.",
+   "set": 2
+  },
+  {
+   "en": "community",
+   "enAudio": "audio/ab5bd2286203.mp3",
+   "enEx": "Our community is very friendly.",
+   "id": "w067",
+   "ru": "сообщество",
+   "ruAudio": "audio/a3b98220ed4b.mp3",
+   "ruEx": "Наше сообщество очень дружелюбное.",
+   "set": 2
+  },
+  {
+   "en": "name",
+   "enAudio": "audio/0929dff2f61a.mp3",
+   "enEx": "What is your name?",
+   "id": "w068",
+   "ru": "имя, название",
+   "ruAudio": "audio/ba964702bd8c.mp3",
+   "ruEx": "Как тебя зовут?",
+   "set": 2
+  },
+  {
+   "en": "president",
+   "enAudio": "audio/4ff668a53185.mp3",
+   "enEx": "The president gave a speech.",
+   "id": "w069",
+   "ru": "президент",
+   "ruAudio": "audio/8a825912c426.mp3",
+   "ruEx": "Президент произнёс речь.",
+   "set": 2
+  },
+  {
+   "en": "team",
+   "enAudio": "audio/781ff50d4bb6.mp3",
+   "enEx": "Our team won the game.",
+   "id": "w070",
+   "ru": "команда",
+   "ruAudio": "audio/b55a9ce68660.mp3",
+   "ruEx": "Наша команда выиграла игру.",
+   "set": 2
+  },
+  {
+   "en": "minute",
+   "enAudio": "audio/c026d1b94530.mp3",
+   "enEx": "Wait a minute.",
+   "id": "w071",
+   "ru": "минута",
+   "ruAudio": "audio/c712fbc9f134.mp3",
+   "ruEx": "Подожди минутку.",
+   "set": 2
+  },
+  {
+   "en": "idea",
+   "enAudio": "audio/1e4ddabefe10.mp3",
+   "enEx": "That is a good idea.",
+   "id": "w072",
+   "ru": "идея",
+   "ruAudio": "audio/e481e3c250df.mp3",
+   "ruEx": "Это хорошая идея.",
+   "set": 2
+  },
+  {
+   "en": "kid",
+   "enAudio": "audio/161a59f21513.mp3",
+   "enEx": "The kids are playing outside.",
+   "id": "w073",
+   "ru": "ребёнок, малыш",
+   "ruAudio": "audio/64a794a8dcdd.mp3",
+   "ruEx": "Дети играют на улице.",
+   "set": 2
+  },
+  {
+   "en": "body",
+   "enAudio": "audio/51603d0dcc54.mp3",
+   "enEx": "Exercise is good for the body.",
+   "id": "w074",
+   "ru": "тело",
+   "ruAudio": "audio/360b7c5a7d21.mp3",
+   "ruEx": "Спорт полезен для тела.",
+   "set": 2
+  },
+  {
+   "en": "information",
+   "enAudio": "audio/b722affd72eb.mp3",
+   "enEx": "I need more information.",
+   "id": "w075",
+   "ru": "информация",
+   "ruAudio": "audio/d587739b6a2b.mp3",
+   "ruEx": "Мне нужно больше информации.",
+   "set": 2
+  },
+  {
+   "en": "back",
+   "enAudio": "audio/e1d779ec650e.mp3",
+   "enEx": "I will be back soon.",
+   "id": "w076",
+   "ru": "спина, назад",
+   "ruAudio": "audio/12b3b3db59f2.mp3",
+   "ruEx": "Я скоро вернусь.",
+   "set": 2
+  },
+  {
+   "en": "parent",
+   "enAudio": "audio/269f51ca7914.mp3",
+   "enEx": "Her parents live in Texas.",
+   "id": "w077",
+   "ru": "родитель",
+   "ruAudio": "audio/a4371ec01438.mp3",
+   "ruEx": "Её родители живут в Техасе.",
+   "set": 2
+  },
+  {
+   "en": "face",
+   "enAudio": "audio/39664e1022a2.mp3",
+   "enEx": "She has a kind face.",
+   "id": "w078",
+   "ru": "лицо",
+   "ruAudio": "audio/999259a6e895.mp3",
+   "ruEx": "У неё доброе лицо.",
+   "set": 2
+  },
+  {
+   "en": "others",
+   "enAudio": "audio/4160177f6875.mp3",
+   "enEx": "Others will come later.",
+   "id": "w079",
+   "ru": "другие",
+   "ruAudio": "audio/36417de7c041.mp3",
+   "ruEx": "Остальные придут позже.",
+   "set": 2
+  },
+  {
+   "en": "level",
+   "enAudio": "audio/5b67dc44acd9.mp3",
+   "enEx": "My English level is good.",
+   "id": "w080",
+   "ru": "уровень",
+   "ruAudio": "audio/422be622e949.mp3",
+   "ruEx": "У меня хороший уровень английского.",
+   "set": 2
+  },
+  {
+   "en": "office",
+   "enAudio": "audio/c469e7354be0.mp3",
+   "enEx": "I am at the office.",
+   "id": "w081",
+   "ru": "офис",
+   "ruAudio": "audio/170f7b1837bd.mp3",
+   "ruEx": "Я в офисе.",
+   "set": 2
+  },
+  {
+   "en": "door",
+   "enAudio": "audio/18b4649b24f3.mp3",
+   "enEx": "Please close the door.",
+   "id": "w082",
+   "ru": "дверь",
+   "ruAudio": "audio/f72c0ceb061e.mp3",
+   "ruEx": "Пожалуйста, закрой дверь.",
+   "set": 2
+  },
+  {
+   "en": "health",
+   "enAudio": "audio/d248f51df920.mp3",
+   "enEx": "Health is more important than money.",
+   "id": "w083",
+   "ru": "здоровье",
+   "ruAudio": "audio/facfa611c92b.mp3",
+   "ruEx": "Здоровье важнее денег.",
+   "set": 2
+  },
+  {
+   "en": "person",
+   "enAudio": "audio/92e50eb44ff2.mp3",
+   "enEx": "He is a very nice person.",
+   "id": "w084",
+   "ru": "человек, личность",
+   "ruAudio": "audio/efee4d236cbe.mp3",
+   "ruEx": "Он очень приятный человек.",
+   "set": 2
+  },
+  {
+   "en": "art",
+   "enAudio": "audio/4546553b6cd8.mp3",
+   "enEx": "She loves modern art.",
+   "id": "w085",
+   "ru": "искусство",
+   "ruAudio": "audio/63426bd7722f.mp3",
+   "ruEx": "Она любит современное искусство.",
+   "set": 2
+  },
+  {
+   "en": "war",
+   "enAudio": "audio/3e4ef9e6e217.mp3",
+   "enEx": "The war ended long ago.",
+   "id": "w086",
+   "ru": "война",
+   "ruAudio": "audio/b366834c53ce.mp3",
+   "ruEx": "Война закончилась давно.",
+   "set": 2
+  },
+  {
+   "en": "history",
+   "enAudio": "audio/71dda3018d0d.mp3",
+   "enEx": "I like reading about history.",
+   "id": "w087",
+   "ru": "история",
+   "ruAudio": "audio/9a7e66285cd8.mp3",
+   "ruEx": "Я люблю читать об истории.",
+   "set": 2
+  },
+  {
+   "en": "party",
+   "enAudio": "audio/9bf5a41bf6b2.mp3",
+   "enEx": "We had a party last night.",
+   "id": "w088",
+   "ru": "вечеринка, партия",
+   "ruAudio": "audio/55fcd371d924.mp3",
+   "ruEx": "Вчера вечером у нас была вечеринка.",
+   "set": 2
+  },
+  {
+   "en": "result",
+   "enAudio": "audio/2ec868051f68.mp3",
+   "enEx": "The test result is good.",
+   "id": "w089",
+   "ru": "результат",
+   "ruAudio": "audio/fa9560370d10.mp3",
+   "ruEx": "Результат анализа хороший.",
+   "set": 2
+  },
+  {
+   "en": "change",
+   "enAudio": "audio/cffebad4f337.mp3",
+   "enEx": "I need a change.",
+   "id": "w090",
+   "ru": "менять, изменение",
+   "ruAudio": "audio/2f76529f09fb.mp3",
+   "ruEx": "Мне нужны перемены.",
+   "set": 2
+  },
+  {
+   "en": "morning",
+   "enAudio": "audio/156a61d6b915.mp3",
+   "enEx": "I drink coffee every morning.",
+   "id": "w091",
+   "ru": "утро",
+   "ruAudio": "audio/8c4e082a6c25.mp3",
+   "ruEx": "Я пью кофе каждое утро.",
+   "set": 2
+  },
+  {
+   "en": "reason",
+   "enAudio": "audio/29029e17a555.mp3",
+   "enEx": "What is the reason?",
+   "id": "w092",
+   "ru": "причина",
+   "ruAudio": "audio/10be04e17e4b.mp3",
+   "ruEx": "В чём причина?",
+   "set": 2
+  },
+  {
+   "en": "research",
+   "enAudio": "audio/86de8216de00.mp3",
+   "enEx": "They did research on sleep.",
+   "id": "w093",
+   "ru": "исследование",
+   "ruAudio": "audio/ea4b9420e135.mp3",
+   "ruEx": "Они провели исследование сна.",
+   "set": 2
+  },
+  {
+   "en": "girl",
+   "enAudio": "audio/414cc1bd2488.mp3",
+   "enEx": "The girl is reading a book.",
+   "id": "w094",
+   "ru": "девочка, девушка",
+   "ruAudio": "audio/dc98b1ddb295.mp3",
+   "ruEx": "Девочка читает книгу.",
+   "set": 2
+  },
+  {
+   "en": "guy",
+   "enAudio": "audio/101097de9ffd.mp3",
+   "enEx": "He is a funny guy.",
+   "id": "w095",
+   "ru": "парень",
+   "ruAudio": "audio/fab18d5fe0ee.mp3",
+   "ruEx": "Он забавный парень.",
+   "set": 2
+  },
+  {
+   "en": "moment",
+   "enAudio": "audio/e6170387bc46.mp3",
+   "enEx": "Just a moment, please.",
+   "id": "w096",
+   "ru": "момент",
+   "ruAudio": "audio/1859d4d2c13b.mp3",
+   "ruEx": "Одну минутку, пожалуйста.",
+   "set": 2
+  },
+  {
+   "en": "air",
+   "enAudio": "audio/478ed1dd6ea7.mp3",
+   "enEx": "The air is fresh here.",
+   "id": "w097",
+   "ru": "воздух",
+   "ruAudio": "audio/a72993d147e3.mp3",
+   "ruEx": "Здесь свежий воздух.",
+   "set": 2
+  },
+  {
+   "en": "teacher",
+   "enAudio": "audio/ac05033138a4.mp3",
+   "enEx": "My teacher is very kind.",
+   "id": "w098",
+   "ru": "учитель",
+   "ruAudio": "audio/1548d492c898.mp3",
+   "ruEx": "Мой учитель очень добрый.",
+   "set": 2
+  },
+  {
+   "en": "force",
+   "enAudio": "audio/586b641ad7d2.mp3",
+   "enEx": "Do not force him.",
+   "id": "w099",
+   "ru": "сила, заставлять",
+   "ruAudio": "audio/a706b4afe16e.mp3",
+   "ruEx": "Не заставляй его.",
+   "set": 2
+  },
+  {
+   "en": "education",
+   "enAudio": "audio/da37b20fa574.mp3",
+   "enEx": "Education is very important.",
+   "id": "w100",
+   "ru": "образование",
+   "ruAudio": "audio/7b391e613cff.mp3",
+   "ruEx": "Образование очень важно.",
+   "set": 2
+  },
+  {
+   "en": "be",
+   "enAudio": "audio/9974314fc7cc.mp3",
+   "enEx": "I want to be a doctor.",
+   "id": "w101",
+   "ru": "быть",
+   "ruAudio": "audio/117c9b417abb.mp3",
+   "ruEx": "Я хочу быть врачом.",
+   "set": 3
+  },
+  {
+   "en": "have",
+   "enAudio": "audio/0ea1fc747c6b.mp3",
+   "enEx": "I have two brothers.",
+   "id": "w102",
+   "ru": "иметь, есть",
+   "ruAudio": "audio/3a832016e341.mp3",
+   "ruEx": "У меня два брата.",
+   "set": 3
+  },
+  {
+   "en": "do",
+   "enAudio": "audio/5ffee13d87ec.mp3",
+   "enEx": "What do you do?",
+   "id": "w103",
+   "ru": "делать",
+   "ruAudio": "audio/dc708ea913ad.mp3",
+   "ruEx": "Чем вы занимаетесь?",
+   "set": 3
+  },
+  {
+   "en": "say",
+   "enAudio": "audio/9cdb35b33aa3.mp3",
+   "enEx": "What did you say?",
+   "id": "w104",
+   "ru": "говорить, сказать",
+   "ruAudio": "audio/811386be7107.mp3",
+   "ruEx": "Что ты сказал?",
+   "set": 3
+  },
+  {
+   "en": "get",
+   "enAudio": "audio/a00acd55bd0d.mp3",
+   "enEx": "I got a letter today.",
+   "id": "w105",
+   "ru": "получать, становиться",
+   "ruAudio": "audio/0722090f8a4b.mp3",
+   "ruEx": "Сегодня я получил письмо.",
+   "set": 3
+  },
+  {
+   "en": "make",
+   "enAudio": "audio/49690946f065.mp3",
+   "enEx": "I will make some tea.",
+   "id": "w106",
+   "ru": "делать, создавать",
+   "ruAudio": "audio/8a142e545a74.mp3",
+   "ruEx": "Я сделаю чай.",
+   "set": 3
+  },
+  {
+   "en": "go",
+   "enAudio": "audio/3af1c8048e31.mp3",
+   "enEx": "Let's go home.",
+   "id": "w107",
+   "ru": "идти, ехать",
+   "ruAudio": "audio/62964a5ced0d.mp3",
+   "ruEx": "Пойдём домой.",
+   "set": 3
+  },
+  {
+   "en": "know",
+   "enAudio": "audio/68f03a9cc28f.mp3",
+   "enEx": "I know him well.",
+   "id": "w108",
+   "ru": "знать",
+   "ruAudio": "audio/914f2510eb71.mp3",
+   "ruEx": "Я хорошо его знаю.",
+   "set": 3
+  },
+  {
+   "en": "take",
+   "enAudio": "audio/7cebc9094a07.mp3",
+   "enEx": "Take a seat, please.",
+   "id": "w109",
+   "ru": "брать",
+   "ruAudio": "audio/a81fcae1870f.mp3",
+   "ruEx": "Присаживайтесь, пожалуйста.",
+   "set": 3
+  },
+  {
+   "en": "see",
+   "enAudio": "audio/61d41c71e0d2.mp3",
+   "enEx": "I can see the sea.",
+   "id": "w110",
+   "ru": "видеть",
+   "ruAudio": "audio/f7da69d0a67a.mp3",
+   "ruEx": "Я вижу море.",
+   "set": 3
+  },
+  {
+   "en": "come",
+   "enAudio": "audio/52d6aa5efbea.mp3",
+   "enEx": "Come here, please.",
+   "id": "w111",
+   "ru": "приходить, приезжать",
+   "ruAudio": "audio/c532e17ca6d6.mp3",
+   "ruEx": "Подойди сюда, пожалуйста.",
+   "set": 3
+  },
+  {
+   "en": "think",
+   "enAudio": "audio/d9b5a6e5e16a.mp3",
+   "enEx": "I think you are right.",
+   "id": "w112",
+   "ru": "думать",
+   "ruAudio": "audio/c201154c350e.mp3",
+   "ruEx": "Я думаю, ты прав.",
+   "set": 3
+  },
+  {
+   "en": "look",
+   "enAudio": "audio/f0e33c81b1c2.mp3",
+   "enEx": "Look at this picture.",
+   "id": "w113",
+   "ru": "смотреть",
+   "ruAudio": "audio/7c2e2226c4e0.mp3",
+   "ruEx": "Посмотри на эту картинку.",
+   "set": 3
+  },
+  {
+   "en": "want",
+   "enAudio": "audio/ba27a3c03095.mp3",
+   "enEx": "I want a cup of coffee.",
+   "id": "w114",
+   "ru": "хотеть",
+   "ruAudio": "audio/79258827c323.mp3",
+   "ruEx": "Я хочу чашку кофе.",
+   "set": 3
+  },
+  {
+   "en": "give",
+   "enAudio": "audio/323b7ca27ecc.mp3",
+   "enEx": "Give me your hand.",
+   "id": "w115",
+   "ru": "давать",
+   "ruAudio": "audio/241ce97f9d28.mp3",
+   "ruEx": "Дай мне руку.",
+   "set": 3
+  },
+  {
+   "en": "use",
+   "enAudio": "audio/d7cc9e942d7a.mp3",
+   "enEx": "Can I use your phone?",
+   "id": "w116",
+   "ru": "использовать",
+   "ruAudio": "audio/da86294d10fc.mp3",
+   "ruEx": "Можно воспользоваться вашим телефоном?",
+   "set": 3
+  },
+  {
+   "en": "find",
+   "enAudio": "audio/8e92a830a4fe.mp3",
+   "enEx": "I cannot find my keys.",
+   "id": "w117",
+   "ru": "находить",
+   "ruAudio": "audio/ce9aa5ad22f9.mp3",
+   "ruEx": "Я не могу найти свои ключи.",
+   "set": 3
+  },
+  {
+   "en": "tell",
+   "enAudio": "audio/9411e276145c.mp3",
+   "enEx": "Tell me the truth.",
+   "id": "w118",
+   "ru": "рассказывать, говорить",
+   "ruAudio": "audio/556ea119d637.mp3",
+   "ruEx": "Скажи мне правду.",
+   "set": 3
+  },
+  {
+   "en": "ask",
+   "enAudio": "audio/61e508128fd0.mp3",
+   "enEx": "Ask him about it.",
+   "id": "w119",
+   "ru": "спрашивать, просить",
+   "ruAudio": "audio/04ba5ae02827.mp3",
+   "ruEx": "Спроси его об этом.",
+   "set": 3
+  },
+  {
+   "en": "seem",
+   "enAudio": "audio/b4a32f6b6d65.mp3",
+   "enEx": "You seem tired today.",
+   "id": "w120",
+   "ru": "казаться",
+   "ruAudio": "audio/934406029e1d.mp3",
+   "ruEx": "Ты, кажется, устал сегодня.",
+   "set": 3
+  },
+  {
+   "en": "feel",
+   "enAudio": "audio/0ecfa2de6c00.mp3",
+   "enEx": "I feel much better now.",
+   "id": "w121",
+   "ru": "чувствовать",
+   "ruAudio": "audio/f309df829001.mp3",
+   "ruEx": "Теперь я чувствую себя намного лучше.",
+   "set": 3
+  },
+  {
+   "en": "try",
+   "enAudio": "audio/e2ad49bb92fb.mp3",
+   "enEx": "Try this soup.",
+   "id": "w122",
+   "ru": "пытаться, пробовать",
+   "ruAudio": "audio/36acb6e8d660.mp3",
+   "ruEx": "Попробуй этот суп.",
+   "set": 3
+  },
+  {
+   "en": "leave",
+   "enAudio": "audio/306333de1180.mp3",
+   "enEx": "I leave work at five.",
+   "id": "w123",
+   "ru": "уходить, оставлять",
+   "ruAudio": "audio/30dd89b8c30e.mp3",
+   "ruEx": "Я ухожу с работы в пять.",
+   "set": 3
+  },
+  {
+   "en": "call",
+   "enAudio": "audio/613b1ec445a1.mp3",
+   "enEx": "I will call you tonight.",
+   "id": "w124",
+   "ru": "звонить, называть",
+   "ruAudio": "audio/d06b0c0c5b22.mp3",
+   "ruEx": "Я позвоню тебе вечером.",
+   "set": 3
+  },
+  {
+   "en": "need",
+   "enAudio": "audio/62e161d2a55b.mp3",
+   "enEx": "I need some help.",
+   "id": "w125",
+   "ru": "нуждаться, нужно",
+   "ruAudio": "audio/f31f96b74086.mp3",
+   "ruEx": "Мне нужна помощь.",
+   "set": 3
+  },
+  {
+   "en": "become",
+   "enAudio": "audio/2e9920b94e09.mp3",
+   "enEx": "She wants to become a nurse.",
+   "id": "w126",
+   "ru": "становиться",
+   "ruAudio": "audio/94d6d23cd3db.mp3",
+   "ruEx": "Она хочет стать медсестрой.",
+   "set": 3
+  },
+  {
+   "en": "mean",
+   "enAudio": "audio/6e611d7d3243.mp3",
+   "enEx": "What does this word mean?",
+   "id": "w127",
+   "ru": "означать, иметь в виду",
+   "ruAudio": "audio/7c1d13cfddac.mp3",
+   "ruEx": "Что значит это слово?",
+   "set": 3
+  },
+  {
+   "en": "keep",
+   "enAudio": "audio/b3763e9eda3e.mp3",
+   "enEx": "Keep the change.",
+   "id": "w128",
+   "ru": "держать, хранить",
+   "ruAudio": "audio/23eec228ee35.mp3",
+   "ruEx": "Сдачу оставьте себе.",
+   "set": 3
+  },
+  {
+   "en": "let",
+   "enAudio": "audio/efc37b2bb9a4.mp3",
+   "enEx": "Let me help you.",
+   "id": "w129",
+   "ru": "позволять, давать",
+   "ruAudio": "audio/f18431f4a619.mp3",
+   "ruEx": "Позволь мне помочь тебе.",
+   "set": 3
+  },
+  {
+   "en": "begin",
+   "enAudio": "audio/45216a8898c7.mp3",
+   "enEx": "The class begins at nine.",
+   "id": "w130",
+   "ru": "начинать",
+   "ruAudio": "audio/2d709ce16c7d.mp3",
+   "ruEx": "Урок начинается в девять.",
+   "set": 3
+  },
+  {
+   "en": "help",
+   "enAudio": "audio/6b0b80918320.mp3",
+   "enEx": "Can you help me?",
+   "id": "w131",
+   "ru": "помогать, помощь",
+   "ruAudio": "audio/3e240a1aece3.mp3",
+   "ruEx": "Ты можешь мне помочь?",
+   "set": 3
+  },
+  {
+   "en": "talk",
+   "enAudio": "audio/ef170d8bbbd0.mp3",
+   "enEx": "We talked for an hour.",
+   "id": "w132",
+   "ru": "разговаривать",
+   "ruAudio": "audio/27c21cd97a84.mp3",
+   "ruEx": "Мы разговаривали час.",
+   "set": 3
+  },
+  {
+   "en": "turn",
+   "enAudio": "audio/55af8541247d.mp3",
+   "enEx": "Turn left at the corner.",
+   "id": "w133",
+   "ru": "поворачивать, очередь",
+   "ruAudio": "audio/1b9056bffe8c.mp3",
+   "ruEx": "На углу поверните налево.",
+   "set": 3
+  },
+  {
+   "en": "start",
+   "enAudio": "audio/12453371be36.mp3",
+   "enEx": "Let's start now.",
+   "id": "w134",
+   "ru": "начинать",
+   "ruAudio": "audio/5a6b993e5aca.mp3",
+   "ruEx": "Давай начнём сейчас.",
+   "set": 3
+  },
+  {
+   "en": "show",
+   "enAudio": "audio/945fed234e5b.mp3",
+   "enEx": "Show me your ticket.",
+   "id": "w135",
+   "ru": "показывать",
+   "ruAudio": "audio/78899aaa5e2d.mp3",
+   "ruEx": "Покажите мне ваш билет.",
+   "set": 3
+  },
+  {
+   "en": "hear",
+   "enAudio": "audio/0797d8354ef2.mp3",
+   "enEx": "I cannot hear you.",
+   "id": "w136",
+   "ru": "слышать",
+   "ruAudio": "audio/503462a65b01.mp3",
+   "ruEx": "Я вас не слышу.",
+   "set": 3
+  },
+  {
+   "en": "play",
+   "enAudio": "audio/985c7c6a0bcd.mp3",
+   "enEx": "The kids play in the yard.",
+   "id": "w137",
+   "ru": "играть",
+   "ruAudio": "audio/854a59ea3a24.mp3",
+   "ruEx": "Дети играют во дворе.",
+   "set": 3
+  },
+  {
+   "en": "run",
+   "enAudio": "audio/1d554c0d55d7.mp3",
+   "enEx": "I run every morning.",
+   "id": "w138",
+   "ru": "бежать",
+   "ruAudio": "audio/99d65f48f84b.mp3",
+   "ruEx": "Я бегаю каждое утро.",
+   "set": 3
+  },
+  {
+   "en": "move",
+   "enAudio": "audio/e0240672945e.mp3",
+   "enEx": "We moved to Boston.",
+   "id": "w139",
+   "ru": "двигаться, переезжать",
+   "ruAudio": "audio/270c48da675b.mp3",
+   "ruEx": "Мы переехали в Бостон.",
+   "set": 3
+  },
+  {
+   "en": "like",
+   "enAudio": "audio/924449c4ccfa.mp3",
+   "enEx": "I like your jacket.",
+   "id": "w140",
+   "ru": "нравиться, любить",
+   "ruAudio": "audio/84de78eaa455.mp3",
+   "ruEx": "Мне нравится твоя куртка.",
+   "set": 3
+  },
+  {
+   "en": "live",
+   "enAudio": "audio/03a9a096a703.mp3",
+   "enEx": "They live in Chicago.",
+   "id": "w141",
+   "ru": "жить",
+   "ruAudio": "audio/cdfc7d7724dc.mp3",
+   "ruEx": "Они живут в Чикаго.",
+   "set": 3
+  },
+  {
+   "en": "believe",
+   "enAudio": "audio/4b8843413de4.mp3",
+   "enEx": "I believe you.",
+   "id": "w142",
+   "ru": "верить",
+   "ruAudio": "audio/6c396f98ba20.mp3",
+   "ruEx": "Я тебе верю.",
+   "set": 3
+  },
+  {
+   "en": "hold",
+   "enAudio": "audio/85395f957389.mp3",
+   "enEx": "Hold on to the handrail.",
+   "id": "w143",
+   "ru": "держать",
+   "ruAudio": "audio/9b6162552596.mp3",
+   "ruEx": "Держитесь за поручень.",
+   "set": 3
+  },
+  {
+   "en": "bring",
+   "enAudio": "audio/4687335efb70.mp3",
+   "enEx": "Bring your friend along.",
+   "id": "w144",
+   "ru": "приносить",
+   "ruAudio": "audio/178984b44dfc.mp3",
+   "ruEx": "Приводи своего друга с собой.",
+   "set": 3
+  },
+  {
+   "en": "happen",
+   "enAudio": "audio/b485258bb5fc.mp3",
+   "enEx": "What happened here?",
+   "id": "w145",
+   "ru": "случаться",
+   "ruAudio": "audio/ecaf6b666171.mp3",
+   "ruEx": "Что здесь случилось?",
+   "set": 3
+  },
+  {
+   "en": "write",
+   "enAudio": "audio/f27952c8c923.mp3",
+   "enEx": "Write your name here.",
+   "id": "w146",
+   "ru": "писать",
+   "ruAudio": "audio/d05a1df3f4fe.mp3",
+   "ruEx": "Напишите здесь своё имя.",
+   "set": 3
+  },
+  {
+   "en": "provide",
+   "enAudio": "audio/78d9488eea74.mp3",
+   "enEx": "The hotel provides free breakfast.",
+   "id": "w147",
+   "ru": "предоставлять",
+   "ruAudio": "audio/a93ade4d7dbf.mp3",
+   "ruEx": "Отель предоставляет бесплатный завтрак.",
+   "set": 3
+  },
+  {
+   "en": "sit",
+   "enAudio": "audio/d276b57ada1c.mp3",
+   "enEx": "Please sit down.",
+   "id": "w148",
+   "ru": "сидеть, садиться",
+   "ruAudio": "audio/7467b14cb4be.mp3",
+   "ruEx": "Пожалуйста, садитесь.",
+   "set": 3
+  },
+  {
+   "en": "stand",
+   "enAudio": "audio/cfbda786706b.mp3",
+   "enEx": "Stand in line, please.",
+   "id": "w149",
+   "ru": "стоять",
+   "ruAudio": "audio/8872b9b3ab94.mp3",
+   "ruEx": "Встаньте в очередь, пожалуйста.",
+   "set": 3
+  },
+  {
+   "en": "put",
+   "enAudio": "audio/31b14d8983b6.mp3",
+   "enEx": "Put it on the table.",
+   "id": "w150",
+   "ru": "класть, ставить",
+   "ruAudio": "audio/1fd0ebceda6d.mp3",
+   "ruEx": "Положи это на стол.",
+   "set": 3
+  },
+  {
+   "en": "lose",
+   "enAudio": "audio/6d73d09bc7b8.mp3",
+   "enEx": "I lost my wallet.",
+   "id": "w151",
+   "ru": "терять, проигрывать",
+   "ruAudio": "audio/ce1e1504a670.mp3",
+   "ruEx": "Я потерял кошелёк.",
+   "set": 4
+  },
+  {
+   "en": "pay",
+   "enAudio": "audio/6e0746866a50.mp3",
+   "enEx": "I will pay by card.",
+   "id": "w152",
+   "ru": "платить",
+   "ruAudio": "audio/4b5e6363adfb.mp3",
+   "ruEx": "Я заплачу картой.",
+   "set": 4
+  },
+  {
+   "en": "meet",
+   "enAudio": "audio/24bd87547f88.mp3",
+   "enEx": "Nice to meet you.",
+   "id": "w153",
+   "ru": "встречать, знакомиться",
+   "ruAudio": "audio/d2ac3cee3075.mp3",
+   "ruEx": "Приятно познакомиться.",
+   "set": 4
+  },
+  {
+   "en": "include",
+   "enAudio": "audio/832cc9efe6d5.mp3",
+   "enEx": "The price includes breakfast.",
+   "id": "w154",
+   "ru": "включать",
+   "ruAudio": "audio/5d4735e9728d.mp3",
+   "ruEx": "В цену входит завтрак.",
+   "set": 4
+  },
+  {
+   "en": "continue",
+   "enAudio": "audio/16a4bdbb28f5.mp3",
+   "enEx": "Please continue.",
+   "id": "w155",
+   "ru": "продолжать",
+   "ruAudio": "audio/4987e7dce44e.mp3",
+   "ruEx": "Пожалуйста, продолжайте.",
+   "set": 4
+  },
+  {
+   "en": "set",
+   "enAudio": "audio/6d5a9ec47138.mp3",
+   "enEx": "Set the alarm for six.",
+   "id": "w156",
+   "ru": "ставить, устанавливать",
+   "ruAudio": "audio/6d5cf5db65d0.mp3",
+   "ruEx": "Поставь будильник на шесть.",
+   "set": 4
+  },
+  {
+   "en": "learn",
+   "enAudio": "audio/04a7c4461b34.mp3",
+   "enEx": "I want to learn Spanish.",
+   "id": "w157",
+   "ru": "учить, узнавать",
+   "ruAudio": "audio/0093d63ae719.mp3",
+   "ruEx": "Я хочу выучить испанский.",
+   "set": 4
+  },
+  {
+   "en": "lead",
+   "enAudio": "audio/6bd3c6bf004a.mp3",
+   "enEx": "She leads the team.",
+   "id": "w158",
+   "ru": "вести, руководить",
+   "ruAudio": "audio/99f93c043c83.mp3",
+   "ruEx": "Она возглавляет команду.",
+   "set": 4
+  },
+  {
+   "en": "understand",
+   "enAudio": "audio/a0f2ca58cdba.mp3",
+   "enEx": "I do not understand.",
+   "id": "w159",
+   "ru": "понимать",
+   "ruAudio": "audio/c0fff6d4ff79.mp3",
+   "ruEx": "Я не понимаю.",
+   "set": 4
+  },
+  {
+   "en": "watch",
+   "enAudio": "audio/018370878302.mp3",
+   "enEx": "We watch TV in the evening.",
+   "id": "w160",
+   "ru": "смотреть, наблюдать",
+   "ruAudio": "audio/1c5147032384.mp3",
+   "ruEx": "По вечерам мы смотрим телевизор.",
+   "set": 4
+  },
+  {
+   "en": "follow",
+   "enAudio": "audio/99b0abca2b55.mp3",
+   "enEx": "Follow me, please.",
+   "id": "w161",
+   "ru": "следовать, идти за",
+   "ruAudio": "audio/3be4122fae1e.mp3",
+   "ruEx": "Идите за мной, пожалуйста.",
+   "set": 4
+  },
+  {
+   "en": "stop",
+   "enAudio": "audio/f1bf7cfd73da.mp3",
+   "enEx": "The bus stops here.",
+   "id": "w162",
+   "ru": "останавливаться, прекращать",
+   "ruAudio": "audio/4d5fe1954132.mp3",
+   "ruEx": "Автобус останавливается здесь.",
+   "set": 4
+  },
+  {
+   "en": "create",
+   "enAudio": "audio/9be65340d327.mp3",
+   "enEx": "She creates beautiful drawings.",
+   "id": "w163",
+   "ru": "создавать",
+   "ruAudio": "audio/c1ee72a41175.mp3",
+   "ruEx": "Она создаёт красивые рисунки.",
+   "set": 4
+  },
+  {
+   "en": "speak",
+   "enAudio": "audio/e09f7cd8cae5.mp3",
+   "enEx": "Do you speak English?",
+   "id": "w164",
+   "ru": "говорить",
+   "ruAudio": "audio/fe6d674e59eb.mp3",
+   "ruEx": "Вы говорите по-английски?",
+   "set": 4
+  },
+  {
+   "en": "read",
+   "enAudio": "audio/3bf8d4a11bc9.mp3",
+   "enEx": "I read the news every morning.",
+   "id": "w165",
+   "ru": "читать",
+   "ruAudio": "audio/dbfd44d71865.mp3",
+   "ruEx": "Я читаю новости каждое утро.",
+   "set": 4
+  },
+  {
+   "en": "allow",
+   "enAudio": "audio/33c8d27cd1f9.mp3",
+   "enEx": "Pets are not allowed here.",
+   "id": "w166",
+   "ru": "разрешать",
+   "ruAudio": "audio/fbf9e111d8e7.mp3",
+   "ruEx": "Здесь нельзя с животными.",
+   "set": 4
+  },
+  {
+   "en": "add",
+   "enAudio": "audio/88c739720d25.mp3",
+   "enEx": "Add some salt.",
+   "id": "w167",
+   "ru": "добавлять",
+   "ruAudio": "audio/d621c72fa8af.mp3",
+   "ruEx": "Добавь немного соли.",
+   "set": 4
+  },
+  {
+   "en": "spend",
+   "enAudio": "audio/cc1eedc294e8.mp3",
+   "enEx": "I spend a lot of time online.",
+   "id": "w168",
+   "ru": "тратить, проводить",
+   "ruAudio": "audio/15b597d4aaed.mp3",
+   "ruEx": "Я провожу много времени в интернете.",
+   "set": 4
+  },
+  {
+   "en": "grow",
+   "enAudio": "audio/1568e6f33a91.mp3",
+   "enEx": "Tomatoes grow fast here.",
+   "id": "w169",
+   "ru": "расти, выращивать",
+   "ruAudio": "audio/ae94d6404c40.mp3",
+   "ruEx": "Помидоры здесь быстро растут.",
+   "set": 4
+  },
+  {
+   "en": "open",
+   "enAudio": "audio/152dbb68a75e.mp3",
+   "enEx": "Open the window, please.",
+   "id": "w170",
+   "ru": "открывать",
+   "ruAudio": "audio/e2852fefb695.mp3",
+   "ruEx": "Открой окно, пожалуйста.",
+   "set": 4
+  },
+  {
+   "en": "walk",
+   "enAudio": "audio/f11b7b54dd6b.mp3",
+   "enEx": "I walk to work.",
+   "id": "w171",
+   "ru": "ходить пешком, гулять",
+   "ruAudio": "audio/080349ff582b.mp3",
+   "ruEx": "Я хожу на работу пешком.",
+   "set": 4
+  },
+  {
+   "en": "win",
+   "enAudio": "audio/9e97ce6e507d.mp3",
+   "enEx": "We want to win.",
+   "id": "w172",
+   "ru": "выигрывать, побеждать",
+   "ruAudio": "audio/d462e7c96dd8.mp3",
+   "ruEx": "Мы хотим победить.",
+   "set": 4
+  },
+  {
+   "en": "offer",
+   "enAudio": "audio/227bf53edf2b.mp3",
+   "enEx": "He offered me a job.",
+   "id": "w173",
+   "ru": "предлагать",
+   "ruAudio": "audio/8b11ee7796d2.mp3",
+   "ruEx": "Он предложил мне работу.",
+   "set": 4
+  },
+  {
+   "en": "remember",
+   "enAudio": "audio/89d356ae0f5f.mp3",
+   "enEx": "I remember that day.",
+   "id": "w174",
+   "ru": "помнить",
+   "ruAudio": "audio/c1b46e9df616.mp3",
+   "ruEx": "Я помню тот день.",
+   "set": 4
+  },
+  {
+   "en": "love",
+   "enAudio": "audio/f803a8c74b6e.mp3",
+   "enEx": "I love my family.",
+   "id": "w175",
+   "ru": "любить",
+   "ruAudio": "audio/6f92cf615f2f.mp3",
+   "ruEx": "Я люблю свою семью.",
+   "set": 4
+  },
+  {
+   "en": "consider",
+   "enAudio": "audio/e5678e369201.mp3",
+   "enEx": "I will consider your offer.",
+   "id": "w176",
+   "ru": "считать, обдумывать",
+   "ruAudio": "audio/bda77b4bfd84.mp3",
+   "ruEx": "Я обдумаю ваше предложение.",
+   "set": 4
+  },
+  {
+   "en": "appear",
+   "enAudio": "audio/7a12799e2a2b.mp3",
+   "enEx": "A man appeared at the door.",
+   "id": "w177",
+   "ru": "появляться, казаться",
+   "ruAudio": "audio/b041d5980ac8.mp3",
+   "ruEx": "В дверях появился мужчина.",
+   "set": 4
+  },
+  {
+   "en": "buy",
+   "enAudio": "audio/c9a77dcc8fe7.mp3",
+   "enEx": "I want to buy a gift.",
+   "id": "w178",
+   "ru": "покупать",
+   "ruAudio": "audio/e2cd2aabd44c.mp3",
+   "ruEx": "Я хочу купить подарок.",
+   "set": 4
+  },
+  {
+   "en": "wait",
+   "enAudio": "audio/9a91c71af2d4.mp3",
+   "enEx": "Wait for me here.",
+   "id": "w179",
+   "ru": "ждать",
+   "ruAudio": "audio/9c4b773f82de.mp3",
+   "ruEx": "Подожди меня здесь.",
+   "set": 4
+  },
+  {
+   "en": "serve",
+   "enAudio": "audio/f5947965534b.mp3",
+   "enEx": "They serve breakfast until ten.",
+   "id": "w180",
+   "ru": "подавать, обслуживать",
+   "ruAudio": "audio/be7212678dc5.mp3",
+   "ruEx": "Завтрак подают до десяти.",
+   "set": 4
+  },
+  {
+   "en": "die",
+   "enAudio": "audio/57de9b90897e.mp3",
+   "enEx": "The flowers will die without water.",
+   "id": "w181",
+   "ru": "умирать",
+   "ruAudio": "audio/ee5591180ec8.mp3",
+   "ruEx": "Цветы погибнут без воды.",
+   "set": 4
+  },
+  {
+   "en": "send",
+   "enAudio": "audio/de9db5d8a2d7.mp3",
+   "enEx": "Please send me the file.",
+   "id": "w182",
+   "ru": "отправлять",
+   "ruAudio": "audio/dae666705782.mp3",
+   "ruEx": "Пожалуйста, отправь мне файл.",
+   "set": 4
+  },
+  {
+   "en": "expect",
+   "enAudio": "audio/8754e7aa43ec.mp3",
+   "enEx": "I expect good news.",
+   "id": "w183",
+   "ru": "ожидать",
+   "ruAudio": "audio/da897075be8b.mp3",
+   "ruEx": "Я жду хороших новостей.",
+   "set": 4
+  },
+  {
+   "en": "build",
+   "enAudio": "audio/c7aae5d67cc8.mp3",
+   "enEx": "They build houses here.",
+   "id": "w184",
+   "ru": "строить",
+   "ruAudio": "audio/99ca6d078712.mp3",
+   "ruEx": "Здесь строят дома.",
+   "set": 4
+  },
+  {
+   "en": "stay",
+   "enAudio": "audio/26229cce0663.mp3",
+   "enEx": "We stayed at a small hotel.",
+   "id": "w185",
+   "ru": "оставаться, останавливаться",
+   "ruAudio": "audio/57ccca586e5f.mp3",
+   "ruEx": "Мы остановились в маленьком отеле.",
+   "set": 4
+  },
+  {
+   "en": "fall",
+   "enAudio": "audio/b20a56cc82ca.mp3",
+   "enEx": "Leaves fall in October.",
+   "id": "w186",
+   "ru": "падать",
+   "ruAudio": "audio/a6c79a873b37.mp3",
+   "ruEx": "В октябре листья опадают.",
+   "set": 4
+  },
+  {
+   "en": "cut",
+   "enAudio": "audio/798929d85ab7.mp3",
+   "enEx": "Cut the bread, please.",
+   "id": "w187",
+   "ru": "резать",
+   "ruAudio": "audio/a55278bf1da4.mp3",
+   "ruEx": "Нарежь хлеб, пожалуйста.",
+   "set": 4
+  },
+  {
+   "en": "reach",
+   "enAudio": "audio/31e209304a5f.mp3",
+   "enEx": "We reached the hotel at noon.",
+   "id": "w188",
+   "ru": "достигать, добираться",
+   "ruAudio": "audio/f65bf8685a6d.mp3",
+   "ruEx": "Мы добрались до отеля в полдень.",
+   "set": 4
+  },
+  {
+   "en": "kill",
+   "enAudio": "audio/abbcb7efbde3.mp3",
+   "enEx": "Smoking can kill you.",
+   "id": "w189",
+   "ru": "убивать",
+   "ruAudio": "audio/839df3be2677.mp3",
+   "ruEx": "Курение может тебя убить.",
+   "set": 4
+  },
+  {
+   "en": "remain",
+   "enAudio": "audio/db7c7cbffbb7.mp3",
+   "enEx": "Please remain seated.",
+   "id": "w190",
+   "ru": "оставаться",
+   "ruAudio": "audio/0f8d27a6bf36.mp3",
+   "ruEx": "Пожалуйста, оставайтесь на местах.",
+   "set": 4
+  },
+  {
+   "en": "suggest",
+   "enAudio": "audio/e413bb76d8b2.mp3",
+   "enEx": "I suggest we leave now.",
+   "id": "w191",
+   "ru": "предлагать, советовать",
+   "ruAudio": "audio/cd88b0a1e0d5.mp3",
+   "ruEx": "Предлагаю уйти сейчас.",
+   "set": 4
+  },
+  {
+   "en": "raise",
+   "enAudio": "audio/893e6e7f8d48.mp3",
+   "enEx": "Raise your hand, please.",
+   "id": "w192",
+   "ru": "поднимать, повышать",
+   "ruAudio": "audio/186877d184e5.mp3",
+   "ruEx": "Поднимите руку, пожалуйста.",
+   "set": 4
+  },
+  {
+   "en": "pass",
+   "enAudio": "audio/e08bb9589694.mp3",
+   "enEx": "Pass me the salt, please.",
+   "id": "w193",
+   "ru": "передавать, проходить",
+   "ruAudio": "audio/6d1805639af2.mp3",
+   "ruEx": "Передай мне соль, пожалуйста.",
+   "set": 4
+  },
+  {
+   "en": "sell",
+   "enAudio": "audio/0dd1b2141db5.mp3",
+   "enEx": "They sell fresh bread.",
+   "id": "w194",
+   "ru": "продавать",
+   "ruAudio": "audio/a8a1a7f4a033.mp3",
+   "ruEx": "Они продают свежий хлеб.",
+   "set": 4
+  },
+  {
+   "en": "require",
+   "enAudio": "audio/72fd27260ad8.mp3",
+   "enEx": "This job requires experience.",
+   "id": "w195",
+   "ru": "требовать",
+   "ruAudio": "audio/aa0d2be579d2.mp3",
+   "ruEx": "Эта работа требует опыта.",
+   "set": 4
+  },
+  {
+   "en": "report",
+   "enAudio": "audio/bc715d448add.mp3",
+   "enEx": "I wrote a short report.",
+   "id": "w196",
+   "ru": "сообщать, отчёт",
+   "ruAudio": "audio/2b9302a36647.mp3",
+   "ruEx": "Я написал короткий отчёт.",
+   "set": 4
+  },
+  {
+   "en": "decide",
+   "enAudio": "audio/9b42ddced858.mp3",
+   "enEx": "I cannot decide.",
+   "id": "w197",
+   "ru": "решать",
+   "ruAudio": "audio/c40b488165f5.mp3",
+   "ruEx": "Я не могу решить.",
+   "set": 4
+  },
+  {
+   "en": "pull",
+   "enAudio": "audio/2f11039f2aee.mp3",
+   "enEx": "Pull the door.",
+   "id": "w198",
+   "ru": "тянуть",
+   "ruAudio": "audio/147721f273d7.mp3",
+   "ruEx": "Потяни дверь на себя.",
+   "set": 4
+  },
+  {
+   "en": "teach",
+   "enAudio": "audio/4b9df8aa5d9d.mp3",
+   "enEx": "She teaches math.",
+   "id": "w199",
+   "ru": "учить, преподавать",
+   "ruAudio": "audio/1e3b667da44e.mp3",
+   "ruEx": "Она преподаёт математику.",
+   "set": 4
+  },
+  {
+   "en": "join",
+   "enAudio": "audio/788ae9d59327.mp3",
+   "enEx": "Join us for lunch.",
+   "id": "w200",
+   "ru": "присоединяться",
+   "ruAudio": "audio/acaed4e84a61.mp3",
+   "ruEx": "Присоединяйся к нам на обед.",
+   "set": 4
+  },
+  {
+   "en": "good",
+   "enAudio": "audio/ad793d5721c5.mp3",
+   "enEx": "This is a good book.",
+   "id": "w201",
+   "ru": "хороший",
+   "ruAudio": "audio/369349fd6b6f.mp3",
+   "ruEx": "Это хорошая книга.",
+   "set": 5
+  },
+  {
+   "en": "new",
+   "enAudio": "audio/a3e37ac0a599.mp3",
+   "enEx": "I have a new phone.",
+   "id": "w202",
+   "ru": "новый",
+   "ruAudio": "audio/e6ffe77026db.mp3",
+   "ruEx": "У меня новый телефон.",
+   "set": 5
+  },
+  {
+   "en": "first",
+   "enAudio": "audio/d88b6bb2d2c4.mp3",
+   "enEx": "This is my first job.",
+   "id": "w203",
+   "ru": "первый",
+   "ruAudio": "audio/c34e228775ef.mp3",
+   "ruEx": "Это моя первая работа.",
+   "set": 5
+  },
+  {
+   "en": "last",
+   "enAudio": "audio/3a4edefcf11b.mp3",
+   "enEx": "I saw him last week.",
+   "id": "w204",
+   "ru": "последний, прошлый",
+   "ruAudio": "audio/703f8320cf89.mp3",
+   "ruEx": "Я видел его на прошлой неделе.",
+   "set": 5
+  },
+  {
+   "en": "long",
+   "enAudio": "audio/3dbb50e2dabd.mp3",
+   "enEx": "It was a long day.",
+   "id": "w205",
+   "ru": "длинный, долгий",
+   "ruAudio": "audio/cc3382ffbb00.mp3",
+   "ruEx": "Это был долгий день.",
+   "set": 5
+  },
+  {
+   "en": "great",
+   "enAudio": "audio/6abcb29e8a82.mp3",
+   "enEx": "That is a great idea.",
+   "id": "w206",
+   "ru": "великолепный, отличный",
+   "ruAudio": "audio/1b661ddc6cd0.mp3",
+   "ruEx": "Это отличная идея.",
+   "set": 5
+  },
+  {
+   "en": "little",
+   "enAudio": "audio/0499ef81e8cf.mp3",
+   "enEx": "I speak a little English.",
+   "id": "w207",
+   "ru": "маленький, немного",
+   "ruAudio": "audio/0f5885fdd517.mp3",
+   "ruEx": "Я немного говорю по-английски.",
+   "set": 5
+  },
+  {
+   "en": "own",
+   "enAudio": "audio/c6e5ca874cd8.mp3",
+   "enEx": "She has her own room.",
+   "id": "w208",
+   "ru": "собственный",
+   "ruAudio": "audio/cc2a909667aa.mp3",
+   "ruEx": "У неё своя комната.",
+   "set": 5
+  },
+  {
+   "en": "other",
+   "enAudio": "audio/b2d02c8f1a60.mp3",
+   "enEx": "Show me the other one.",
+   "id": "w209",
+   "ru": "другой",
+   "ruAudio": "audio/198b4239f05d.mp3",
+   "ruEx": "Покажи мне другой.",
+   "set": 5
+  },
+  {
+   "en": "old",
+   "enAudio": "audio/96f3056b67e2.mp3",
+   "enEx": "My car is very old.",
+   "id": "w210",
+   "ru": "старый",
+   "ruAudio": "audio/bf16650aff85.mp3",
+   "ruEx": "Моя машина очень старая.",
+   "set": 5
+  },
+  {
+   "en": "big",
+   "enAudio": "audio/b83019c56f77.mp3",
+   "enEx": "They have a big dog.",
+   "id": "w211",
+   "ru": "большой",
+   "ruAudio": "audio/9d329b375ba5.mp3",
+   "ruEx": "У них большая собака.",
+   "set": 5
+  },
+  {
+   "en": "high",
+   "enAudio": "audio/4b7451498338.mp3",
+   "enEx": "The mountain is very high.",
+   "id": "w212",
+   "ru": "высокий",
+   "ruAudio": "audio/a477b2915c94.mp3",
+   "ruEx": "Гора очень высокая.",
+   "set": 5
+  },
+  {
+   "en": "different",
+   "enAudio": "audio/966261f15e2c.mp3",
+   "enEx": "We have different tastes.",
+   "id": "w213",
+   "ru": "разный, другой",
+   "ruAudio": "audio/42ca0d924c47.mp3",
+   "ruEx": "У нас разные вкусы.",
+   "set": 5
+  },
+  {
+   "en": "small",
+   "enAudio": "audio/04b6dc49b2f7.mp3",
+   "enEx": "I need a small bag.",
+   "id": "w214",
+   "ru": "маленький",
+   "ruAudio": "audio/d2c137b3bc79.mp3",
+   "ruEx": "Мне нужна маленькая сумка.",
+   "set": 5
+  },
+  {
+   "en": "large",
+   "enAudio": "audio/3a97a8db2561.mp3",
+   "enEx": "I will take a large coffee.",
+   "id": "w215",
+   "ru": "крупный, большой",
+   "ruAudio": "audio/a313f6f24874.mp3",
+   "ruEx": "Мне большой кофе.",
+   "set": 5
+  },
+  {
+   "en": "next",
+   "enAudio": "audio/e696ddd490b2.mp3",
+   "enEx": "Who is next?",
+   "id": "w216",
+   "ru": "следующий",
+   "ruAudio": "audio/680e546a8e57.mp3",
+   "ruEx": "Кто следующий?",
+   "set": 5
+  },
+  {
+   "en": "early",
+   "enAudio": "audio/ee7be22deea6.mp3",
+   "enEx": "I woke up early today.",
+   "id": "w217",
+   "ru": "ранний, рано",
+   "ruAudio": "audio/f2aad90f207a.mp3",
+   "ruEx": "Сегодня я проснулся рано.",
+   "set": 5
+  },
+  {
+   "en": "young",
+   "enAudio": "audio/48f85c91f2a0.mp3",
+   "enEx": "She is a young doctor.",
+   "id": "w218",
+   "ru": "молодой",
+   "ruAudio": "audio/c24298e83d03.mp3",
+   "ruEx": "Она молодой врач.",
+   "set": 5
+  },
+  {
+   "en": "important",
+   "enAudio": "audio/70b8a1f69392.mp3",
+   "enEx": "This meeting is very important.",
+   "id": "w219",
+   "ru": "важный",
+   "ruAudio": "audio/27748770f28a.mp3",
+   "ruEx": "Эта встреча очень важна.",
+   "set": 5
+  },
+  {
+   "en": "few",
+   "enAudio": "audio/d0643e884656.mp3",
+   "enEx": "I have a few questions.",
+   "id": "w220",
+   "ru": "несколько, мало",
+   "ruAudio": "audio/efb68ba91bcf.mp3",
+   "ruEx": "У меня есть несколько вопросов.",
+   "set": 5
+  },
+  {
+   "en": "public",
+   "enAudio": "audio/791004fc8756.mp3",
+   "enEx": "I take public transportation.",
+   "id": "w221",
+   "ru": "общественный, публичный",
+   "ruAudio": "audio/3009e2341c16.mp3",
+   "ruEx": "Я езжу на общественном транспорте.",
+   "set": 5
+  },
+  {
+   "en": "bad",
+   "enAudio": "audio/19c639f49a6c.mp3",
+   "enEx": "I have bad news.",
+   "id": "w222",
+   "ru": "плохой",
+   "ruAudio": "audio/4bb2dd542481.mp3",
+   "ruEx": "У меня плохие новости.",
+   "set": 5
+  },
+  {
+   "en": "same",
+   "enAudio": "audio/1b62f750cdf1.mp3",
+   "enEx": "We have the same teacher.",
+   "id": "w223",
+   "ru": "тот же, одинаковый",
+   "ruAudio": "audio/f2e1d88fe847.mp3",
+   "ruEx": "У нас один и тот же учитель.",
+   "set": 5
+  },
+  {
+   "en": "able",
+   "enAudio": "audio/3661fbfc1906.mp3",
+   "enEx": "Are you able to come?",
+   "id": "w224",
+   "ru": "способный",
+   "ruAudio": "audio/15bb68e576a9.mp3",
+   "ruEx": "Ты сможешь прийти?",
+   "set": 5
+  },
+  {
+   "en": "free",
+   "enAudio": "audio/6c1427bc5eb3.mp3",
+   "enEx": "Are you free tonight?",
+   "id": "w225",
+   "ru": "свободный, бесплатный",
+   "ruAudio": "audio/843f04cda0c6.mp3",
+   "ruEx": "Ты свободен сегодня вечером?",
+   "set": 5
+  },
+  {
+   "en": "sure",
+   "enAudio": "audio/1be7cac74fd5.mp3",
+   "enEx": "I am not sure.",
+   "id": "w226",
+   "ru": "уверенный",
+   "ruAudio": "audio/541fc6a66754.mp3",
+   "ruEx": "Я не уверен.",
+   "set": 5
+  },
+  {
+   "en": "real",
+   "enAudio": "audio/f3ffc60e0393.mp3",
+   "enEx": "Is this real gold?",
+   "id": "w227",
+   "ru": "настоящий, реальный",
+   "ruAudio": "audio/52b481457a0f.mp3",
+   "ruEx": "Это настоящее золото?",
+   "set": 5
+  },
+  {
+   "en": "special",
+   "enAudio": "audio/901de97cb242.mp3",
+   "enEx": "Today is a special day.",
+   "id": "w228",
+   "ru": "особенный",
+   "ruAudio": "audio/3a5f9fdb6b1f.mp3",
+   "ruEx": "Сегодня особенный день.",
+   "set": 5
+  },
+  {
+   "en": "whole",
+   "enAudio": "audio/9db84500966c.mp3",
+   "enEx": "I ate the whole pizza.",
+   "id": "w229",
+   "ru": "целый, весь",
+   "ruAudio": "audio/5c43da3f165a.mp3",
+   "ruEx": "Я съел всю пиццу.",
+   "set": 5
+  },
+  {
+   "en": "full",
+   "enAudio": "audio/375a05517fec.mp3",
+   "enEx": "The bus is full.",
+   "id": "w230",
+   "ru": "полный, сытый",
+   "ruAudio": "audio/e470b78fbedb.mp3",
+   "ruEx": "Автобус полон.",
+   "set": 5
+  },
+  {
+   "en": "clear",
+   "enAudio": "audio/0250e0397d5e.mp3",
+   "enEx": "The answer is clear.",
+   "id": "w231",
+   "ru": "ясный, понятный",
+   "ruAudio": "audio/177da90c15bb.mp3",
+   "ruEx": "Ответ ясен.",
+   "set": 5
+  },
+  {
+   "en": "easy",
+   "enAudio": "audio/fb96a0e280d8.mp3",
+   "enEx": "This test is easy.",
+   "id": "w232",
+   "ru": "лёгкий, простой",
+   "ruAudio": "audio/8d13b310bc9f.mp3",
+   "ruEx": "Этот тест лёгкий.",
+   "set": 5
+  },
+  {
+   "en": "hard",
+   "enAudio": "audio/e17672bbfaa3.mp3",
+   "enEx": "English is hard for me.",
+   "id": "w233",
+   "ru": "трудный, твёрдый",
+   "ruAudio": "audio/bbd85ea5370e.mp3",
+   "ruEx": "Английский даётся мне трудно.",
+   "set": 5
+  },
+  {
+   "en": "strong",
+   "enAudio": "audio/b056a4dabe6f.mp3",
+   "enEx": "He is very strong.",
+   "id": "w234",
+   "ru": "сильный",
+   "ruAudio": "audio/99d17791a4b6.mp3",
+   "ruEx": "Он очень сильный.",
+   "set": 5
+  },
+  {
+   "en": "possible",
+   "enAudio": "audio/93262b2083f3.mp3",
+   "enEx": "Is it possible?",
+   "id": "w235",
+   "ru": "возможный",
+   "ruAudio": "audio/9f27bcc7fbda.mp3",
+   "ruEx": "Это возможно?",
+   "set": 5
+  },
+  {
+   "en": "late",
+   "enAudio": "audio/7ce9695e75fc.mp3",
+   "enEx": "Do not be late.",
+   "id": "w236",
+   "ru": "поздний, поздно",
+   "ruAudio": "audio/8575419793ff.mp3",
+   "ruEx": "Не опаздывай.",
+   "set": 5
+  },
+  {
+   "en": "best",
+   "enAudio": "audio/c74b0caaed51.mp3",
+   "enEx": "She is my best friend.",
+   "id": "w237",
+   "ru": "лучший",
+   "ruAudio": "audio/97e779b380f2.mp3",
+   "ruEx": "Она моя лучшая подруга.",
+   "set": 5
+  },
+  {
+   "en": "short",
+   "enAudio": "audio/0d519e331c14.mp3",
+   "enEx": "The movie was short.",
+   "id": "w238",
+   "ru": "короткий, низкий",
+   "ruAudio": "audio/dc4ccec12d43.mp3",
+   "ruEx": "Фильм был коротким.",
+   "set": 5
+  },
+  {
+   "en": "happy",
+   "enAudio": "audio/7ade709af663.mp3",
+   "enEx": "I am happy to see you.",
+   "id": "w239",
+   "ru": "счастливый, довольный",
+   "ruAudio": "audio/581d9adf9924.mp3",
+   "ruEx": "Я рад тебя видеть.",
+   "set": 5
+  },
+  {
+   "en": "cold",
+   "enAudio": "audio/345f74fc5498.mp3",
+   "enEx": "The water is cold.",
+   "id": "w240",
+   "ru": "холодный",
+   "ruAudio": "audio/0ae40a8c1370.mp3",
+   "ruEx": "Вода холодная.",
+   "set": 5
+  },
+  {
+   "en": "hot",
+   "enAudio": "audio/2cd4581654cc.mp3",
+   "enEx": "It is hot today.",
+   "id": "w241",
+   "ru": "горячий, жаркий",
+   "ruAudio": "audio/6adfaa09d17b.mp3",
+   "ruEx": "Сегодня жарко.",
+   "set": 5
+  },
+  {
+   "en": "ready",
+   "enAudio": "audio/4109142966a7.mp3",
+   "enEx": "Are you ready?",
+   "id": "w242",
+   "ru": "готовый",
+   "ruAudio": "audio/0f60377fa636.mp3",
+   "ruEx": "Ты готов?",
+   "set": 5
+  },
+  {
+   "en": "left",
+   "enAudio": "audio/69e60c9961e2.mp3",
+   "enEx": "Turn left here.",
+   "id": "w243",
+   "ru": "левый",
+   "ruAudio": "audio/2ab27a388a1b.mp3",
+   "ruEx": "Поверните здесь налево.",
+   "set": 5
+  },
+  {
+   "en": "nice",
+   "enAudio": "audio/a4f2022b36a2.mp3",
+   "enEx": "What a nice day!",
+   "id": "w244",
+   "ru": "приятный, милый",
+   "ruAudio": "audio/1fcf1ce0e557.mp3",
+   "ruEx": "Какой приятный день!",
+   "set": 5
+  },
+  {
+   "en": "major",
+   "enAudio": "audio/5289b531d026.mp3",
+   "enEx": "This is a major problem.",
+   "id": "w245",
+   "ru": "главный, крупный",
+   "ruAudio": "audio/958deafe0030.mp3",
+   "ruEx": "Это серьёзная проблема.",
+   "set": 5
+  },
+  {
+   "en": "black",
+   "enAudio": "audio/f215a7c65298.mp3",
+   "enEx": "I like black coffee.",
+   "id": "w246",
+   "ru": "чёрный",
+   "ruAudio": "audio/c1153e1960d2.mp3",
+   "ruEx": "Я люблю чёрный кофе.",
+   "set": 5
+  },
+  {
+   "en": "white",
+   "enAudio": "audio/b6660d0c5b6a.mp3",
+   "enEx": "She wore a white dress.",
+   "id": "w247",
+   "ru": "белый",
+   "ruAudio": "audio/ef9ea4f6728e.mp3",
+   "ruEx": "На ней было белое платье.",
+   "set": 5
+  },
+  {
+   "en": "red",
+   "enAudio": "audio/e10036e9417b.mp3",
+   "enEx": "He has a red car.",
+   "id": "w248",
+   "ru": "красный",
+   "ruAudio": "audio/be4b6f2ab098.mp3",
+   "ruEx": "У него красная машина.",
+   "set": 5
+  },
+  {
+   "en": "wrong",
+   "enAudio": "audio/04211125457c.mp3",
+   "enEx": "You have the wrong number.",
+   "id": "w249",
+   "ru": "неправильный, неверный",
+   "ruAudio": "audio/01a8af86fc25.mp3",
+   "ruEx": "Вы ошиблись номером.",
+   "set": 5
+  },
+  {
+   "en": "simple",
+   "enAudio": "audio/485903bfe8e9.mp3",
+   "enEx": "It is a simple recipe.",
+   "id": "w250",
+   "ru": "простой",
+   "ruAudio": "audio/7e050a85d50e.mp3",
+   "ruEx": "Это простой рецепт.",
+   "set": 5
+  },
+  {
+   "en": "about",
+   "enAudio": "audio/85565ef0cc73.mp3",
+   "enEx": "Tell me about your day.",
+   "id": "w251",
+   "ru": "о, около",
+   "ruAudio": "audio/931bf6e8d9c9.mp3",
+   "ruEx": "Расскажи мне о своём дне.",
+   "set": 6
+  },
+  {
+   "en": "because",
+   "enAudio": "audio/42fdadd32f32.mp3",
+   "enEx": "I stayed home because I was sick.",
+   "id": "w252",
+   "ru": "потому что",
+   "ruAudio": "audio/54823847ef56.mp3",
+   "ruEx": "Я остался дома, потому что болел.",
+   "set": 6
+  },
+  {
+   "en": "always",
+   "enAudio": "audio/8d48fd74e82c.mp3",
+   "enEx": "She is always on time.",
+   "id": "w253",
+   "ru": "всегда",
+   "ruAudio": "audio/d0a0443f7457.mp3",
+   "ruEx": "Она всегда приходит вовремя.",
+   "set": 6
+  },
+  {
+   "en": "never",
+   "enAudio": "audio/1faa9afd983e.mp3",
+   "enEx": "I have never been to Paris.",
+   "id": "w254",
+   "ru": "никогда",
+   "ruAudio": "audio/a8fa60ef262f.mp3",
+   "ruEx": "Я никогда не был в Париже.",
+   "set": 6
+  },
+  {
+   "en": "often",
+   "enAudio": "audio/0a01943aeb56.mp3",
+   "enEx": "We often eat out.",
+   "id": "w255",
+   "ru": "часто",
+   "ruAudio": "audio/3e94c2e556ef.mp3",
+   "ruEx": "Мы часто едим в кафе.",
+   "set": 6
+  },
+  {
+   "en": "also",
+   "enAudio": "audio/ac4c1c99efa5.mp3",
+   "enEx": "I also like tea.",
+   "id": "w256",
+   "ru": "также, тоже",
+   "ruAudio": "audio/256f08c60662.mp3",
+   "ruEx": "Я тоже люблю чай.",
+   "set": 6
+  },
+  {
+   "en": "very",
+   "enAudio": "audio/6474afd8ec41.mp3",
+   "enEx": "This soup is very good.",
+   "id": "w257",
+   "ru": "очень",
+   "ruAudio": "audio/8fcf2c1a7404.mp3",
+   "ruEx": "Этот суп очень вкусный.",
+   "set": 6
+  },
+  {
+   "en": "too",
+   "enAudio": "audio/fcddeb7f2454.mp3",
+   "enEx": "It is too expensive.",
+   "id": "w258",
+   "ru": "слишком, тоже",
+   "ruAudio": "audio/590db12393df.mp3",
+   "ruEx": "Это слишком дорого.",
+   "set": 6
+  },
+  {
+   "en": "only",
+   "enAudio": "audio/2ffb158afa95.mp3",
+   "enEx": "I have only five dollars.",
+   "id": "w259",
+   "ru": "только",
+   "ruAudio": "audio/ec79c6a972d5.mp3",
+   "ruEx": "У меня всего пять долларов.",
+   "set": 6
+  },
+  {
+   "en": "just",
+   "enAudio": "audio/633fc62163ff.mp3",
+   "enEx": "I have just arrived.",
+   "id": "w260",
+   "ru": "только что, просто",
+   "ruAudio": "audio/12bc05b9998d.mp3",
+   "ruEx": "Я только что приехал.",
+   "set": 6
+  },
+  {
+   "en": "now",
+   "enAudio": "audio/fecbcd27ee6b.mp3",
+   "enEx": "I am busy now.",
+   "id": "w261",
+   "ru": "сейчас",
+   "ruAudio": "audio/5fc1b8b33afa.mp3",
+   "ruEx": "Сейчас я занят.",
+   "set": 6
+  },
+  {
+   "en": "then",
+   "enAudio": "audio/702ed6dcf30a.mp3",
+   "enEx": "First eat, then play.",
+   "id": "w262",
+   "ru": "потом, тогда",
+   "ruAudio": "audio/830b036f439e.mp3",
+   "ruEx": "Сначала поешь, потом играй.",
+   "set": 6
+  },
+  {
+   "en": "here",
+   "enAudio": "audio/d010cd4dd86f.mp3",
+   "enEx": "Put it here.",
+   "id": "w263",
+   "ru": "здесь, сюда",
+   "ruAudio": "audio/aea07f39c784.mp3",
+   "ruEx": "Положи это сюда.",
+   "set": 6
+  },
+  {
+   "en": "there",
+   "enAudio": "audio/2a161973493c.mp3",
+   "enEx": "I will go there tomorrow.",
+   "id": "w264",
+   "ru": "там, туда",
+   "ruAudio": "audio/49f4f3249cff.mp3",
+   "ruEx": "Я пойду туда завтра.",
+   "set": 6
+  },
+  {
+   "en": "again",
+   "enAudio": "audio/593b40dc9555.mp3",
+   "enEx": "Please say it again.",
+   "id": "w265",
+   "ru": "снова",
+   "ruAudio": "audio/9bc70ecdf08a.mp3",
+   "ruEx": "Пожалуйста, повторите ещё раз.",
+   "set": 6
+  },
+  {
+   "en": "even",
+   "enAudio": "audio/aa04f3274175.mp3",
+   "enEx": "Even kids can do it.",
+   "id": "w266",
+   "ru": "даже",
+   "ruAudio": "audio/c367dff8a6b7.mp3",
+   "ruEx": "Даже дети могут это сделать.",
+   "set": 6
+  },
+  {
+   "en": "ever",
+   "enAudio": "audio/6f6e13796dfe.mp3",
+   "enEx": "Have you ever been to Japan?",
+   "id": "w267",
+   "ru": "когда-либо",
+   "ruAudio": "audio/76505179c215.mp3",
+   "ruEx": "Ты когда-нибудь бывал в Японии?",
+   "set": 6
+  },
+  {
+   "en": "away",
+   "enAudio": "audio/23d2a1b28b9e.mp3",
+   "enEx": "The station is not far away.",
+   "id": "w268",
+   "ru": "прочь, далеко",
+   "ruAudio": "audio/3201c5e37e4f.mp3",
+   "ruEx": "Станция недалеко.",
+   "set": 6
+  },
+  {
+   "en": "together",
+   "enAudio": "audio/48bd298d56a7.mp3",
+   "enEx": "We work together.",
+   "id": "w269",
+   "ru": "вместе",
+   "ruAudio": "audio/4c06bb4b8678.mp3",
+   "ruEx": "Мы работаем вместе.",
+   "set": 6
+  },
+  {
+   "en": "really",
+   "enAudio": "audio/e33687412369.mp3",
+   "enEx": "I really like it.",
+   "id": "w270",
+   "ru": "действительно, правда",
+   "ruAudio": "audio/b14701971ef3.mp3",
+   "ruEx": "Мне это очень нравится.",
+   "set": 6
+  },
+  {
+   "en": "maybe",
+   "enAudio": "audio/736149746c1b.mp3",
+   "enEx": "Maybe we can meet later.",
+   "id": "w271",
+   "ru": "может быть",
+   "ruAudio": "audio/26db9ffab371.mp3",
+   "ruEx": "Может быть, встретимся позже.",
+   "set": 6
+  },
+  {
+   "en": "almost",
+   "enAudio": "audio/17283e5f6cdb.mp3",
+   "enEx": "We are almost there.",
+   "id": "w272",
+   "ru": "почти",
+   "ruAudio": "audio/253bbbc5e180.mp3",
+   "ruEx": "Мы почти на месте.",
+   "set": 6
+  },
+  {
+   "en": "enough",
+   "enAudio": "audio/4a74a05a6a14.mp3",
+   "enEx": "I have had enough.",
+   "id": "w273",
+   "ru": "достаточно",
+   "ruAudio": "audio/c6b8e2a2b8e7.mp3",
+   "ruEx": "С меня хватит.",
+   "set": 6
+  },
+  {
+   "en": "quite",
+   "enAudio": "audio/20a45af10170.mp3",
+   "enEx": "It is quite cold today.",
+   "id": "w274",
+   "ru": "довольно",
+   "ruAudio": "audio/5e3a08d93b54.mp3",
+   "ruEx": "Сегодня довольно холодно.",
+   "set": 6
+  },
+  {
+   "en": "soon",
+   "enAudio": "audio/965847023435.mp3",
+   "enEx": "See you soon!",
+   "id": "w275",
+   "ru": "скоро",
+   "ruAudio": "audio/22e986fa1379.mp3",
+   "ruEx": "Скоро увидимся!",
+   "set": 6
+  },
+  {
+   "en": "today",
+   "enAudio": "audio/df5033a7933a.mp3",
+   "enEx": "What are we doing today?",
+   "id": "w276",
+   "ru": "сегодня",
+   "ruAudio": "audio/7e32f87f777d.mp3",
+   "ruEx": "Что мы делаем сегодня?",
+   "set": 6
+  },
+  {
+   "en": "tomorrow",
+   "enAudio": "audio/3da95dd2ca34.mp3",
+   "enEx": "I will call you tomorrow.",
+   "id": "w277",
+   "ru": "завтра",
+   "ruAudio": "audio/e55afc0ac853.mp3",
+   "ruEx": "Я позвоню тебе завтра.",
+   "set": 6
+  },
+  {
+   "en": "yesterday",
+   "enAudio": "audio/b9633caff4d0.mp3",
+   "enEx": "It rained yesterday.",
+   "id": "w278",
+   "ru": "вчера",
+   "ruAudio": "audio/650e94734fdf.mp3",
+   "ruEx": "Вчера шёл дождь.",
+   "set": 6
+  },
+  {
+   "en": "with",
+   "enAudio": "audio/f83eaf32e495.mp3",
+   "enEx": "I live with my parents.",
+   "id": "w279",
+   "ru": "с, вместе с",
+   "ruAudio": "audio/70eb770ec1db.mp3",
+   "ruEx": "Я живу с родителями.",
+   "set": 6
+  },
+  {
+   "en": "without",
+   "enAudio": "audio/de919f544fba.mp3",
+   "enEx": "I drink tea without sugar.",
+   "id": "w280",
+   "ru": "без",
+   "ruAudio": "audio/7f6a742c8ca4.mp3",
+   "ruEx": "Я пью чай без сахара.",
+   "set": 6
+  },
+  {
+   "en": "between",
+   "enAudio": "audio/75f8060ee462.mp3",
+   "enEx": "Sit between us.",
+   "id": "w281",
+   "ru": "между",
+   "ruAudio": "audio/e617216b6800.mp3",
+   "ruEx": "Садись между нами.",
+   "set": 6
+  },
+  {
+   "en": "under",
+   "enAudio": "audio/ea06cb5e0239.mp3",
+   "enEx": "The cat is under the table.",
+   "id": "w282",
+   "ru": "под",
+   "ruAudio": "audio/40a4255af1e5.mp3",
+   "ruEx": "Кошка под столом.",
+   "set": 6
+  },
+  {
+   "en": "over",
+   "enAudio": "audio/f91cd8aa8dac.mp3",
+   "enEx": "The plane flew over the city.",
+   "id": "w283",
+   "ru": "над, через",
+   "ruAudio": "audio/236112b5fe77.mp3",
+   "ruEx": "Самолёт пролетел над городом.",
+   "set": 6
+  },
+  {
+   "en": "through",
+   "enAudio": "audio/c85e9ad49060.mp3",
+   "enEx": "We drove through the tunnel.",
+   "id": "w284",
+   "ru": "через, сквозь",
+   "ruAudio": "audio/6bfbc281b240.mp3",
+   "ruEx": "Мы проехали через туннель.",
+   "set": 6
+  },
+  {
+   "en": "during",
+   "enAudio": "audio/cf728c15f802.mp3",
+   "enEx": "I slept during the flight.",
+   "id": "w285",
+   "ru": "во время",
+   "ruAudio": "audio/103a2e4875ff.mp3",
+   "ruEx": "Я спал во время полёта.",
+   "set": 6
+  },
+  {
+   "en": "before",
+   "enAudio": "audio/e3e279611d82.mp3",
+   "enEx": "Wash your hands before dinner.",
+   "id": "w286",
+   "ru": "до, перед",
+   "ruAudio": "audio/99acf009f2f3.mp3",
+   "ruEx": "Мойте руки перед ужином.",
+   "set": 6
+  },
+  {
+   "en": "after",
+   "enAudio": "audio/62c5d64df21e.mp3",
+   "enEx": "Call me after work.",
+   "id": "w287",
+   "ru": "после",
+   "ruAudio": "audio/4a43e14dc8eb.mp3",
+   "ruEx": "Позвони мне после работы.",
+   "set": 6
+  },
+  {
+   "en": "against",
+   "enAudio": "audio/ed0bc180b408.mp3",
+   "enEx": "Who are we playing against?",
+   "id": "w288",
+   "ru": "против",
+   "ruAudio": "audio/766bd680612e.mp3",
+   "ruEx": "Против кого мы играем?",
+   "set": 6
+  },
+  {
+   "en": "around",
+   "enAudio": "audio/c348a2597a30.mp3",
+   "enEx": "Let's walk around the park.",
+   "id": "w289",
+   "ru": "вокруг, около",
+   "ruAudio": "audio/8f54bac79cb8.mp3",
+   "ruEx": "Давай погуляем по парку.",
+   "set": 6
+  },
+  {
+   "en": "near",
+   "enAudio": "audio/37ee4b3f33b8.mp3",
+   "enEx": "I live near the station.",
+   "id": "w290",
+   "ru": "рядом, возле",
+   "ruAudio": "audio/be0cb352ad1e.mp3",
+   "ruEx": "Я живу рядом со станцией.",
+   "set": 6
+  },
+  {
+   "en": "across",
+   "enAudio": "audio/96d192befdfa.mp3",
+   "enEx": "The bank is across the street.",
+   "id": "w291",
+   "ru": "через, напротив",
+   "ruAudio": "audio/595f765ad987.mp3",
+   "ruEx": "Банк находится через дорогу.",
+   "set": 6
+  },
+  {
+   "en": "along",
+   "enAudio": "audio/60f9615defed.mp3",
+   "enEx": "We walked along the river.",
+   "id": "w292",
+   "ru": "вдоль",
+   "ruAudio": "audio/c03fe68cb2fd.mp3",
+   "ruEx": "Мы шли вдоль реки.",
+   "set": 6
+  },
+  {
+   "en": "inside",
+   "enAudio": "audio/21de1220110c.mp3",
+   "enEx": "It is warm inside.",
+   "id": "w293",
+   "ru": "внутри",
+   "ruAudio": "audio/029f35715315.mp3",
+   "ruEx": "Внутри тепло.",
+   "set": 6
+  },
+  {
+   "en": "outside",
+   "enAudio": "audio/e2cd4bf4212b.mp3",
+   "enEx": "The kids are playing outside.",
+   "id": "w294",
+   "ru": "снаружи, на улице",
+   "ruAudio": "audio/306bf354cb39.mp3",
+   "ruEx": "Дети играют на улице.",
+   "set": 6
+  },
+  {
+   "en": "behind",
+   "enAudio": "audio/0e78dba0c56f.mp3",
+   "enEx": "He stood behind me.",
+   "id": "w295",
+   "ru": "позади, за",
+   "ruAudio": "audio/a83a8c86f9c2.mp3",
+   "ruEx": "Он стоял позади меня.",
+   "set": 6
+  },
+  {
+   "en": "until",
+   "enAudio": "audio/571c7b94dc5a.mp3",
+   "enEx": "Wait until Monday.",
+   "id": "w296",
+   "ru": "до, пока",
+   "ruAudio": "audio/dd24f31b29cf.mp3",
+   "ruEx": "Подожди до понедельника.",
+   "set": 6
+  },
+  {
+   "en": "while",
+   "enAudio": "audio/04f0f7d93a43.mp3",
+   "enEx": "I read while I eat.",
+   "id": "w297",
+   "ru": "пока, в то время как",
+   "ruAudio": "audio/6b0d5aa18208.mp3",
+   "ruEx": "Я читаю, пока ем.",
+   "set": 6
+  },
+  {
+   "en": "if",
+   "enAudio": "audio/490efd98233f.mp3",
+   "enEx": "Call me if you need help.",
+   "id": "w298",
+   "ru": "если",
+   "ruAudio": "audio/4db47f8a815f.mp3",
+   "ruEx": "Позвони, если понадобится помощь.",
+   "set": 6
+  },
+  {
+   "en": "but",
+   "enAudio": "audio/aac810b73208.mp3",
+   "enEx": "I like it, but it is expensive.",
+   "id": "w299",
+   "ru": "но",
+   "ruAudio": "audio/e1935915d050.mp3",
+   "ruEx": "Мне нравится, но это дорого.",
+   "set": 6
+  },
+  {
+   "en": "or",
+   "enAudio": "audio/9506d29ef1c4.mp3",
+   "enEx": "Do you want tea or coffee?",
+   "id": "w300",
+   "ru": "или",
+   "ruAudio": "audio/473c29815c12.mp3",
+   "ruEx": "Ты хочешь чай или кофе?",
+   "set": 6
+  },
+  {
+   "en": "food",
+   "enAudio": "audio/bb75599d97a2.mp3",
+   "enEx": "The food here is great.",
+   "id": "w301",
+   "ru": "еда",
+   "ruAudio": "audio/5681168e48cc.mp3",
+   "ruEx": "Еда здесь отличная.",
+   "set": 7
+  },
+  {
+   "en": "music",
+   "enAudio": "audio/37f101641026.mp3",
+   "enEx": "I listen to music on the bus.",
+   "id": "w302",
+   "ru": "музыка",
+   "ruAudio": "audio/a8291d3a3404.mp3",
+   "ruEx": "Я слушаю музыку в автобусе.",
+   "set": 7
+  },
+  {
+   "en": "movie",
+   "enAudio": "audio/b30d1e332bad.mp3",
+   "enEx": "Let's watch a movie.",
+   "id": "w303",
+   "ru": "фильм",
+   "ruAudio": "audio/432cdb4199f1.mp3",
+   "ruEx": "Давай посмотрим фильм.",
+   "set": 7
+  },
+  {
+   "en": "street",
+   "enAudio": "audio/36a9a6012a33.mp3",
+   "enEx": "The street is very busy.",
+   "id": "w304",
+   "ru": "улица",
+   "ruAudio": "audio/63005bb92e74.mp3",
+   "ruEx": "Улица очень оживлённая.",
+   "set": 7
+  },
+  {
+   "en": "window",
+   "enAudio": "audio/184b70eb1e9a.mp3",
+   "enEx": "Please open the window.",
+   "id": "w305",
+   "ru": "окно",
+   "ruAudio": "audio/f646257b7324.mp3",
+   "ruEx": "Пожалуйста, открой окно.",
+   "set": 7
+  },
+  {
+   "en": "table",
+   "enAudio": "audio/ec09741f8a40.mp3",
+   "enEx": "The keys are on the table.",
+   "id": "w306",
+   "ru": "стол",
+   "ruAudio": "audio/16c77d1cca43.mp3",
+   "ruEx": "Ключи лежат на столе.",
+   "set": 7
+  },
+  {
+   "en": "bed",
+   "enAudio": "audio/e47985669e24.mp3",
+   "enEx": "I go to bed at eleven.",
+   "id": "w307",
+   "ru": "кровать",
+   "ruAudio": "audio/6971f84f8655.mp3",
+   "ruEx": "Я ложусь спать в одиннадцать.",
+   "set": 7
+  },
+  {
+   "en": "phone",
+   "enAudio": "audio/6f4baa753129.mp3",
+   "enEx": "My phone is dead.",
+   "id": "w308",
+   "ru": "телефон",
+   "ruAudio": "audio/cca8799965f5.mp3",
+   "ruEx": "Мой телефон разрядился.",
+   "set": 7
+  },
+  {
+   "en": "computer",
+   "enAudio": "audio/4d8478f38963.mp3",
+   "enEx": "He works on a computer all day.",
+   "id": "w309",
+   "ru": "компьютер",
+   "ruAudio": "audio/b24bf16839b2.mp3",
+   "ruEx": "Он весь день работает за компьютером.",
+   "set": 7
+  },
+  {
+   "en": "market",
+   "enAudio": "audio/93a485db1721.mp3",
+   "enEx": "We buy fruit at the market.",
+   "id": "w310",
+   "ru": "рынок",
+   "ruAudio": "audio/3809c5d491c0.mp3",
+   "ruEx": "Мы покупаем фрукты на рынке.",
+   "set": 7
+  },
+  {
+   "en": "price",
+   "enAudio": "audio/108a571b3d59.mp3",
+   "enEx": "What is the price?",
+   "id": "w311",
+   "ru": "цена",
+   "ruAudio": "audio/4b6ddba30c66.mp3",
+   "ruEx": "Какая цена?",
+   "set": 7
+  },
+  {
+   "en": "color",
+   "enAudio": "audio/ea083142ab13.mp3",
+   "enEx": "What is your favorite color?",
+   "id": "w312",
+   "ru": "цвет",
+   "ruAudio": "audio/eae695199af4.mp3",
+   "ruEx": "Какой у тебя любимый цвет?",
+   "set": 7
+  },
+  {
+   "en": "weather",
+   "enAudio": "audio/b2d9743630ae.mp3",
+   "enEx": "The weather is nice today.",
+   "id": "w313",
+   "ru": "погода",
+   "ruAudio": "audio/63222e29ebeb.mp3",
+   "ruEx": "Сегодня хорошая погода.",
+   "set": 7
+  },
+  {
+   "en": "rain",
+   "enAudio": "audio/f03614de22de.mp3",
+   "enEx": "I hope the rain stops soon.",
+   "id": "w314",
+   "ru": "дождь",
+   "ruAudio": "audio/6a1b0209369f.mp3",
+   "ruEx": "Надеюсь, дождь скоро закончится.",
+   "set": 7
+  },
+  {
+   "en": "tree",
+   "enAudio": "audio/8578a1902bc0.mp3",
+   "enEx": "There is a tree in our yard.",
+   "id": "w315",
+   "ru": "дерево",
+   "ruAudio": "audio/a1cbdc852b06.mp3",
+   "ruEx": "У нас во дворе растёт дерево.",
+   "set": 7
+  },
+  {
+   "en": "dog",
+   "enAudio": "audio/68d22724c9d8.mp3",
+   "enEx": "My dog loves walks.",
+   "id": "w316",
+   "ru": "собака",
+   "ruAudio": "audio/ca2d82c1f17b.mp3",
+   "ruEx": "Моя собака любит прогулки.",
+   "set": 7
+  },
+  {
+   "en": "cat",
+   "enAudio": "audio/46bc5e0a054b.mp3",
+   "enEx": "The cat is on the sofa.",
+   "id": "w317",
+   "ru": "кошка",
+   "ruAudio": "audio/e31bca97d815.mp3",
+   "ruEx": "Кошка лежит на диване.",
+   "set": 7
+  },
+  {
+   "en": "sea",
+   "enAudio": "audio/ec8b21b82099.mp3",
+   "enEx": "We swam in the sea.",
+   "id": "w318",
+   "ru": "море",
+   "ruAudio": "audio/951e4ce80502.mp3",
+   "ruEx": "Мы купались в море.",
+   "set": 7
+  },
+  {
+   "en": "road",
+   "enAudio": "audio/5715adc836ea.mp3",
+   "enEx": "The road is closed.",
+   "id": "w319",
+   "ru": "дорога",
+   "ruAudio": "audio/98ed108f1877.mp3",
+   "ruEx": "Дорога закрыта.",
+   "set": 7
+  },
+  {
+   "en": "train",
+   "enAudio": "audio/908489383688.mp3",
+   "enEx": "The train leaves at noon.",
+   "id": "w320",
+   "ru": "поезд",
+   "ruAudio": "audio/897994ce2ba2.mp3",
+   "ruEx": "Поезд отправляется в полдень.",
+   "set": 7
+  },
+  {
+   "en": "plane",
+   "enAudio": "audio/e2065daa1f2e.mp3",
+   "enEx": "Our plane is late.",
+   "id": "w321",
+   "ru": "самолёт",
+   "ruAudio": "audio/541ad83c2a14.mp3",
+   "ruEx": "Наш самолёт задерживается.",
+   "set": 7
+  },
+  {
+   "en": "ticket",
+   "enAudio": "audio/2d5c539716eb.mp3",
+   "enEx": "I bought two tickets.",
+   "id": "w322",
+   "ru": "билет",
+   "ruAudio": "audio/8d24bf286cae.mp3",
+   "ruEx": "Я купил два билета.",
+   "set": 7
+  },
+  {
+   "en": "trip",
+   "enAudio": "audio/b63eb16ea0cc.mp3",
+   "enEx": "We took a trip to Canada.",
+   "id": "w323",
+   "ru": "поездка",
+   "ruAudio": "audio/e3a50a975685.mp3",
+   "ruEx": "Мы съездили в Канаду.",
+   "set": 7
+  },
+  {
+   "en": "summer",
+   "enAudio": "audio/4a824c68623f.mp3",
+   "enEx": "I love summer.",
+   "id": "w324",
+   "ru": "лето",
+   "ruAudio": "audio/b846e3f88208.mp3",
+   "ruEx": "Я люблю лето.",
+   "set": 7
+  },
+  {
+   "en": "winter",
+   "enAudio": "audio/b0b4a4e4223f.mp3",
+   "enEx": "Winters are cold here.",
+   "id": "w325",
+   "ru": "зима",
+   "ruAudio": "audio/4f60c3f357ec.mp3",
+   "ruEx": "Зимы здесь холодные.",
+   "set": 7
+  },
+  {
+   "en": "breakfast",
+   "enAudio": "audio/da60bdeb968e.mp3",
+   "enEx": "What do you have for breakfast?",
+   "id": "w326",
+   "ru": "завтрак",
+   "ruAudio": "audio/15b86328e905.mp3",
+   "ruEx": "Что ты ешь на завтрак?",
+   "set": 7
+  },
+  {
+   "en": "dinner",
+   "enAudio": "audio/4e635a1f6b6d.mp3",
+   "enEx": "Dinner is ready.",
+   "id": "w327",
+   "ru": "ужин, обед",
+   "ruAudio": "audio/c03a55bb300c.mp3",
+   "ruEx": "Ужин готов.",
+   "set": 7
+  },
+  {
+   "en": "coffee",
+   "enAudio": "audio/b15540a8ce59.mp3",
+   "enEx": "I would like a coffee.",
+   "id": "w328",
+   "ru": "кофе",
+   "ruAudio": "audio/787d5ffebc31.mp3",
+   "ruEx": "Я бы хотел кофе.",
+   "set": 7
+  },
+  {
+   "en": "tea",
+   "enAudio": "audio/83af4521fb80.mp3",
+   "enEx": "Would you like some tea?",
+   "id": "w329",
+   "ru": "чай",
+   "ruAudio": "audio/f6fbd371870f.mp3",
+   "ruEx": "Хотите чаю?",
+   "set": 7
+  },
+  {
+   "en": "milk",
+   "enAudio": "audio/aaf3dabf3a9b.mp3",
+   "enEx": "We need more milk.",
+   "id": "w330",
+   "ru": "молоко",
+   "ruAudio": "audio/8db4ba0b34dc.mp3",
+   "ruEx": "Нам нужно ещё молока.",
+   "set": 7
+  },
+  {
+   "en": "bread",
+   "enAudio": "audio/06a3cb1afba6.mp3",
+   "enEx": "I bought fresh bread.",
+   "id": "w331",
+   "ru": "хлеб",
+   "ruAudio": "audio/aff530519572.mp3",
+   "ruEx": "Я купил свежий хлеб.",
+   "set": 7
+  },
+  {
+   "en": "meat",
+   "enAudio": "audio/62f5be21f83f.mp3",
+   "enEx": "She does not eat meat.",
+   "id": "w332",
+   "ru": "мясо",
+   "ruAudio": "audio/3d84ac544c70.mp3",
+   "ruEx": "Она не ест мясо.",
+   "set": 7
+  },
+  {
+   "en": "fruit",
+   "enAudio": "audio/9efdda9fbb2f.mp3",
+   "enEx": "Eat more fruit.",
+   "id": "w333",
+   "ru": "фрукты",
+   "ruAudio": "audio/dbdcb9f17811.mp3",
+   "ruEx": "Ешь больше фруктов.",
+   "set": 7
+  },
+  {
+   "en": "shirt",
+   "enAudio": "audio/01ea8372a2a7.mp3",
+   "enEx": "I need a clean shirt.",
+   "id": "w334",
+   "ru": "рубашка",
+   "ruAudio": "audio/f0f13900ed4f.mp3",
+   "ruEx": "Мне нужна чистая рубашка.",
+   "set": 7
+  },
+  {
+   "en": "shoes",
+   "enAudio": "audio/5916e8b2b799.mp3",
+   "enEx": "These shoes are too small.",
+   "id": "w335",
+   "ru": "обувь, туфли",
+   "ruAudio": "audio/9cb0391b3f6c.mp3",
+   "ruEx": "Эти туфли слишком малы.",
+   "set": 7
+  },
+  {
+   "en": "bag",
+   "enAudio": "audio/b868abd79746.mp3",
+   "enEx": "Where is my bag?",
+   "id": "w336",
+   "ru": "сумка, пакет",
+   "ruAudio": "audio/b06f8dfb8014.mp3",
+   "ruEx": "Где моя сумка?",
+   "set": 7
+  },
+  {
+   "en": "key",
+   "enAudio": "audio/4b43141ab9a4.mp3",
+   "enEx": "I lost my key.",
+   "id": "w337",
+   "ru": "ключ",
+   "ruAudio": "audio/9d14183fd50b.mp3",
+   "ruEx": "Я потерял ключ.",
+   "set": 7
+  },
+  {
+   "en": "picture",
+   "enAudio": "audio/505204656300.mp3",
+   "enEx": "She took a nice picture.",
+   "id": "w338",
+   "ru": "картина, фото",
+   "ruAudio": "audio/75587bbe1871.mp3",
+   "ruEx": "Она сделала красивое фото.",
+   "set": 7
+  },
+  {
+   "en": "letter",
+   "enAudio": "audio/3d88b2d15724.mp3",
+   "enEx": "I got a letter from him.",
+   "id": "w339",
+   "ru": "письмо, буква",
+   "ruAudio": "audio/72689917a337.mp3",
+   "ruEx": "Я получил от него письмо.",
+   "set": 7
+  },
+  {
+   "en": "newspaper",
+   "enAudio": "audio/8f99295c0d19.mp3",
+   "enEx": "He reads the newspaper daily.",
+   "id": "w340",
+   "ru": "газета",
+   "ruAudio": "audio/a897552968d9.mp3",
+   "ruEx": "Он читает газету каждый день.",
+   "set": 7
+  },
+  {
+   "en": "gift",
+   "enAudio": "audio/8074c177fde1.mp3",
+   "enEx": "This gift is for you.",
+   "id": "w341",
+   "ru": "подарок",
+   "ruAudio": "audio/fc4b74eb1c6c.mp3",
+   "ruEx": "Этот подарок для тебя.",
+   "set": 7
+  },
+  {
+   "en": "garden",
+   "enAudio": "audio/442d226c64b7.mp3",
+   "enEx": "They have a beautiful garden.",
+   "id": "w342",
+   "ru": "сад",
+   "ruAudio": "audio/7fee1ddb70de.mp3",
+   "ruEx": "У них красивый сад.",
+   "set": 7
+  },
+  {
+   "en": "hospital",
+   "enAudio": "audio/0d76fa3388e8.mp3",
+   "enEx": "She works at a hospital.",
+   "id": "w343",
+   "ru": "больница",
+   "ruAudio": "audio/988b4c42d03e.mp3",
+   "ruEx": "Она работает в больнице.",
+   "set": 7
+  },
+  {
+   "en": "bank",
+   "enAudio": "audio/95bb4267c6b6.mp3",
+   "enEx": "The bank opens at nine.",
+   "id": "w344",
+   "ru": "банк",
+   "ruAudio": "audio/789b288f2047.mp3",
+   "ruEx": "Банк открывается в девять.",
+   "set": 7
+  },
+  {
+   "en": "store",
+   "enAudio": "audio/10dc77c11305.mp3",
+   "enEx": "The store is closed.",
+   "id": "w345",
+   "ru": "магазин",
+   "ruAudio": "audio/b4305ae01740.mp3",
+   "ruEx": "Магазин закрыт.",
+   "set": 7
+  },
+  {
+   "en": "restaurant",
+   "enAudio": "audio/985a114a838c.mp3",
+   "enEx": "Let's eat at a restaurant.",
+   "id": "w346",
+   "ru": "ресторан",
+   "ruAudio": "audio/731b562f7e01.mp3",
+   "ruEx": "Давай поедим в ресторане.",
+   "set": 7
+  },
+  {
+   "en": "airport",
+   "enAudio": "audio/2afebf6b9ef7.mp3",
+   "enEx": "The airport is far away.",
+   "id": "w347",
+   "ru": "аэропорт",
+   "ruAudio": "audio/1cfe4894b9f5.mp3",
+   "ruEx": "Аэропорт далеко.",
+   "set": 7
+  },
+  {
+   "en": "hotel",
+   "enAudio": "audio/92ef779bb924.mp3",
+   "enEx": "We stayed at a nice hotel.",
+   "id": "w348",
+   "ru": "отель, гостиница",
+   "ruAudio": "audio/09500f9af6c1.mp3",
+   "ruEx": "Мы остановились в хорошем отеле.",
+   "set": 7
+  },
+  {
+   "en": "village",
+   "enAudio": "audio/d7f4bc1ee9f7.mp3",
+   "enEx": "He grew up in a small village.",
+   "id": "w349",
+   "ru": "деревня",
+   "ruAudio": "audio/400f99bbab42.mp3",
+   "ruEx": "Он вырос в маленькой деревне.",
+   "set": 7
+  },
+  {
+   "en": "floor",
+   "enAudio": "audio/430c52a81b7b.mp3",
+   "enEx": "I live on the third floor.",
+   "id": "w350",
+   "ru": "пол, этаж",
+   "ruAudio": "audio/099acfd84bcf.mp3",
+   "ruEx": "Я живу на третьем этаже.",
+   "set": 7
+  },
+  {
+   "en": "cook",
+   "enAudio": "audio/2ce4690905a3.mp3",
+   "enEx": "I cook dinner every night.",
+   "id": "w351",
+   "ru": "готовить",
+   "ruAudio": "audio/b2815b1abfa1.mp3",
+   "ruEx": "Я готовлю ужин каждый вечер.",
+   "set": 8
+  },
+  {
+   "en": "eat",
+   "enAudio": "audio/48c5e4750721.mp3",
+   "enEx": "Let's eat outside.",
+   "id": "w352",
+   "ru": "есть, кушать",
+   "ruAudio": "audio/fc086cade318.mp3",
+   "ruEx": "Давай поедим на улице.",
+   "set": 8
+  },
+  {
+   "en": "drink",
+   "enAudio": "audio/7a1f962f923b.mp3",
+   "enEx": "Do you want something to drink?",
+   "id": "w353",
+   "ru": "пить",
+   "ruAudio": "audio/9b76bf7bca5a.mp3",
+   "ruEx": "Хочешь что-нибудь попить?",
+   "set": 8
+  },
+  {
+   "en": "sleep",
+   "enAudio": "audio/e3bc6915e602.mp3",
+   "enEx": "I sleep eight hours a night.",
+   "id": "w354",
+   "ru": "спать",
+   "ruAudio": "audio/45e4d245c385.mp3",
+   "ruEx": "Я сплю восемь часов за ночь.",
+   "set": 8
+  },
+  {
+   "en": "wake",
+   "enAudio": "audio/72611c4cc84e.mp3",
+   "enEx": "I wake up at six.",
+   "id": "w355",
+   "ru": "просыпаться, будить",
+   "ruAudio": "audio/a845f40f759b.mp3",
+   "ruEx": "Я просыпаюсь в шесть.",
+   "set": 8
+  },
+  {
+   "en": "wear",
+   "enAudio": "audio/1df78c8a70dc.mp3",
+   "enEx": "She wears a red coat.",
+   "id": "w356",
+   "ru": "носить, быть одетым",
+   "ruAudio": "audio/88fac9e5b468.mp3",
+   "ruEx": "Она носит красное пальто.",
+   "set": 8
+  },
+  {
+   "en": "carry",
+   "enAudio": "audio/58c4032e93c3.mp3",
+   "enEx": "Can you carry this bag?",
+   "id": "w357",
+   "ru": "нести",
+   "ruAudio": "audio/8043d4d6e68a.mp3",
+   "ruEx": "Ты можешь донести эту сумку?",
+   "set": 8
+  },
+  {
+   "en": "drive",
+   "enAudio": "audio/c55cc1995a63.mp3",
+   "enEx": "I drive to work.",
+   "id": "w358",
+   "ru": "водить машину",
+   "ruAudio": "audio/a828b4064fa0.mp3",
+   "ruEx": "Я езжу на работу на машине.",
+   "set": 8
+  },
+  {
+   "en": "ride",
+   "enAudio": "audio/5d879960eea2.mp3",
+   "enEx": "I ride my bike to school.",
+   "id": "w359",
+   "ru": "ехать верхом, кататься",
+   "ruAudio": "audio/d4e3ffc39cad.mp3",
+   "ruEx": "Я езжу в школу на велосипеде.",
+   "set": 8
+  },
+  {
+   "en": "fly",
+   "enAudio": "audio/770e2fc9bb6e.mp3",
+   "enEx": "We fly to Rome tomorrow.",
+   "id": "w360",
+   "ru": "летать",
+   "ruAudio": "audio/ce700b10f15b.mp3",
+   "ruEx": "Завтра мы летим в Рим.",
+   "set": 8
+  },
+  {
+   "en": "swim",
+   "enAudio": "audio/fc7863e8dc60.mp3",
+   "enEx": "Can you swim?",
+   "id": "w361",
+   "ru": "плавать",
+   "ruAudio": "audio/305c85708f4a.mp3",
+   "ruEx": "Ты умеешь плавать?",
+   "set": 8
+  },
+  {
+   "en": "sing",
+   "enAudio": "audio/254f389fc316.mp3",
+   "enEx": "She sings very well.",
+   "id": "w362",
+   "ru": "петь",
+   "ruAudio": "audio/f2ff934b2a86.mp3",
+   "ruEx": "Она очень хорошо поёт.",
+   "set": 8
+  },
+  {
+   "en": "dance",
+   "enAudio": "audio/82b78abc7406.mp3",
+   "enEx": "They dance every Friday.",
+   "id": "w363",
+   "ru": "танцевать",
+   "ruAudio": "audio/db734753fbb7.mp3",
+   "ruEx": "Они танцуют каждую пятницу.",
+   "set": 8
+  },
+  {
+   "en": "laugh",
+   "enAudio": "audio/152c11cea3fc.mp3",
+   "enEx": "We laughed a lot.",
+   "id": "w364",
+   "ru": "смеяться",
+   "ruAudio": "audio/a7f96b022a54.mp3",
+   "ruEx": "Мы много смеялись.",
+   "set": 8
+  },
+  {
+   "en": "cry",
+   "enAudio": "audio/d5ad4f76c513.mp3",
+   "enEx": "The baby started to cry.",
+   "id": "w365",
+   "ru": "плакать",
+   "ruAudio": "audio/fb89625a31fe.mp3",
+   "ruEx": "Малыш начал плакать.",
+   "set": 8
+  },
+  {
+   "en": "smile",
+   "enAudio": "audio/5b987c36d53b.mp3",
+   "enEx": "She smiled at me.",
+   "id": "w366",
+   "ru": "улыбаться, улыбка",
+   "ruAudio": "audio/da9a6079a19c.mp3",
+   "ruEx": "Она улыбнулась мне.",
+   "set": 8
+  },
+  {
+   "en": "wash",
+   "enAudio": "audio/5df285261655.mp3",
+   "enEx": "I wash the dishes after dinner.",
+   "id": "w367",
+   "ru": "мыть, стирать",
+   "ruAudio": "audio/c23870be592f.mp3",
+   "ruEx": "Я мою посуду после ужина.",
+   "set": 8
+  },
+  {
+   "en": "clean",
+   "enAudio": "audio/f217317022e4.mp3",
+   "enEx": "I clean my room on Sundays.",
+   "id": "w368",
+   "ru": "убирать, чистить",
+   "ruAudio": "audio/5ebc195cc0a8.mp3",
+   "ruEx": "Я убираюсь в комнате по воскресеньям.",
+   "set": 8
+  },
+  {
+   "en": "close",
+   "enAudio": "audio/3a37df5c2cb9.mp3",
+   "enEx": "Close the door, please.",
+   "id": "w369",
+   "ru": "закрывать",
+   "ruAudio": "audio/53c4da1c8b38.mp3",
+   "ruEx": "Закрой дверь, пожалуйста.",
+   "set": 8
+  },
+  {
+   "en": "throw",
+   "enAudio": "audio/7e77e9d54e77.mp3",
+   "enEx": "Throw me the ball.",
+   "id": "w370",
+   "ru": "бросать",
+   "ruAudio": "audio/2a5134a11f87.mp3",
+   "ruEx": "Брось мне мяч.",
+   "set": 8
+  },
+  {
+   "en": "catch",
+   "enAudio": "audio/c40f468926ba.mp3",
+   "enEx": "I could not catch the bus.",
+   "id": "w371",
+   "ru": "ловить",
+   "ruAudio": "audio/5e106f8f1c75.mp3",
+   "ruEx": "Я не успел на автобус.",
+   "set": 8
+  },
+  {
+   "en": "drop",
+   "enAudio": "audio/9e6652ca019f.mp3",
+   "enEx": "I dropped my phone.",
+   "id": "w372",
+   "ru": "ронять",
+   "ruAudio": "audio/1619e0d14dbc.mp3",
+   "ruEx": "Я уронил телефон.",
+   "set": 8
+  },
+  {
+   "en": "push",
+   "enAudio": "audio/f5e7479e4f79.mp3",
+   "enEx": "Push the red button.",
+   "id": "w373",
+   "ru": "толкать, нажимать",
+   "ruAudio": "audio/52963517e56f.mp3",
+   "ruEx": "Нажмите красную кнопку.",
+   "set": 8
+  },
+  {
+   "en": "break",
+   "enAudio": "audio/ae33da9cdbdd.mp3",
+   "enEx": "Be careful not to break it.",
+   "id": "w374",
+   "ru": "ломать, разбивать",
+   "ruAudio": "audio/32161b65b1e2.mp3",
+   "ruEx": "Осторожно, не сломай это.",
+   "set": 8
+  },
+  {
+   "en": "fix",
+   "enAudio": "audio/43b34c185be5.mp3",
+   "enEx": "Can you fix my bike?",
+   "id": "w375",
+   "ru": "чинить, исправлять",
+   "ruAudio": "audio/4f9b0cb07f69.mp3",
+   "ruEx": "Ты можешь починить мой велосипед?",
+   "set": 8
+  },
+  {
+   "en": "choose",
+   "enAudio": "audio/a8f75009952c.mp3",
+   "enEx": "Choose a color.",
+   "id": "w376",
+   "ru": "выбирать",
+   "ruAudio": "audio/43ffefae214d.mp3",
+   "ruEx": "Выбери цвет.",
+   "set": 8
+  },
+  {
+   "en": "check",
+   "enAudio": "audio/dc4590f9c454.mp3",
+   "enEx": "Please check your answers.",
+   "id": "w377",
+   "ru": "проверять",
+   "ruAudio": "audio/dd4175a5ddf2.mp3",
+   "ruEx": "Пожалуйста, проверьте свои ответы.",
+   "set": 8
+  },
+  {
+   "en": "enjoy",
+   "enAudio": "audio/8934bb11acf7.mp3",
+   "enEx": "I enjoy long walks.",
+   "id": "w378",
+   "ru": "наслаждаться, любить",
+   "ruAudio": "audio/51a4bfdc593e.mp3",
+   "ruEx": "Я люблю долгие прогулки.",
+   "set": 8
+  },
+  {
+   "en": "miss",
+   "enAudio": "audio/16df856617ad.mp3",
+   "enEx": "I miss my family.",
+   "id": "w379",
+   "ru": "скучать, пропускать",
+   "ruAudio": "audio/e7f7e24f2994.mp3",
+   "ruEx": "Я скучаю по семье.",
+   "set": 8
+  },
+  {
+   "en": "invite",
+   "enAudio": "audio/94b16e7fe771.mp3",
+   "enEx": "I invited her to dinner.",
+   "id": "w380",
+   "ru": "приглашать",
+   "ruAudio": "audio/d87100b08990.mp3",
+   "ruEx": "Я пригласил её на ужин.",
+   "set": 8
+  },
+  {
+   "en": "visit",
+   "enAudio": "audio/6a30223a74ba.mp3",
+   "enEx": "We visit my aunt on Sundays.",
+   "id": "w381",
+   "ru": "посещать, навещать",
+   "ruAudio": "audio/dad01742feba.mp3",
+   "ruEx": "Мы навещаем мою тётю по воскресеньям.",
+   "set": 8
+  },
+  {
+   "en": "travel",
+   "enAudio": "audio/06144c136dd2.mp3",
+   "enEx": "I love to travel.",
+   "id": "w382",
+   "ru": "путешествовать",
+   "ruAudio": "audio/cb3c04967c15.mp3",
+   "ruEx": "Я люблю путешествовать.",
+   "set": 8
+  },
+  {
+   "en": "arrive",
+   "enAudio": "audio/8ce58d4eab3e.mp3",
+   "enEx": "We arrive at noon.",
+   "id": "w383",
+   "ru": "прибывать",
+   "ruAudio": "audio/ac58d4556cdd.mp3",
+   "ruEx": "Мы прибываем в полдень.",
+   "set": 8
+  },
+  {
+   "en": "finish",
+   "enAudio": "audio/bbbc54d96b73.mp3",
+   "enEx": "I will finish work at six.",
+   "id": "w384",
+   "ru": "заканчивать",
+   "ruAudio": "audio/d91dc1385f82.mp3",
+   "ruEx": "Я закончу работу в шесть.",
+   "set": 8
+  },
+  {
+   "en": "prepare",
+   "enAudio": "audio/44e09a156edc.mp3",
+   "enEx": "I am preparing for the exam.",
+   "id": "w385",
+   "ru": "готовить, готовиться",
+   "ruAudio": "audio/94b7ed204651.mp3",
+   "ruEx": "Я готовлюсь к экзамену.",
+   "set": 8
+  },
+  {
+   "en": "answer",
+   "enAudio": "audio/ec0a88fd123a.mp3",
+   "enEx": "Please answer the question.",
+   "id": "w386",
+   "ru": "отвечать, ответ",
+   "ruAudio": "audio/d27d3c371d79.mp3",
+   "ruEx": "Пожалуйста, ответьте на вопрос.",
+   "set": 8
+  },
+  {
+   "en": "worry",
+   "enAudio": "audio/04fe39e0bfbc.mp3",
+   "enEx": "Do not worry about it.",
+   "id": "w387",
+   "ru": "волноваться",
+   "ruAudio": "audio/415857f342f9.mp3",
+   "ruEx": "Не волнуйся об этом.",
+   "set": 8
+  },
+  {
+   "en": "forget",
+   "enAudio": "audio/84b3bc2984bb.mp3",
+   "enEx": "I forgot my password.",
+   "id": "w388",
+   "ru": "забывать",
+   "ruAudio": "audio/22aa9465fc56.mp3",
+   "ruEx": "Я забыл свой пароль.",
+   "set": 8
+  },
+  {
+   "en": "hope",
+   "enAudio": "audio/b86033f84da9.mp3",
+   "enEx": "I hope you feel better.",
+   "id": "w389",
+   "ru": "надеяться",
+   "ruAudio": "audio/942d12f508f6.mp3",
+   "ruEx": "Надеюсь, тебе станет лучше.",
+   "set": 8
+  },
+  {
+   "en": "wish",
+   "enAudio": "audio/cae15d171120.mp3",
+   "enEx": "I wish you luck.",
+   "id": "w390",
+   "ru": "желать",
+   "ruAudio": "audio/a648febd42e2.mp3",
+   "ruEx": "Желаю тебе удачи.",
+   "set": 8
+  },
+  {
+   "en": "agree",
+   "enAudio": "audio/906cea93042a.mp3",
+   "enEx": "I agree with you.",
+   "id": "w391",
+   "ru": "соглашаться",
+   "ruAudio": "audio/3a96de1595c0.mp3",
+   "ruEx": "Я с тобой согласен.",
+   "set": 8
+  },
+  {
+   "en": "explain",
+   "enAudio": "audio/ee9377fb45d5.mp3",
+   "enEx": "Can you explain this word?",
+   "id": "w392",
+   "ru": "объяснять",
+   "ruAudio": "audio/2d7a92950169.mp3",
+   "ruEx": "Можешь объяснить это слово?",
+   "set": 8
+  },
+  {
+   "en": "share",
+   "enAudio": "audio/d72b125a97d8.mp3",
+   "enEx": "Let us share a pizza.",
+   "id": "w393",
+   "ru": "делиться",
+   "ruAudio": "audio/a9c41c4ebc09.mp3",
+   "ruEx": "Давай разделим пиццу.",
+   "set": 8
+  },
+  {
+   "en": "save",
+   "enAudio": "audio/34b7b4315ddd.mp3",
+   "enEx": "I save money every month.",
+   "id": "w394",
+   "ru": "экономить, сохранять",
+   "ruAudio": "audio/6d71b53e126d.mp3",
+   "ruEx": "Я откладываю деньги каждый месяц.",
+   "set": 8
+  },
+  {
+   "en": "practice",
+   "enAudio": "audio/385ec72c44c9.mp3",
+   "enEx": "I practice English every day.",
+   "id": "w395",
+   "ru": "практиковаться, практика",
+   "ruAudio": "audio/cf7d60a8b0b2.mp3",
+   "ruEx": "Я каждый день практикую английский.",
+   "set": 8
+  },
+  {
+   "en": "thank",
+   "enAudio": "audio/a2a11bb845fb.mp3",
+   "enEx": "I want to thank you.",
+   "id": "w396",
+   "ru": "благодарить",
+   "ruAudio": "audio/69b13c25ecf3.mp3",
+   "ruEx": "Я хочу вас поблагодарить.",
+   "set": 8
+  },
+  {
+   "en": "touch",
+   "enAudio": "audio/8ced1176ec6a.mp3",
+   "enEx": "Do not touch the stove.",
+   "id": "w397",
+   "ru": "трогать, касаться",
+   "ruAudio": "audio/ed0bfe0b3afc.mp3",
+   "ruEx": "Не трогай плиту.",
+   "set": 8
+  },
+  {
+   "en": "rest",
+   "enAudio": "audio/72538831f0af.mp3",
+   "enEx": "You need to rest.",
+   "id": "w398",
+   "ru": "отдыхать, отдых",
+   "ruAudio": "audio/6581db97d7b5.mp3",
+   "ruEx": "Тебе нужно отдохнуть.",
+   "set": 8
+  },
+  {
+   "en": "dream",
+   "enAudio": "audio/8d5eadbc6a31.mp3",
+   "enEx": "I had a strange dream.",
+   "id": "w399",
+   "ru": "мечтать, сон",
+   "ruAudio": "audio/62145d446cc7.mp3",
+   "ruEx": "Мне приснился странный сон.",
+   "set": 8
+  },
+  {
+   "en": "hurt",
+   "enAudio": "audio/f5c864ee0955.mp3",
+   "enEx": "My back hurts.",
+   "id": "w400",
+   "ru": "болеть, причинять боль",
+   "ruAudio": "audio/87b33b3d724c.mp3",
+   "ruEx": "У меня болит спина.",
+   "set": 8
+  },
+  {
+   "en": "tired",
+   "enAudio": "audio/362bb36359cf.mp3",
+   "enEx": "I am tired after work.",
+   "id": "w401",
+   "ru": "усталый",
+   "ruAudio": "audio/32bdbad0e5e2.mp3",
+   "ruEx": "Я устал после работы.",
+   "set": 9
+  },
+  {
+   "en": "hungry",
+   "enAudio": "audio/a42d5c1aa02e.mp3",
+   "enEx": "I am very hungry.",
+   "id": "w402",
+   "ru": "голодный",
+   "ruAudio": "audio/cf50b59f645f.mp3",
+   "ruEx": "Я очень голоден.",
+   "set": 9
+  },
+  {
+   "en": "busy",
+   "enAudio": "audio/36d4fe2e778d.mp3",
+   "enEx": "She is busy today.",
+   "id": "w403",
+   "ru": "занятой",
+   "ruAudio": "audio/cca4bff795b7.mp3",
+   "ruEx": "Сегодня она занята.",
+   "set": 9
+  },
+  {
+   "en": "careful",
+   "enAudio": "audio/fb4cdb3d1374.mp3",
+   "enEx": "Be careful on the stairs.",
+   "id": "w404",
+   "ru": "осторожный",
+   "ruAudio": "audio/35b4c8197b52.mp3",
+   "ruEx": "Осторожно на лестнице.",
+   "set": 9
+  },
+  {
+   "en": "dangerous",
+   "enAudio": "audio/58fb29bc15b7.mp3",
+   "enEx": "This road is dangerous.",
+   "id": "w405",
+   "ru": "опасный",
+   "ruAudio": "audio/a35c8fa64a65.mp3",
+   "ruEx": "Эта дорога опасна.",
+   "set": 9
+  },
+  {
+   "en": "expensive",
+   "enAudio": "audio/42dfd4180a3b.mp3",
+   "enEx": "This hotel is expensive.",
+   "id": "w406",
+   "ru": "дорогой",
+   "ruAudio": "audio/469b0fed37da.mp3",
+   "ruEx": "Этот отель дорогой.",
+   "set": 9
+  },
+  {
+   "en": "cheap",
+   "enAudio": "audio/8c4afa128071.mp3",
+   "enEx": "The tickets were cheap.",
+   "id": "w407",
+   "ru": "дешёвый",
+   "ruAudio": "audio/37512de08783.mp3",
+   "ruEx": "Билеты были дешёвые.",
+   "set": 9
+  },
+  {
+   "en": "beautiful",
+   "enAudio": "audio/1857dd4a7041.mp3",
+   "enEx": "What a beautiful view!",
+   "id": "w408",
+   "ru": "красивый",
+   "ruAudio": "audio/5e67be28bba1.mp3",
+   "ruEx": "Какой красивый вид!",
+   "set": 9
+  },
+  {
+   "en": "ugly",
+   "enAudio": "audio/0cd0811779a2.mp3",
+   "enEx": "I do not like this ugly lamp.",
+   "id": "w409",
+   "ru": "уродливый",
+   "ruAudio": "audio/72121a2b81d8.mp3",
+   "ruEx": "Мне не нравится эта уродливая лампа.",
+   "set": 9
+  },
+  {
+   "en": "funny",
+   "enAudio": "audio/d9630785a1de.mp3",
+   "enEx": "He tells funny stories.",
+   "id": "w410",
+   "ru": "смешной",
+   "ruAudio": "audio/20f380486a4d.mp3",
+   "ruEx": "Он рассказывает смешные истории.",
+   "set": 9
+  },
+  {
+   "en": "boring",
+   "enAudio": "audio/0729c71be82c.mp3",
+   "enEx": "The movie was boring.",
+   "id": "w411",
+   "ru": "скучный",
+   "ruAudio": "audio/594c35450414.mp3",
+   "ruEx": "Фильм был скучный.",
+   "set": 9
+  },
+  {
+   "en": "interesting",
+   "enAudio": "audio/4d800219310d.mp3",
+   "enEx": "This book is very interesting.",
+   "id": "w412",
+   "ru": "интересный",
+   "ruAudio": "audio/365f9052b375.mp3",
+   "ruEx": "Эта книга очень интересная.",
+   "set": 9
+  },
+  {
+   "en": "difficult",
+   "enAudio": "audio/3203188d9c7a.mp3",
+   "enEx": "The exam was difficult.",
+   "id": "w413",
+   "ru": "трудный",
+   "ruAudio": "audio/9f15224fcb2e.mp3",
+   "ruEx": "Экзамен был трудным.",
+   "set": 9
+  },
+  {
+   "en": "safe",
+   "enAudio": "audio/74294328da54.mp3",
+   "enEx": "Is it safe to swim here?",
+   "id": "w414",
+   "ru": "безопасный",
+   "ruAudio": "audio/34296f8a520c.mp3",
+   "ruEx": "Здесь безопасно купаться?",
+   "set": 9
+  },
+  {
+   "en": "famous",
+   "enAudio": "audio/01f65adc1194.mp3",
+   "enEx": "She is a famous singer.",
+   "id": "w415",
+   "ru": "известный",
+   "ruAudio": "audio/74279d27212e.mp3",
+   "ruEx": "Она известная певица.",
+   "set": 9
+  },
+  {
+   "en": "popular",
+   "enAudio": "audio/c5116eae21ad.mp3",
+   "enEx": "This song is very popular.",
+   "id": "w416",
+   "ru": "популярный",
+   "ruAudio": "audio/c28d0627d468.mp3",
+   "ruEx": "Эта песня очень популярна.",
+   "set": 9
+  },
+  {
+   "en": "quiet",
+   "enAudio": "audio/ac1bc9f38e66.mp3",
+   "enEx": "It is quiet at night.",
+   "id": "w417",
+   "ru": "тихий",
+   "ruAudio": "audio/1024f6806816.mp3",
+   "ruEx": "Ночью здесь тихо.",
+   "set": 9
+  },
+  {
+   "en": "loud",
+   "enAudio": "audio/9180728a77d6.mp3",
+   "enEx": "The music is too loud.",
+   "id": "w418",
+   "ru": "громкий",
+   "ruAudio": "audio/855b947d2116.mp3",
+   "ruEx": "Музыка слишком громкая.",
+   "set": 9
+  },
+  {
+   "en": "fast",
+   "enAudio": "audio/b17f25e25436.mp3",
+   "enEx": "He drives too fast.",
+   "id": "w419",
+   "ru": "быстрый, быстро",
+   "ruAudio": "audio/e13da89d80b1.mp3",
+   "ruEx": "Он водит слишком быстро.",
+   "set": 9
+  },
+  {
+   "en": "slow",
+   "enAudio": "audio/82eab320826e.mp3",
+   "enEx": "The internet is slow today.",
+   "id": "w420",
+   "ru": "медленный",
+   "ruAudio": "audio/0dda4cc0c8e5.mp3",
+   "ruEx": "Сегодня медленный интернет.",
+   "set": 9
+  },
+  {
+   "en": "heavy",
+   "enAudio": "audio/19524f687857.mp3",
+   "enEx": "This bag is heavy.",
+   "id": "w421",
+   "ru": "тяжёлый",
+   "ruAudio": "audio/c58f191f0f84.mp3",
+   "ruEx": "Эта сумка тяжёлая.",
+   "set": 9
+  },
+  {
+   "en": "light",
+   "enAudio": "audio/3f38f9a9daa4.mp3",
+   "enEx": "Turn off the light.",
+   "id": "w422",
+   "ru": "лёгкий, свет",
+   "ruAudio": "audio/c4857659acb9.mp3",
+   "ruEx": "Выключи свет.",
+   "set": 9
+  },
+  {
+   "en": "dark",
+   "enAudio": "audio/63c3f02edd52.mp3",
+   "enEx": "It gets dark early.",
+   "id": "w423",
+   "ru": "тёмный",
+   "ruAudio": "audio/c47c08fea016.mp3",
+   "ruEx": "Рано темнеет.",
+   "set": 9
+  },
+  {
+   "en": "bright",
+   "enAudio": "audio/18e11ba7d9d2.mp3",
+   "enEx": "The room is bright.",
+   "id": "w424",
+   "ru": "яркий",
+   "ruAudio": "audio/0efd3a3f0f17.mp3",
+   "ruEx": "В комнате светло.",
+   "set": 9
+  },
+  {
+   "en": "dirty",
+   "enAudio": "audio/afd4fd3be308.mp3",
+   "enEx": "My shoes are dirty.",
+   "id": "w425",
+   "ru": "грязный",
+   "ruAudio": "audio/a13a3822389c.mp3",
+   "ruEx": "Мои туфли грязные.",
+   "set": 9
+  },
+  {
+   "en": "empty",
+   "enAudio": "audio/37d65e45fe5b.mp3",
+   "enEx": "The box is empty.",
+   "id": "w426",
+   "ru": "пустой",
+   "ruAudio": "audio/e9d4b6554d87.mp3",
+   "ruEx": "Коробка пуста.",
+   "set": 9
+  },
+  {
+   "en": "sick",
+   "enAudio": "audio/3bbd7fc73c0e.mp3",
+   "enEx": "He is sick today.",
+   "id": "w427",
+   "ru": "больной",
+   "ruAudio": "audio/801b3aadd5c6.mp3",
+   "ruEx": "Сегодня он болеет.",
+   "set": 9
+  },
+  {
+   "en": "healthy",
+   "enAudio": "audio/15cd8f4601df.mp3",
+   "enEx": "Fruit is healthy.",
+   "id": "w428",
+   "ru": "здоровый, полезный",
+   "ruAudio": "audio/51218b1ae1d8.mp3",
+   "ruEx": "Фрукты полезны.",
+   "set": 9
+  },
+  {
+   "en": "rich",
+   "enAudio": "audio/9ef9f6be5024.mp3",
+   "enEx": "He is a rich man.",
+   "id": "w429",
+   "ru": "богатый",
+   "ruAudio": "audio/7d6acd6acd37.mp3",
+   "ruEx": "Он богатый человек.",
+   "set": 9
+  },
+  {
+   "en": "poor",
+   "enAudio": "audio/7bbc09dcb3fa.mp3",
+   "enEx": "They were very poor.",
+   "id": "w430",
+   "ru": "бедный",
+   "ruAudio": "audio/ccf99863059a.mp3",
+   "ruEx": "Они были очень бедны.",
+   "set": 9
+  },
+  {
+   "en": "polite",
+   "enAudio": "audio/6ee4362bfa5f.mp3",
+   "enEx": "He is always polite.",
+   "id": "w431",
+   "ru": "вежливый",
+   "ruAudio": "audio/82829fc75d33.mp3",
+   "ruEx": "Он всегда вежлив.",
+   "set": 9
+  },
+  {
+   "en": "angry",
+   "enAudio": "audio/33b483e879f5.mp3",
+   "enEx": "She was angry with me.",
+   "id": "w432",
+   "ru": "сердитый",
+   "ruAudio": "audio/b7d5be029a93.mp3",
+   "ruEx": "Она сердилась на меня.",
+   "set": 9
+  },
+  {
+   "en": "afraid",
+   "enAudio": "audio/3501b844af1b.mp3",
+   "enEx": "I am afraid of dogs.",
+   "id": "w433",
+   "ru": "испуганный",
+   "ruAudio": "audio/4dc82389602e.mp3",
+   "ruEx": "Я боюсь собак.",
+   "set": 9
+  },
+  {
+   "en": "sad",
+   "enAudio": "audio/def64a4fb4e3.mp3",
+   "enEx": "Why do you look sad?",
+   "id": "w434",
+   "ru": "грустный",
+   "ruAudio": "audio/5af6a6fac77d.mp3",
+   "ruEx": "Почему ты выглядишь грустным?",
+   "set": 9
+  },
+  {
+   "en": "lucky",
+   "enAudio": "audio/4a088d58c619.mp3",
+   "enEx": "You are very lucky.",
+   "id": "w435",
+   "ru": "удачливый",
+   "ruAudio": "audio/b9d7a44f38f3.mp3",
+   "ruEx": "Тебе очень повезло.",
+   "set": 9
+  },
+  {
+   "en": "tall",
+   "enAudio": "audio/474e25cc2bb5.mp3",
+   "enEx": "He is tall and thin.",
+   "id": "w436",
+   "ru": "высокий",
+   "ruAudio": "audio/d8e9a52d8217.mp3",
+   "ruEx": "Он высокий и худой.",
+   "set": 9
+  },
+  {
+   "en": "thin",
+   "enAudio": "audio/6ef54dda6e3e.mp3",
+   "enEx": "The walls are thin.",
+   "id": "w437",
+   "ru": "тонкий, худой",
+   "ruAudio": "audio/cef394cfb00d.mp3",
+   "ruEx": "Стены тонкие.",
+   "set": 9
+  },
+  {
+   "en": "wide",
+   "enAudio": "audio/c5acb1876ba2.mp3",
+   "enEx": "The river is wide here.",
+   "id": "w438",
+   "ru": "широкий",
+   "ruAudio": "audio/59b6adb76979.mp3",
+   "ruEx": "Здесь река широкая.",
+   "set": 9
+  },
+  {
+   "en": "deep",
+   "enAudio": "audio/9c1a001c1738.mp3",
+   "enEx": "The lake is very deep.",
+   "id": "w439",
+   "ru": "глубокий",
+   "ruAudio": "audio/28fa088730a0.mp3",
+   "ruEx": "Озеро очень глубокое.",
+   "set": 9
+  },
+  {
+   "en": "soft",
+   "enAudio": "audio/269d5a16d02e.mp3",
+   "enEx": "The bed is soft.",
+   "id": "w440",
+   "ru": "мягкий",
+   "ruAudio": "audio/426e6db988af.mp3",
+   "ruEx": "Кровать мягкая.",
+   "set": 9
+  },
+  {
+   "en": "sweet",
+   "enAudio": "audio/6b42860db177.mp3",
+   "enEx": "This tea is too sweet.",
+   "id": "w441",
+   "ru": "сладкий",
+   "ruAudio": "audio/f949f97af665.mp3",
+   "ruEx": "Этот чай слишком сладкий.",
+   "set": 9
+  },
+  {
+   "en": "dry",
+   "enAudio": "audio/f89d75789743.mp3",
+   "enEx": "My hands are dry.",
+   "id": "w442",
+   "ru": "сухой",
+   "ruAudio": "audio/3dc31c9e3d5f.mp3",
+   "ruEx": "У меня сухие руки.",
+   "set": 9
+  },
+  {
+   "en": "wet",
+   "enAudio": "audio/3e13c8c849f3.mp3",
+   "enEx": "My socks are wet.",
+   "id": "w443",
+   "ru": "мокрый",
+   "ruAudio": "audio/1db08b65886f.mp3",
+   "ruEx": "Мои носки мокрые.",
+   "set": 9
+  },
+  {
+   "en": "warm",
+   "enAudio": "audio/7b02792ec37b.mp3",
+   "enEx": "The room is warm.",
+   "id": "w444",
+   "ru": "тёплый",
+   "ruAudio": "audio/24ecc3ba50f4.mp3",
+   "ruEx": "В комнате тепло.",
+   "set": 9
+  },
+  {
+   "en": "cool",
+   "enAudio": "audio/5e71a1326408.mp3",
+   "enEx": "The water is cool.",
+   "id": "w445",
+   "ru": "прохладный, классный",
+   "ruAudio": "audio/927ebdd842b3.mp3",
+   "ruEx": "Вода прохладная.",
+   "set": 9
+  },
+  {
+   "en": "strange",
+   "enAudio": "audio/8fe7a0555a7b.mp3",
+   "enEx": "I heard a strange noise.",
+   "id": "w446",
+   "ru": "странный",
+   "ruAudio": "audio/bbd0c37a0a9c.mp3",
+   "ruEx": "Я услышал странный шум.",
+   "set": 9
+  },
+  {
+   "en": "proud",
+   "enAudio": "audio/3feb585fa187.mp3",
+   "enEx": "I am proud of you.",
+   "id": "w447",
+   "ru": "гордый",
+   "ruAudio": "audio/1a2e2843921d.mp3",
+   "ruEx": "Я горжусь тобой.",
+   "set": 9
+  },
+  {
+   "en": "common",
+   "enAudio": "audio/64996ccd7e46.mp3",
+   "enEx": "Smith is a common name.",
+   "id": "w448",
+   "ru": "обычный, распространённый",
+   "ruAudio": "audio/8565e1cfd0f4.mp3",
+   "ruEx": "Смит — распространённая фамилия.",
+   "set": 9
+  },
+  {
+   "en": "modern",
+   "enAudio": "audio/c3a18ba8374a.mp3",
+   "enEx": "They live in a modern house.",
+   "id": "w449",
+   "ru": "современный",
+   "ruAudio": "audio/80ee8ab5ab9b.mp3",
+   "ruEx": "Они живут в современном доме.",
+   "set": 9
+  },
+  {
+   "en": "usual",
+   "enAudio": "audio/d4a58781db02.mp3",
+   "enEx": "I will have the usual.",
+   "id": "w450",
+   "ru": "обычный",
+   "ruAudio": "audio/e2a446c86fc1.mp3",
+   "ruEx": "Мне как обычно.",
+   "set": 9
+  },
+  {
+   "en": "example",
+   "enAudio": "audio/400e88d94172.mp3",
+   "enEx": "Give me an example.",
+   "id": "w451",
+   "ru": "пример",
+   "ruAudio": "audio/bf8a69e400cd.mp3",
+   "ruEx": "Приведи мне пример.",
+   "set": 10
+  },
+  {
+   "en": "experience",
+   "enAudio": "audio/b070b3c3fdcc.mp3",
+   "enEx": "She has a lot of experience.",
+   "id": "w452",
+   "ru": "опыт",
+   "ruAudio": "audio/0eb9c9818367.mp3",
+   "ruEx": "У неё большой опыт.",
+   "set": 10
+  },
+  {
+   "en": "interest",
+   "enAudio": "audio/5e35c6b7cfcf.mp3",
+   "enEx": "He has an interest in art.",
+   "id": "w453",
+   "ru": "интерес",
+   "ruAudio": "audio/246c29d1da22.mp3",
+   "ruEx": "Он интересуется искусством.",
+   "set": 10
+  },
+  {
+   "en": "opportunity",
+   "enAudio": "audio/a31cbe416bc7.mp3",
+   "enEx": "This is a great opportunity.",
+   "id": "w454",
+   "ru": "возможность",
+   "ruAudio": "audio/94ed10a9b76c.mp3",
+   "ruEx": "Это отличная возможность.",
+   "set": 10
+  },
+  {
+   "en": "decision",
+   "enAudio": "audio/c17ee6b81978.mp3",
+   "enEx": "It was a hard decision.",
+   "id": "w455",
+   "ru": "решение",
+   "ruAudio": "audio/4c5e19189519.mp3",
+   "ruEx": "Это было трудное решение.",
+   "set": 10
+  },
+  {
+   "en": "plan",
+   "enAudio": "audio/4c328d487e05.mp3",
+   "enEx": "What is your plan?",
+   "id": "w456",
+   "ru": "план, планировать",
+   "ruAudio": "audio/5b0167a3587e.mp3",
+   "ruEx": "Какой у тебя план?",
+   "set": 10
+  },
+  {
+   "en": "attention",
+   "enAudio": "audio/b8139c6a4138.mp3",
+   "enEx": "Please pay attention.",
+   "id": "w457",
+   "ru": "внимание",
+   "ruAudio": "audio/f0ea82119379.mp3",
+   "ruEx": "Пожалуйста, обратите внимание.",
+   "set": 10
+  },
+  {
+   "en": "difference",
+   "enAudio": "audio/00181dba32b1.mp3",
+   "enEx": "I see no difference.",
+   "id": "w458",
+   "ru": "разница",
+   "ruAudio": "audio/cbc8e4e65ea3.mp3",
+   "ruEx": "Я не вижу разницы.",
+   "set": 10
+  },
+  {
+   "en": "effect",
+   "enAudio": "audio/7b2263cb4646.mp3",
+   "enEx": "The medicine had no effect.",
+   "id": "w459",
+   "ru": "эффект, влияние",
+   "ruAudio": "audio/fffcc0240b48.mp3",
+   "ruEx": "Лекарство не подействовало.",
+   "set": 10
+  },
+  {
+   "en": "support",
+   "enAudio": "audio/273405ee645b.mp3",
+   "enEx": "Thank you for your support.",
+   "id": "w460",
+   "ru": "поддержка, поддерживать",
+   "ruAudio": "audio/1d932d19694f.mp3",
+   "ruEx": "Спасибо за вашу поддержку.",
+   "set": 10
+  },
+  {
+   "en": "mind",
+   "enAudio": "audio/a4c39ce78c26.mp3",
+   "enEx": "Do you mind if I sit here?",
+   "id": "w461",
+   "ru": "ум, возражать",
+   "ruAudio": "audio/d2068566ec4e.mp3",
+   "ruEx": "Вы не против, если я тут сяду?",
+   "set": 10
+  },
+  {
+   "en": "chance",
+   "enAudio": "audio/8e84bf7f2a10.mp3",
+   "enEx": "Give me one more chance.",
+   "id": "w462",
+   "ru": "шанс, случай",
+   "ruAudio": "audio/e3ba2a69ccdc.mp3",
+   "ruEx": "Дай мне ещё один шанс.",
+   "set": 10
+  },
+  {
+   "en": "choice",
+   "enAudio": "audio/d4a8eba13ae5.mp3",
+   "enEx": "You have a choice.",
+   "id": "w463",
+   "ru": "выбор",
+   "ruAudio": "audio/1de5ba84c4e7.mp3",
+   "ruEx": "У тебя есть выбор.",
+   "set": 10
+  },
+  {
+   "en": "risk",
+   "enAudio": "audio/5b91c8808e29.mp3",
+   "enEx": "It is a big risk.",
+   "id": "w464",
+   "ru": "риск",
+   "ruAudio": "audio/77c0ee4b9ccb.mp3",
+   "ruEx": "Это большой риск.",
+   "set": 10
+  },
+  {
+   "en": "success",
+   "enAudio": "audio/af7caa0a5cc0.mp3",
+   "enEx": "I wish you success.",
+   "id": "w465",
+   "ru": "успех",
+   "ruAudio": "audio/955d2a3065e7.mp3",
+   "ruEx": "Желаю тебе успеха.",
+   "set": 10
+  },
+  {
+   "en": "goal",
+   "enAudio": "audio/ad9932934377.mp3",
+   "enEx": "My goal is to learn English.",
+   "id": "w466",
+   "ru": "цель, гол",
+   "ruAudio": "audio/58864e392b36.mp3",
+   "ruEx": "Моя цель — выучить английский.",
+   "set": 10
+  },
+  {
+   "en": "culture",
+   "enAudio": "audio/db1470fb6ffe.mp3",
+   "enEx": "I am interested in Japanese culture.",
+   "id": "w467",
+   "ru": "культура",
+   "ruAudio": "audio/d05176173902.mp3",
+   "ruEx": "Меня интересует японская культура.",
+   "set": 10
+  },
+  {
+   "en": "language",
+   "enAudio": "audio/49797591ccb5.mp3",
+   "enEx": "English is a global language.",
+   "id": "w468",
+   "ru": "язык",
+   "ruAudio": "audio/bd6b2e98c0b7.mp3",
+   "ruEx": "Английский — мировой язык.",
+   "set": 10
+  },
+  {
+   "en": "society",
+   "enAudio": "audio/1b536b1b391f.mp3",
+   "enEx": "Society is changing fast.",
+   "id": "w469",
+   "ru": "общество",
+   "ruAudio": "audio/dd5e52668c32.mp3",
+   "ruEx": "Общество быстро меняется.",
+   "set": 10
+  },
+  {
+   "en": "project",
+   "enAudio": "audio/6b5862ad99be.mp3",
+   "enEx": "We finished the project.",
+   "id": "w470",
+   "ru": "проект",
+   "ruAudio": "audio/a8602bd6767b.mp3",
+   "ruEx": "Мы закончили проект.",
+   "set": 10
+  },
+  {
+   "en": "process",
+   "enAudio": "audio/06d8631e73a0.mp3",
+   "enEx": "Learning is a slow process.",
+   "id": "w471",
+   "ru": "процесс",
+   "ruAudio": "audio/64f16b1acb35.mp3",
+   "ruEx": "Обучение — медленный процесс.",
+   "set": 10
+  },
+  {
+   "en": "trouble",
+   "enAudio": "audio/958587318e73.mp3",
+   "enEx": "I am in trouble.",
+   "id": "w472",
+   "ru": "неприятности, беда",
+   "ruAudio": "audio/1b2ef1c81022.mp3",
+   "ruEx": "У меня неприятности.",
+   "set": 10
+  },
+  {
+   "en": "rule",
+   "enAudio": "audio/bea852554313.mp3",
+   "enEx": "That is the rule.",
+   "id": "w473",
+   "ru": "правило",
+   "ruAudio": "audio/dbfd0713558d.mp3",
+   "ruEx": "Таково правило.",
+   "set": 10
+  },
+  {
+   "en": "cost",
+   "enAudio": "audio/7e1f2ebdfad7.mp3",
+   "enEx": "How much does it cost?",
+   "id": "w474",
+   "ru": "стоить, стоимость",
+   "ruAudio": "audio/b9a62fde50e0.mp3",
+   "ruEx": "Сколько это стоит?",
+   "set": 10
+  },
+  {
+   "en": "energy",
+   "enAudio": "audio/bbed8a6a7c3c.mp3",
+   "enEx": "I have no energy today.",
+   "id": "w475",
+   "ru": "энергия",
+   "ruAudio": "audio/d5994c136f24.mp3",
+   "ruEx": "У меня сегодня нет сил.",
+   "set": 10
+  },
+  {
+   "en": "bit",
+   "enAudio": "audio/5781381825e2.mp3",
+   "enEx": "Wait a little bit.",
+   "id": "w476",
+   "ru": "кусочек, немного",
+   "ruAudio": "audio/61aba982591f.mp3",
+   "ruEx": "Подожди чуть-чуть.",
+   "set": 10
+  },
+  {
+   "en": "order",
+   "enAudio": "audio/6a825f8e0ef3.mp3",
+   "enEx": "I would like to order.",
+   "id": "w477",
+   "ru": "заказ, порядок",
+   "ruAudio": "audio/ba4762eaba23.mp3",
+   "ruEx": "Я хотел бы сделать заказ.",
+   "set": 10
+  },
+  {
+   "en": "sense",
+   "enAudio": "audio/15a7c4e49b3d.mp3",
+   "enEx": "It does not make sense.",
+   "id": "w478",
+   "ru": "смысл, чувство",
+   "ruAudio": "audio/1109f398ff59.mp3",
+   "ruEx": "Это не имеет смысла.",
+   "set": 10
+  },
+  {
+   "en": "relationship",
+   "enAudio": "audio/60ad57597db0.mp3",
+   "enEx": "They have a good relationship.",
+   "id": "w479",
+   "ru": "отношения",
+   "ruAudio": "audio/144caf898c19.mp3",
+   "ruEx": "У них хорошие отношения.",
+   "set": 10
+  },
+  {
+   "en": "situation",
+   "enAudio": "audio/2b1856b3c17e.mp3",
+   "enEx": "The situation is getting better.",
+   "id": "w480",
+   "ru": "ситуация",
+   "ruAudio": "audio/33cc68268083.mp3",
+   "ruEx": "Ситуация улучшается.",
+   "set": 10
+  },
+  {
+   "en": "event",
+   "enAudio": "audio/f7ba1d195081.mp3",
+   "enEx": "The event starts at seven.",
+   "id": "w481",
+   "ru": "событие, мероприятие",
+   "ruAudio": "audio/8b337c0d8837.mp3",
+   "ruEx": "Мероприятие начинается в семь.",
+   "set": 10
+  },
+  {
+   "en": "season",
+   "enAudio": "audio/2b3fcbfc519a.mp3",
+   "enEx": "Summer is my favorite season.",
+   "id": "w482",
+   "ru": "время года, сезон",
+   "ruAudio": "audio/a32b166da2ef.mp3",
+   "ruEx": "Лето — моё любимое время года.",
+   "set": 10
+  },
+  {
+   "en": "nature",
+   "enAudio": "audio/cf55174f82b1.mp3",
+   "enEx": "I love walking in nature.",
+   "id": "w483",
+   "ru": "природа",
+   "ruAudio": "audio/a75a204c27bf.mp3",
+   "ruEx": "Я люблю гулять на природе.",
+   "set": 10
+  },
+  {
+   "en": "space",
+   "enAudio": "audio/525745509f2f.mp3",
+   "enEx": "We need more space.",
+   "id": "w484",
+   "ru": "место, космос",
+   "ruAudio": "audio/9e440757508d.mp3",
+   "ruEx": "Нам нужно больше места.",
+   "set": 10
+  },
+  {
+   "en": "century",
+   "enAudio": "audio/bf48f2537f54.mp3",
+   "enEx": "This house is over a century old.",
+   "id": "w485",
+   "ru": "век",
+   "ruAudio": "audio/b98702dc39df.mp3",
+   "ruEx": "Этому дому больше ста лет.",
+   "set": 10
+  },
+  {
+   "en": "age",
+   "enAudio": "audio/e54a05196e68.mp3",
+   "enEx": "Age is just a number.",
+   "id": "w486",
+   "ru": "возраст",
+   "ruAudio": "audio/a3d4f28bdb89.mp3",
+   "ruEx": "Возраст — это просто цифра.",
+   "set": 10
+  },
+  {
+   "en": "quality",
+   "enAudio": "audio/0e181e0dd539.mp3",
+   "enEx": "The quality is excellent.",
+   "id": "w487",
+   "ru": "качество",
+   "ruAudio": "audio/9ef0ddba2614.mp3",
+   "ruEx": "Качество отличное.",
+   "set": 10
+  },
+  {
+   "en": "value",
+   "enAudio": "audio/57dafdff73aa.mp3",
+   "enEx": "The value of the house went up.",
+   "id": "w488",
+   "ru": "ценность, стоимость",
+   "ruAudio": "audio/178193ea80c7.mp3",
+   "ruEx": "Стоимость дома выросла.",
+   "set": 10
+  },
+  {
+   "en": "knowledge",
+   "enAudio": "audio/36ff9235f33d.mp3",
+   "enEx": "Knowledge is power.",
+   "id": "w489",
+   "ru": "знания",
+   "ruAudio": "audio/f2f78b9d7c1f.mp3",
+   "ruEx": "Знание — сила.",
+   "set": 10
+  },
+  {
+   "en": "news",
+   "enAudio": "audio/5868fcd9a48f.mp3",
+   "enEx": "I have good news.",
+   "id": "w490",
+   "ru": "новости",
+   "ruAudio": "audio/1d41573b4e9d.mp3",
+   "ruEx": "У меня хорошие новости.",
+   "set": 10
+  },
+  {
+   "en": "truth",
+   "enAudio": "audio/9fcd1c50b8b5.mp3",
+   "enEx": "Tell me the truth.",
+   "id": "w491",
+   "ru": "правда",
+   "ruAudio": "audio/51f1d80c3c26.mp3",
+   "ruEx": "Скажи мне правду.",
+   "set": 10
+  },
+  {
+   "en": "pain",
+   "enAudio": "audio/4a61c8d87d74.mp3",
+   "enEx": "I feel pain in my knee.",
+   "id": "w492",
+   "ru": "боль",
+   "ruAudio": "audio/c58247a84c11.mp3",
+   "ruEx": "Я чувствую боль в колене.",
+   "set": 10
+  },
+  {
+   "en": "fear",
+   "enAudio": "audio/c3df26c5c29b.mp3",
+   "enEx": "She has no fear.",
+   "id": "w493",
+   "ru": "страх",
+   "ruAudio": "audio/c7e441636f4c.mp3",
+   "ruEx": "Она ничего не боится.",
+   "set": 10
+  },
+  {
+   "en": "peace",
+   "enAudio": "audio/bd8b852da774.mp3",
+   "enEx": "I want some peace and quiet.",
+   "id": "w494",
+   "ru": "мир, покой",
+   "ruAudio": "audio/33f06c31ee9d.mp3",
+   "ruEx": "Я хочу тишины и покоя.",
+   "set": 10
+  },
+  {
+   "en": "luck",
+   "enAudio": "audio/da344aaaecb9.mp3",
+   "enEx": "Good luck!",
+   "id": "w495",
+   "ru": "удача",
+   "ruAudio": "audio/cff78615d672.mp3",
+   "ruEx": "Удачи!",
+   "set": 10
+  },
+  {
+   "en": "view",
+   "enAudio": "audio/fcce9db445fb.mp3",
+   "enEx": "What a great view!",
+   "id": "w496",
+   "ru": "вид, мнение",
+   "ruAudio": "audio/c249826e4681.mp3",
+   "ruEx": "Какой чудесный вид!",
+   "set": 10
+  },
+  {
+   "en": "cause",
+   "enAudio": "audio/0c25a236192d.mp3",
+   "enEx": "Smoking causes health problems.",
+   "id": "w497",
+   "ru": "причина, вызывать",
+   "ruAudio": "audio/a8430564129f.mp3",
+   "ruEx": "Курение вызывает проблемы со здоровьем.",
+   "set": 10
+  },
+  {
+   "en": "form",
+   "enAudio": "audio/e87a821d1d32.mp3",
+   "enEx": "Fill out this form.",
+   "id": "w498",
+   "ru": "форма, бланк",
+   "ruAudio": "audio/b9e37a09e5a5.mp3",
+   "ruEx": "Заполните эту форму.",
+   "set": 10
+  },
+  {
+   "en": "type",
+   "enAudio": "audio/9d3d31c5522f.mp3",
+   "enEx": "What type of food do you like?",
+   "id": "w499",
+   "ru": "тип, вид",
+   "ruAudio": "audio/4945feadc041.mp3",
+   "ruEx": "Какую еду ты любишь?",
+   "set": 10
+  },
+  {
+   "en": "step",
+   "enAudio": "audio/6fc5c537dc05.mp3",
+   "enEx": "Take one step at a time.",
+   "id": "w500",
+   "ru": "шаг",
+   "ruAudio": "audio/9b157f4228a3.mp3",
+   "ruEx": "Делай по одному шагу.",
+   "set": 10
+  }
+ ],
+ "id": "top-500-words"
+}

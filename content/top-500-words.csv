@@ -1,0 +1,501 @@
+id;set;en;ru;en_ex;ru_ex
+w001;1;time;время;What time is it?;Который час?
+w002;1;year;год;I lived there for a year.;Я прожил там год.
+w003;1;people;люди;Many people like this song.;Многим людям нравится эта песня.
+w004;1;way;путь, способ;Is this the right way?;Это правильная дорога?
+w005;1;day;день;Have a nice day!;Хорошего дня!
+w006;1;man;мужчина;That man is my uncle.;Тот мужчина — мой дядя.
+w007;1;thing;вещь;I need to buy a few things.;Мне нужно купить кое-какие вещи.
+w008;1;woman;женщина;The woman is waiting outside.;Женщина ждёт на улице.
+w009;1;life;жизнь;Life is not always easy.;Жизнь не всегда проста.
+w010;1;child;ребёнок;The child is sleeping.;Ребёнок спит.
+w011;1;world;мир, свет;She wants to see the world.;Она хочет увидеть мир.
+w012;1;school;школа;My kids go to school.;Мои дети ходят в школу.
+w013;1;state;штат, состояние;She lives in the state of Ohio.;Она живёт в штате Огайо.
+w014;1;family;семья;I have a big family.;У меня большая семья.
+w015;1;student;студент, ученик;He is a college student.;Он студент колледжа.
+w016;1;group;группа;We work in small groups.;Мы работаем в небольших группах.
+w017;1;country;страна;Which country are you from?;Вы из какой страны?
+w018;1;problem;проблема;We have a small problem.;У нас небольшая проблема.
+w019;1;hand;рука;Wash your hands first.;Сначала вымой руки.
+w020;1;part;часть;This is the best part.;Это лучшая часть.
+w021;1;place;место;This is a quiet place.;Это тихое место.
+w022;1;case;случай, дело;In that case, I will wait.;В таком случае я подожду.
+w023;1;week;неделя;See you next week.;Увидимся на следующей неделе.
+w024;1;company;компания;She works for a big company.;Она работает в большой компании.
+w025;1;system;система;The system is down.;Система не работает.
+w026;1;question;вопрос;Can I ask a question?;Можно задать вопрос?
+w027;1;work;работа, работать;I work from home.;Я работаю из дома.
+w028;1;government;правительство;The government announced a new plan.;Правительство объявило новый план.
+w029;1;number;номер, число;What is your phone number?;Какой у вас номер телефона?
+w030;1;night;ночь, вечер;We stayed up all night.;Мы не спали всю ночь.
+w031;1;point;точка, смысл;I see your point.;Я понимаю вашу мысль.
+w032;1;home;дом;I am going home.;Я иду домой.
+w033;1;water;вода;Can I have some water?;Можно мне воды?
+w034;1;room;комната;My room is on the left.;Моя комната слева.
+w035;1;mother;мать, мама;My mother is a teacher.;Моя мама — учительница.
+w036;1;area;район, область;This area is very safe.;Этот район очень безопасный.
+w037;1;money;деньги;I do not have much money.;У меня мало денег.
+w038;1;story;история, рассказ;Tell me a story.;Расскажи мне историю.
+w039;1;fact;факт;That is a fact.;Это факт.
+w040;1;month;месяц;I will call you next month.;Я позвоню тебе в следующем месяце.
+w041;1;lot;множество, много;Thanks a lot!;Большое спасибо!
+w042;1;right;правильный, правый;You are right.;Ты прав.
+w043;1;study;учиться, изучать;I study English every day.;Я каждый день учу английский.
+w044;1;book;книга;I am reading a good book.;Я читаю хорошую книгу.
+w045;1;eye;глаз;She has blue eyes.;У неё голубые глаза.
+w046;1;job;работа, должность;He found a new job.;Он нашёл новую работу.
+w047;1;word;слово;I do not know this word.;Я не знаю этого слова.
+w048;1;business;бизнес, дело;He runs a small business.;Он ведёт небольшой бизнес.
+w049;1;issue;вопрос, проблема;This is an important issue.;Это важный вопрос.
+w050;1;program;программа;I like this TV program.;Мне нравится эта передача.
+w051;2;side;сторона;Sit on the other side.;Сядь с другой стороны.
+w052;2;kind;вид, добрый;What kind of music do you like?;Какую музыку ты любишь?
+w053;2;head;голова;My head hurts.;У меня болит голова.
+w054;2;house;дом;They bought a new house.;Они купили новый дом.
+w055;2;service;обслуживание, услуга;The service here is great.;Обслуживание здесь отличное.
+w056;2;friend;друг;He is my best friend.;Он мой лучший друг.
+w057;2;father;отец, папа;My father drives a truck.;Мой папа водит грузовик.
+w058;2;power;сила, электричество;The power went out.;Отключили электричество.
+w059;2;hour;час;The movie is two hours long.;Фильм идёт два часа.
+w060;2;game;игра;Let's play a game.;Давай сыграем в игру.
+w061;2;line;линия, очередь;Please wait in line.;Пожалуйста, подождите в очереди.
+w062;2;end;конец;This is the end of the story.;Это конец истории.
+w063;2;member;член, участник;She is a member of the club.;Она член клуба.
+w064;2;law;закон;It is against the law.;Это противозаконно.
+w065;2;car;машина;I need to wash my car.;Мне нужно помыть машину.
+w066;2;city;город;New York is a big city.;Нью-Йорк — большой город.
+w067;2;community;сообщество;Our community is very friendly.;Наше сообщество очень дружелюбное.
+w068;2;name;имя, название;What is your name?;Как тебя зовут?
+w069;2;president;президент;The president gave a speech.;Президент произнёс речь.
+w070;2;team;команда;Our team won the game.;Наша команда выиграла игру.
+w071;2;minute;минута;Wait a minute.;Подожди минутку.
+w072;2;idea;идея;That is a good idea.;Это хорошая идея.
+w073;2;kid;ребёнок, малыш;The kids are playing outside.;Дети играют на улице.
+w074;2;body;тело;Exercise is good for the body.;Спорт полезен для тела.
+w075;2;information;информация;I need more information.;Мне нужно больше информации.
+w076;2;back;спина, назад;I will be back soon.;Я скоро вернусь.
+w077;2;parent;родитель;Her parents live in Texas.;Её родители живут в Техасе.
+w078;2;face;лицо;She has a kind face.;У неё доброе лицо.
+w079;2;others;другие;Others will come later.;Остальные придут позже.
+w080;2;level;уровень;My English level is good.;У меня хороший уровень английского.
+w081;2;office;офис;I am at the office.;Я в офисе.
+w082;2;door;дверь;Please close the door.;Пожалуйста, закрой дверь.
+w083;2;health;здоровье;Health is more important than money.;Здоровье важнее денег.
+w084;2;person;человек, личность;He is a very nice person.;Он очень приятный человек.
+w085;2;art;искусство;She loves modern art.;Она любит современное искусство.
+w086;2;war;война;The war ended long ago.;Война закончилась давно.
+w087;2;history;история;I like reading about history.;Я люблю читать об истории.
+w088;2;party;вечеринка, партия;We had a party last night.;Вчера вечером у нас была вечеринка.
+w089;2;result;результат;The test result is good.;Результат анализа хороший.
+w090;2;change;менять, изменение;I need a change.;Мне нужны перемены.
+w091;2;morning;утро;I drink coffee every morning.;Я пью кофе каждое утро.
+w092;2;reason;причина;What is the reason?;В чём причина?
+w093;2;research;исследование;They did research on sleep.;Они провели исследование сна.
+w094;2;girl;девочка, девушка;The girl is reading a book.;Девочка читает книгу.
+w095;2;guy;парень;He is a funny guy.;Он забавный парень.
+w096;2;moment;момент;Just a moment, please.;Одну минутку, пожалуйста.
+w097;2;air;воздух;The air is fresh here.;Здесь свежий воздух.
+w098;2;teacher;учитель;My teacher is very kind.;Мой учитель очень добрый.
+w099;2;force;сила, заставлять;Do not force him.;Не заставляй его.
+w100;2;education;образование;Education is very important.;Образование очень важно.
+w101;3;be;быть;I want to be a doctor.;Я хочу быть врачом.
+w102;3;have;иметь, есть;I have two brothers.;У меня два брата.
+w103;3;do;делать;What do you do?;Чем вы занимаетесь?
+w104;3;say;говорить, сказать;What did you say?;Что ты сказал?
+w105;3;get;получать, становиться;I got a letter today.;Сегодня я получил письмо.
+w106;3;make;делать, создавать;I will make some tea.;Я сделаю чай.
+w107;3;go;идти, ехать;Let's go home.;Пойдём домой.
+w108;3;know;знать;I know him well.;Я хорошо его знаю.
+w109;3;take;брать;Take a seat, please.;Присаживайтесь, пожалуйста.
+w110;3;see;видеть;I can see the sea.;Я вижу море.
+w111;3;come;приходить, приезжать;Come here, please.;Подойди сюда, пожалуйста.
+w112;3;think;думать;I think you are right.;Я думаю, ты прав.
+w113;3;look;смотреть;Look at this picture.;Посмотри на эту картинку.
+w114;3;want;хотеть;I want a cup of coffee.;Я хочу чашку кофе.
+w115;3;give;давать;Give me your hand.;Дай мне руку.
+w116;3;use;использовать;Can I use your phone?;Можно воспользоваться вашим телефоном?
+w117;3;find;находить;I cannot find my keys.;Я не могу найти свои ключи.
+w118;3;tell;рассказывать, говорить;Tell me the truth.;Скажи мне правду.
+w119;3;ask;спрашивать, просить;Ask him about it.;Спроси его об этом.
+w120;3;seem;казаться;You seem tired today.;Ты, кажется, устал сегодня.
+w121;3;feel;чувствовать;I feel much better now.;Теперь я чувствую себя намного лучше.
+w122;3;try;пытаться, пробовать;Try this soup.;Попробуй этот суп.
+w123;3;leave;уходить, оставлять;I leave work at five.;Я ухожу с работы в пять.
+w124;3;call;звонить, называть;I will call you tonight.;Я позвоню тебе вечером.
+w125;3;need;нуждаться, нужно;I need some help.;Мне нужна помощь.
+w126;3;become;становиться;She wants to become a nurse.;Она хочет стать медсестрой.
+w127;3;mean;означать, иметь в виду;What does this word mean?;Что значит это слово?
+w128;3;keep;держать, хранить;Keep the change.;Сдачу оставьте себе.
+w129;3;let;позволять, давать;Let me help you.;Позволь мне помочь тебе.
+w130;3;begin;начинать;The class begins at nine.;Урок начинается в девять.
+w131;3;help;помогать, помощь;Can you help me?;Ты можешь мне помочь?
+w132;3;talk;разговаривать;We talked for an hour.;Мы разговаривали час.
+w133;3;turn;поворачивать, очередь;Turn left at the corner.;На углу поверните налево.
+w134;3;start;начинать;Let's start now.;Давай начнём сейчас.
+w135;3;show;показывать;Show me your ticket.;Покажите мне ваш билет.
+w136;3;hear;слышать;I cannot hear you.;Я вас не слышу.
+w137;3;play;играть;The kids play in the yard.;Дети играют во дворе.
+w138;3;run;бежать;I run every morning.;Я бегаю каждое утро.
+w139;3;move;двигаться, переезжать;We moved to Boston.;Мы переехали в Бостон.
+w140;3;like;нравиться, любить;I like your jacket.;Мне нравится твоя куртка.
+w141;3;live;жить;They live in Chicago.;Они живут в Чикаго.
+w142;3;believe;верить;I believe you.;Я тебе верю.
+w143;3;hold;держать;Hold on to the handrail.;Держитесь за поручень.
+w144;3;bring;приносить;Bring your friend along.;Приводи своего друга с собой.
+w145;3;happen;случаться;What happened here?;Что здесь случилось?
+w146;3;write;писать;Write your name here.;Напишите здесь своё имя.
+w147;3;provide;предоставлять;The hotel provides free breakfast.;Отель предоставляет бесплатный завтрак.
+w148;3;sit;сидеть, садиться;Please sit down.;Пожалуйста, садитесь.
+w149;3;stand;стоять;Stand in line, please.;Встаньте в очередь, пожалуйста.
+w150;3;put;класть, ставить;Put it on the table.;Положи это на стол.
+w151;4;lose;терять, проигрывать;I lost my wallet.;Я потерял кошелёк.
+w152;4;pay;платить;I will pay by card.;Я заплачу картой.
+w153;4;meet;встречать, знакомиться;Nice to meet you.;Приятно познакомиться.
+w154;4;include;включать;The price includes breakfast.;В цену входит завтрак.
+w155;4;continue;продолжать;Please continue.;Пожалуйста, продолжайте.
+w156;4;set;ставить, устанавливать;Set the alarm for six.;Поставь будильник на шесть.
+w157;4;learn;учить, узнавать;I want to learn Spanish.;Я хочу выучить испанский.
+w158;4;lead;вести, руководить;She leads the team.;Она возглавляет команду.
+w159;4;understand;понимать;I do not understand.;Я не понимаю.
+w160;4;watch;смотреть, наблюдать;We watch TV in the evening.;По вечерам мы смотрим телевизор.
+w161;4;follow;следовать, идти за;Follow me, please.;Идите за мной, пожалуйста.
+w162;4;stop;останавливаться, прекращать;The bus stops here.;Автобус останавливается здесь.
+w163;4;create;создавать;She creates beautiful drawings.;Она создаёт красивые рисунки.
+w164;4;speak;говорить;Do you speak English?;Вы говорите по-английски?
+w165;4;read;читать;I read the news every morning.;Я читаю новости каждое утро.
+w166;4;allow;разрешать;Pets are not allowed here.;Здесь нельзя с животными.
+w167;4;add;добавлять;Add some salt.;Добавь немного соли.
+w168;4;spend;тратить, проводить;I spend a lot of time online.;Я провожу много времени в интернете.
+w169;4;grow;расти, выращивать;Tomatoes grow fast here.;Помидоры здесь быстро растут.
+w170;4;open;открывать;Open the window, please.;Открой окно, пожалуйста.
+w171;4;walk;ходить пешком, гулять;I walk to work.;Я хожу на работу пешком.
+w172;4;win;выигрывать, побеждать;We want to win.;Мы хотим победить.
+w173;4;offer;предлагать;He offered me a job.;Он предложил мне работу.
+w174;4;remember;помнить;I remember that day.;Я помню тот день.
+w175;4;love;любить;I love my family.;Я люблю свою семью.
+w176;4;consider;считать, обдумывать;I will consider your offer.;Я обдумаю ваше предложение.
+w177;4;appear;появляться, казаться;A man appeared at the door.;В дверях появился мужчина.
+w178;4;buy;покупать;I want to buy a gift.;Я хочу купить подарок.
+w179;4;wait;ждать;Wait for me here.;Подожди меня здесь.
+w180;4;serve;подавать, обслуживать;They serve breakfast until ten.;Завтрак подают до десяти.
+w181;4;die;умирать;The flowers will die without water.;Цветы погибнут без воды.
+w182;4;send;отправлять;Please send me the file.;Пожалуйста, отправь мне файл.
+w183;4;expect;ожидать;I expect good news.;Я жду хороших новостей.
+w184;4;build;строить;They build houses here.;Здесь строят дома.
+w185;4;stay;оставаться, останавливаться;We stayed at a small hotel.;Мы остановились в маленьком отеле.
+w186;4;fall;падать;Leaves fall in October.;В октябре листья опадают.
+w187;4;cut;резать;Cut the bread, please.;Нарежь хлеб, пожалуйста.
+w188;4;reach;достигать, добираться;We reached the hotel at noon.;Мы добрались до отеля в полдень.
+w189;4;kill;убивать;Smoking can kill you.;Курение может тебя убить.
+w190;4;remain;оставаться;Please remain seated.;Пожалуйста, оставайтесь на местах.
+w191;4;suggest;предлагать, советовать;I suggest we leave now.;Предлагаю уйти сейчас.
+w192;4;raise;поднимать, повышать;Raise your hand, please.;Поднимите руку, пожалуйста.
+w193;4;pass;передавать, проходить;Pass me the salt, please.;Передай мне соль, пожалуйста.
+w194;4;sell;продавать;They sell fresh bread.;Они продают свежий хлеб.
+w195;4;require;требовать;This job requires experience.;Эта работа требует опыта.
+w196;4;report;сообщать, отчёт;I wrote a short report.;Я написал короткий отчёт.
+w197;4;decide;решать;I cannot decide.;Я не могу решить.
+w198;4;pull;тянуть;Pull the door.;Потяни дверь на себя.
+w199;4;teach;учить, преподавать;She teaches math.;Она преподаёт математику.
+w200;4;join;присоединяться;Join us for lunch.;Присоединяйся к нам на обед.
+w201;5;good;хороший;This is a good book.;Это хорошая книга.
+w202;5;new;новый;I have a new phone.;У меня новый телефон.
+w203;5;first;первый;This is my first job.;Это моя первая работа.
+w204;5;last;последний, прошлый;I saw him last week.;Я видел его на прошлой неделе.
+w205;5;long;длинный, долгий;It was a long day.;Это был долгий день.
+w206;5;great;великолепный, отличный;That is a great idea.;Это отличная идея.
+w207;5;little;маленький, немного;I speak a little English.;Я немного говорю по-английски.
+w208;5;own;собственный;She has her own room.;У неё своя комната.
+w209;5;other;другой;Show me the other one.;Покажи мне другой.
+w210;5;old;старый;My car is very old.;Моя машина очень старая.
+w211;5;big;большой;They have a big dog.;У них большая собака.
+w212;5;high;высокий;The mountain is very high.;Гора очень высокая.
+w213;5;different;разный, другой;We have different tastes.;У нас разные вкусы.
+w214;5;small;маленький;I need a small bag.;Мне нужна маленькая сумка.
+w215;5;large;крупный, большой;I will take a large coffee.;Мне большой кофе.
+w216;5;next;следующий;Who is next?;Кто следующий?
+w217;5;early;ранний, рано;I woke up early today.;Сегодня я проснулся рано.
+w218;5;young;молодой;She is a young doctor.;Она молодой врач.
+w219;5;important;важный;This meeting is very important.;Эта встреча очень важна.
+w220;5;few;несколько, мало;I have a few questions.;У меня есть несколько вопросов.
+w221;5;public;общественный, публичный;I take public transportation.;Я езжу на общественном транспорте.
+w222;5;bad;плохой;I have bad news.;У меня плохие новости.
+w223;5;same;тот же, одинаковый;We have the same teacher.;У нас один и тот же учитель.
+w224;5;able;способный;Are you able to come?;Ты сможешь прийти?
+w225;5;free;свободный, бесплатный;Are you free tonight?;Ты свободен сегодня вечером?
+w226;5;sure;уверенный;I am not sure.;Я не уверен.
+w227;5;real;настоящий, реальный;Is this real gold?;Это настоящее золото?
+w228;5;special;особенный;Today is a special day.;Сегодня особенный день.
+w229;5;whole;целый, весь;I ate the whole pizza.;Я съел всю пиццу.
+w230;5;full;полный, сытый;The bus is full.;Автобус полон.
+w231;5;clear;ясный, понятный;The answer is clear.;Ответ ясен.
+w232;5;easy;лёгкий, простой;This test is easy.;Этот тест лёгкий.
+w233;5;hard;трудный, твёрдый;English is hard for me.;Английский даётся мне трудно.
+w234;5;strong;сильный;He is very strong.;Он очень сильный.
+w235;5;possible;возможный;Is it possible?;Это возможно?
+w236;5;late;поздний, поздно;Do not be late.;Не опаздывай.
+w237;5;best;лучший;She is my best friend.;Она моя лучшая подруга.
+w238;5;short;короткий, низкий;The movie was short.;Фильм был коротким.
+w239;5;happy;счастливый, довольный;I am happy to see you.;Я рад тебя видеть.
+w240;5;cold;холодный;The water is cold.;Вода холодная.
+w241;5;hot;горячий, жаркий;It is hot today.;Сегодня жарко.
+w242;5;ready;готовый;Are you ready?;Ты готов?
+w243;5;left;левый;Turn left here.;Поверните здесь налево.
+w244;5;nice;приятный, милый;What a nice day!;Какой приятный день!
+w245;5;major;главный, крупный;This is a major problem.;Это серьёзная проблема.
+w246;5;black;чёрный;I like black coffee.;Я люблю чёрный кофе.
+w247;5;white;белый;She wore a white dress.;На ней было белое платье.
+w248;5;red;красный;He has a red car.;У него красная машина.
+w249;5;wrong;неправильный, неверный;You have the wrong number.;Вы ошиблись номером.
+w250;5;simple;простой;It is a simple recipe.;Это простой рецепт.
+w251;6;about;о, около;Tell me about your day.;Расскажи мне о своём дне.
+w252;6;because;потому что;I stayed home because I was sick.;Я остался дома, потому что болел.
+w253;6;always;всегда;She is always on time.;Она всегда приходит вовремя.
+w254;6;never;никогда;I have never been to Paris.;Я никогда не был в Париже.
+w255;6;often;часто;We often eat out.;Мы часто едим в кафе.
+w256;6;also;также, тоже;I also like tea.;Я тоже люблю чай.
+w257;6;very;очень;This soup is very good.;Этот суп очень вкусный.
+w258;6;too;слишком, тоже;It is too expensive.;Это слишком дорого.
+w259;6;only;только;I have only five dollars.;У меня всего пять долларов.
+w260;6;just;только что, просто;I have just arrived.;Я только что приехал.
+w261;6;now;сейчас;I am busy now.;Сейчас я занят.
+w262;6;then;потом, тогда;First eat, then play.;Сначала поешь, потом играй.
+w263;6;here;здесь, сюда;Put it here.;Положи это сюда.
+w264;6;there;там, туда;I will go there tomorrow.;Я пойду туда завтра.
+w265;6;again;снова;Please say it again.;Пожалуйста, повторите ещё раз.
+w266;6;even;даже;Even kids can do it.;Даже дети могут это сделать.
+w267;6;ever;когда-либо;Have you ever been to Japan?;Ты когда-нибудь бывал в Японии?
+w268;6;away;прочь, далеко;The station is not far away.;Станция недалеко.
+w269;6;together;вместе;We work together.;Мы работаем вместе.
+w270;6;really;действительно, правда;I really like it.;Мне это очень нравится.
+w271;6;maybe;может быть;Maybe we can meet later.;Может быть, встретимся позже.
+w272;6;almost;почти;We are almost there.;Мы почти на месте.
+w273;6;enough;достаточно;I have had enough.;С меня хватит.
+w274;6;quite;довольно;It is quite cold today.;Сегодня довольно холодно.
+w275;6;soon;скоро;See you soon!;Скоро увидимся!
+w276;6;today;сегодня;What are we doing today?;Что мы делаем сегодня?
+w277;6;tomorrow;завтра;I will call you tomorrow.;Я позвоню тебе завтра.
+w278;6;yesterday;вчера;It rained yesterday.;Вчера шёл дождь.
+w279;6;with;с, вместе с;I live with my parents.;Я живу с родителями.
+w280;6;without;без;I drink tea without sugar.;Я пью чай без сахара.
+w281;6;between;между;Sit between us.;Садись между нами.
+w282;6;under;под;The cat is under the table.;Кошка под столом.
+w283;6;over;над, через;The plane flew over the city.;Самолёт пролетел над городом.
+w284;6;through;через, сквозь;We drove through the tunnel.;Мы проехали через туннель.
+w285;6;during;во время;I slept during the flight.;Я спал во время полёта.
+w286;6;before;до, перед;Wash your hands before dinner.;Мойте руки перед ужином.
+w287;6;after;после;Call me after work.;Позвони мне после работы.
+w288;6;against;против;Who are we playing against?;Против кого мы играем?
+w289;6;around;вокруг, около;Let's walk around the park.;Давай погуляем по парку.
+w290;6;near;рядом, возле;I live near the station.;Я живу рядом со станцией.
+w291;6;across;через, напротив;The bank is across the street.;Банк находится через дорогу.
+w292;6;along;вдоль;We walked along the river.;Мы шли вдоль реки.
+w293;6;inside;внутри;It is warm inside.;Внутри тепло.
+w294;6;outside;снаружи, на улице;The kids are playing outside.;Дети играют на улице.
+w295;6;behind;позади, за;He stood behind me.;Он стоял позади меня.
+w296;6;until;до, пока;Wait until Monday.;Подожди до понедельника.
+w297;6;while;пока, в то время как;I read while I eat.;Я читаю, пока ем.
+w298;6;if;если;Call me if you need help.;Позвони, если понадобится помощь.
+w299;6;but;но;I like it, but it is expensive.;Мне нравится, но это дорого.
+w300;6;or;или;Do you want tea or coffee?;Ты хочешь чай или кофе?
+w301;7;food;еда;The food here is great.;Еда здесь отличная.
+w302;7;music;музыка;I listen to music on the bus.;Я слушаю музыку в автобусе.
+w303;7;movie;фильм;Let's watch a movie.;Давай посмотрим фильм.
+w304;7;street;улица;The street is very busy.;Улица очень оживлённая.
+w305;7;window;окно;Please open the window.;Пожалуйста, открой окно.
+w306;7;table;стол;The keys are on the table.;Ключи лежат на столе.
+w307;7;bed;кровать;I go to bed at eleven.;Я ложусь спать в одиннадцать.
+w308;7;phone;телефон;My phone is dead.;Мой телефон разрядился.
+w309;7;computer;компьютер;He works on a computer all day.;Он весь день работает за компьютером.
+w310;7;market;рынок;We buy fruit at the market.;Мы покупаем фрукты на рынке.
+w311;7;price;цена;What is the price?;Какая цена?
+w312;7;color;цвет;What is your favorite color?;Какой у тебя любимый цвет?
+w313;7;weather;погода;The weather is nice today.;Сегодня хорошая погода.
+w314;7;rain;дождь;I hope the rain stops soon.;Надеюсь, дождь скоро закончится.
+w315;7;tree;дерево;There is a tree in our yard.;У нас во дворе растёт дерево.
+w316;7;dog;собака;My dog loves walks.;Моя собака любит прогулки.
+w317;7;cat;кошка;The cat is on the sofa.;Кошка лежит на диване.
+w318;7;sea;море;We swam in the sea.;Мы купались в море.
+w319;7;road;дорога;The road is closed.;Дорога закрыта.
+w320;7;train;поезд;The train leaves at noon.;Поезд отправляется в полдень.
+w321;7;plane;самолёт;Our plane is late.;Наш самолёт задерживается.
+w322;7;ticket;билет;I bought two tickets.;Я купил два билета.
+w323;7;trip;поездка;We took a trip to Canada.;Мы съездили в Канаду.
+w324;7;summer;лето;I love summer.;Я люблю лето.
+w325;7;winter;зима;Winters are cold here.;Зимы здесь холодные.
+w326;7;breakfast;завтрак;What do you have for breakfast?;Что ты ешь на завтрак?
+w327;7;dinner;ужин, обед;Dinner is ready.;Ужин готов.
+w328;7;coffee;кофе;I would like a coffee.;Я бы хотел кофе.
+w329;7;tea;чай;Would you like some tea?;Хотите чаю?
+w330;7;milk;молоко;We need more milk.;Нам нужно ещё молока.
+w331;7;bread;хлеб;I bought fresh bread.;Я купил свежий хлеб.
+w332;7;meat;мясо;She does not eat meat.;Она не ест мясо.
+w333;7;fruit;фрукты;Eat more fruit.;Ешь больше фруктов.
+w334;7;shirt;рубашка;I need a clean shirt.;Мне нужна чистая рубашка.
+w335;7;shoes;обувь, туфли;These shoes are too small.;Эти туфли слишком малы.
+w336;7;bag;сумка, пакет;Where is my bag?;Где моя сумка?
+w337;7;key;ключ;I lost my key.;Я потерял ключ.
+w338;7;picture;картина, фото;She took a nice picture.;Она сделала красивое фото.
+w339;7;letter;письмо, буква;I got a letter from him.;Я получил от него письмо.
+w340;7;newspaper;газета;He reads the newspaper daily.;Он читает газету каждый день.
+w341;7;gift;подарок;This gift is for you.;Этот подарок для тебя.
+w342;7;garden;сад;They have a beautiful garden.;У них красивый сад.
+w343;7;hospital;больница;She works at a hospital.;Она работает в больнице.
+w344;7;bank;банк;The bank opens at nine.;Банк открывается в девять.
+w345;7;store;магазин;The store is closed.;Магазин закрыт.
+w346;7;restaurant;ресторан;Let's eat at a restaurant.;Давай поедим в ресторане.
+w347;7;airport;аэропорт;The airport is far away.;Аэропорт далеко.
+w348;7;hotel;отель, гостиница;We stayed at a nice hotel.;Мы остановились в хорошем отеле.
+w349;7;village;деревня;He grew up in a small village.;Он вырос в маленькой деревне.
+w350;7;floor;пол, этаж;I live on the third floor.;Я живу на третьем этаже.
+w351;8;cook;готовить;I cook dinner every night.;Я готовлю ужин каждый вечер.
+w352;8;eat;есть, кушать;Let's eat outside.;Давай поедим на улице.
+w353;8;drink;пить;Do you want something to drink?;Хочешь что-нибудь попить?
+w354;8;sleep;спать;I sleep eight hours a night.;Я сплю восемь часов за ночь.
+w355;8;wake;просыпаться, будить;I wake up at six.;Я просыпаюсь в шесть.
+w356;8;wear;носить, быть одетым;She wears a red coat.;Она носит красное пальто.
+w357;8;carry;нести;Can you carry this bag?;Ты можешь донести эту сумку?
+w358;8;drive;водить машину;I drive to work.;Я езжу на работу на машине.
+w359;8;ride;ехать верхом, кататься;I ride my bike to school.;Я езжу в школу на велосипеде.
+w360;8;fly;летать;We fly to Rome tomorrow.;Завтра мы летим в Рим.
+w361;8;swim;плавать;Can you swim?;Ты умеешь плавать?
+w362;8;sing;петь;She sings very well.;Она очень хорошо поёт.
+w363;8;dance;танцевать;They dance every Friday.;Они танцуют каждую пятницу.
+w364;8;laugh;смеяться;We laughed a lot.;Мы много смеялись.
+w365;8;cry;плакать;The baby started to cry.;Малыш начал плакать.
+w366;8;smile;улыбаться, улыбка;She smiled at me.;Она улыбнулась мне.
+w367;8;wash;мыть, стирать;I wash the dishes after dinner.;Я мою посуду после ужина.
+w368;8;clean;убирать, чистить;I clean my room on Sundays.;Я убираюсь в комнате по воскресеньям.
+w369;8;close;закрывать;Close the door, please.;Закрой дверь, пожалуйста.
+w370;8;throw;бросать;Throw me the ball.;Брось мне мяч.
+w371;8;catch;ловить;I could not catch the bus.;Я не успел на автобус.
+w372;8;drop;ронять;I dropped my phone.;Я уронил телефон.
+w373;8;push;толкать, нажимать;Push the red button.;Нажмите красную кнопку.
+w374;8;break;ломать, разбивать;Be careful not to break it.;Осторожно, не сломай это.
+w375;8;fix;чинить, исправлять;Can you fix my bike?;Ты можешь починить мой велосипед?
+w376;8;choose;выбирать;Choose a color.;Выбери цвет.
+w377;8;check;проверять;Please check your answers.;Пожалуйста, проверьте свои ответы.
+w378;8;enjoy;наслаждаться, любить;I enjoy long walks.;Я люблю долгие прогулки.
+w379;8;miss;скучать, пропускать;I miss my family.;Я скучаю по семье.
+w380;8;invite;приглашать;I invited her to dinner.;Я пригласил её на ужин.
+w381;8;visit;посещать, навещать;We visit my aunt on Sundays.;Мы навещаем мою тётю по воскресеньям.
+w382;8;travel;путешествовать;I love to travel.;Я люблю путешествовать.
+w383;8;arrive;прибывать;We arrive at noon.;Мы прибываем в полдень.
+w384;8;finish;заканчивать;I will finish work at six.;Я закончу работу в шесть.
+w385;8;prepare;готовить, готовиться;I am preparing for the exam.;Я готовлюсь к экзамену.
+w386;8;answer;отвечать, ответ;Please answer the question.;Пожалуйста, ответьте на вопрос.
+w387;8;worry;волноваться;Do not worry about it.;Не волнуйся об этом.
+w388;8;forget;забывать;I forgot my password.;Я забыл свой пароль.
+w389;8;hope;надеяться;I hope you feel better.;Надеюсь, тебе станет лучше.
+w390;8;wish;желать;I wish you luck.;Желаю тебе удачи.
+w391;8;agree;соглашаться;I agree with you.;Я с тобой согласен.
+w392;8;explain;объяснять;Can you explain this word?;Можешь объяснить это слово?
+w393;8;share;делиться;Let us share a pizza.;Давай разделим пиццу.
+w394;8;save;экономить, сохранять;I save money every month.;Я откладываю деньги каждый месяц.
+w395;8;practice;практиковаться, практика;I practice English every day.;Я каждый день практикую английский.
+w396;8;thank;благодарить;I want to thank you.;Я хочу вас поблагодарить.
+w397;8;touch;трогать, касаться;Do not touch the stove.;Не трогай плиту.
+w398;8;rest;отдыхать, отдых;You need to rest.;Тебе нужно отдохнуть.
+w399;8;dream;мечтать, сон;I had a strange dream.;Мне приснился странный сон.
+w400;8;hurt;болеть, причинять боль;My back hurts.;У меня болит спина.
+w401;9;tired;усталый;I am tired after work.;Я устал после работы.
+w402;9;hungry;голодный;I am very hungry.;Я очень голоден.
+w403;9;busy;занятой;She is busy today.;Сегодня она занята.
+w404;9;careful;осторожный;Be careful on the stairs.;Осторожно на лестнице.
+w405;9;dangerous;опасный;This road is dangerous.;Эта дорога опасна.
+w406;9;expensive;дорогой;This hotel is expensive.;Этот отель дорогой.
+w407;9;cheap;дешёвый;The tickets were cheap.;Билеты были дешёвые.
+w408;9;beautiful;красивый;What a beautiful view!;Какой красивый вид!
+w409;9;ugly;уродливый;I do not like this ugly lamp.;Мне не нравится эта уродливая лампа.
+w410;9;funny;смешной;He tells funny stories.;Он рассказывает смешные истории.
+w411;9;boring;скучный;The movie was boring.;Фильм был скучный.
+w412;9;interesting;интересный;This book is very interesting.;Эта книга очень интересная.
+w413;9;difficult;трудный;The exam was difficult.;Экзамен был трудным.
+w414;9;safe;безопасный;Is it safe to swim here?;Здесь безопасно купаться?
+w415;9;famous;известный;She is a famous singer.;Она известная певица.
+w416;9;popular;популярный;This song is very popular.;Эта песня очень популярна.
+w417;9;quiet;тихий;It is quiet at night.;Ночью здесь тихо.
+w418;9;loud;громкий;The music is too loud.;Музыка слишком громкая.
+w419;9;fast;быстрый, быстро;He drives too fast.;Он водит слишком быстро.
+w420;9;slow;медленный;The internet is slow today.;Сегодня медленный интернет.
+w421;9;heavy;тяжёлый;This bag is heavy.;Эта сумка тяжёлая.
+w422;9;light;лёгкий, свет;Turn off the light.;Выключи свет.
+w423;9;dark;тёмный;It gets dark early.;Рано темнеет.
+w424;9;bright;яркий;The room is bright.;В комнате светло.
+w425;9;dirty;грязный;My shoes are dirty.;Мои туфли грязные.
+w426;9;empty;пустой;The box is empty.;Коробка пуста.
+w427;9;sick;больной;He is sick today.;Сегодня он болеет.
+w428;9;healthy;здоровый, полезный;Fruit is healthy.;Фрукты полезны.
+w429;9;rich;богатый;He is a rich man.;Он богатый человек.
+w430;9;poor;бедный;They were very poor.;Они были очень бедны.
+w431;9;polite;вежливый;He is always polite.;Он всегда вежлив.
+w432;9;angry;сердитый;She was angry with me.;Она сердилась на меня.
+w433;9;afraid;испуганный;I am afraid of dogs.;Я боюсь собак.
+w434;9;sad;грустный;Why do you look sad?;Почему ты выглядишь грустным?
+w435;9;lucky;удачливый;You are very lucky.;Тебе очень повезло.
+w436;9;tall;высокий;He is tall and thin.;Он высокий и худой.
+w437;9;thin;тонкий, худой;The walls are thin.;Стены тонкие.
+w438;9;wide;широкий;The river is wide here.;Здесь река широкая.
+w439;9;deep;глубокий;The lake is very deep.;Озеро очень глубокое.
+w440;9;soft;мягкий;The bed is soft.;Кровать мягкая.
+w441;9;sweet;сладкий;This tea is too sweet.;Этот чай слишком сладкий.
+w442;9;dry;сухой;My hands are dry.;У меня сухие руки.
+w443;9;wet;мокрый;My socks are wet.;Мои носки мокрые.
+w444;9;warm;тёплый;The room is warm.;В комнате тепло.
+w445;9;cool;прохладный, классный;The water is cool.;Вода прохладная.
+w446;9;strange;странный;I heard a strange noise.;Я услышал странный шум.
+w447;9;proud;гордый;I am proud of you.;Я горжусь тобой.
+w448;9;common;обычный, распространённый;Smith is a common name.;Смит — распространённая фамилия.
+w449;9;modern;современный;They live in a modern house.;Они живут в современном доме.
+w450;9;usual;обычный;I will have the usual.;Мне как обычно.
+w451;10;example;пример;Give me an example.;Приведи мне пример.
+w452;10;experience;опыт;She has a lot of experience.;У неё большой опыт.
+w453;10;interest;интерес;He has an interest in art.;Он интересуется искусством.
+w454;10;opportunity;возможность;This is a great opportunity.;Это отличная возможность.
+w455;10;decision;решение;It was a hard decision.;Это было трудное решение.
+w456;10;plan;план, планировать;What is your plan?;Какой у тебя план?
+w457;10;attention;внимание;Please pay attention.;Пожалуйста, обратите внимание.
+w458;10;difference;разница;I see no difference.;Я не вижу разницы.
+w459;10;effect;эффект, влияние;The medicine had no effect.;Лекарство не подействовало.
+w460;10;support;поддержка, поддерживать;Thank you for your support.;Спасибо за вашу поддержку.
+w461;10;mind;ум, возражать;Do you mind if I sit here?;Вы не против, если я тут сяду?
+w462;10;chance;шанс, случай;Give me one more chance.;Дай мне ещё один шанс.
+w463;10;choice;выбор;You have a choice.;У тебя есть выбор.
+w464;10;risk;риск;It is a big risk.;Это большой риск.
+w465;10;success;успех;I wish you success.;Желаю тебе успеха.
+w466;10;goal;цель, гол;My goal is to learn English.;Моя цель — выучить английский.
+w467;10;culture;культура;I am interested in Japanese culture.;Меня интересует японская культура.
+w468;10;language;язык;English is a global language.;Английский — мировой язык.
+w469;10;society;общество;Society is changing fast.;Общество быстро меняется.
+w470;10;project;проект;We finished the project.;Мы закончили проект.
+w471;10;process;процесс;Learning is a slow process.;Обучение — медленный процесс.
+w472;10;trouble;неприятности, беда;I am in trouble.;У меня неприятности.
+w473;10;rule;правило;That is the rule.;Таково правило.
+w474;10;cost;стоить, стоимость;How much does it cost?;Сколько это стоит?
+w475;10;energy;энергия;I have no energy today.;У меня сегодня нет сил.
+w476;10;bit;кусочек, немного;Wait a little bit.;Подожди чуть-чуть.
+w477;10;order;заказ, порядок;I would like to order.;Я хотел бы сделать заказ.
+w478;10;sense;смысл, чувство;It does not make sense.;Это не имеет смысла.
+w479;10;relationship;отношения;They have a good relationship.;У них хорошие отношения.
+w480;10;situation;ситуация;The situation is getting better.;Ситуация улучшается.
+w481;10;event;событие, мероприятие;The event starts at seven.;Мероприятие начинается в семь.
+w482;10;season;время года, сезон;Summer is my favorite season.;Лето — моё любимое время года.
+w483;10;nature;природа;I love walking in nature.;Я люблю гулять на природе.
+w484;10;space;место, космос;We need more space.;Нам нужно больше места.
+w485;10;century;век;This house is over a century old.;Этому дому больше ста лет.
+w486;10;age;возраст;Age is just a number.;Возраст — это просто цифра.
+w487;10;quality;качество;The quality is excellent.;Качество отличное.
+w488;10;value;ценность, стоимость;The value of the house went up.;Стоимость дома выросла.
+w489;10;knowledge;знания;Knowledge is power.;Знание — сила.
+w490;10;news;новости;I have good news.;У меня хорошие новости.
+w491;10;truth;правда;Tell me the truth.;Скажи мне правду.
+w492;10;pain;боль;I feel pain in my knee.;Я чувствую боль в колене.
+w493;10;fear;страх;She has no fear.;Она ничего не боится.
+w494;10;peace;мир, покой;I want some peace and quiet.;Я хочу тишины и покоя.
+w495;10;luck;удача;Good luck!;Удачи!
+w496;10;view;вид, мнение;What a great view!;Какой чудесный вид!
+w497;10;cause;причина, вызывать;Smoking causes health problems.;Курение вызывает проблемы со здоровьем.
+w498;10;form;форма, бланк;Fill out this form.;Заполните эту форму.
+w499;10;type;тип, вид;What type of food do you like?;Какую еду ты любишь?
+w500;10;step;шаг;Take one step at a time.;Делай по одному шагу.

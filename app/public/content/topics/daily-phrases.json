@@ -1,0 +1,1005 @@
+{
+ "cards": [
+  {
+   "en": "How much is this?",
+   "enAudio": "audio/3c806ee9c282.mp3",
+   "enEx": "",
+   "id": "dp001",
+   "ru": "Сколько это стоит?",
+   "ruAudio": "audio/39606639c503.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Do you have this in a larger size?",
+   "enAudio": "audio/8027291ced1e.mp3",
+   "enEx": "",
+   "id": "dp002",
+   "ru": "У вас есть такое на размер больше?",
+   "ruAudio": "audio/133c8a06b145.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Where are the dressing rooms?",
+   "enAudio": "audio/f07aa8ccfe74.mp3",
+   "enEx": "",
+   "id": "dp003",
+   "ru": "Где примерочные?",
+   "ruAudio": "audio/1f76508f9f23.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Can I try this on?",
+   "enAudio": "audio/701a4bdf1852.mp3",
+   "enEx": "",
+   "id": "dp004",
+   "ru": "Можно это примерить?",
+   "ruAudio": "audio/e8e22d4c5fa4.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "I'm just looking, thanks.",
+   "enAudio": "audio/d71d3d4dd6f1.mp3",
+   "enEx": "",
+   "id": "dp005",
+   "ru": "Я просто смотрю, спасибо.",
+   "ruAudio": "audio/0f6d03df7816.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Do you take credit cards?",
+   "enAudio": "audio/5d44a45aa267.mp3",
+   "enEx": "",
+   "id": "dp006",
+   "ru": "Вы принимаете кредитные карты?",
+   "ruAudio": "audio/42f7623fab5d.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Cash or card?",
+   "enAudio": "audio/ce13c9138dca.mp3",
+   "enEx": "",
+   "id": "dp007",
+   "ru": "Наличные или карта?",
+   "ruAudio": "audio/3498d2753799.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Do you need a bag?",
+   "enAudio": "audio/70c277baf0a0.mp3",
+   "enEx": "",
+   "id": "dp008",
+   "ru": "Вам нужен пакет?",
+   "ruAudio": "audio/eeaf57a541bb.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Can I get a receipt, please?",
+   "enAudio": "audio/b2bb17e312d9.mp3",
+   "enEx": "",
+   "id": "dp009",
+   "ru": "Можно чек, пожалуйста?",
+   "ruAudio": "audio/0bf49eaa5815.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Is this on sale?",
+   "enAudio": "audio/b9cca160eec8.mp3",
+   "enEx": "",
+   "id": "dp010",
+   "ru": "Это со скидкой?",
+   "ruAudio": "audio/12e19d1fc0cb.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Do you have a cheaper one?",
+   "enAudio": "audio/a69a4d535f00.mp3",
+   "enEx": "",
+   "id": "dp011",
+   "ru": "У вас есть что-нибудь подешевле?",
+   "ruAudio": "audio/591d67592e1c.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "I'll take it.",
+   "enAudio": "audio/4264b54a6be6.mp3",
+   "enEx": "",
+   "id": "dp012",
+   "ru": "Я это возьму.",
+   "ruAudio": "audio/2baf54db68be.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Where can I find the milk?",
+   "enAudio": "audio/7251c4d9a3a8.mp3",
+   "enEx": "",
+   "id": "dp013",
+   "ru": "Где тут молоко?",
+   "ruAudio": "audio/3426ac0be8af.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Can I return this?",
+   "enAudio": "audio/0584c0183d2d.mp3",
+   "enEx": "",
+   "id": "dp014",
+   "ru": "Можно это вернуть?",
+   "ruAudio": "audio/b1931594ef72.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Do you have this in stock?",
+   "enAudio": "audio/50c61322a82b.mp3",
+   "enEx": "",
+   "id": "dp015",
+   "ru": "Это есть в наличии?",
+   "ruAudio": "audio/a0f1215c8b32.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Please enter your PIN.",
+   "enAudio": "audio/4ec6e4c46f6d.mp3",
+   "enEx": "",
+   "id": "dp016",
+   "ru": "Введите ПИН-код, пожалуйста.",
+   "ruAudio": "audio/2a8c9f99efaf.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Do you have a loyalty card?",
+   "enAudio": "audio/c709a966d8cd.mp3",
+   "enEx": "",
+   "id": "dp017",
+   "ru": "У вас есть бонусная карта?",
+   "ruAudio": "audio/08a501243198.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Could you gift wrap it?",
+   "enAudio": "audio/57c1ee339ae4.mp3",
+   "enEx": "",
+   "id": "dp018",
+   "ru": "Можете упаковать это в подарок?",
+   "ruAudio": "audio/39ff2cf80a19.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "What time do you close?",
+   "enAudio": "audio/a8c8620c16aa.mp3",
+   "enEx": "",
+   "id": "dp019",
+   "ru": "До скольки вы работаете?",
+   "ruAudio": "audio/15d7f5bbd3e6.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "Keep the change.",
+   "enAudio": "audio/2e3aeec370aa.mp3",
+   "enEx": "",
+   "id": "dp020",
+   "ru": "Сдачи не надо.",
+   "ruAudio": "audio/108a9d968bbf.mp3",
+   "ruEx": "",
+   "set": 1
+  },
+  {
+   "en": "A table for two, please.",
+   "enAudio": "audio/6b66fcce9e90.mp3",
+   "enEx": "",
+   "id": "dp021",
+   "ru": "Столик на двоих, пожалуйста.",
+   "ruAudio": "audio/91d1452fd509.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "Can I see the menu?",
+   "enAudio": "audio/6c61f6d30307.mp3",
+   "enEx": "",
+   "id": "dp022",
+   "ru": "Можно посмотреть меню?",
+   "ruAudio": "audio/c40c1f98e1fd.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "Are you ready to order?",
+   "enAudio": "audio/b92a1801ca2a.mp3",
+   "enEx": "",
+   "id": "dp023",
+   "ru": "Готовы сделать заказ?",
+   "ruAudio": "audio/9dc93bc84186.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "I'll have the chicken, please.",
+   "enAudio": "audio/cd61d4bad0e5.mp3",
+   "enEx": "",
+   "id": "dp024",
+   "ru": "Мне курицу, пожалуйста.",
+   "ruAudio": "audio/b4d48fcd097c.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "What do you recommend?",
+   "enAudio": "audio/285214a126ea.mp3",
+   "enEx": "",
+   "id": "dp025",
+   "ru": "Что вы посоветуете?",
+   "ruAudio": "audio/f13a33628cea.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "I'm allergic to nuts.",
+   "enAudio": "audio/1b2f119edf78.mp3",
+   "enEx": "",
+   "id": "dp026",
+   "ru": "У меня аллергия на орехи.",
+   "ruAudio": "audio/cdbf60ce6939.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "Does this contain meat?",
+   "enAudio": "audio/b393975e52ff.mp3",
+   "enEx": "",
+   "id": "dp027",
+   "ru": "В этом блюде есть мясо?",
+   "ruAudio": "audio/b35cb2ec5734.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "Could we have some water?",
+   "enAudio": "audio/54c9336281db.mp3",
+   "enEx": "",
+   "id": "dp028",
+   "ru": "Можно нам воды?",
+   "ruAudio": "audio/9914b9bfa441.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "Can I get this to go?",
+   "enAudio": "audio/505712dfbc33.mp3",
+   "enEx": "",
+   "id": "dp029",
+   "ru": "Можно это с собой?",
+   "ruAudio": "audio/b371c631116e.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "For here or to go?",
+   "enAudio": "audio/5badf0b7d27a.mp3",
+   "enEx": "",
+   "id": "dp030",
+   "ru": "Здесь или с собой?",
+   "ruAudio": "audio/489434ddd928.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "Enjoy your meal!",
+   "enAudio": "audio/2ada67370642.mp3",
+   "enEx": "",
+   "id": "dp031",
+   "ru": "Приятного аппетита!",
+   "ruAudio": "audio/569925f5a8f5.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "Could I have the check, please?",
+   "enAudio": "audio/4e8371b5eb27.mp3",
+   "enEx": "",
+   "id": "dp032",
+   "ru": "Можно счет, пожалуйста?",
+   "ruAudio": "audio/431b597a234d.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "Can we pay separately?",
+   "enAudio": "audio/b8b9dc1b3152.mp3",
+   "enEx": "",
+   "id": "dp033",
+   "ru": "Мы можем заплатить отдельно?",
+   "ruAudio": "audio/58d69f81e860.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "Is the tip included?",
+   "enAudio": "audio/286a4066fe64.mp3",
+   "enEx": "",
+   "id": "dp034",
+   "ru": "Чаевые включены в счет?",
+   "ruAudio": "audio/e8898a8549a7.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "This isn't what I ordered.",
+   "enAudio": "audio/62c910710cba.mp3",
+   "enEx": "",
+   "id": "dp035",
+   "ru": "Я заказывал не это.",
+   "ruAudio": "audio/96c77eabc257.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "Could I get a refill?",
+   "enAudio": "audio/b98da2057c32.mp3",
+   "enEx": "",
+   "id": "dp036",
+   "ru": "Можно еще налить?",
+   "ruAudio": "audio/40e009082aab.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "How would you like your steak?",
+   "enAudio": "audio/845c14a280aa.mp3",
+   "enEx": "",
+   "id": "dp037",
+   "ru": "Как вам приготовить стейк?",
+   "ruAudio": "audio/d3dd96bee80b.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "I'd like a coffee with milk.",
+   "enAudio": "audio/d55c17fbca73.mp3",
+   "enEx": "",
+   "id": "dp038",
+   "ru": "Мне кофе с молоком.",
+   "ruAudio": "audio/8add1d7f54c4.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "Is there a vegetarian option?",
+   "enAudio": "audio/ad9bc19bec56.mp3",
+   "enEx": "",
+   "id": "dp039",
+   "ru": "Есть вегетарианские блюда?",
+   "ruAudio": "audio/912e66229d8e.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "It was delicious, thank you.",
+   "enAudio": "audio/67381e4762e2.mp3",
+   "enEx": "",
+   "id": "dp040",
+   "ru": "Было очень вкусно, спасибо.",
+   "ruAudio": "audio/89aec1ccde18.mp3",
+   "ruEx": "",
+   "set": 2
+  },
+  {
+   "en": "Where is the nearest subway station?",
+   "enAudio": "audio/4a4e942f2714.mp3",
+   "enEx": "",
+   "id": "dp041",
+   "ru": "Где ближайшая станция метро?",
+   "ruAudio": "audio/bf5eb1854571.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "How do I get to the airport?",
+   "enAudio": "audio/f0af9c1d9d45.mp3",
+   "enEx": "",
+   "id": "dp042",
+   "ru": "Как добраться до аэропорта?",
+   "ruAudio": "audio/472272e305d4.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "One ticket to downtown, please.",
+   "enAudio": "audio/70e308b62ff0.mp3",
+   "enEx": "",
+   "id": "dp043",
+   "ru": "Один билет до центра, пожалуйста.",
+   "ruAudio": "audio/dd5b0d8b1dee.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "Which track does the train leave from?",
+   "enAudio": "audio/027799095d50.mp3",
+   "enEx": "",
+   "id": "dp044",
+   "ru": "С какого пути отправляется поезд?",
+   "ruAudio": "audio/a98ecb8b9e84.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "Does this bus go to the beach?",
+   "enAudio": "audio/146bf4637dd9.mp3",
+   "enEx": "",
+   "id": "dp045",
+   "ru": "Этот автобус идет до пляжа?",
+   "ruAudio": "audio/ca9d8bbc3aa1.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "Is this seat taken?",
+   "enAudio": "audio/0618e794a76b.mp3",
+   "enEx": "",
+   "id": "dp046",
+   "ru": "Это место занято?",
+   "ruAudio": "audio/84b0c004b767.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "Excuse me, I'm lost.",
+   "enAudio": "audio/1f6a7c294f3f.mp3",
+   "enEx": "",
+   "id": "dp047",
+   "ru": "Извините, я заблудился.",
+   "ruAudio": "audio/6d5528916b38.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "Could you show me on the map?",
+   "enAudio": "audio/8684f88ab660.mp3",
+   "enEx": "",
+   "id": "dp048",
+   "ru": "Можете показать на карте?",
+   "ruAudio": "audio/abd440b0a3eb.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "How long does it take?",
+   "enAudio": "audio/74635a1780b1.mp3",
+   "enEx": "",
+   "id": "dp049",
+   "ru": "Сколько это займет времени?",
+   "ruAudio": "audio/5a44ba66150f.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "The train is delayed.",
+   "enAudio": "audio/bca0b8db24d9.mp3",
+   "enEx": "",
+   "id": "dp050",
+   "ru": "Поезд задерживается.",
+   "ruAudio": "audio/27f0a0cffa88.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "Next stop is Main Street.",
+   "enAudio": "audio/6486ca179a47.mp3",
+   "enEx": "",
+   "id": "dp051",
+   "ru": "Следующая остановка Мейн-стрит.",
+   "ruAudio": "audio/73afe5667e4d.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "Please take me to this address.",
+   "enAudio": "audio/7bd669f7aa9c.mp3",
+   "enEx": "",
+   "id": "dp052",
+   "ru": "Отвезите меня по этому адресу, пожалуйста.",
+   "ruAudio": "audio/cb3499fda71f.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "How much is the fare?",
+   "enAudio": "audio/eea3fc9679f1.mp3",
+   "enEx": "",
+   "id": "dp053",
+   "ru": "Сколько стоит проезд?",
+   "ruAudio": "audio/30fefdac0c77.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "Can you stop here, please?",
+   "enAudio": "audio/87d89bfd1845.mp3",
+   "enEx": "",
+   "id": "dp054",
+   "ru": "Остановите здесь, пожалуйста.",
+   "ruAudio": "audio/229b0890ae52.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "Where can I catch a taxi?",
+   "enAudio": "audio/bd858c4b63aa.mp3",
+   "enEx": "",
+   "id": "dp055",
+   "ru": "Где можно поймать такси?",
+   "ruAudio": "audio/1fff720b5803.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "Do I need to change trains?",
+   "enAudio": "audio/64f0cf6c9eea.mp3",
+   "enEx": "",
+   "id": "dp056",
+   "ru": "Мне нужна пересадка?",
+   "ruAudio": "audio/5db33a799f42.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "Stand clear of the closing doors.",
+   "enAudio": "audio/22e1860c773c.mp3",
+   "enEx": "",
+   "id": "dp057",
+   "ru": "Осторожно, двери закрываются.",
+   "ruAudio": "audio/aef0a2cc87f7.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "Where is the baggage claim?",
+   "enAudio": "audio/f246f4c26ee5.mp3",
+   "enEx": "",
+   "id": "dp058",
+   "ru": "Где выдача багажа?",
+   "ruAudio": "audio/8a61809324d3.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "I missed my flight.",
+   "enAudio": "audio/c7905aec5838.mp3",
+   "enEx": "",
+   "id": "dp059",
+   "ru": "Я опоздал на самолет.",
+   "ruAudio": "audio/26190a958392.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "Can I pay by card here?",
+   "enAudio": "audio/d933183b707e.mp3",
+   "enEx": "",
+   "id": "dp060",
+   "ru": "Здесь можно оплатить картой?",
+   "ruAudio": "audio/1c39c48d24b7.mp3",
+   "ruEx": "",
+   "set": 3
+  },
+  {
+   "en": "I have a reservation under Ivanov.",
+   "enAudio": "audio/f967054d9d4b.mp3",
+   "enEx": "",
+   "id": "dp061",
+   "ru": "У меня бронь на фамилию Иванов.",
+   "ruAudio": "audio/c175d7c537a4.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "What time is check-out?",
+   "enAudio": "audio/036fb7776f3b.mp3",
+   "enEx": "",
+   "id": "dp062",
+   "ru": "Во сколько нужно освободить номер?",
+   "ruAudio": "audio/d40e7876b68f.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "Could I see your passport, please?",
+   "enAudio": "audio/e6d1ecaa1d7d.mp3",
+   "enEx": "",
+   "id": "dp063",
+   "ru": "Можно ваш паспорт, пожалуйста?",
+   "ruAudio": "audio/2296fa9e9ef1.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "Is breakfast included?",
+   "enAudio": "audio/82d3e176863c.mp3",
+   "enEx": "",
+   "id": "dp064",
+   "ru": "Завтрак включен?",
+   "ruAudio": "audio/da895f83253c.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "What is the Wi-Fi password?",
+   "enAudio": "audio/e49ac3e6505d.mp3",
+   "enEx": "",
+   "id": "dp065",
+   "ru": "Какой пароль от вай-фая?",
+   "ruAudio": "audio/68784a726ac9.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "The air conditioner isn't working.",
+   "enAudio": "audio/445aed931860.mp3",
+   "enEx": "",
+   "id": "dp066",
+   "ru": "Кондиционер не работает.",
+   "ruAudio": "audio/f4074c3a40ec.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "Could we have extra towels?",
+   "enAudio": "audio/78287a81d35c.mp3",
+   "enEx": "",
+   "id": "dp067",
+   "ru": "Можно нам дополнительные полотенца?",
+   "ruAudio": "audio/ece4742a0cb6.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "Can I get a late check-out?",
+   "enAudio": "audio/358330b2789e.mp3",
+   "enEx": "",
+   "id": "dp068",
+   "ru": "Можно выехать попозже?",
+   "ruAudio": "audio/b3b410797d8d.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "Here is your key card.",
+   "enAudio": "audio/ad7ecaaab548.mp3",
+   "enEx": "",
+   "id": "dp069",
+   "ru": "Вот ваша ключ-карта.",
+   "ruAudio": "audio/b30ae6d62b0f.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "Your room is on the third floor.",
+   "enAudio": "audio/31992437d3c9.mp3",
+   "enEx": "",
+   "id": "dp070",
+   "ru": "Ваш номер на третьем этаже.",
+   "ruAudio": "audio/7e58416e61b0.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "Could you call me a taxi?",
+   "enAudio": "audio/381b9b41e8a6.mp3",
+   "enEx": "",
+   "id": "dp071",
+   "ru": "Можете вызвать мне такси?",
+   "ruAudio": "audio/6c1d5b5a27ef.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "I'd like a quiet room.",
+   "enAudio": "audio/f9ed1233ff61.mp3",
+   "enEx": "",
+   "id": "dp072",
+   "ru": "Мне нужен тихий номер.",
+   "ruAudio": "audio/c020c0db7467.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "There is no hot water.",
+   "enAudio": "audio/905a3ab09ac4.mp3",
+   "enEx": "",
+   "id": "dp073",
+   "ru": "Нет горячей воды.",
+   "ruAudio": "audio/52b3fcd62bed.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "Can I leave my luggage here?",
+   "enAudio": "audio/c6db00432a57.mp3",
+   "enEx": "",
+   "id": "dp074",
+   "ru": "Можно оставить у вас багаж?",
+   "ruAudio": "audio/d167770fe31a.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "Could I have a wake-up call at seven?",
+   "enAudio": "audio/e8a01d277cd1.mp3",
+   "enEx": "",
+   "id": "dp075",
+   "ru": "Разбудите меня в семь, пожалуйста.",
+   "ruAudio": "audio/7fe6fb390c2b.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "How much is a room for two nights?",
+   "enAudio": "audio/852647f4ad4b.mp3",
+   "enEx": "",
+   "id": "dp076",
+   "ru": "Сколько стоит номер на две ночи?",
+   "ruAudio": "audio/8357ed0a517f.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "Do you have any rooms available?",
+   "enAudio": "audio/cf75b08fe1ee.mp3",
+   "enEx": "",
+   "id": "dp077",
+   "ru": "У вас есть свободные номера?",
+   "ruAudio": "audio/7a323be500cd.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "Please clean my room today.",
+   "enAudio": "audio/491283763d6d.mp3",
+   "enEx": "",
+   "id": "dp078",
+   "ru": "Пожалуйста, уберите мой номер сегодня.",
+   "ruAudio": "audio/7643af3c9a04.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "I locked myself out.",
+   "enAudio": "audio/d45d32c2ce23.mp3",
+   "enEx": "",
+   "id": "dp079",
+   "ru": "Я не могу попасть в номер, ключ остался внутри.",
+   "ruAudio": "audio/b356ef0072fc.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "Where is the elevator?",
+   "enAudio": "audio/8960705cc96b.mp3",
+   "enEx": "",
+   "id": "dp080",
+   "ru": "Где лифт?",
+   "ruAudio": "audio/60cc8117dda5.mp3",
+   "ruEx": "",
+   "set": 4
+  },
+  {
+   "en": "I need to see a doctor.",
+   "enAudio": "audio/8c5f72450ee2.mp3",
+   "enEx": "",
+   "id": "dp081",
+   "ru": "Мне нужно к врачу.",
+   "ruAudio": "audio/a364fedc9e64.mp3",
+   "ruEx": "",
+   "set": 5
+  },
+  {
+   "en": "I don't feel well.",
+   "enAudio": "audio/1ea1dec4aa7d.mp3",
+   "enEx": "",
+   "id": "dp082",
+   "ru": "Я плохо себя чувствую.",
+   "ruAudio": "audio/d8bc284eebdf.mp3",
+   "ruEx": "",
+   "set": 5
+  },
+  {
+   "en": "I have a headache.",
+   "enAudio": "audio/f7683f1a3532.mp3",
+   "enEx": "",
+   "id": "dp083",
+   "ru": "У меня болит голова.",
+   "ruAudio": "audio/83d855b8c55f.mp3",
+   "ruEx": "",
+   "set": 5
+  },
+  {
+   "en": "It hurts here.",
+   "enAudio": "audio/83ca016d7c58.mp3",
+   "enEx": "",
+   "id": "dp084",
+   "ru": "Болит вот здесь.",
+   "ruAudio": "audio/cbbcaa5ae602.mp3",
+   "ruEx": "",
+   "set": 5
+  },
+  {
+   "en": "I have a fever.",
+   "enAudio": "audio/01135e5c6eb1.mp3",
+   "enEx": "",
+   "id": "dp085",
+   "ru": "У меня температура.",
+   "ruAudio": "audio/72990cf1a79b.mp3",
+   "ruEx": "",
+   "set": 5
+  },
+  {
+   "en": "How long have you had these symptoms?",
+   "enAudio": "audio/55c0d67e4749.mp3",
+   "enEx": "",
+   "id": "dp086",
+   "ru": "Как давно у вас эти симптомы?",
+   "ruAudio": "audio/bc3663ddbde9.mp3",
+   "ruEx": "",
+   "set": 5
+  },
+  {
+   "en": "Are you allergic to anything?",
+   "enAudio": "audio/b8775e6fc82f.mp3",
+   "enEx": "",
+   "id": "dp087",
+   "ru": "У вас есть на что-нибудь аллергия?",
+   "ruAudio": "audio/e753d7d5213c.mp3",
+   "ruEx": "",
+   "set": 5
+  },
+  {
+   "en": "Take one pill twice a day.",
+   "enAudio": "audio/a6f07c36c942.mp3",
+   "enEx": "",
+   "id": "dp088",
+   "ru": "Принимайте по одной таблетке два раза в день.",
+   "ruAudio": "audio/91f6ed35da38.mp3",
+   "ruEx": "",
+   "set": 5
+  },
+  {
+   "en": "Do I need a prescription?",
+   "enAudio": "audio/63901f36707c.mp3",
+   "enEx": "",
+   "id": "dp089",
+   "ru": "Мне нужен рецепт?",
+   "ruAudio": "audio/c0f4575dbb8d.mp3",
+   "ruEx": "",
+   "set": 5
+  },
+  {
+   "en": "Do you have something for a cold?",
+   "enAudio": "audio/ec3afd4fc955.mp3",
+   "enEx": "",
+   "id": "dp090",
+   "ru": "У вас есть что-нибудь от простуды?",
+   "ruAudio": "audio/7d49f01d0a2a.mp3",
+   "ruEx": "",
+   "set": 5
+  },
+  {
+   "en": "I have a sore throat.",
+   "enAudio": "audio/7e90dd84eec2.mp3",
+   "enEx": "",
+   "id": "dp091",
+   "ru": "У меня болит горло.",
+   "ruAudio": "audio/cff7ee4e115e.mp3",
+   "ruEx": "",
+   "set": 5
+  },
+  {
+   "en": "Do you have travel insurance?",
+   "enAudio": "audio/52728a2d6d15.mp3",
+   "enEx": "",
+   "id": "dp092",
+   "ru": "У вас есть туристическая страховка?",
+   "ruAudio": "audio/0e3fbdd3ad11.mp3",
+   "ruEx": "",
+   "set": 5
+  },
+  {
+   "en": "Please call an ambulance.",
+   "enAudio": "audio/2158a287c518.mp3",
+   "enEx": "",
+   "id": "dp093",
+   "ru": "Вызовите скорую помощь, пожалуйста.",
+   "ruAudio": "audio/5a59524ce456.mp3",
+   "ruEx": "",
+   "set": 5
+  },
+  {
+   "en": "Take it with food.",
+   "enAudio": "audio/b1ae40c8a2c7.mp3",
+   "enEx": "",
+   "id": "dp094",
+   "ru": "Принимайте во время еды.",
+   "ruAudio": "audio/72948fa0b60d.mp3",
+   "ruEx": "",
+   "set": 5
+  },
+  {
+   "en": "Where is the nearest pharmacy?",
+   "enAudio": "audio/0500507d4469.mp3",
+   "enEx": "",
+   "id": "dp095",
+   "ru": "Где ближайшая аптека?",
+   "ruAudio": "audio/8c1c7e345f7d.mp3",
+   "ruEx": "",
+   "set": 5
+  },
+  {
+   "en": "I feel dizzy.",
+   "enAudio": "audio/53ec463d0f0f.mp3",
+   "enEx": "",
+   "id": "dp096",
+   "ru": "У меня кружится голова.",
+   "ruAudio": "audio/edf365eb4808.mp3",
+   "ruEx": "",
+   "set": 5
+  },
+  {
+   "en": "Is it serious?",
+   "enAudio": "audio/773575304441.mp3",
+   "enEx": "",
+   "id": "dp097",
+   "ru": "Это серьезно?",
+   "ruAudio": "audio/01fcc9b4c3ce.mp3",
+   "ruEx": "",
+   "set": 5
+  },
+  {
+   "en": "I need to make an appointment.",
+   "enAudio": "audio/16b1ead92ff3.mp3",
+   "enEx": "",
+   "id": "dp098",
+   "ru": "Мне нужно записаться на прием.",
+   "ruAudio": "audio/53681c51fbcf.mp3",
+   "ruEx": "",
+   "set": 5
+  },
+  {
+   "en": "You should get some rest.",
+   "enAudio": "audio/4aff648f55ad.mp3",
+   "enEx": "",
+   "id": "dp099",
+   "ru": "Вам нужно отдохнуть.",
+   "ruAudio": "audio/d302863558e2.mp3",
+   "ruEx": "",
+   "set": 5
+  },
+  {
+   "en": "I've been throwing up all morning.",
+   "enAudio": "audio/3467385cdcc7.mp3",
+   "enEx": "",
+   "id": "dp100",
+   "ru": "Меня всё утро рвёт.",
+   "ruAudio": "audio/ae56960e6f1d.mp3",
+   "ruEx": "",
+   "set": 5
+  }
+ ],
+ "id": "daily-phrases"
+}

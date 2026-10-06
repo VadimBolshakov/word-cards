@@ -1,0 +1,1005 @@
+{
+ "cards": [
+  {
+   "en": "get up",
+   "enAudio": "audio/1d2bd888f706.mp3",
+   "enEx": "I get up at seven.",
+   "id": "pv001",
+   "ru": "вставать",
+   "ruAudio": "audio/fb1fb65e891d.mp3",
+   "ruEx": "Я встаю в семь.",
+   "set": 1
+  },
+  {
+   "en": "sit down",
+   "enAudio": "audio/68f9321c9050.mp3",
+   "enEx": "Please sit down here.",
+   "id": "pv002",
+   "ru": "садиться",
+   "ruAudio": "audio/34b857a22e9d.mp3",
+   "ruEx": "Пожалуйста, садитесь сюда.",
+   "set": 1
+  },
+  {
+   "en": "come back",
+   "enAudio": "audio/9ed59adee6ff.mp3",
+   "enEx": "When will you come back?",
+   "id": "pv003",
+   "ru": "возвращаться",
+   "ruAudio": "audio/1c0f41d44fa6.mp3",
+   "ruEx": "Когда ты вернёшься?",
+   "set": 1
+  },
+  {
+   "en": "go out",
+   "enAudio": "audio/cd9f9c2b36e3.mp3",
+   "enEx": "Let's go out tonight.",
+   "id": "pv004",
+   "ru": "выходить, гулять",
+   "ruAudio": "audio/d9ec9991d672.mp3",
+   "ruEx": "Давай сегодня куда-нибудь сходим.",
+   "set": 1
+  },
+  {
+   "en": "turn on",
+   "enAudio": "audio/9da052b9be1b.mp3",
+   "enEx": "Can you turn on the light?",
+   "id": "pv005",
+   "ru": "включать",
+   "ruAudio": "audio/23d0aa66f6d0.mp3",
+   "ruEx": "Можешь включить свет?",
+   "set": 1
+  },
+  {
+   "en": "turn off",
+   "enAudio": "audio/195517be8ac7.mp3",
+   "enEx": "Turn off the TV, please.",
+   "id": "pv006",
+   "ru": "выключать",
+   "ruAudio": "audio/18e944e63014.mp3",
+   "ruEx": "Выключи телевизор, пожалуйста.",
+   "set": 1
+  },
+  {
+   "en": "look for",
+   "enAudio": "audio/c27c3b790aff.mp3",
+   "enEx": "I am looking for my keys.",
+   "id": "pv007",
+   "ru": "искать",
+   "ruAudio": "audio/e784fdb283e8.mp3",
+   "ruEx": "Я ищу свои ключи.",
+   "set": 1
+  },
+  {
+   "en": "find out",
+   "enAudio": "audio/d941616a435a.mp3",
+   "enEx": "I need to find out the truth.",
+   "id": "pv008",
+   "ru": "выяснять, узнавать",
+   "ruAudio": "audio/ba646b4a49c9.mp3",
+   "ruEx": "Мне нужно узнать правду.",
+   "set": 1
+  },
+  {
+   "en": "give up",
+   "enAudio": "audio/a4dea14afe8a.mp3",
+   "enEx": "Never give up on your dreams.",
+   "id": "pv009",
+   "ru": "сдаваться, бросать",
+   "ruAudio": "audio/0d3b0ee36bd2.mp3",
+   "ruEx": "Никогда не отказывайся от своих мечтаний.",
+   "set": 1
+  },
+  {
+   "en": "pick up",
+   "enAudio": "audio/4e066f058c45.mp3",
+   "enEx": "Can you pick me up at six?",
+   "id": "pv010",
+   "ru": "подбирать, забирать",
+   "ruAudio": "audio/d665c6fe9e82.mp3",
+   "ruEx": "Ты можешь забрать меня в шесть?",
+   "set": 1
+  },
+  {
+   "en": "put on",
+   "enAudio": "audio/9bb20a686a40.mp3",
+   "enEx": "Put on your coat.",
+   "id": "pv011",
+   "ru": "надевать",
+   "ruAudio": "audio/7bd672eddf2e.mp3",
+   "ruEx": "Надень пальто.",
+   "set": 1
+  },
+  {
+   "en": "take off (clothes)",
+   "enAudio": "audio/1fba385c5a31.mp3",
+   "enEx": "Take off your shoes, please.",
+   "id": "pv012",
+   "ru": "снимать (одежду)",
+   "ruAudio": "audio/899bacc6df38.mp3",
+   "ruEx": "Сними обувь, пожалуйста.",
+   "set": 1
+  },
+  {
+   "en": "wake up",
+   "enAudio": "audio/ccea7b9bc550.mp3",
+   "enEx": "I woke up very early today.",
+   "id": "pv013",
+   "ru": "просыпаться",
+   "ruAudio": "audio/70b2a4754c55.mp3",
+   "ruEx": "Сегодня я проснулся очень рано.",
+   "set": 1
+  },
+  {
+   "en": "come on",
+   "enAudio": "audio/1ea32c2e710c.mp3",
+   "enEx": "Come on, we are late!",
+   "id": "pv014",
+   "ru": "давай, пошли",
+   "ruAudio": "audio/7c5327411322.mp3",
+   "ruEx": "Давай, мы опаздываем!",
+   "set": 1
+  },
+  {
+   "en": "go on",
+   "enAudio": "audio/5a424f151c69.mp3",
+   "enEx": "Please go on with your story.",
+   "id": "pv015",
+   "ru": "продолжать",
+   "ruAudio": "audio/926b79625140.mp3",
+   "ruEx": "Пожалуйста, продолжай свой рассказ.",
+   "set": 1
+  },
+  {
+   "en": "look up",
+   "enAudio": "audio/15b328ffbf2a.mp3",
+   "enEx": "Look up the word in a dictionary.",
+   "id": "pv016",
+   "ru": "искать (в словаре)",
+   "ruAudio": "audio/42c78b219e56.mp3",
+   "ruEx": "Найди это слово в словаре.",
+   "set": 1
+  },
+  {
+   "en": "take care",
+   "enAudio": "audio/2d8d8b8238c4.mp3",
+   "enEx": "Take care of yourself.",
+   "id": "pv017",
+   "ru": "беречь себя, заботиться",
+   "ruAudio": "audio/322475c96001.mp3",
+   "ruEx": "Береги себя.",
+   "set": 1
+  },
+  {
+   "en": "come in",
+   "enAudio": "audio/f895d16d8910.mp3",
+   "enEx": "Please come in and sit down.",
+   "id": "pv018",
+   "ru": "входить",
+   "ruAudio": "audio/b52b44ff4ba5.mp3",
+   "ruEx": "Входите и садитесь, пожалуйста.",
+   "set": 1
+  },
+  {
+   "en": "go back",
+   "enAudio": "audio/be19dc9e2716.mp3",
+   "enEx": "I want to go back home.",
+   "id": "pv019",
+   "ru": "возвращаться, идти назад",
+   "ruAudio": "audio/ebc5bbdeedbf.mp3",
+   "ruEx": "Я хочу вернуться домой.",
+   "set": 1
+  },
+  {
+   "en": "stand up",
+   "enAudio": "audio/c78e24244a1e.mp3",
+   "enEx": "Everyone stood up when she came in.",
+   "id": "pv020",
+   "ru": "вставать, подниматься",
+   "ruAudio": "audio/eabc04c896cc.mp3",
+   "ruEx": "Все встали, когда она вошла.",
+   "set": 1
+  },
+  {
+   "en": "work out",
+   "enAudio": "audio/6d0e2f3df42b.mp3",
+   "enEx": "I work out three times a week.",
+   "id": "pv021",
+   "ru": "тренироваться, получаться",
+   "ruAudio": "audio/9044754af469.mp3",
+   "ruEx": "Я тренируюсь три раза в неделю.",
+   "set": 1
+  },
+  {
+   "en": "get back",
+   "enAudio": "audio/d7e31def1a5e.mp3",
+   "enEx": "I get back from work at six.",
+   "id": "pv022",
+   "ru": "возвращаться",
+   "ruAudio": "audio/b1d1da416454.mp3",
+   "ruEx": "Я возвращаюсь с работы в шесть.",
+   "set": 1
+  },
+  {
+   "en": "come out",
+   "enAudio": "audio/22c4b2d476ad.mp3",
+   "enEx": "The new movie comes out in May.",
+   "id": "pv023",
+   "ru": "выходить, появляться",
+   "ruAudio": "audio/373a09e740df.mp3",
+   "ruEx": "Новый фильм выходит в мае.",
+   "set": 1
+  },
+  {
+   "en": "sign up",
+   "enAudio": "audio/9e79955755e1.mp3",
+   "enEx": "I signed up for a class.",
+   "id": "pv024",
+   "ru": "записываться, регистрироваться",
+   "ruAudio": "audio/4ea3f0e78ec7.mp3",
+   "ruEx": "Я записался на занятия.",
+   "set": 1
+  },
+  {
+   "en": "set up",
+   "enAudio": "audio/98f630db975d.mp3",
+   "enEx": "Can you set up my new phone?",
+   "id": "pv025",
+   "ru": "устанавливать, настраивать",
+   "ruAudio": "audio/27c4aa8b097c.mp3",
+   "ruEx": "Ты можешь настроить мой новый телефон?",
+   "set": 1
+  },
+  {
+   "en": "make up",
+   "enAudio": "audio/60c37aa1fd3d.mp3",
+   "enEx": "He made up a funny story.",
+   "id": "pv026",
+   "ru": "придумывать, мириться",
+   "ruAudio": "audio/fe786df1b981.mp3",
+   "ruEx": "Он придумал смешную историю.",
+   "set": 2
+  },
+  {
+   "en": "show up",
+   "enAudio": "audio/c8d5db5c6a62.mp3",
+   "enEx": "He never shows up on time.",
+   "id": "pv027",
+   "ru": "появляться, приходить",
+   "ruAudio": "audio/0798141b52a0.mp3",
+   "ruEx": "Он никогда не приходит вовремя.",
+   "set": 2
+  },
+  {
+   "en": "take out",
+   "enAudio": "audio/3c096701545a.mp3",
+   "enEx": "Please take out the trash.",
+   "id": "pv028",
+   "ru": "выносить, вынимать",
+   "ruAudio": "audio/389e8283764b.mp3",
+   "ruEx": "Пожалуйста, вынеси мусор.",
+   "set": 2
+  },
+  {
+   "en": "pick out",
+   "enAudio": "audio/54b336000edc.mp3",
+   "enEx": "She picked out a red dress.",
+   "id": "pv029",
+   "ru": "выбирать",
+   "ruAudio": "audio/964e919d9624.mp3",
+   "ruEx": "Она выбрала красное платье.",
+   "set": 2
+  },
+  {
+   "en": "fill out",
+   "enAudio": "audio/25b3239eff47.mp3",
+   "enEx": "Please fill out this form.",
+   "id": "pv030",
+   "ru": "заполнять",
+   "ruAudio": "audio/cccb6ee5edbc.mp3",
+   "ruEx": "Пожалуйста, заполните эту форму.",
+   "set": 2
+  },
+  {
+   "en": "hang out",
+   "enAudio": "audio/e7457087d2ff.mp3",
+   "enEx": "We often hang out after work.",
+   "id": "pv031",
+   "ru": "проводить время, тусоваться",
+   "ruAudio": "audio/6d5496faf55e.mp3",
+   "ruEx": "Мы часто проводим время вместе после работы.",
+   "set": 2
+  },
+  {
+   "en": "get in",
+   "enAudio": "audio/343b52b6d26f.mp3",
+   "enEx": "Get in the car, please.",
+   "id": "pv032",
+   "ru": "садиться (в машину), входить",
+   "ruAudio": "audio/701580691efd.mp3",
+   "ruEx": "Садись в машину, пожалуйста.",
+   "set": 2
+  },
+  {
+   "en": "get out",
+   "enAudio": "audio/3a7e08bba31e.mp3",
+   "enEx": "Let's get out of here.",
+   "id": "pv033",
+   "ru": "выходить, выбираться",
+   "ruAudio": "audio/6ef25aa50bf8.mp3",
+   "ruEx": "Давай уйдём отсюда.",
+   "set": 2
+  },
+  {
+   "en": "get on",
+   "enAudio": "audio/3a137127dd2b.mp3",
+   "enEx": "We got on the bus at noon.",
+   "id": "pv034",
+   "ru": "садиться (в автобус)",
+   "ruAudio": "audio/56cb7627567c.mp3",
+   "ruEx": "Мы сели на автобус в полдень.",
+   "set": 2
+  },
+  {
+   "en": "get off",
+   "enAudio": "audio/9d09f1607aac.mp3",
+   "enEx": "I get off at the next stop.",
+   "id": "pv035",
+   "ru": "выходить (из автобуса)",
+   "ruAudio": "audio/bb74e5599813.mp3",
+   "ruEx": "Я выхожу на следующей остановке.",
+   "set": 2
+  },
+  {
+   "en": "get along",
+   "enAudio": "audio/ac41a164844f.mp3",
+   "enEx": "I get along well with my sister.",
+   "id": "pv036",
+   "ru": "ладить",
+   "ruAudio": "audio/d1f094cdb809.mp3",
+   "ruEx": "Я хорошо лажу с сестрой.",
+   "set": 2
+  },
+  {
+   "en": "get over",
+   "enAudio": "audio/fd63858d066d.mp3",
+   "enEx": "She got over the flu quickly.",
+   "id": "pv037",
+   "ru": "оправиться, пережить",
+   "ruAudio": "audio/05e4bd92a253.mp3",
+   "ruEx": "Она быстро оправилась от гриппа.",
+   "set": 2
+  },
+  {
+   "en": "get away",
+   "enAudio": "audio/53542417bd34.mp3",
+   "enEx": "I need to get away for a while.",
+   "id": "pv038",
+   "ru": "убегать, уезжать",
+   "ruAudio": "audio/74c17d129cf9.mp3",
+   "ruEx": "Мне нужно ненадолго уехать.",
+   "set": 2
+  },
+  {
+   "en": "grow up",
+   "enAudio": "audio/4ac90e7fbe54.mp3",
+   "enEx": "I grew up in a small town.",
+   "id": "pv039",
+   "ru": "вырастать, взрослеть",
+   "ruAudio": "audio/010fbbd83c8c.mp3",
+   "ruEx": "Я вырос в маленьком городке.",
+   "set": 2
+  },
+  {
+   "en": "break down",
+   "enAudio": "audio/058b95e775e6.mp3",
+   "enEx": "Our car broke down yesterday.",
+   "id": "pv040",
+   "ru": "ломаться",
+   "ruAudio": "audio/930549b3bfca.mp3",
+   "ruEx": "Вчера наша машина сломалась.",
+   "set": 2
+  },
+  {
+   "en": "break up",
+   "enAudio": "audio/935721ce38c1.mp3",
+   "enEx": "They broke up last month.",
+   "id": "pv041",
+   "ru": "расставаться",
+   "ruAudio": "audio/c832b32533c2.mp3",
+   "ruEx": "Они расстались в прошлом месяце.",
+   "set": 2
+  },
+  {
+   "en": "bring up",
+   "enAudio": "audio/c66a859fd6f3.mp3",
+   "enEx": "Don't bring up that subject.",
+   "id": "pv042",
+   "ru": "поднимать (тему), воспитывать",
+   "ruAudio": "audio/1243b4eea7fa.mp3",
+   "ruEx": "Не поднимай эту тему.",
+   "set": 2
+  },
+  {
+   "en": "bring back",
+   "enAudio": "audio/2112f0b01d75.mp3",
+   "enEx": "Please bring back my book.",
+   "id": "pv043",
+   "ru": "возвращать, приносить обратно",
+   "ruAudio": "audio/e137d0ec655f.mp3",
+   "ruEx": "Пожалуйста, верни мою книгу.",
+   "set": 2
+  },
+  {
+   "en": "call back",
+   "enAudio": "audio/645a33316cfe.mp3",
+   "enEx": "I will call you back later.",
+   "id": "pv044",
+   "ru": "перезванивать",
+   "ruAudio": "audio/b9471d4bbecf.mp3",
+   "ruEx": "Я перезвоню тебе позже.",
+   "set": 2
+  },
+  {
+   "en": "call off",
+   "enAudio": "audio/4978a404a650.mp3",
+   "enEx": "They called off the meeting.",
+   "id": "pv045",
+   "ru": "отменять",
+   "ruAudio": "audio/a8e532420f98.mp3",
+   "ruEx": "Они отменили встречу.",
+   "set": 2
+  },
+  {
+   "en": "carry on",
+   "enAudio": "audio/d5234e3d2a4f.mp3",
+   "enEx": "Carry on with your work.",
+   "id": "pv046",
+   "ru": "продолжать",
+   "ruAudio": "audio/e2b67077bb18.mp3",
+   "ruEx": "Продолжайте работу.",
+   "set": 2
+  },
+  {
+   "en": "check in",
+   "enAudio": "audio/10773209c33c.mp3",
+   "enEx": "We check in at three.",
+   "id": "pv047",
+   "ru": "регистрироваться (в отеле)",
+   "ruAudio": "audio/6497c5d02b69.mp3",
+   "ruEx": "Мы заселяемся в три.",
+   "set": 2
+  },
+  {
+   "en": "check out",
+   "enAudio": "audio/6cad549a2f91.mp3",
+   "enEx": "We check out at noon.",
+   "id": "pv048",
+   "ru": "выезжать, проверять",
+   "ruAudio": "audio/bd77b858e3d4.mp3",
+   "ruEx": "Мы выезжаем в полдень.",
+   "set": 2
+  },
+  {
+   "en": "cheer up",
+   "enAudio": "audio/d5814c00d560.mp3",
+   "enEx": "Cheer up! Things will get better.",
+   "id": "pv049",
+   "ru": "подбодрить, повеселеть",
+   "ruAudio": "audio/0c66e073c8a8.mp3",
+   "ruEx": "Не унывай! Всё наладится.",
+   "set": 2
+  },
+  {
+   "en": "clean up",
+   "enAudio": "audio/707789469942.mp3",
+   "enEx": "Let's clean up the kitchen.",
+   "id": "pv050",
+   "ru": "убирать, наводить порядок",
+   "ruAudio": "audio/4456b1babec7.mp3",
+   "ruEx": "Давай приберёмся на кухне.",
+   "set": 2
+  },
+  {
+   "en": "cut off",
+   "enAudio": "audio/6505d7711cac.mp3",
+   "enEx": "They cut off our water.",
+   "id": "pv051",
+   "ru": "отрезать, отключать",
+   "ruAudio": "audio/7999dd7f831f.mp3",
+   "ruEx": "Нам отключили воду.",
+   "set": 3
+  },
+  {
+   "en": "cut down",
+   "enAudio": "audio/132bfa7d8e67.mp3",
+   "enEx": "I am cutting down on sugar.",
+   "id": "pv052",
+   "ru": "сокращать",
+   "ruAudio": "audio/d8eeaf131d27.mp3",
+   "ruEx": "Я стараюсь есть меньше сахара.",
+   "set": 3
+  },
+  {
+   "en": "deal with",
+   "enAudio": "audio/24fea74f8865.mp3",
+   "enEx": "I can deal with this problem.",
+   "id": "pv053",
+   "ru": "справляться, иметь дело",
+   "ruAudio": "audio/3643b14f4633.mp3",
+   "ruEx": "Я могу справиться с этой проблемой.",
+   "set": 3
+  },
+  {
+   "en": "dress up",
+   "enAudio": "audio/2962cda7250b.mp3",
+   "enEx": "We dressed up for the party.",
+   "id": "pv054",
+   "ru": "наряжаться",
+   "ruAudio": "audio/db4438eb9c4f.mp3",
+   "ruEx": "Мы нарядились на вечеринку.",
+   "set": 3
+  },
+  {
+   "en": "drop off",
+   "enAudio": "audio/c32df2b4116c.mp3",
+   "enEx": "Can you drop me off here?",
+   "id": "pv055",
+   "ru": "подвозить, высаживать",
+   "ruAudio": "audio/96a903b31aa3.mp3",
+   "ruEx": "Можешь высадить меня здесь?",
+   "set": 3
+  },
+  {
+   "en": "end up",
+   "enAudio": "audio/9a29ae6251ff.mp3",
+   "enEx": "We ended up at a small cafe.",
+   "id": "pv056",
+   "ru": "оказываться, заканчивать",
+   "ruAudio": "audio/5dc87154554f.mp3",
+   "ruEx": "В итоге мы оказались в маленьком кафе.",
+   "set": 3
+  },
+  {
+   "en": "fall down",
+   "enAudio": "audio/9e4c257e93a6.mp3",
+   "enEx": "The boy fell down and cried.",
+   "id": "pv057",
+   "ru": "падать",
+   "ruAudio": "audio/a24fa0d78832.mp3",
+   "ruEx": "Мальчик упал и заплакал.",
+   "set": 3
+  },
+  {
+   "en": "figure out",
+   "enAudio": "audio/88873bf8331a.mp3",
+   "enEx": "I cannot figure out this problem.",
+   "id": "pv058",
+   "ru": "разобраться, понять",
+   "ruAudio": "audio/a04cb19314e1.mp3",
+   "ruEx": "Я не могу разобраться с этой задачей.",
+   "set": 3
+  },
+  {
+   "en": "fill up",
+   "enAudio": "audio/21e2179226a8.mp3",
+   "enEx": "Let's fill up the tank.",
+   "id": "pv059",
+   "ru": "заполнять, заправлять",
+   "ruAudio": "audio/c8f7fba3b8f5.mp3",
+   "ruEx": "Давай заправим полный бак.",
+   "set": 3
+  },
+  {
+   "en": "fall asleep",
+   "enAudio": "audio/98758103b5d5.mp3",
+   "enEx": "I fell asleep on the sofa.",
+   "id": "pv060",
+   "ru": "засыпать",
+   "ruAudio": "audio/66c7374a78dc.mp3",
+   "ruEx": "Я уснул на диване.",
+   "set": 3
+  },
+  {
+   "en": "get ready",
+   "enAudio": "audio/44817e78e9c2.mp3",
+   "enEx": "Get ready, we leave soon.",
+   "id": "pv061",
+   "ru": "готовиться",
+   "ruAudio": "audio/674493e0dadc.mp3",
+   "ruEx": "Готовься, мы скоро выезжаем.",
+   "set": 3
+  },
+  {
+   "en": "give back",
+   "enAudio": "audio/380a477d65c8.mp3",
+   "enEx": "Please give me back my pen.",
+   "id": "pv062",
+   "ru": "возвращать",
+   "ruAudio": "audio/ebffd770bc66.mp3",
+   "ruEx": "Пожалуйста, верни мне мою ручку.",
+   "set": 3
+  },
+  {
+   "en": "go away",
+   "enAudio": "audio/edeb87e76ad9.mp3",
+   "enEx": "Please go away.",
+   "id": "pv063",
+   "ru": "уходить, уезжать",
+   "ruAudio": "audio/046ebff12b9d.mp3",
+   "ruEx": "Пожалуйста, уйди.",
+   "set": 3
+  },
+  {
+   "en": "go down",
+   "enAudio": "audio/c6c990030a07.mp3",
+   "enEx": "Prices went down this year.",
+   "id": "pv064",
+   "ru": "спускаться, падать",
+   "ruAudio": "audio/2d5f0745467d.mp3",
+   "ruEx": "В этом году цены упали.",
+   "set": 3
+  },
+  {
+   "en": "go up",
+   "enAudio": "audio/b0b082dc1ed9.mp3",
+   "enEx": "Prices keep going up.",
+   "id": "pv065",
+   "ru": "подниматься, расти",
+   "ruAudio": "audio/0bcd297b3979.mp3",
+   "ruEx": "Цены продолжают расти.",
+   "set": 3
+  },
+  {
+   "en": "hand in",
+   "enAudio": "audio/ccbbd590fcb2.mp3",
+   "enEx": "Hand in your tests now.",
+   "id": "pv066",
+   "ru": "сдавать, подавать",
+   "ruAudio": "audio/c10c112f96b9.mp3",
+   "ruEx": "Сдавайте свои работы сейчас.",
+   "set": 3
+  },
+  {
+   "en": "hang up",
+   "enAudio": "audio/b4990e0b8ce9.mp3",
+   "enEx": "Don't hang up yet.",
+   "id": "pv067",
+   "ru": "вешать трубку",
+   "ruAudio": "audio/dc26bb2c6aa9.mp3",
+   "ruEx": "Пока не вешай трубку.",
+   "set": 3
+  },
+  {
+   "en": "hold on",
+   "enAudio": "audio/ffac9e234d9c.mp3",
+   "enEx": "Hold on, I will be right back.",
+   "id": "pv068",
+   "ru": "подождать, держаться",
+   "ruAudio": "audio/700c13e9d3d0.mp3",
+   "ruEx": "Подожди, я сейчас вернусь.",
+   "set": 3
+  },
+  {
+   "en": "hurry up",
+   "enAudio": "audio/5f83a171fb49.mp3",
+   "enEx": "Hurry up or we will be late.",
+   "id": "pv069",
+   "ru": "торопиться",
+   "ruAudio": "audio/6ad76adb882f.mp3",
+   "ruEx": "Поторопись, или мы опоздаем.",
+   "set": 3
+  },
+  {
+   "en": "keep up",
+   "enAudio": "audio/3d90e1a21add.mp3",
+   "enEx": "Keep up the good work!",
+   "id": "pv070",
+   "ru": "не отставать, продолжать",
+   "ruAudio": "audio/8ab0b54a37b2.mp3",
+   "ruEx": "Так держать!",
+   "set": 3
+  },
+  {
+   "en": "keep on",
+   "enAudio": "audio/9eb0e3046f25.mp3",
+   "enEx": "He kept on talking.",
+   "id": "pv071",
+   "ru": "продолжать",
+   "ruAudio": "audio/6205a42643d7.mp3",
+   "ruEx": "Он продолжал говорить.",
+   "set": 3
+  },
+  {
+   "en": "leave out",
+   "enAudio": "audio/b2e92981fd0e.mp3",
+   "enEx": "Don't leave out any details.",
+   "id": "pv072",
+   "ru": "пропускать, не включать",
+   "ruAudio": "audio/1efb05b07d4d.mp3",
+   "ruEx": "Не пропускай никаких деталей.",
+   "set": 3
+  },
+  {
+   "en": "let down",
+   "enAudio": "audio/cc920c6c41b8.mp3",
+   "enEx": "I don't want to let you down.",
+   "id": "pv073",
+   "ru": "подводить",
+   "ruAudio": "audio/cc18d50d6d34.mp3",
+   "ruEx": "Я не хочу тебя подвести.",
+   "set": 3
+  },
+  {
+   "en": "log in",
+   "enAudio": "audio/60e17033afa5.mp3",
+   "enEx": "I cannot log in to my account.",
+   "id": "pv074",
+   "ru": "входить в систему",
+   "ruAudio": "audio/58258ad59e63.mp3",
+   "ruEx": "Я не могу войти в свой аккаунт.",
+   "set": 3
+  },
+  {
+   "en": "log out",
+   "enAudio": "audio/3832e6710589.mp3",
+   "enEx": "Remember to log out.",
+   "id": "pv075",
+   "ru": "выходить из системы",
+   "ruAudio": "audio/15cc00710675.mp3",
+   "ruEx": "Не забудь выйти из системы.",
+   "set": 3
+  },
+  {
+   "en": "look after",
+   "enAudio": "audio/10f3f9d1a729.mp3",
+   "enEx": "She looks after her little brother.",
+   "id": "pv076",
+   "ru": "присматривать, заботиться",
+   "ruAudio": "audio/28b4bdff5002.mp3",
+   "ruEx": "Она присматривает за младшим братом.",
+   "set": 4
+  },
+  {
+   "en": "look forward to",
+   "enAudio": "audio/fe6d650f03b0.mp3",
+   "enEx": "I look forward to seeing you.",
+   "id": "pv077",
+   "ru": "ждать с нетерпением",
+   "ruAudio": "audio/855fd73bf827.mp3",
+   "ruEx": "С нетерпением жду встречи с тобой.",
+   "set": 4
+  },
+  {
+   "en": "look out",
+   "enAudio": "audio/36a365a852ca.mp3",
+   "enEx": "Look out! A car is coming!",
+   "id": "pv078",
+   "ru": "остерегаться, берегись",
+   "ruAudio": "audio/99431e71a3b2.mp3",
+   "ruEx": "Осторожно! Едет машина!",
+   "set": 4
+  },
+  {
+   "en": "move on",
+   "enAudio": "audio/29f8c0bb78f6.mp3",
+   "enEx": "It is time to move on.",
+   "id": "pv079",
+   "ru": "двигаться дальше",
+   "ruAudio": "audio/353036d33d88.mp3",
+   "ruEx": "Пора двигаться дальше.",
+   "set": 4
+  },
+  {
+   "en": "move out",
+   "enAudio": "audio/20f5ba0b905a.mp3",
+   "enEx": "She moved out last week.",
+   "id": "pv080",
+   "ru": "съезжать",
+   "ruAudio": "audio/ffada86504b0.mp3",
+   "ruEx": "Она съехала на прошлой неделе.",
+   "set": 4
+  },
+  {
+   "en": "pay back",
+   "enAudio": "audio/ff81b7a28f9d.mp3",
+   "enEx": "I will pay you back tomorrow.",
+   "id": "pv081",
+   "ru": "возвращать долг",
+   "ruAudio": "audio/c712e6611ebb.mp3",
+   "ruEx": "Я верну тебе долг завтра.",
+   "set": 4
+  },
+  {
+   "en": "point out",
+   "enAudio": "audio/72efbef7cac4.mp3",
+   "enEx": "He pointed out a mistake.",
+   "id": "pv082",
+   "ru": "указывать, обращать внимание",
+   "ruAudio": "audio/933e31bcc67a.mp3",
+   "ruEx": "Он указал на ошибку.",
+   "set": 4
+  },
+  {
+   "en": "put away",
+   "enAudio": "audio/2a9171beb0f2.mp3",
+   "enEx": "Put away your toys.",
+   "id": "pv083",
+   "ru": "убирать (на место)",
+   "ruAudio": "audio/8172160caa56.mp3",
+   "ruEx": "Убери свои игрушки.",
+   "set": 4
+  },
+  {
+   "en": "put off",
+   "enAudio": "audio/893ea87ffeed.mp3",
+   "enEx": "Don't put off your homework.",
+   "id": "pv084",
+   "ru": "откладывать",
+   "ruAudio": "audio/7327970b3f20.mp3",
+   "ruEx": "Не откладывай домашнее задание.",
+   "set": 4
+  },
+  {
+   "en": "run out",
+   "enAudio": "audio/f509c4dfa6f6.mp3",
+   "enEx": "We ran out of milk.",
+   "id": "pv085",
+   "ru": "заканчиваться",
+   "ruAudio": "audio/8d25a90ed8a5.mp3",
+   "ruEx": "У нас закончилось молоко.",
+   "set": 4
+  },
+  {
+   "en": "run away",
+   "enAudio": "audio/c6c9f2e158ca.mp3",
+   "enEx": "The dog ran away.",
+   "id": "pv086",
+   "ru": "убегать",
+   "ruAudio": "audio/d1c62938525d.mp3",
+   "ruEx": "Собака убежала.",
+   "set": 4
+  },
+  {
+   "en": "set off",
+   "enAudio": "audio/146b0f29f5fc.mp3",
+   "enEx": "We set off early in the morning.",
+   "id": "pv087",
+   "ru": "отправляться в путь",
+   "ruAudio": "audio/29adf0be3e78.mp3",
+   "ruEx": "Мы отправились в путь рано утром.",
+   "set": 4
+  },
+  {
+   "en": "show off",
+   "enAudio": "audio/eed44101abbc.mp3",
+   "enEx": "He likes to show off.",
+   "id": "pv088",
+   "ru": "хвастаться",
+   "ruAudio": "audio/ade6c02ed0f2.mp3",
+   "ruEx": "Он любит хвастаться.",
+   "set": 4
+  },
+  {
+   "en": "shut down",
+   "enAudio": "audio/c79147de34fd.mp3",
+   "enEx": "The store shut down last year.",
+   "id": "pv089",
+   "ru": "выключать, закрывать",
+   "ruAudio": "audio/47bafd4c46aa.mp3",
+   "ruEx": "Магазин закрылся в прошлом году.",
+   "set": 4
+  },
+  {
+   "en": "slow down",
+   "enAudio": "audio/09c19bd61070.mp3",
+   "enEx": "Please slow down a little.",
+   "id": "pv090",
+   "ru": "замедлять, сбавлять скорость",
+   "ruAudio": "audio/e2cdef0b962e.mp3",
+   "ruEx": "Пожалуйста, притормози немного.",
+   "set": 4
+  },
+  {
+   "en": "speak up",
+   "enAudio": "audio/5d80d2ec2af4.mp3",
+   "enEx": "Could you speak up, please?",
+   "id": "pv091",
+   "ru": "говорить громче",
+   "ruAudio": "audio/07804d1e9a72.mp3",
+   "ruEx": "Не могли бы вы говорить громче?",
+   "set": 4
+  },
+  {
+   "en": "take away",
+   "enAudio": "audio/4aece34885c3.mp3",
+   "enEx": "Please take away these plates.",
+   "id": "pv092",
+   "ru": "забирать, убирать",
+   "ruAudio": "audio/131526d526ee.mp3",
+   "ruEx": "Пожалуйста, уберите эти тарелки.",
+   "set": 4
+  },
+  {
+   "en": "take over",
+   "enAudio": "audio/4cf0d00a599a.mp3",
+   "enEx": "I will take over from here.",
+   "id": "pv093",
+   "ru": "брать на себя, захватывать",
+   "ruAudio": "audio/b9307b454a9b.mp3",
+   "ruEx": "Дальше я возьму это на себя.",
+   "set": 4
+  },
+  {
+   "en": "throw away",
+   "enAudio": "audio/a5202fa6112a.mp3",
+   "enEx": "Don't throw away that box.",
+   "id": "pv094",
+   "ru": "выбрасывать",
+   "ruAudio": "audio/d5bcf4faef8b.mp3",
+   "ruEx": "Не выбрасывай эту коробку.",
+   "set": 4
+  },
+  {
+   "en": "try on",
+   "enAudio": "audio/ce90093c0545.mp3",
+   "enEx": "Can I try on this jacket?",
+   "id": "pv095",
+   "ru": "примерять",
+   "ruAudio": "audio/a558dc0b7893.mp3",
+   "ruEx": "Можно примерить эту куртку?",
+   "set": 4
+  },
+  {
+   "en": "turn down",
+   "enAudio": "audio/e537b5bf2d19.mp3",
+   "enEx": "Please turn down the music.",
+   "id": "pv096",
+   "ru": "отклонять, делать тише",
+   "ruAudio": "audio/81d8667f57e4.mp3",
+   "ruEx": "Пожалуйста, сделай музыку потише.",
+   "set": 4
+  },
+  {
+   "en": "turn around",
+   "enAudio": "audio/afa064fd510e.mp3",
+   "enEx": "Turn around and look at me.",
+   "id": "pv097",
+   "ru": "поворачиваться, разворачиваться",
+   "ruAudio": "audio/5642240cf4af.mp3",
+   "ruEx": "Повернись и посмотри на меня.",
+   "set": 4
+  },
+  {
+   "en": "wake up (someone)",
+   "enAudio": "audio/01d374a2bffd.mp3",
+   "enEx": "Please wake me up at six.",
+   "id": "pv098",
+   "ru": "будить",
+   "ruAudio": "audio/c0d834be5254.mp3",
+   "ruEx": "Пожалуйста, разбуди меня в шесть.",
+   "set": 4
+  },
+  {
+   "en": "come over",
+   "enAudio": "audio/3b12c43affb3.mp3",
+   "enEx": "Come over for dinner on Friday.",
+   "id": "pv099",
+   "ru": "заходить в гости, приходить",
+   "ruAudio": "audio/2f5e69556902.mp3",
+   "ruEx": "Приходи к нам на ужин в пятницу.",
+   "set": 4
+  },
+  {
+   "en": "take off (plane)",
+   "enAudio": "audio/72a384bb27cc.mp3",
+   "enEx": "The plane takes off at noon.",
+   "id": "pv100",
+   "ru": "взлетать",
+   "ruAudio": "audio/5590b73c4cbc.mp3",
+   "ruEx": "Самолёт взлетает в полдень.",
+   "set": 4
+  }
+ ],
+ "id": "phrasal-verbs"
+}

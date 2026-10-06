@@ -1,5 +1,5 @@
 {
- "contentVersion": "aa31e121ebf7",
+ "contentVersion": "34c2efb242a5",
  "topics": [
   {
    "cardCount": 8,
@@ -13,6 +13,155 @@
     }
    ],
    "title": "Приветствия и вежливость"
+  },
+  {
+   "cardCount": 500,
+   "description": "Самые употребимые слова с примерами",
+   "id": "top-500-words",
+   "order": 2,
+   "sets": [
+    {
+     "count": 50,
+     "n": 1
+    },
+    {
+     "count": 50,
+     "n": 2
+    },
+    {
+     "count": 50,
+     "n": 3
+    },
+    {
+     "count": 50,
+     "n": 4
+    },
+    {
+     "count": 50,
+     "n": 5
+    },
+    {
+     "count": 50,
+     "n": 6
+    },
+    {
+     "count": 50,
+     "n": 7
+    },
+    {
+     "count": 50,
+     "n": 8
+    },
+    {
+     "count": 50,
+     "n": 9
+    },
+    {
+     "count": 50,
+     "n": 10
+    }
+   ],
+   "title": "500 частых слов"
+  },
+  {
+   "cardCount": 100,
+   "description": "Магазин, кафе, транспорт, отель, у врача",
+   "id": "daily-phrases",
+   "order": 3,
+   "sets": [
+    {
+     "count": 20,
+     "n": 1
+    },
+    {
+     "count": 20,
+     "n": 2
+    },
+    {
+     "count": 20,
+     "n": 3
+    },
+    {
+     "count": 20,
+     "n": 4
+    },
+    {
+     "count": 20,
+     "n": 5
+    }
+   ],
+   "title": "100 бытовых фраз"
+  },
+  {
+   "cardCount": 100,
+   "description": "get up, give up, find out и другие",
+   "id": "phrasal-verbs",
+   "order": 4,
+   "sets": [
+    {
+     "count": 25,
+     "n": 1
+    },
+    {
+     "count": 25,
+     "n": 2
+    },
+    {
+     "count": 25,
+     "n": 3
+    },
+    {
+     "count": 25,
+     "n": 4
+    }
+   ],
+   "title": "Фразовые глаголы"
+  },
+  {
+   "cardCount": 60,
+   "description": "already, still, however, although…",
+   "id": "adverbs-linkers",
+   "order": 5,
+   "sets": [
+    {
+     "count": 20,
+     "n": 1
+    },
+    {
+     "count": 20,
+     "n": 2
+    },
+    {
+     "count": 20,
+     "n": 3
+    }
+   ],
+   "title": "Наречия и связки"
+  },
+  {
+   "cardCount": 100,
+   "description": "Три формы и пример",
+   "id": "irregular-verbs",
+   "order": 6,
+   "sets": [
+    {
+     "count": 25,
+     "n": 1
+    },
+    {
+     "count": 25,
+     "n": 2
+    },
+    {
+     "count": 25,
+     "n": 3
+    },
+    {
+     "count": 25,
+     "n": 4
+    }
+   ],
+   "title": "Неправильные глаголы"
   }
  ]
 }

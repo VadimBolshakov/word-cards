@@ -1,2 +1,7 @@
 id;title;description;order;en_voice;ru_voice
 greetings;Приветствия и вежливость;Самые первые фразы для любого разговора;1;;
+top-500-words;500 частых слов;Самые употребимые слова с примерами;2;;
+daily-phrases;100 бытовых фраз;Магазин, кафе, транспорт, отель, у врача;3;;
+phrasal-verbs;Фразовые глаголы;get up, give up, find out и другие;4;;
+adverbs-linkers;Наречия и связки;already, still, however, although…;5;;
+irregular-verbs;Неправильные глаголы;Три формы и пример;6;;
